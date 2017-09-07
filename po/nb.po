@@ -6,13 +6,13 @@
 # sandsmark <inactive+sandsmark@transifex.com>, 2012
 # Terje Andersen <terander@guard.zapto.org>, 2009
 # Terje Andersen <teranders@gmail.com>, 2011
-# Thorbjørn Bruarøy, 2014
+# Thorbjørn Bruarøy, 2014,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-12 10:43+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2017-09-06 09:44+0000\n"
+"Last-Translator: Thorbjørn Bruarøy\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/ald/quassel/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:136
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "Quassel IRC"
 
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
@@ -44,7 +44,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former Lead Developer"
-msgstr ""
+msgstr "Tidligere sjefsutvikler"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
@@ -75,7 +75,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:296
 msgctxt "AboutData|"
 msgid "Spanish translation"
-msgstr ""
+msgstr "Spansk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
@@ -85,30 +85,30 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
 msgid "Language improvements"
-msgstr ""
+msgstr "Språkforbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
 msgid "Documentation improvements"
-msgstr ""
+msgstr "Dokumentasjon-forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:214
 #: ../src/uisupport/aboutdata.cpp:237 ../src/uisupport/aboutdata.cpp:255
 #: ../src/uisupport/aboutdata.cpp:267 ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr ""
+msgstr "Rettelser"
 
 #: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
 msgid "Romanian translation"
-msgstr ""
+msgstr "Rumensk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:191 ../src/uisupport/aboutdata.cpp:244
 #: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Finnish translation"
-msgstr ""
+msgstr "Finsk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:192
 msgctxt "AboutData|"
@@ -129,18 +129,18 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "Nicer tooltips"
-msgstr ""
+msgstr "Penere verktøytips"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Crash fixes"
-msgstr ""
+msgstr "Krasjrettelser"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:220
 #: ../src/uisupport/aboutdata.cpp:282
 msgctxt "AboutData|"
 msgid "French translation"
-msgstr ""
+msgstr "Fransk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:200
 msgctxt "AboutData|"
@@ -150,7 +150,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "SASL-støtte"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
@@ -176,7 +176,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:207
 msgctxt "AboutData|"
 msgid "Japanese translation"
-msgstr ""
+msgstr "Japansk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:273
 msgctxt "AboutData|"
@@ -207,7 +207,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:215 ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
 msgid "Mac fixes"
-msgstr ""
+msgstr "Mac-rettelser"
 
 #: ../src/uisupport/aboutdata.cpp:216
 msgctxt "AboutData|"
@@ -217,7 +217,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:217
 msgctxt "AboutData|"
 msgid "Polish translation"
-msgstr ""
+msgstr "Polsk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:218
 msgctxt "AboutData|"
@@ -238,12 +238,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:291
 msgctxt "AboutData|"
 msgid "Russian translation"
-msgstr ""
+msgstr "Russisk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:223 ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
 msgid "Italian translation"
-msgstr ""
+msgstr "Italiensk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
@@ -253,12 +253,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
 msgid "Norwegian translation"
-msgstr ""
+msgstr "Norsk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:227
 msgctxt "AboutData|"
 msgid "Hungarian translation"
-msgstr ""
+msgstr "Ungarsk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:228
 msgctxt "AboutData|"
@@ -269,7 +269,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:316
 msgctxt "AboutData|"
 msgid "Turkish translation"
-msgstr ""
+msgstr "Tyrkisk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:230
 msgctxt "AboutData|"
@@ -289,21 +289,21 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:233
 msgctxt "AboutData|"
 msgid "Various features"
-msgstr ""
+msgstr "Diverse funksjoner"
 
 #: ../src/uisupport/aboutdata.cpp:234 ../src/uisupport/aboutdata.cpp:235
 #: ../src/uisupport/aboutdata.cpp:243 ../src/uisupport/aboutdata.cpp:248
 #: ../src/uisupport/aboutdata.cpp:286
 msgctxt "AboutData|"
 msgid "Various fixes"
-msgstr ""
+msgstr "Diverse rettelser"
 
 #: ../src/uisupport/aboutdata.cpp:236 ../src/uisupport/aboutdata.cpp:240
 #: ../src/uisupport/aboutdata.cpp:281 ../src/uisupport/aboutdata.cpp:284
 #: ../src/uisupport/aboutdata.cpp:289 ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
 msgid "Bugfixes"
-msgstr ""
+msgstr "Feilrettinger"
 
 #: ../src/uisupport/aboutdata.cpp:238
 msgctxt "AboutData|"
@@ -343,12 +343,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
 msgid "Serbian translation"
-msgstr ""
+msgstr "Serbisk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:250
 msgctxt "AboutData|"
 msgid "Slovenian translation"
-msgstr ""
+msgstr "Slovensk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:251
 msgctxt "AboutData|"
@@ -366,7 +366,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:266 ../src/uisupport/aboutdata.cpp:307
 msgctxt "AboutData|"
 msgid "German translation"
-msgstr ""
+msgstr "Tysk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:254
 msgctxt "AboutData|"
@@ -376,7 +376,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:258
 msgctxt "AboutData|"
 msgid "OSX improvements"
-msgstr ""
+msgstr "OSX-forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
@@ -386,7 +386,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:260
 msgctxt "AboutData|"
 msgid "Documentation fixes"
-msgstr ""
+msgstr "Dokumentasjonrettinger"
 
 #: ../src/uisupport/aboutdata.cpp:262
 msgctxt "AboutData|"
@@ -401,7 +401,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
 msgid "German translation, fixes"
-msgstr ""
+msgstr "Tysk oversettelse, rettelser"
 
 #: ../src/uisupport/aboutdata.cpp:270
 msgctxt "AboutData|"
@@ -426,7 +426,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:276
 msgctxt "AboutData|"
 msgid "Danish translation"
-msgstr ""
+msgstr "Dansk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:277
 msgctxt "AboutData|"
@@ -446,7 +446,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Performance improvements"
-msgstr ""
+msgstr "Ytelsesforbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:283
 msgctxt "AboutData|"
@@ -476,13 +476,13 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:292
 msgctxt "AboutData|"
 msgid "Dutch translation"
-msgstr ""
+msgstr "Nederlansk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:295
 #: ../src/uisupport/aboutdata.cpp:302 ../src/uisupport/aboutdata.cpp:303
 msgctxt "AboutData|"
 msgid "Greek translation"
-msgstr ""
+msgstr "Gresk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
@@ -497,7 +497,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:301
 msgctxt "AboutData|"
 msgid "Norwegian translation, documentation"
-msgstr ""
+msgstr "Norsk oversettelse, dokumentasjon"
 
 #: ../src/uisupport/aboutdata.cpp:304
 msgctxt "AboutData|"
@@ -512,12 +512,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:306
 msgctxt "AboutData|"
 msgid "Fixes and feedback"
-msgstr ""
+msgstr "Rettelser og tilbakemelding"
 
 #: ../src/uisupport/aboutdata.cpp:308 ../src/uisupport/aboutdata.cpp:310
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Tjekkisk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
@@ -527,12 +527,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:314
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Ukrainsk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:315
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Portugisisk oversettelse"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -1301,7 +1301,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "Inkluder leste beskjeder"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
@@ -2591,7 +2591,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "Automatisk"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -4281,12 +4281,12 @@ msgstr "Emacs hurtigtaster"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:127
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enables line wrapping for input."
-msgstr ""
+msgstr "Aktiverer tekstbrytning for inndata."
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:130
 msgctxt "InputWidgetSettingsPage|"
 msgid "Line wrapping"
-msgstr ""
+msgstr "Tekstbrytning"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:143
 msgctxt "InputWidgetSettingsPage|"
@@ -4366,22 +4366,22 @@ msgstr "Emne"
 #: ../src/client/networkmodel.cpp:976
 msgctxt "IrcUserItem|"
 msgid "(unknown)"
-msgstr ""
+msgstr "(ukjent)"
 
 #: ../src/client/networkmodel.cpp:980
 msgctxt "IrcUserItem|"
 msgid "Away&nbsp;Message"
-msgstr ""
+msgstr "Fraværsmelding"
 
 #: ../src/client/networkmodel.cpp:982
 msgctxt "IrcUserItem|"
 msgid "Realname"
-msgstr ""
+msgstr "Virkelig navn"
 
 #: ../src/client/networkmodel.cpp:983 ../src/client/networkmodel.cpp:987
 msgctxt "IrcUserItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Operatør"
 
 #: ../src/client/networkmodel.cpp:984
 msgctxt "IrcUserItem|"
@@ -4401,17 +4401,17 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:993
 msgctxt "IrcUserItem|"
 msgid "Idling&nbsp;since"
-msgstr ""
+msgstr "Inaktiv&nbsp;siden"
 
 #: ../src/client/networkmodel.cpp:997
 msgctxt "IrcUserItem|"
 msgid "Login&nbsp;time"
-msgstr ""
+msgstr "Innloggingstid"
 
 #: ../src/client/networkmodel.cpp:1000
 msgctxt "IrcUserItem|"
 msgid "Server"
-msgstr ""
+msgstr "Server"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
 msgctxt "ItemViewSettingsPage|"
@@ -4640,7 +4640,7 @@ msgstr "Ukjent protokoll-melding av type %1"
 #: ../src/qtui/mainpage.cpp:40
 msgctxt "MainPage|"
 msgid "Connect to Core..."
-msgstr ""
+msgstr "Koble til kjernen..."
 
 #: ../src/qtui/mainwin.cpp:360
 msgctxt "MainWin|"
@@ -4660,7 +4660,7 @@ msgstr "K&oble fra kjernen"
 #: ../src/qtui/mainwin.cpp:366
 msgctxt "MainWin|"
 msgid "Change &Password..."
-msgstr ""
+msgstr "Endre &Passord..."
 
 #: ../src/qtui/mainwin.cpp:368
 msgctxt "MainWin|"
@@ -4945,7 +4945,7 @@ msgstr ""
 #: ../src/qtui/mainwin.cpp:750
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
-msgstr ""
+msgstr "<b>Quassel-kjernen din støtter ikke denne funksjonen</b>"
 
 #: ../src/qtui/mainwin.cpp:752
 msgctxt "MainWin|"
@@ -5567,22 +5567,22 @@ msgstr "Informative beskjeder"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "Endre passord:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
 msgid "Old password:"
-msgstr ""
+msgstr "Gammelt passord:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:51
 msgctxt "PasswordChangeDlg|"
 msgid "New Password:"
-msgstr ""
+msgstr "Nytt passord:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:65
 msgctxt "PasswordChangeDlg|"
 msgid "Confirm password:"
-msgstr ""
+msgstr "Bekreft passord:"
 
 #: ../src/qtui/passwordchangedlg.cpp:33
 #, qt-format
@@ -5595,12 +5595,12 @@ msgstr ""
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
 msgid "Password Not Changed"
-msgstr ""
+msgstr "Passord ikke endret"
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
 msgid "<b>Password change failed</b>"
-msgstr ""
+msgstr "<b>Passordbytte feilet</b>"
 
 #: ../src/qtui/passwordchangedlg.cpp:69
 msgctxt "PasswordChangeDlg|"
@@ -5959,12 +5959,12 @@ msgstr ""
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 (usikker)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:156
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 (usikker)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:161
 msgctxt "ServerEditDlg|"
@@ -6349,7 +6349,7 @@ msgstr "<b>SHA1 sammendrag:</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:418
 msgctxt "SslInfoDlg|"
 msgid "<b>SHA256 digest:</b>"
-msgstr ""
+msgstr "<b>SHA256 sammendrag:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:448
 msgctxt "SslInfoDlg|"
