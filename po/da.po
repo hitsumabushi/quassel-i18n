@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-10-10 15:48+0000\n"
+"PO-Revision-Date: 2017-10-11 13:29+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -250,7 +250,7 @@ msgstr "Italiensk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
 msgid "Sanitize topic handling"
-msgstr ""
+msgstr "Ryd op i håndtering af emne"
 
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
@@ -310,7 +310,7 @@ msgstr "Fejlrettelser"
 #: ../src/uisupport/aboutdata.cpp:238
 msgctxt "AboutData|"
 msgid "QuasselDroid and Java wizardess, documentation, bugfixes"
-msgstr ""
+msgstr "QuasselDroid- og Java-trylleri, dokumentation, fejlrettelser"
 
 #: ../src/uisupport/aboutdata.cpp:239
 msgctxt "AboutData|"
@@ -468,7 +468,7 @@ msgstr "Fremhæv konfigurationsforbedringer"
 #: ../src/uisupport/aboutdata.cpp:288
 msgctxt "AboutData|"
 msgid "Kubuntu packager, (packaging/build system) bughunter"
-msgstr ""
+msgstr "Kubuntu-pakning, (pakning/bygsystem) fejlfinder"
 
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
@@ -2045,7 +2045,7 @@ msgstr ""
 #: ../src/core/core.cpp:252
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
-msgstr ""
+msgstr "Kalder restoreState() selvom der findes aktive sessioner!"
 
 #: ../src/core/core.cpp:286
 msgctxt "Core|"
@@ -2077,7 +2077,7 @@ msgstr "Ugyldig lytteadresse %1"
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
-msgstr ""
+msgstr "Lytter efter GUI-klienter på IPv6 %1 port %2 ved brug af protokolversion %3"
 
 #: ../src/core/core.cpp:465
 #, qt-format
@@ -2089,7 +2089,7 @@ msgstr "Kunne ikke åbne IPv6-grænseflade %1:%2: %3"
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
-msgstr ""
+msgstr "Lytter efter GUI-klienter på IPv4 %1 port %2 ved brug af protokolversion %3"
 
 #: ../src/core/core.cpp:484
 #, qt-format
@@ -2276,7 +2276,7 @@ msgid ""
 "<b>Your Quassel Client is too old!</b><br>This core needs at least "
 "client/core protocol version %1 (got: %2).<br>Please consider upgrading your"
 " client."
-msgstr ""
+msgstr "<b>Din Quassel-klient er for gammel!</b><br>Denne kerne behøver mindst klient-/kerne-protokolversion %1 (fik: %2).<br>Overvej venligst at opgradere din klient."
 
 #: ../src/core/coreauthhandler.cpp:144
 msgctxt "CoreAuthHandler|"
@@ -2842,7 +2842,7 @@ msgstr ""
 #: ../src/core/coresessioneventprocessor.cpp:1052
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
-msgstr ""
+msgstr "Omvendt DCC SEND understøttes ikke"
 
 #: ../src/core/coresessioneventprocessor.cpp:1070
 #, qt-format
@@ -2853,7 +2853,7 @@ msgstr "DCC %1 er ikke understøttet"
 #: ../src/core/coretransfer.cpp:58
 msgctxt "CoreTransfer|"
 msgid "Socket closed while still transferring!"
-msgstr ""
+msgstr "Sokkel lukket mens der blev overført!"
 
 #: ../src/core/coretransfer.cpp:70
 #, qt-format
@@ -2978,7 +2978,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been set."
-msgstr ""
+msgstr "Nøglen for %1 er blevet sat."
 
 #: ../src/core/coreuserinputhandler.cpp:670
 msgctxt "CoreUserInputHandler|"
@@ -2991,7 +2991,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
-msgstr ""
+msgstr "Nøglen for %1 er %2:%3"
 
 #: ../src/qtui/settingspages/createidentitydlg.ui:17
 msgctxt "CreateIdentityDlg|"
@@ -4557,7 +4557,7 @@ msgstr ""
 #: ../src/qtui/settingspages/keysequencewidget.cpp:81
 msgctxt "KeySequenceButton|"
 msgid "Unsupported Key"
-msgstr ""
+msgstr "Nøgle understøttes ikke"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:176
 msgctxt "KeySequenceWidget|"
@@ -4642,7 +4642,7 @@ msgstr "Ukendt protokolbesked af typen %1"
 #: ../src/qtui/mainpage.cpp:40
 msgctxt "MainPage|"
 msgid "Connect to Core..."
-msgstr ""
+msgstr "Forbind til kerne..."
 
 #: ../src/qtui/mainwin.cpp:360
 msgctxt "MainWin|"
