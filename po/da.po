@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-10-11 13:29+0000\n"
+"PO-Revision-Date: 2017-10-13 16:10+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -3158,12 +3158,12 @@ msgstr "%1 er ikke tilstede: »%2"
 #: ../src/core/eventstringifier.cpp:391
 msgctxt "EventStringifier|"
 msgid "You are no longer marked as being away"
-msgstr ""
+msgstr "Du er ikke længere markeret som værende væk"
 
 #: ../src/core/eventstringifier.cpp:399
 msgctxt "EventStringifier|"
 msgid "You have been marked as being away"
-msgstr ""
+msgstr "Du er blevet markeret som værende væk"
 
 #: ../src/core/eventstringifier.cpp:421
 #, qt-format
@@ -4373,7 +4373,7 @@ msgstr "(ukendt)"
 #: ../src/client/networkmodel.cpp:980
 msgctxt "IrcUserItem|"
 msgid "Away&nbsp;Message"
-msgstr ""
+msgstr "Væk-meddelelse"
 
 #: ../src/client/networkmodel.cpp:982
 msgctxt "IrcUserItem|"
@@ -4621,12 +4621,12 @@ msgstr ""
 #: ../src/qtui/settingspages/keysequencewidget.cpp:392
 msgctxt "KeySequenceWidget|"
 msgid "Do you want to reassign this shortcut to the selected action?"
-msgstr ""
+msgstr "Vil du tilknytte genvejen til den valgte handling igen?"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:395
 msgctxt "KeySequenceWidget|"
 msgid "Reassign"
-msgstr ""
+msgstr "Tilknyt igen"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:136
 msgctxt "LegacyPeer|"
@@ -4687,7 +4687,7 @@ msgstr "&Konfigurer Quassel..."
 #: ../src/qtui/mainwin.cpp:380
 msgctxt "MainWin|"
 msgid "&Lock Layout"
-msgstr ""
+msgstr "&Lås layout"
 
 #: ../src/qtui/mainwin.cpp:384
 msgctxt "MainWin|"
@@ -4697,7 +4697,7 @@ msgstr "Vis &søgelinje"
 #: ../src/qtui/mainwin.cpp:386
 msgctxt "MainWin|"
 msgid "Show Away Log"
-msgstr ""
+msgstr "Vis væk-log"
 
 #: ../src/qtui/mainwin.cpp:388
 msgctxt "MainWin|"
@@ -4712,7 +4712,7 @@ msgstr "Vis s&tatuslinje"
 #: ../src/qtui/mainwin.cpp:397
 msgctxt "MainWin|"
 msgid "&Full Screen Mode"
-msgstr ""
+msgstr "&Fuldskærmstilstand"
 
 #: ../src/qtui/mainwin.cpp:404
 msgctxt "MainWin|"
@@ -4752,7 +4752,7 @@ msgstr "Ny besked"
 #: ../src/qtui/mainwin.cpp:435
 msgctxt "MainWin|"
 msgid "Debug &HotList"
-msgstr ""
+msgstr "Debug &hotliste"
 
 #: ../src/qtui/mainwin.cpp:437
 msgctxt "MainWin|"
@@ -4762,7 +4762,7 @@ msgstr "Debug konsol"
 #: ../src/qtui/mainwin.cpp:439
 msgctxt "MainWin|"
 msgid "Reload Stylesheet"
-msgstr ""
+msgstr "Genindlæs typografi"
 
 #: ../src/qtui/mainwin.cpp:442
 msgctxt "MainWin|"
@@ -4777,7 +4777,7 @@ msgstr "Navigation"
 #: ../src/qtui/mainwin.cpp:448
 msgctxt "MainWin|"
 msgid "Jump to hot chat"
-msgstr ""
+msgstr "Hop til hotchat"
 
 #: ../src/qtui/mainwin.cpp:460
 msgctxt "MainWin|"
@@ -5774,7 +5774,7 @@ msgstr ""
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font property: %1"
-msgstr ""
+msgstr "Ugyldig skrifttypeegenskab: %1"
 
 #: ../src/uisupport/qssparser.cpp:444
 #, qt-format
@@ -5884,7 +5884,7 @@ msgstr "Server: %1"
 #: ../src/qtui/ui/receivefiledlg.ui:14
 msgctxt "ReceiveFileDlg|"
 msgid "Incoming File Transfer"
-msgstr ""
+msgstr "Indkommende filoverførsel"
 
 #: ../src/qtui/receivefiledlg.cpp:35
 #, qt-format
@@ -6246,12 +6246,12 @@ msgstr "Fra"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:29
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Snore"
-msgstr ""
+msgstr "Snore"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:40
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Enable Snore"
-msgstr ""
+msgstr "Aktivér Snore"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
@@ -6336,7 +6336,7 @@ msgstr "Udsteder"
 #: ../src/qtui/ui/sslinfodlg.ui:367
 msgctxt "SslInfoDlg|"
 msgid "<b>Validity period:</b>"
-msgstr ""
+msgstr "<b>Gyldighedsperiode:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:384
 msgctxt "SslInfoDlg|"
@@ -6405,7 +6405,7 @@ msgstr "Vis egne beskeder"
 #: ../src/uisupport/tabcompleter.cpp:52
 msgctxt "TabCompleter|"
 msgid "Tab completion"
-msgstr ""
+msgstr "Tabulatorfuldførsel"
 
 #: ../src/qtui/taskbarnotificationbackend.cpp:83
 msgctxt "TaskbarNotificationBackend::ConfigWidget|"
@@ -6475,7 +6475,7 @@ msgstr "Forespørgsel"
 #: ../src/uisupport/toolbaractionprovider.cpp:36
 msgctxt "ToolBarActionProvider|"
 msgid "Start a private conversation"
-msgstr ""
+msgstr "Start en privat samtale"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:37
 msgctxt "ToolBarActionProvider|"
@@ -6671,14 +6671,14 @@ msgstr ""
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN has kicked %DN%2%DN from %DC%3%DC"
-msgstr ""
+msgstr "%DN%1%DN har sparket %DN%2%DN fra %DC%3%DC"
 
 #. Day Change Message
 #: ../src/uisupport/uistyle.cpp:731
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "{Day changed to %1}"
-msgstr ""
+msgstr "{Dag ændret til %1}"
 
 #: ../src/uisupport/uistyle.cpp:744
 #, qt-format
@@ -6690,7 +6690,7 @@ msgstr ""
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN (%2 more)"
-msgstr ""
+msgstr "%DN%1%DN (%2 flere)"
 
 #: ../src/uisupport/uistyle.cpp:759
 #, qt-format
@@ -6711,8 +6711,8 @@ msgstr[1] "%n ejere"
 msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
 msgid_plural "%n Admin(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n administrator"
+msgstr[1] "%n administratorer"
 
 #: ../src/client/networkmodel.cpp:835
 #, qt-format
