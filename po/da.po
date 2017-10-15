@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-10-13 16:10+0000\n"
+"PO-Revision-Date: 2017-10-14 20:08+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -1615,7 +1615,7 @@ msgstr "Quassel IRC er en moderne, distribueret IRC-klient"
 #: ../src/client/client.cpp:324
 msgctxt "Client|"
 msgid "Identity already exists in client!"
-msgstr "Identiteten eksisterer allerede i klienten!"
+msgstr "Identiteten findes allerede i klienten!"
 
 #: ../src/client/clientauthhandler.cpp:69
 #: ../src/client/clientauthhandler.cpp:497
@@ -2121,7 +2121,7 @@ msgstr "Lukker server for grundlæggende opsætning."
 #: ../src/core/core.cpp:556
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
-msgstr ""
+msgstr "Ikke-autentificeret klient afbrudt:"
 
 #: ../src/client/coreaccount.h:40
 msgctxt "CoreAccount|"
@@ -2301,13 +2301,13 @@ msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
-msgstr ""
+msgstr "<b>SSL kræves!</b><br>Du skal bruge SSL for at kunne forbinde til denne kerne."
 
 #: ../src/core/coreauthhandler.cpp:177
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "<b>Quassel Core Version %1</b><br>Built: %2<br>Up %3d%4h%5m (since %6)"
-msgstr ""
+msgstr "<b>Quassel-kerneversion %1</b><br>Bygget: %2<br>Oppe %3d%4h%5m (siden %6)"
 
 #: ../src/core/coreauthhandler.cpp:213
 #, qt-format
@@ -2624,7 +2624,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:103
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Never time out actively"
-msgstr ""
+msgstr "Foretag aldrig timeout aktivt"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:113
 msgctxt "CoreConnectionSettingsPage|"
@@ -2639,7 +2639,7 @@ msgstr "Prøv hver"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:154
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Interval between consecutive connection attempts"
-msgstr ""
+msgstr "Interval mellem fortløbende forbindelsesforsøg"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.cpp:24
 msgctxt "CoreConnectionSettingsPage|"
@@ -3257,13 +3257,13 @@ msgstr "Kanalen %1 blev oprettet %2"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is authed as %2"
-msgstr "[Whois] %1 er ikke tilstede: »%2"
+msgstr "[Whois] %1 er autentificeret som %2"
 
 #: ../src/core/eventstringifier.cpp:592
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was authed as %2"
-msgstr ""
+msgstr "[Whois] %1 blev autentificeret som %2"
 
 #: ../src/core/eventstringifier.cpp:601
 #, qt-format
@@ -3316,7 +3316,7 @@ msgstr "Kaldenavnet er allerede i brug: %1"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick/channel is temporarily unavailable: %1"
-msgstr ""
+msgstr "Kaldenavn/kanal er midlertidig utilgængelig: %1"
 
 #: ../src/core/eventstringifier.cpp:702
 #, qt-format
@@ -3884,7 +3884,7 @@ msgstr "Normal identitet"
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:15
 msgctxt "IgnoreListEditDlg|"
 msgid "Configure Ignore Rule"
-msgstr ""
+msgstr "Konfigurer ignoreringsregel"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:27
 msgctxt "IgnoreListEditDlg|"
@@ -3931,7 +3931,7 @@ msgstr "Regeltype"
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:72
 msgctxt "IgnoreListEditDlg|"
 msgid "Sender"
-msgstr ""
+msgstr "Afsender"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:79
 msgctxt "IgnoreListEditDlg|"
@@ -4082,7 +4082,7 @@ msgstr "Type"
 #: ../src/qtui/settingspages/ignorelistmodel.cpp:210
 msgctxt "IgnoreListModel|"
 msgid "Ignore Rule"
-msgstr "Ignorer regel"
+msgstr "Ignoreringsregel"
 
 #: ../src/qtui/settingspages/ignorelistsettingspage.ui:14
 msgctxt "IgnoreListSettingsPage|"
@@ -4117,7 +4117,7 @@ msgstr "Kanal-liste"
 #: ../src/qtui/settingspages/ignorelistsettingspage.cpp:144
 msgctxt "IgnoreListSettingsPage|"
 msgid "Rule already exists"
-msgstr "Identiteten eksisterer allerede i klienten!"
+msgstr "Identiteten findes allerede i klienten!"
 
 #: ../src/qtui/settingspages/ignorelistsettingspage.cpp:145
 #, qt-format
@@ -4403,7 +4403,7 @@ msgstr "Værtsmaske"
 #: ../src/client/networkmodel.cpp:993
 msgctxt "IrcUserItem|"
 msgid "Idling&nbsp;since"
-msgstr ""
+msgstr "Inaktiv&nbsp;siden"
 
 #: ../src/client/networkmodel.cpp:997
 msgctxt "IrcUserItem|"
@@ -4443,7 +4443,7 @@ msgstr "Vis emne i værktøjstip"
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:85
 msgctxt "ItemViewSettingsPage|"
 msgid "Mouse wheel changes selected chat"
-msgstr ""
+msgstr "Musehjul skifter valgte chat"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:101
 msgctxt "ItemViewSettingsPage|"
@@ -4489,7 +4489,7 @@ msgstr "Anden aktivitet"
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:286
 msgctxt "ItemViewSettingsPage|"
 msgid "Custom Nick List Colors"
-msgstr ""
+msgstr "Farver for tilpasset kaldenavnsliste"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:301
 msgctxt "ItemViewSettingsPage|"
@@ -4552,7 +4552,7 @@ msgstr[1] ""
 #: ../src/qtui/settingspages/keysequencewidget.cpp:80
 msgctxt "KeySequenceButton|"
 msgid "The key you just pressed is not supported by Qt."
-msgstr ""
+msgstr "Tasten som du trykkede på understøttes ikke af Qt."
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:81
 msgctxt "KeySequenceButton|"
@@ -5697,7 +5697,7 @@ msgstr ""
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid subelement name in %1"
-msgstr ""
+msgstr "Ugyldig underelementnavn i %1"
 
 #: ../src/uisupport/qssparser.cpp:248
 #, qt-format
@@ -5721,12 +5721,12 @@ msgstr "Ugyldig beskedetiket: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid senderhash specification: %1"
-msgstr ""
+msgstr "Ugyldig afsenderhash-specifikation: %1"
 
 #: ../src/uisupport/qssparser.cpp:285
 msgctxt "QssParser|"
 msgid "Senderhash can be at most \"0x0f\"!"
-msgstr ""
+msgstr "Afsenderhash må højst være \"0x0f\"!"
 
 #: ../src/uisupport/qssparser.cpp:301
 #, qt-format
@@ -5762,7 +5762,7 @@ msgstr ""
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid chatlist state %1"
-msgstr ""
+msgstr "Ugyldig chatliste-tilstand %1"
 
 #: ../src/uisupport/qssparser.cpp:414
 #, qt-format
@@ -5792,33 +5792,33 @@ msgstr ""
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unknown palette color role: %1"
-msgstr ""
+msgstr "Ukendt palet-farverolle: %1"
 
 #: ../src/uisupport/qssparser.cpp:482 ../src/uisupport/qssparser.cpp:505
 #: ../src/uisupport/qssparser.cpp:527
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid gradient declaration: %1"
-msgstr ""
+msgstr "Ugyldig gradient-deklaration: %1"
 
 #: ../src/uisupport/qssparser.cpp:491 ../src/uisupport/qssparser.cpp:513
 #: ../src/uisupport/qssparser.cpp:537
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid gradient stops list: %1"
-msgstr ""
+msgstr "Ugyldig gradient-stopliste: %1"
 
 #: ../src/uisupport/qssparser.cpp:646
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font specification: %1"
-msgstr ""
+msgstr "Ugyldig skrifttype-specifikation: %1"
 
 #: ../src/uisupport/qssparser.cpp:687
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font style specification: %1"
-msgstr ""
+msgstr "Ugyldig skriftstil-specifikation: %1"
 
 #: ../src/uisupport/qssparser.cpp:702
 #, qt-format
@@ -5830,7 +5830,7 @@ msgstr ""
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font size specification: %1"
-msgstr ""
+msgstr "Ugyldig skriftstørrelse-specifikation: %1"
 
 #: ../src/common/util.cpp:169
 msgctxt "Quassel::secondsToString()|"
@@ -5890,7 +5890,7 @@ msgstr "Indkommende filoverførsel"
 #, qt-format
 msgctxt "ReceiveFileDlg|"
 msgid "<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)"
-msgstr ""
+msgstr "<b>%1</b> vil sende dig en fil:<br>%2 (%3 bytes)"
 
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
@@ -6351,7 +6351,7 @@ msgstr "<b>SHA1-sammendrag:</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:418
 msgctxt "SslInfoDlg|"
 msgid "<b>SHA256 digest:</b>"
-msgstr ""
+msgstr "<b>SHA256-fingeraftryk:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:448
 msgctxt "SslInfoDlg|"
@@ -6455,7 +6455,7 @@ msgstr "Forlad"
 #: ../src/uisupport/toolbaractionprovider.cpp:33
 msgctxt "ToolBarActionProvider|"
 msgid "Leave currently selected channel"
-msgstr ""
+msgstr "Forlad den valgte kanal"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:34
 msgctxt "ToolBarActionProvider|"
