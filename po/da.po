@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-10-14 20:08+0000\n"
+"PO-Revision-Date: 2017-10-15 13:02+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgstr "Spansk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
 msgid "Tray icon fix"
-msgstr "Skuffeikon rettelse"
+msgstr "Rettelse af bakkeikon"
 
 #: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
@@ -163,7 +163,7 @@ msgstr "Forskelige forbedringer"
 #: ../src/uisupport/aboutdata.cpp:208
 msgctxt "AboutData|"
 msgid "Various fixes and improvements"
-msgstr "Forskellige rettelser og forbedringer"
+msgstr "Diverse rettelser og forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:205
 msgctxt "AboutData|"
@@ -591,7 +591,7 @@ msgid ""
 "href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Please use "
 "<a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr "<b>En moderne, distribuerede IRC klient</b><br><br>© %1 af projektets Quassel <br><a href=\"http://quassel-irc.org\"> http://quassel-irc.org</a> <br><a href=\"irc://irc.freenode.net/quassel\"> #quassel</a> på <a href=\"http://www.freenode.net\"> Freenode</a> <br><br>Quassel IRC er dual-licenseret under <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\"> GPLv2</a> og <a href=\"http://www.gnu.org/licenses/gpl-3.0.txt\"> GPLv3</a>. <br>De fleste ikoner er © af <a href=\"http://www.oxygen-icons.org\"> Ilt Team</a> og anvendes under <a href=\"http://www.gnu.org/licenses/lgpl.html\"> LGPL</a>.<br><br>Venligst Brug <a href=\"http://bugs.quassel-irc.org\"> http://bugs.quassel-irc.org</a> til at rapportere fejl."
+msgstr "<b>En moderne, distribuerede IRC-klient</b><br><br>© %1 af projektets Quassel <br><a href=\"http://quassel-irc.org\"> http://quassel-irc.org</a> <br><a href=\"irc://irc.freenode.net/quassel\"> #quassel</a> på <a href=\"http://www.freenode.net\"> Freenode</a> <br><br>Quassel IRC er dual-licenseret under <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\"> GPLv2</a> og <a href=\"http://www.gnu.org/licenses/gpl-3.0.txt\"> GPLv3</a>. <br>De fleste ikoner er © af <a href=\"http://www.oxygen-icons.org\"> Ilt Team</a> og anvendes under <a href=\"http://www.gnu.org/licenses/lgpl.html\"> LGPL</a>.<br><br>Brug venligst <a href=\"http://bugs.quassel-irc.org\"> http://bugs.quassel-irc.org</a> til at rapportere fejl."
 
 #: ../src/qtui/aboutdlg.cpp:72
 msgctxt "AboutDlg|"
@@ -662,7 +662,7 @@ msgid ""
 "semicolons<br /><br /><b>Example:</b> \"Test $1; Test $2; Test All $0\" will"
 " be expanded to three separate messages \"Test 1\", \"Test 2\" and \"Test "
 "All 1 2 3\" when called like /test 1 2 3"
-msgstr "<b>Streng genvejen vil blive udvidet til</b> < br / > <b>særlige variabler:</b> < br / >-<b>$i</b> repræsenterer i'th parameter. < br / >-<b>$i...j</b> repræsenterer i'th til j'th parameter adskilt af mellemrum. < br / >-<b>$i..</b> repræsenterer alle parametre fra jeg på adskilt af mellemrum. < br / >-<b>$i: hostname</b> repræsenterer hostname i den bruger identificeres i parameteren i'th eller en * hvis ukendt. < br / >-<b>$0</b> den hele strengen. < br / >-<b>$nick</b> din nuværende kaldenavn < br / >-<b>$channel</b> navnet på den valgte kanal < br / > < br / > flere kommandoer kan adskilles med semikolon < br / > < br / > <b>eksempel:</b> \"Test $1; Teste $2; Teste alle $0\" vil blive udvidet til tre separate meddelelser\"Test 1\",\"Test 2\"og\"Afprøve alle 1 2 3\"når kaldet ligesom/test 1 2 3"
+msgstr "<b>Streng genvejen vil blive udvidet til</b><br /><b>særlige variabler:</b><br /> - <b>$i</b> repræsenterer i'th parameter.<br /> - <b>$i...j</b> repræsenterer i'th til j'th parameter adskilt af mellemrum.<br /> - <b>$i..</b> repræsenterer alle parametre fra jeg på adskilt af mellemrum.<br /> - <b>$i: hostname</b> repræsenterer hostname i den bruger identificeres i parameteren i'th eller en * hvis ukendt.<br /> - <b>$0</b> den hele strengen.<br /> - <b>$nick</b> din nuværende kaldenavn<br /> - <b>$channel</b> navnet på den valgte kanal<br /><br />flere kommandoer kan adskilles med semikolon<br /><br /><b>eksempel:</b> \"Test $1; Teste $2; Teste alle $0\" vil blive udvidet til tre separate meddelelser\"Test 1\",\"Test 2\"og\"Afprøve alle 1 2 3\"når kaldet ligesom /test 1 2 3"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:185
 msgctxt "AliasesModel|"
@@ -753,12 +753,12 @@ msgstr "..."
 #: ../src/qtui/settingspages/appearancesettingspage.ui:150
 msgctxt "AppearanceSettingsPage|"
 msgid "Show system tray icon"
-msgstr "Vis statusikon"
+msgstr "Vis bakkeikon i systemet"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:184
 msgctxt "AppearanceSettingsPage|"
 msgid "Hide to tray on close button"
-msgstr "Skjul til menulinje ved brug af luk"
+msgstr "Skjul til bakke når luk-knappen bruges"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:216
 msgctxt "AppearanceSettingsPage|"
@@ -867,7 +867,7 @@ msgctxt "BacklogSettingsPage|"
 msgid ""
 "The simplest requester. It fetches a fixed amount of lines for each chat "
 "window from the backlog."
-msgstr "Den enkleste anmoderen. Den henter et fast beløb på linjerne for hvert chat-vinduet fra puklen."
+msgstr "Den enkleste anmoderen. Den henter et fast beløb på linjerne for hvert chatvinduet fra puklen."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:138
 msgctxt "BacklogSettingsPage|"
@@ -982,7 +982,7 @@ msgstr "Indtast et nyt navn for snakkelisten:"
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:582
 msgctxt "BufferViewEditDlg|"
 msgid "Add Chat List"
-msgstr "Kanal-liste"
+msgstr "Tilføj chatliste"
 
 #: ../src/uisupport/bufferviewfilter.cpp:46
 msgctxt "BufferViewFilter|"
@@ -1141,12 +1141,12 @@ msgstr "Faktisk størrelse"
 #: ../src/qtui/bufferwidget.cpp:94
 msgctxt "BufferWidget|"
 msgid "Set Marker Line"
-msgstr "Sæt markings linje"
+msgstr "Sæt markeringslinje"
 
 #: ../src/qtui/bufferwidget.cpp:98
 msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
-msgstr "Gå til markerings linje"
+msgstr "Gå til markeringslinje"
 
 #: ../src/client/networkmodel.cpp:589 ../src/client/networkmodel.cpp:591
 #, qt-format
@@ -1175,7 +1175,7 @@ msgstr "<b>Emne:</b> %1"
 #: ../src/client/networkmodel.cpp:619
 msgctxt "ChannelBufferItem|"
 msgid "Not active <br /> Double-click to join"
-msgstr "Inaktiv <br /> dobbelt-klik for at joine"
+msgstr "Inaktiv <br /> dobbeltklik for at joine"
 
 #: ../src/client/networkmodel.cpp:622
 #, qt-format
@@ -1186,7 +1186,7 @@ msgstr "<p> %1 </p>"
 #: ../src/qtui/ui/channellistdlg.ui:14
 msgctxt "ChannelListDlg|"
 msgid "Channel List"
-msgstr "Kanal-liste"
+msgstr "Kanalliste"
 
 #: ../src/qtui/ui/channellistdlg.ui:38
 msgctxt "ChannelListDlg|"
@@ -1298,7 +1298,7 @@ msgstr "Vis meddelelser fra bagkatalog"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:192
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
-msgstr "inkludér læste beskeder fra bagkatalog ved tilslutning"
+msgstr "Inkludér læste beskeder fra bagkatalog ved tilslutning"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
@@ -1343,7 +1343,7 @@ msgstr "Vis netværk navn"
 #: ../src/qtui/chatmonitorview.cpp:66
 msgctxt "ChatMonitorView|"
 msgid "Show Buffer Name"
-msgstr "Vis buffer navn"
+msgstr "Vis buffernavn"
 
 #: ../src/qtui/chatmonitorview.cpp:73
 msgctxt "ChatMonitorView|"
@@ -1353,7 +1353,7 @@ msgstr "Konfigurer..."
 #: ../src/qtui/chatscene.cpp:826
 msgctxt "ChatScene|"
 msgid "Copy Selection"
-msgstr "Kopier valgte"
+msgstr "Kopiér valgte"
 
 #: ../src/qtui/chatscene.cpp:833
 #, qt-format
@@ -1429,23 +1429,23 @@ msgstr "[hh:mm:ss]"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:69
 msgctxt "ChatViewSettingsPage|"
 msgid "Custom chat window font:"
-msgstr "Brugerdefinerede chat vinduet skrifttype:"
+msgstr "Brugerdefinerede chatvinduet skrifttype:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:102
 msgctxt "ChatViewSettingsPage|"
 msgid "Show colored text in the chat window"
-msgstr "Vis farvet text i chat vinduet"
+msgstr "Vis farvet tekst i chatvinduet"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:105
 msgctxt "ChatViewSettingsPage|"
 msgid "Allow colored text (mIRC color codes)"
-msgstr "Tillad farvet text (mIRC farve koder)"
+msgstr "Tillad farvet tekst (mIRC-farvekoder)"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:121
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Show a website preview window when hovering the mouse over a web address"
-msgstr "Vis webside eksempel når mus hover over en webaddresse"
+msgstr "Vis webstedseksempel når musen holdes over en webadresse"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:124
 msgctxt "ChatViewSettingsPage|"
@@ -1545,7 +1545,7 @@ msgstr "Tidsstempel:"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:268
 msgctxt "ChatViewSettingsPage|"
 msgid "Channel message:"
-msgstr "Kanal-liste"
+msgstr "Kanalmeddelelse:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:305
 msgctxt "ChatViewSettingsPage|"
@@ -1565,17 +1565,17 @@ msgstr "Fremhæv navne"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:360
 msgctxt "ChatViewSettingsPage|"
 msgid "Server message:"
-msgstr "Server besked:"
+msgstr "Serverbesked:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:384
 msgctxt "ChatViewSettingsPage|"
 msgid "Marker line:"
-msgstr "Marker linje:"
+msgstr "Markeringslinje:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:408
 msgctxt "ChatViewSettingsPage|"
 msgid "Error message:"
-msgstr "Fejl besked:"
+msgstr "Fejlbesked:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:432
 msgctxt "ChatViewSettingsPage|"
@@ -1600,7 +1600,7 @@ msgstr "Grænseflade"
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:28
 msgctxt "ChatViewSettingsPage|"
 msgid "Chat View"
-msgstr "Chat vindue"
+msgstr "Chatvisning"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:41
 msgctxt "ChatViewSettingsPage|"
@@ -1733,7 +1733,7 @@ msgstr "/QUERY forventer mindst en nick"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:14
 msgctxt "ConnectionSettingsPage|"
 msgid "Configure the IRC Connection"
-msgstr "Konfigurer IRC forbindelsen"
+msgstr "Konfigurer IRC-forbindelsen"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:20
 msgctxt "ConnectionSettingsPage|"
@@ -1755,7 +1755,7 @@ msgstr "sekunder"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:80
 msgctxt "ConnectionSettingsPage|"
 msgid "Disconnect after"
-msgstr "Af&bryd fra server efter"
+msgstr "Afbryd forbindelsen efter"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:103
 msgctxt "ConnectionSettingsPage|"
@@ -1807,7 +1807,7 @@ msgstr "IRC"
 #: ../src/qtui/chatitem.cpp:801
 msgctxt "ContentsChatItem|"
 msgid "Copy Link Address"
-msgstr "Kopier link "
+msgstr "Kopiér link "
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:39
 msgctxt "ContextMenuActionProvider|"
@@ -1862,7 +1862,7 @@ msgstr "&Afslut"
 #: ../src/uisupport/contextmenuactionprovider.cpp:51
 msgctxt "ContextMenuActionProvider|"
 msgid "Nick Changes"
-msgstr "Navne-skift"
+msgstr "Ændringer af kaldenavn"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:52
 msgctxt "ContextMenuActionProvider|"
@@ -1992,12 +1992,12 @@ msgstr "Skjul chat(te) permanent"
 #: ../src/uisupport/contextmenuactionprovider.cpp:92
 msgctxt "ContextMenuActionProvider|"
 msgid "Show Channel List"
-msgstr "Vis kanal-liste"
+msgstr "Vis kanalliste"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:93
 msgctxt "ContextMenuActionProvider|"
 msgid "Show Ignore List"
-msgstr "Vis kanal-liste"
+msgstr "Vis ignoreringsliste"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:108
 msgctxt "ContextMenuActionProvider|"
@@ -3239,7 +3239,7 @@ msgstr "Kanalen %1 har %2 brugere. Emnet er: \"%3\""
 #: ../src/core/eventstringifier.cpp:540
 msgctxt "EventStringifier|"
 msgid "End of channel list"
-msgstr "Vis kanal-liste"
+msgstr "Slut på kanalliste"
 
 #: ../src/core/eventstringifier.cpp:558
 #, qt-format
@@ -3423,7 +3423,7 @@ msgstr "Aktiver"
 #: ../src/qtui/settingspages/highlightsettingspage.ui:53
 msgctxt "HighlightSettingsPage|"
 msgid "Channel"
-msgstr "Kanal-liste"
+msgstr "Kanal"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:69
 msgctxt "HighlightSettingsPage|"
@@ -4011,7 +4011,7 @@ msgstr "Netværk"
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:174
 msgctxt "IgnoreListEditDlg|"
 msgid "Channel"
-msgstr "Kanal-liste"
+msgstr "Kanal"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:183
 msgctxt "IgnoreListEditDlg|"
@@ -4112,7 +4112,7 @@ msgstr "IRC"
 #: ../src/qtui/settingspages/ignorelistsettingspage.cpp:34
 msgctxt "IgnoreListSettingsPage|"
 msgid "Ignore List"
-msgstr "Kanal-liste"
+msgstr "Ignoreringsliste"
 
 #: ../src/qtui/settingspages/ignorelistsettingspage.cpp:144
 msgctxt "IgnoreListSettingsPage|"
@@ -4353,7 +4353,7 @@ msgstr "Gem og forbind"
 #: ../src/client/irclistmodel.cpp:65
 msgctxt "IrcListModel|"
 msgid "Channel"
-msgstr "Kanal-liste"
+msgstr "Kanal"
 
 #: ../src/client/irclistmodel.cpp:66
 msgctxt "IrcListModel|"
@@ -4433,7 +4433,7 @@ msgstr "Vis navneliste"
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:66
 msgctxt "ItemViewSettingsPage|"
 msgid "Chat List"
-msgstr "Kanal-liste"
+msgstr "Chatliste"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:72
 msgctxt "ItemViewSettingsPage|"
@@ -4917,7 +4917,7 @@ msgstr "&Vis"
 #: ../src/qtui/mainwin.cpp:538
 msgctxt "MainWin|"
 msgid "&Chat Lists"
-msgstr "Kanal-liste"
+msgstr "&Chatlister"
 
 #: ../src/qtui/mainwin.cpp:540
 msgctxt "MainWin|"
@@ -5243,7 +5243,7 @@ msgstr "Netværk"
 #: ../src/uisupport/networkmodelcontroller.cpp:549
 msgctxt "NetworkModelController::JoinDlg|"
 msgid "Channel:"
-msgstr "Kanal-liste"
+msgstr "Kanal:"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:551
 msgctxt "NetworkModelController::JoinDlg|"
