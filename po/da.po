@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-10-15 13:02+0000\n"
+"PO-Revision-Date: 2017-10-17 10:25+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -1175,7 +1175,7 @@ msgstr "<b>Emne:</b> %1"
 #: ../src/client/networkmodel.cpp:619
 msgctxt "ChannelBufferItem|"
 msgid "Not active <br /> Double-click to join"
-msgstr "Inaktiv <br /> dobbeltklik for at joine"
+msgstr "Inaktiv <br /> dobbeltklik for at deltage"
 
 #: ../src/client/networkmodel.cpp:622
 #, qt-format
@@ -1396,7 +1396,7 @@ msgstr "søg i besked"
 #: ../src/qtui/ui/chatviewsearchbar.ui:82
 msgctxt "ChatViewSearchBar|"
 msgid "ignore joins, parts, etc."
-msgstr "ignorér joins, parts, osv."
+msgstr "ignorér deltager, forlader, osv."
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:14
 msgctxt "ChatViewSettingsPage|"
@@ -1822,7 +1822,7 @@ msgstr "Af&bryd fra server"
 #: ../src/uisupport/contextmenuactionprovider.cpp:42
 msgctxt "ContextMenuActionProvider|"
 msgid "Join"
-msgstr "Log på"
+msgstr "Deltag"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:43
 msgctxt "ContextMenuActionProvider|"
@@ -1847,7 +1847,7 @@ msgstr "Deltager/forlader/afslutter"
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins"
-msgstr "Logger på"
+msgstr "Deltager"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:49
 msgctxt "ContextMenuActionProvider|"
@@ -1892,7 +1892,7 @@ msgstr "<Systemets standard>"
 #: ../src/uisupport/contextmenuactionprovider.cpp:58
 msgctxt "ContextMenuActionProvider|"
 msgid "Join Channel..."
-msgstr "Join kanal"
+msgstr "Deltag i kanal..."
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:60
 msgctxt "ContextMenuActionProvider|"
@@ -2040,7 +2040,7 @@ msgid ""
 "Currently, Quassel supports SQLite3 and PostgreSQL. You need to build your\n"
 "Qt library with the sqlite or postgres plugin enabled in order for quasselcore\n"
 "to work."
-msgstr ""
+msgstr "Quassel understøtter på nuværende tidspunkt SQLite3 og PostgreSQL.\nDu skal bygge dit Qt-bibliotek med sqlite- eller postgres-pluginet\nfor at quasselcore skal kunne virke."
 
 #: ../src/core/core.cpp:252
 msgctxt "Core|"
@@ -2281,7 +2281,7 @@ msgstr "<b>Din Quassel-klient er for gammel!</b><br>Denne kerne behøver mindst 
 #: ../src/core/coreauthhandler.cpp:144
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
-msgstr ""
+msgstr "sendte ikke registreringsmeddelelsen inden forsøg på at logge ind, afviser."
 
 #: ../src/core/coreauthhandler.cpp:145
 msgctxt "CoreAuthHandler|"
@@ -3016,7 +3016,7 @@ msgstr "Duplikér:"
 #: ../src/common/protocols/datastream/datastreampeer.cpp:114
 msgctxt "DataStreamPeer|"
 msgid "Invalid handshake message!"
-msgstr ""
+msgstr "Ugyldig håndtryksmeddelelse!"
 
 #: ../src/common/protocols/datastream/datastreampeer.cpp:161
 #, qt-format
@@ -3027,7 +3027,7 @@ msgstr "Ukendt protokolbesked af typen %1"
 #: ../src/qtui/ui/debugbufferviewoverlay.ui:13
 msgctxt "DebugBufferViewOverlay|"
 msgid "Debug BufferView Overlay"
-msgstr ""
+msgstr "Fejlsøg buffervisningsoverlægning"
 
 #: ../src/qtui/ui/debugbufferviewoverlay.ui:26
 msgctxt "DebugBufferViewOverlay|"
@@ -4631,7 +4631,7 @@ msgstr "Tilknyt igen"
 #: ../src/common/protocols/legacy/legacypeer.cpp:136
 msgctxt "LegacyPeer|"
 msgid "Invalid handshake message!"
-msgstr ""
+msgstr "Ugyldig håndtryksmeddelelse!"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:207
 #, qt-format
@@ -4737,12 +4737,12 @@ msgstr "&Om"
 #: ../src/qtui/mainwin.cpp:429
 msgctxt "MainWin|"
 msgid "Debug &NetworkModel"
-msgstr ""
+msgstr "Fejlsøg &netværksmodel"
 
 #: ../src/qtui/mainwin.cpp:431
 msgctxt "MainWin|"
 msgid "Debug &BufferViewOverlay"
-msgstr ""
+msgstr "Fejlsøg &buffervisningsoverlægning"
 
 #: ../src/qtui/mainwin.cpp:433
 msgctxt "MainWin|"
@@ -5233,7 +5233,7 @@ msgstr "Fjern mellemlagre permanent?"
 #: ../src/uisupport/networkmodelcontroller.cpp:544
 msgctxt "NetworkModelController::JoinDlg|"
 msgid "Join Channel"
-msgstr "Join kanal"
+msgstr "Deltag i kanal"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:547
 msgctxt "NetworkModelController::JoinDlg|"
@@ -5750,7 +5750,7 @@ msgstr "Ikke håndteret betingelse: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid proplist %1"
-msgstr ""
+msgstr "Ugyldig propliste %1"
 
 #: ../src/uisupport/qssparser.cpp:368
 #, qt-format
@@ -5768,7 +5768,7 @@ msgstr "Ugyldig chatliste-tilstand %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid property declaration: %1"
-msgstr ""
+msgstr "Ugyldig egenskabsdeklaration: %1"
 
 #: ../src/uisupport/qssparser.cpp:438
 #, qt-format
@@ -5780,7 +5780,7 @@ msgstr "Ugyldig skrifttypeegenskab: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unknown ChatLine property: %1"
-msgstr ""
+msgstr "Ugyldig ChatLine-egenskab: %1"
 
 #: ../src/uisupport/qssparser.cpp:468
 #, qt-format
@@ -6224,14 +6224,14 @@ msgstr "Flyt ned i listen"
 #: ../src/qtui/ui/simplenetworkeditor.ui:226
 msgctxt "SimpleNetworkEditor|"
 msgid "Join Channels Automatically"
-msgstr "Join kanal"
+msgstr "Deltag automatisk i kanaler"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:250
 msgctxt "SimpleNetworkEditor|"
 msgid ""
 "A list of IRC channels you will join automatically after connecting to the "
 "network"
-msgstr "En liste med IRC-kanaler som automatisk tilsluttes, når du forbinder til netværket"
+msgstr "En liste med IRC-kanaler som du automatisk deltager i, når du forbinder til netværket"
 
 #: ../src/qtui/snorenotificationbackend.cpp:56
 msgctxt "SnoreNotificationBackend|"
@@ -6460,12 +6460,12 @@ msgstr "Forlad den valgte kanal"
 #: ../src/uisupport/toolbaractionprovider.cpp:34
 msgctxt "ToolBarActionProvider|"
 msgid "Join"
-msgstr "Log på"
+msgstr "Deltag"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:34
 msgctxt "ToolBarActionProvider|"
 msgid "Join a channel"
-msgstr "Join kanal"
+msgstr "Deltag i en kanal"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:36
 msgctxt "ToolBarActionProvider|"
@@ -6650,7 +6650,7 @@ msgstr "Tilstand %DM%1%DM af %DN%2%DN"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has joined %DC%4%DC"
-msgstr "%DN%1%DN %DH(%2@%3)%DH har sluttet sig til %DC%4%DC"
+msgstr "%DN%1%DN %DH(%2@%3)%DH deltager nu i %DC%4%DC"
 
 #. Part Message
 #: ../src/uisupport/uistyle.cpp:703
@@ -6664,7 +6664,7 @@ msgstr "%DN%1%DN %DH(%2@%3)%DH har forladt %DC%4%DC"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has quit"
-msgstr ""
+msgstr "%DN%1%DN %DH(%2@%3)%DH har afsluttet"
 
 #. Kick Message
 #: ../src/uisupport/uistyle.cpp:716
@@ -6684,7 +6684,7 @@ msgstr "{Dag ændret til %1}"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH ended. Users joined: "
-msgstr ""
+msgstr "Netsplit mellem %DH%1%DH og %DH%2%DH sluttede. Brugere deltog: "
 
 #: ../src/uisupport/uistyle.cpp:748 ../src/uisupport/uistyle.cpp:764
 #, qt-format
@@ -6696,7 +6696,7 @@ msgstr "%DN%1%DN (%2 flere)"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
-msgstr ""
+msgstr "Netsplit mellem %DH%1%DH og %DH%2%DH. Brugere afsluttede: "
 
 #: ../src/client/networkmodel.cpp:831
 #, qt-format
