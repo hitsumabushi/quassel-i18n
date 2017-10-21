@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-10-19 09:35+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"PO-Revision-Date: 2017-10-20 18:24+0000\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2327,7 +2327,7 @@ msgstr "<b>Ugyldigt brugernavn eller kodeord!</b><br>Brugernavn/password-kombina
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
-msgstr ""
+msgstr "Klient %1 initialiseret og autoiseret som \"%2\" (brugerid: %3)."
 
 #: ../src/core/coreauthhandler.cpp:238
 msgctxt "CoreAuthHandler|"
@@ -2389,7 +2389,7 @@ msgctxt "CoreConfigWizardAdminUserPage|"
 msgid ""
 "<b>Note:</b> Adding more users and changing your username/password is not possible via Quassel's client interface yet.\n"
 "If you need to do these things, please run \"<tt><nobr>quasselcore --help</nobr></tt>\"."
-msgstr ""
+msgstr "<b>Bemærk:</b> Det er endnu ikke muligt at tilføje flere brugere og skifte dit brugernavn/adgangskode via Quassel-klientens brugerflade.\nKør venglist \"<tt><nobr>quasselcore --help</nobr></tt>\" hvis du har brug for at gøre disse ting."
 
 #: ../src/qtui/ui/coreconfigwizardintropage.ui:13
 msgctxt "CoreConfigWizardIntroPage|"
@@ -2411,7 +2411,7 @@ msgctxt "CoreConfigWizardPages::AdminUserPage|"
 msgid ""
 "First, we will create a user on the core. This first user will have "
 "administrator privileges."
-msgstr ""
+msgstr "Først opretter vi en bruger på kernen. Den første bruger har administratorrettigheder."
 
 #: ../src/qtui/coreconfigwizard.cpp:145
 msgctxt "CoreConfigWizardPages::IntroPage|"
@@ -2588,7 +2588,7 @@ msgstr "Netværks detaljer"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:26
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Rely on Qt's network configuration manager to detect if we're online"
-msgstr ""
+msgstr "Brug Qt's netværkskonfigurationshåndtering til at registrerer om vi er online"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
@@ -2816,7 +2816,7 @@ msgctxt "CoreSessionEventProcessor|"
 msgid ""
 "No free and valid nicks in nicklist found. use: /nick <othernick> to "
 "continue"
-msgstr ""
+msgstr "Fandt ingen ledige eller gyldige kaldenavne i kaldenavnsliste. Brug: /nick <andet kaldenavn> for at fortsætte"
 
 #: ../src/core/coresessioneventprocessor.cpp:450
 msgctxt "CoreSessionEventProcessor|"
@@ -2902,7 +2902,7 @@ msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /delkey <nick|channel> deletes the encryption key for nick or "
 "channel or just /delkey when in a channel or query."
-msgstr ""
+msgstr "[anvendelse] /delkey <kaldenavn|kanal> sletter krypteringsnøglen for kaldenavnet eller kanalen eller blot /delkey når du er i en kanal eller forespørgsel."
 
 #: ../src/core/coreuserinputhandler.cpp:207
 #: ../src/core/coreuserinputhandler.cpp:678
@@ -2936,7 +2936,7 @@ msgstr ""
 #: ../src/core/coreuserinputhandler.cpp:377
 msgctxt "CoreUserInputHandler|"
 msgid "It is only possible to exchange keys in a query buffer."
-msgstr ""
+msgstr "Det er kun muligt at udveksle nøgler i en forespørgselsbuffer."
 
 #: ../src/core/coreuserinputhandler.cpp:387
 #, qt-format
@@ -2964,7 +2964,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Starting query with %1"
-msgstr "Starter kø med %1"
+msgstr "Starter forespørgsel med %1"
 
 #: ../src/core/coreuserinputhandler.cpp:632
 msgctxt "CoreUserInputHandler|"
@@ -3334,13 +3334,13 @@ msgstr "ukendt"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received %1CTCP-%2 request by %3"
-msgstr ""
+msgstr "Modtog %1CTCP-%2 anmodet af %3"
 
 #: ../src/core/eventstringifier.cpp:721
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-%1 answer from %2: %3"
-msgstr ""
+msgstr "Modtog CTCP-%1 svar fra %2: %3"
 
 #: ../src/core/eventstringifier.cpp:736
 #, qt-format
@@ -5223,7 +5223,7 @@ msgstr "<b>Bemærk:</b> Dette vil slette alle relaterede data, inklusive alle ba
 msgctxt "NetworkModelController|"
 msgid ""
 "<br>Active channel buffers cannot be deleted, please part the channel first."
-msgstr ""
+msgstr "<br>Aktive kanalbuffere kan ikke slettes. Forlad venligst først kanalen."
 
 #: ../src/uisupport/networkmodelcontroller.cpp:195
 msgctxt "NetworkModelController|"
@@ -5679,19 +5679,19 @@ msgstr ""
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid block declaration: %1"
-msgstr ""
+msgstr "Ugyldig blok-deklaration: %1"
 
 #: ../src/uisupport/qssparser.cpp:147
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid palette role assignment: %1"
-msgstr ""
+msgstr "Ugyldig paletrolle-tildeling: %1"
 
 #: ../src/uisupport/qssparser.cpp:166
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unknown palette role name: %1"
-msgstr ""
+msgstr "Ukendt paletrollenavn: %1"
 
 #: ../src/uisupport/qssparser.cpp:204
 #, qt-format
@@ -5861,7 +5861,7 @@ msgstr "sek"
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "<b>Query with %1</b>"
-msgstr "<b>Samtale med %1</b>"
+msgstr "<b>Forespørg med %1</b>"
 
 #: ../src/client/networkmodel.cpp:521
 #, qt-format
@@ -6490,22 +6490,22 @@ msgstr "Anmod om brugerinformation"
 #: ../src/uisupport/toolbaractionprovider.cpp:39
 msgctxt "ToolBarActionProvider|"
 msgid "Op"
-msgstr ""
+msgstr "Op"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:39
 msgctxt "ToolBarActionProvider|"
 msgid "Give operator privileges to user"
-msgstr ""
+msgstr "Giv operatørrettigheder til bruger"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:40
 msgctxt "ToolBarActionProvider|"
 msgid "Deop"
-msgstr ""
+msgstr "Afop"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:40
 msgctxt "ToolBarActionProvider|"
 msgid "Take operator privileges from user"
-msgstr ""
+msgstr "Fratag operatørrettigheder fra bruger"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:41
 msgctxt "ToolBarActionProvider|"
