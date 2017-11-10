@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-10-29 21:18+0000\n"
+"PO-Revision-Date: 2017-11-09 05:11+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -3117,7 +3117,7 @@ msgstr "Luk"
 #: ../src/qtui/dockmanagernotificationbackend.cpp:184
 msgctxt "DockManagerNotificationBackend::ConfigWidget|"
 msgid "Mark dockmanager entry"
-msgstr ""
+msgstr "Mærk dokhåndteringspost"
 
 #: ../src/core/eventstringifier.cpp:224 ../src/core/eventstringifier.cpp:370
 msgctxt "EventStringifier|"
@@ -3517,7 +3517,7 @@ msgctxt "IdentitiesSettingsPage|"
 msgid ""
 "<b>The following problems need to be corrected before your changes can be "
 "applied:</b><ul>"
-msgstr ""
+msgstr "<b>Følgende problemer skal rettes inden dine ændringer kan anvendes:</b><ul>"
 
 #: ../src/qtui/settingspages/identitiessettingspage.cpp:206
 msgctxt "IdentitiesSettingsPage|"
@@ -4546,8 +4546,8 @@ msgstr "Anden aktivitet"
 msgctxt "KNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n afventende fremhævning"
+msgstr[1] "%n afventende fremhævninger"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:80
 msgctxt "KeySequenceButton|"
@@ -5504,7 +5504,7 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "<b>The following problems need to be corrected before your changes can be "
 "applied:</b><ul>"
-msgstr ""
+msgstr "<b>Følgende problemer skal rettes inden dine ændringer kan anvendes:</b><ul>"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:186
 msgctxt "NetworksSettingsPage|"
@@ -5549,7 +5549,7 @@ msgctxt "NickEditDlg|"
 msgid ""
 "A valid nickname may contain letters from the English alphabet, digits, and "
 "the special characters {, }, [, ], \\, |, `, ^, _ and -."
-msgstr ""
+msgstr "Et gyldigt kaldenavn må indeholde bogstaver fra det engelske alfabet, tal og specialtegnene {, }, [, ], \\, |, `, ^, _ og -."
 
 #: ../src/qtui/settingspages/identitiessettingspage.cpp:480
 msgctxt "NickEditDlg|"
@@ -5738,7 +5738,7 @@ msgstr "Ugyldigt formatnavn: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Illegal IRC color specification (must be between 00 and 0f): %1"
-msgstr ""
+msgstr "Ugyldig IRC-farvespecifikation (skal være mellem 00 og 0f): %1"
 
 #: ../src/uisupport/qssparser.cpp:318
 #, qt-format
@@ -6394,8 +6394,8 @@ msgstr "&Gendan"
 msgctxt "SystrayNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n afventende fremhævning"
+msgstr[1] "%n afventende fremhævninger"
 
 #: ../src/qtui/systraynotificationbackend.cpp:155
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
@@ -6410,12 +6410,12 @@ msgstr "Tabulatorfuldførsel"
 #: ../src/qtui/taskbarnotificationbackend.cpp:83
 msgctxt "TaskbarNotificationBackend::ConfigWidget|"
 msgid "Activate dock entry, timeout:"
-msgstr ""
+msgstr "Aktivér dokpost, timeout:"
 
 #: ../src/qtui/taskbarnotificationbackend.cpp:85
 msgctxt "TaskbarNotificationBackend::ConfigWidget|"
 msgid "Mark taskbar entry, timeout:"
-msgstr ""
+msgstr "Mærk opgavelinjepost, timeout:"
 
 #: ../src/qtui/taskbarnotificationbackend.cpp:93
 msgctxt "TaskbarNotificationBackend::ConfigWidget|"
