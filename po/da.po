@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-11-09 05:11+0000\n"
+"PO-Revision-Date: 2017-11-18 16:39+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -3771,7 +3771,7 @@ msgstr "Kick årsag:"
 msgctxt "IdentityEditWidget|"
 msgid ""
 "You need an SSL Capable Client to edit your Cores SSL Key and Certificate"
-msgstr ""
+msgstr "Du skal have en klient som formår SSL for at redigere dine kerners SSL-nøgle og -certifikat"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:517
 msgctxt "IdentityEditWidget|"
@@ -4328,7 +4328,7 @@ msgstr ": "
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:278
 msgctxt "InputWidgetSettingsPage|"
 msgid "Add space after nick when completing mid-sentence"
-msgstr ""
+msgstr "Tilføj mellemrum efter kaldenavn når der fuldføres midt i en sætning"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.cpp:24
 msgctxt "InputWidgetSettingsPage|"
@@ -4393,7 +4393,7 @@ msgstr "Sbruger&nbsp;Vært"
 #: ../src/client/networkmodel.cpp:985
 msgctxt "IrcUserItem|"
 msgid "Whois&nbsp;Service&nbsp;Reply"
-msgstr ""
+msgstr "Whois&nbsp;Tjeneste&nbsp;Svar"
 
 #: ../src/client/networkmodel.cpp:986
 msgctxt "IrcUserItem|"
@@ -4616,7 +4616,7 @@ msgstr "Genvejen »%1« er allerede i brug, og kan ikke konfigureres.\nVælg ven
 msgctxt "KeySequenceWidget|"
 msgid ""
 "The \"%1\" shortcut is ambiguous with the shortcut for the following action:"
-msgstr ""
+msgstr "Genvejen \"%1\" er tvetydig med genvejen af følgende handling:"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:392
 msgctxt "KeySequenceWidget|"
@@ -4954,7 +4954,7 @@ msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
-msgstr ""
+msgstr "Du skal bruge en Quassel-kerne v0.12.0 eller nyere for at kunne skifte din adgangskode fra et fjernsted."
 
 #: ../src/qtui/mainwin.cpp:865
 msgctxt "MainWin|"
@@ -5640,7 +5640,7 @@ msgstr "Vælg lydfil at afspille"
 #: ../src/core/postgresqlstorage.cpp:72
 msgctxt "PostgreSqlStorage|"
 msgid "PostgreSQL Turbo Bomber HD!"
-msgstr ""
+msgstr "PostgreSQL Turbo Bomber HD!"
 
 #: ../src/client/backlogrequester.cpp:95
 #, qt-format
