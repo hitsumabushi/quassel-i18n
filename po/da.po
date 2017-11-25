@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-11-19 19:43+0000\n"
+"PO-Revision-Date: 2017-11-25 02:34+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -2823,7 +2823,7 @@ msgstr "Fandt ingen ledige eller gyldige kaldenavne i kaldenavnsliste. Brug: /ni
 #: ../src/core/coresessioneventprocessor.cpp:450
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
-msgstr ""
+msgstr "Kan ikke udføre nøgleudveksling, manglende qca-ossl-plugin."
 
 #: ../src/core/coresessioneventprocessor.cpp:461
 msgctxt "CoreSessionEventProcessor|"
@@ -5758,7 +5758,7 @@ msgstr "Ugyldig propliste %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid chatlist item type %1"
-msgstr ""
+msgstr "Ugyldig chatliste-elementtype %1"
 
 #: ../src/uisupport/qssparser.cpp:384
 #, qt-format
