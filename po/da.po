@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-11-25 02:34+0000\n"
+"PO-Revision-Date: 2017-12-04 22:07+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -2828,7 +2828,7 @@ msgstr "Kan ikke udføre nøgleudveksling, manglende qca-ossl-plugin."
 #: ../src/core/coresessioneventprocessor.cpp:461
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to parse the DH1080_INIT. Key exchange failed."
-msgstr ""
+msgstr "Kan ikke fortolke DH1080_INIT. Nøgleudveksling mislykkedes."
 
 #: ../src/core/coresessioneventprocessor.cpp:465
 #: ../src/core/coresessioneventprocessor.cpp:473
@@ -2839,7 +2839,7 @@ msgstr "Din nøgle er angivet og beskeder vil blive krypteret."
 #: ../src/core/coresessioneventprocessor.cpp:475
 msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
-msgstr ""
+msgstr "Kan ikke fortolke DH1080_FINISH. Nøgleudveksling mislykkedes."
 
 #: ../src/core/coresessioneventprocessor.cpp:1052
 msgctxt "CoreSessionEventProcessor|"
