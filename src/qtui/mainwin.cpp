@@ -146,6 +146,7 @@
 #include "settingspages/connectionsettingspage.h"
 #include "settingspages/coreaccountsettingspage.h"
 #include "settingspages/coreconnectionsettingspage.h"
+#include <settingspages/corehighlightsettingspage.h>
 #include "settingspages/dccsettingspage.h"
 #include "settingspages/highlightsettingspage.h"
 #include "settingspages/identitiessettingspage.h"
@@ -1442,6 +1443,7 @@ void MainWin::showSettingsDlg()
     dlg->registerSettingsPage(new SonnetSettingsPage(dlg));
 #endif
     dlg->registerSettingsPage(new HighlightSettingsPage(dlg));
+    dlg->registerSettingsPage(new CoreHighlightSettingsPage(dlg));
     dlg->registerSettingsPage(new NotificationsSettingsPage(dlg));
     dlg->registerSettingsPage(new BacklogSettingsPage(dlg));
 

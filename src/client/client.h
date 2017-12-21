@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLIENT_H_
-#define CLIENT_H_
+#pragma once
 
 #include <QList>
 #include <QPointer>
@@ -27,6 +26,7 @@
 #include "bufferinfo.h"
 #include "coreaccount.h"
 #include "coreconnection.h"
+#include "highlightrulemanager.h"
 #include "quassel.h"
 #include "types.h"
 
@@ -122,6 +122,7 @@ public:
     static inline ClientUserInputHandler *inputHandler() { return instance()->_inputHandler; }
     static inline NetworkConfig *networkConfig() { return instance()->_networkConfig; }
     static inline ClientIgnoreListManager *ignoreListManager() { return instance()->_ignoreListManager; }
+    static inline HighlightRuleManager *highlightRuleManager() { return instance()->_highlightRuleManager; }
     static inline ClientTransferManager *transferManager() { return instance()->_transferManager; }
     static inline TransferModel *transferModel() { return instance()->_transferModel; }
 
@@ -260,6 +261,7 @@ private:
     ClientUserInputHandler *_inputHandler;
     NetworkConfig *_networkConfig;
     ClientIgnoreListManager *_ignoreListManager;
+    HighlightRuleManager *_highlightRuleManager;
     ClientTransferManager *_transferManager;
     TransferModel *_transferModel;
 
@@ -284,6 +286,3 @@ private:
 
     friend class CoreConnection;
 };
-
-
-#endif
