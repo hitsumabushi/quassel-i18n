@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef PROTOCOL_H_
-#define PROTOCOL_H_
+#pragma once
 
 #include <QByteArray>
 #include <QDateTime>
@@ -42,7 +41,7 @@ enum Feature {
 };
 
 
-enum Handler {
+enum class Handler {
     SignalProxy,
     AuthHandler
 };
@@ -51,22 +50,24 @@ enum Handler {
 /*** Handshake, handled by AuthHandler ***/
 
 struct HandshakeMessage {
-    inline Handler handler() const { return AuthHandler; }
+    inline Handler handler() const { return Handler::AuthHandler; }
 };
 
 
 struct RegisterClient : public HandshakeMessage
 {
-    inline RegisterClient(const QString &clientVersion, const QString &buildDate, bool sslSupported = false)
+    inline RegisterClient(const QString &clientVersion, const QString &buildDate, bool sslSupported = false, quint32 features = 0)
     : clientVersion(clientVersion)
     , buildDate(buildDate)
-    , sslSupported(sslSupported) {}
+    , sslSupported(sslSupported)
+    , clientFeatures(features) {}
 
     QString clientVersion;
     QString buildDate;
 
     // this is only used by the LegacyProtocol in compat mode
     bool sslSupported;
+    quint32 clientFeatures;
 };
 
 
@@ -179,7 +180,7 @@ struct SessionState : public HandshakeMessage
 
 struct SignalProxyMessage
 {
-    inline Handler handler() const { return SignalProxy; }
+    inline Handler handler() const { return Handler::SignalProxy; }
 };
 
 
@@ -245,5 +246,3 @@ struct HeartBeatReply
 
 
 };
-
-#endif

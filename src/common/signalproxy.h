@@ -18,13 +18,13 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef SIGNALPROXY_H
-#define SIGNALPROXY_H
+#pragma once
 
 #include <QEvent>
 #include <QSet>
 
 #include <functional>
+#include <initializer_list>
 
 #include "protocol.h"
 
@@ -80,6 +80,10 @@ public:
     void dumpProxyStats();
     void dumpSyncMap(SyncableObject *object);
 
+    static SignalProxy *current() {
+        return _current;
+    }
+
     /**@{*/
     /**
      * This method allows to send a signal only to a limited set of peers
@@ -111,7 +115,14 @@ public:
     /**
      * @return If handling a signal, the Peer from which the current signal originates
      */
-    Peer *sourcePeer() { return _sourcePeer; }
+    Peer *sourcePeer();
+    void setSourcePeer(Peer *sourcePeer);
+
+    /**
+     * @return If sending a signal, the Peer to which the current signal is directed
+     */
+    Peer *targetPeer();
+    void setTargetPeer(Peer *targetPeer);
 
 public slots:
     void detachObject(QObject *obj);
@@ -206,6 +217,9 @@ private:
     bool _restrictMessageTarget = false;
 
     Peer *_sourcePeer = nullptr;
+    Peer *_targetPeer = nullptr;
+
+    thread_local static SignalProxy *_current;
 
     friend class SignalRelay;
     friend class SyncableObject;
@@ -270,5 +284,3 @@ private:
     QHash<QByteArray, int> _methodIds;
     QHash<int, int> _receiveMap; // if slot x is called then hand over the result to slot y
 };
-
-#endif

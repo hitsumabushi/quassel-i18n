@@ -173,6 +173,9 @@ int SignalProxy::SignalRelay::qt_metacall(QMetaObject::Call _c, int _id, void **
 // ==================================================
 //  SignalProxy
 // ==================================================
+
+thread_local SignalProxy *SignalProxy::_current{nullptr};
+
 SignalProxy::SignalProxy(QObject *parent)
     : QObject(parent)
 {
@@ -204,6 +207,8 @@ SignalProxy::~SignalProxy()
     _syncSlave.clear();
 
     removeAllPeers();
+
+    _current = nullptr;
 }
 
 
@@ -221,7 +226,6 @@ void SignalProxy::setProxyMode(ProxyMode mode)
         initClient();
 }
 
-
 void SignalProxy::init()
 {
     _heartBeatInterval = 0;
@@ -230,6 +234,7 @@ void SignalProxy::init()
     setHeartBeatInterval(30);
     setMaxHeartBeatCount(2);
     _secure = false;
+    _current = this;
     updateSecureState();
 }
 
@@ -513,11 +518,8 @@ void SignalProxy::stopSynchronize(SyncableObject *obj)
 template<class T>
 void SignalProxy::dispatch(const T &protoMessage)
 {
-    for (auto peer : _peerMap.values()) {
-        if (peer->isOpen())
-            peer->dispatch(protoMessage);
-        else
-            QCoreApplication::postEvent(this, new ::RemovePeerEvent(peer));
+    for (auto&& peer : _peerMap.values()) {
+        dispatch(peer, protoMessage);
     }
 }
 
@@ -525,10 +527,14 @@ void SignalProxy::dispatch(const T &protoMessage)
 template<class T>
 void SignalProxy::dispatch(Peer *peer, const T &protoMessage)
 {
+    _targetPeer = peer;
+
     if (peer && peer->isOpen())
         peer->dispatch(protoMessage);
     else
         QCoreApplication::postEvent(this, new ::RemovePeerEvent(peer));
+
+    _targetPeer = nullptr;
 }
 
 
@@ -571,7 +577,9 @@ void SignalProxy::handle(Peer *peer, const SyncMessage &syncMessage)
         if (eMeta->argTypes(receiverId).count() > 1)
             returnParams << syncMessage.params;
         returnParams << returnValue;
+        _targetPeer = peer;
         peer->dispatch(SyncMessage(syncMessage.className, syncMessage.objectName, eMeta->methodName(receiverId), returnParams));
+        _targetPeer = nullptr;
     }
 
     // send emit update signal
@@ -594,7 +602,9 @@ void SignalProxy::handle(Peer *peer, const InitRequest &initRequest)
     }
 
     SyncableObject *obj = _syncSlave[initRequest.className][initRequest.objectName];
+    _targetPeer = peer;
     peer->dispatch(InitData(initRequest.className, initRequest.objectName, initData(obj)));
+    _targetPeer = nullptr;
 }
 
 
@@ -849,6 +859,22 @@ void SignalProxy::restrictTargetPeers(QSet<Peer*> peers, std::function<void()> c
 
     _restrictMessageTarget = previousRestrictMessageTarget;
     _restrictedTargets = previousRestrictedTargets;
+}
+
+Peer *SignalProxy::sourcePeer() {
+    return _sourcePeer;
+}
+
+void SignalProxy::setSourcePeer(Peer *sourcePeer) {
+    _sourcePeer = sourcePeer;
+}
+
+Peer *SignalProxy::targetPeer() {
+    return _targetPeer;
+}
+
+void SignalProxy::setTargetPeer(Peer *targetPeer) {
+    _targetPeer = targetPeer;
 }
 
 // ==================================================
