@@ -1674,52 +1674,62 @@ msgctxt "ChatViewSettingsPage|"
 msgid "Show brackets around sender names"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:100
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:98
+msgctxt "ChatViewSettingsPage|"
+msgid "Shows the modes of senders before their name (e.g. @, +)"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:101
+msgctxt "ChatViewSettingsPage|"
+msgid "Show sendermodes in front of nicknames"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:119
 msgctxt "ChatViewSettingsPage|"
 msgid "Custom chat window font:"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:133
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:152
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Show a website preview window when hovering the mouse over a web address"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:136
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:155
 msgctxt "ChatViewSettingsPage|"
 msgid "Show previews of webpages on URL hover"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:152
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:171
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when selecting "
 "another channel"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:155
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:174
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when switching chats"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:171
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:190
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:174
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:193
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:192
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:211
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search URL:"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:199
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:218
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "<html><head/><body><p>The URL to open with the selected text as the "
@@ -1729,7 +1739,7 @@ msgid ""
 "font-weight:600;\">%s</span></p></body></html>"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:205
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:224
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
 msgstr ""
@@ -1746,7 +1756,12 @@ msgstr ""
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:40
 msgctxt "ChatViewSettingsPage|"
-msgid "You need at least version 0.6 of quasselcore to use this feature"
+msgid "You need at least version 0.6 of Quassel Core to use this feature"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:44
+msgctxt "ChatViewSettingsPage|"
+msgid "You need at least version 0.13 of Quassel Core to use this feature"
 msgstr ""
 
 #: ../src/common/qt5cliparser.cpp:30
@@ -1760,7 +1775,7 @@ msgid "Identity already exists in client!"
 msgstr ""
 
 #: ../src/client/clientauthhandler.cpp:69
-#: ../src/client/clientauthhandler.cpp:498
+#: ../src/client/clientauthhandler.cpp:499
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
 msgstr ""
@@ -1779,7 +1794,7 @@ msgid "Looking up %1..."
 msgstr ""
 
 #: ../src/client/clientauthhandler.cpp:110
-#: ../src/client/clientauthhandler.cpp:321
+#: ../src/client/clientauthhandler.cpp:322
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Connected to %1"
@@ -1836,17 +1851,17 @@ msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:363
+#: ../src/client/clientauthhandler.cpp:364
 msgctxt "ClientAuthHandler|"
 msgid "Logging in..."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:368
+#: ../src/client/clientauthhandler.cpp:369
 msgctxt "ClientAuthHandler|"
 msgid "Login canceled"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:426
+#: ../src/client/clientauthhandler.cpp:427
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr ""
@@ -2564,27 +2579,27 @@ msgid ""
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:230
+#: ../src/core/coreauthhandler.cpp:231
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:231
+#: ../src/core/coreauthhandler.cpp:232
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:236
+#: ../src/core/coreauthhandler.cpp:237
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:255
+#: ../src/core/coreauthhandler.cpp:256
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -7285,7 +7300,7 @@ msgctxt "ShortcutsSettingsPage|"
 msgid "Shortcuts"
 msgstr ""
 
-#: ../src/common/signalproxy.cpp:782
+#: ../src/common/signalproxy.cpp:792
 msgctxt "SignalProxy|"
 msgid "Disconnecting"
 msgstr ""
@@ -7867,79 +7882,79 @@ msgid "Receive"
 msgstr ""
 
 #. Nick Message
-#: ../src/uisupport/uistyle.cpp:787
+#: ../src/uisupport/uistyle.cpp:796
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "You are now known as %DN%1%DN"
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:788
+#: ../src/uisupport/uistyle.cpp:797
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN is now known as %DN%2%DN"
 msgstr ""
 
 #. Mode Message
-#: ../src/uisupport/uistyle.cpp:792
+#: ../src/uisupport/uistyle.cpp:801
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "User mode: %DM%1%DM"
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:793
+#: ../src/uisupport/uistyle.cpp:802
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Mode %DM%1%DM by %DN%2%DN"
 msgstr ""
 
 #. Join Message
-#: ../src/uisupport/uistyle.cpp:797
+#: ../src/uisupport/uistyle.cpp:806
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has joined %DC%4%DC"
 msgstr ""
 
 #. Part Message
-#: ../src/uisupport/uistyle.cpp:800
+#: ../src/uisupport/uistyle.cpp:809
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has left %DC%4%DC"
 msgstr ""
 
 #. Quit Message
-#: ../src/uisupport/uistyle.cpp:805
+#: ../src/uisupport/uistyle.cpp:814
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has quit"
 msgstr ""
 
 #. Kick Message
-#: ../src/uisupport/uistyle.cpp:813
+#: ../src/uisupport/uistyle.cpp:822
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN has kicked %DN%2%DN from %DC%3%DC"
 msgstr ""
 
 #. Day Change Message
-#: ../src/uisupport/uistyle.cpp:828
+#: ../src/uisupport/uistyle.cpp:837
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "{Day changed to %1}"
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:841
+#: ../src/uisupport/uistyle.cpp:850
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH ended. Users joined: "
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:845 ../src/uisupport/uistyle.cpp:861
+#: ../src/uisupport/uistyle.cpp:854 ../src/uisupport/uistyle.cpp:870
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN (%2 more)"
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:856
+#: ../src/uisupport/uistyle.cpp:865
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
