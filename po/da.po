@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-12-04 22:07+0000\n"
+"PO-Revision-Date: 2017-12-23 18:56+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -2897,7 +2897,7 @@ msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl"
 " plugin."
-msgstr ""
+msgstr "Fejl: QCA-udbyder-plugin ikke fundet. Den leveres typisk af qca-ossl-pluginet."
 
 #: ../src/core/coreuserinputhandler.cpp:200
 msgctxt "CoreUserInputHandler|"
@@ -2933,7 +2933,7 @@ msgstr ""
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /keyx [<nick>] Initiates a DH1080 key exchange with the target."
-msgstr ""
+msgstr "[usage] /keyx [<nick>] Initialisere en DH1080-nøgleudveksling med målet."
 
 #: ../src/core/coreuserinputhandler.cpp:377
 msgctxt "CoreUserInputHandler|"
@@ -3348,7 +3348,7 @@ msgstr "Modtog CTCP-%1 svar fra %2: %3"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
-msgstr ""
+msgstr "Modtog CTCP-PING-svar fra %1 med %2 millisekunders rundturstid"
 
 #: ../src/client/execwrapper.cpp:49
 #, qt-format
@@ -3902,7 +3902,7 @@ msgstr ""
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:35
 msgctxt "IgnoreListEditDlg|"
 msgid "Strictness"
-msgstr ""
+msgstr "Strikshed"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:41
 msgctxt "IgnoreListEditDlg|"
@@ -5788,7 +5788,7 @@ msgstr "Ugyldig ChatLine-egenskab: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid palette color role specification: %1"
-msgstr ""
+msgstr "Ugyldig specifikation for paletfarverolle: %1"
 
 #: ../src/uisupport/qssparser.cpp:475
 #, qt-format
@@ -5826,7 +5826,7 @@ msgstr "Ugyldig skriftstil-specifikation: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font weight specification: %1"
-msgstr ""
+msgstr "Ugyldig specifikation for skriftvægtning: %1"
 
 #: ../src/uisupport/qssparser.cpp:714
 #, qt-format
