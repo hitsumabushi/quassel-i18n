@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-12-23 18:56+0000\n"
+"PO-Revision-Date: 2017-12-27 18:59+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -2811,7 +2811,7 @@ msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
 "exists, updating instead!"
-msgstr ""
+msgstr "CoreSession::createNetwork(): Prøver at oprette et netværk som allerede findes, opdaterer i stedet!"
 
 #: ../src/core/coresessioneventprocessor.cpp:78
 msgctxt "CoreSessionEventProcessor|"
@@ -2876,7 +2876,7 @@ msgstr "DCC Receive: Modtog flere data end forventet!"
 #: ../src/core/coretransfer.cpp:176
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Quassel Client disconnected during transfer!"
-msgstr ""
+msgstr "DCC Receive: Quassel-klient afbrød forbindelsen under overførsel!"
 
 #: ../src/core/coreuserinputhandler.cpp:88
 msgctxt "CoreUserInputHandler|"
@@ -2904,7 +2904,7 @@ msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /delkey <nick|channel> deletes the encryption key for nick or "
 "channel or just /delkey when in a channel or query."
-msgstr "[anvendelse] /delkey <kaldenavn|kanal> sletter krypteringsnøglen for kaldenavnet eller kanalen eller blot /delkey når du er i en kanal eller forespørgsel."
+msgstr "[usage] /delkey <kaldenavn|kanal> sletter krypteringsnøglen for kaldenavnet eller kanalen eller blot /delkey når du er i en kanal eller forespørgsel."
 
 #: ../src/core/coreuserinputhandler.cpp:207
 #: ../src/core/coreuserinputhandler.cpp:678
@@ -2974,7 +2974,7 @@ msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
 "channel. /setkey <key> when in a channel or query buffer sets the key for "
 "it."
-msgstr ""
+msgstr "[usage] /setkey <kaldenavn|kanal> <key> sætter krypteringsnøglen for kaldenavn eller kanal. /setkey <key> når i en kanal eller forespørgselsbufferen sætter nøglen for den."
 
 #: ../src/core/coreuserinputhandler.cpp:641
 #, qt-format
@@ -5038,7 +5038,7 @@ msgstr "<b>Din kerne understøtter ikke SSL-kryptering</b>"
 #: ../src/qtui/mainwin.cpp:1248 ../src/qtui/mainwin.cpp:1269
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
-msgstr ""
+msgstr "Ubetroet sikkerhedscertifikat"
 
 #: ../src/qtui/mainwin.cpp:1249
 #, qt-format
@@ -5046,7 +5046,7 @@ msgctxt "MainWin|"
 msgid ""
 "<b>The SSL certificate provided by the core at %1 is untrusted for the "
 "following reasons:</b>"
-msgstr ""
+msgstr "<b>SSL-certifikatet leveret af kernen ved %1 er ubetroet pga. følgende årsager:</b>"
 
 #: ../src/qtui/mainwin.cpp:1252
 msgctxt "MainWin|"
