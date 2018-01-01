@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-12-27 18:59+0000\n"
+"PO-Revision-Date: 2017-12-31 12:30+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -4046,7 +4046,7 @@ msgctxt "IgnoreListModel|"
 msgid ""
 "<b>Enable / Disable:</b><br />Only enabled rules are filtered.<br />For "
 "dynamic rules, disabling actually shows the filtered messages again"
-msgstr ""
+msgstr "<b>Aktivér/deaktivér:</b><br />Kun aktiverede regler filtreres.<br />Ved deaktivering af dynamiske regler vises den filtrerede meddelelse igen"
 
 #: ../src/qtui/settingspages/ignorelistmodel.cpp:75
 msgctxt "IgnoreListModel|"
@@ -4566,7 +4566,7 @@ msgctxt "KeySequenceWidget|"
 msgid ""
 "Click on the button, then enter the shortcut like you would in the program.\n"
 "Example for Ctrl+a: hold the Ctrl key and press a."
-msgstr ""
+msgstr "Klik på knappen, indtast så genvejen som du ville gøre det i programmet.\nEksempel med Ctrl+a: hold Ctrl-tasten inde og tryk på a."
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:274
 msgctxt "KeySequenceWidget|Meta key"
@@ -5476,7 +5476,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:720
 msgctxt "NetworksSettingsPage|"
 msgid "Receive fallback:"
-msgstr ""
+msgstr "Modtage-reserve:"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:747
 #: ../src/qtui/settingspages/networkssettingspage.ui:761
@@ -5611,7 +5611,7 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "The core reported an error when trying to change your password. Make sure "
 "you entered your old password correctly!"
-msgstr ""
+msgstr "Kernen rapporterede en fejl ved forsøg på at skifte din adgangskode. Sørg for at du har indtastet din gamle adgangskode korrekt!"
 
 #: ../src/qtui/phononnotificationbackend.cpp:188
 msgctxt "PhononNotificationBackend::ConfigWidget|"
@@ -5674,7 +5674,7 @@ msgid ""
 "This wizard will help you to set up your default identity and your IRC "
 "network connection.<br>This only covers basic settings. You can cancel this "
 "wizard any time and use the settings dialog for more detailed changes."
-msgstr ""
+msgstr "Guiden hjælpe dig med at opsætte din standardidentitet og din IRC-netværksforbindelse.<br>Den dækker kun grundlæggende indstillinger. Du kan når som helst annullere guiden og bruge indstillingsdialogen for mere detaljerede ændringer."
 
 #: ../src/uisupport/qssparser.cpp:128 ../src/uisupport/qssparser.cpp:178
 #: ../src/uisupport/qssparser.cpp:334
