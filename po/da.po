@@ -10,12 +10,12 @@
 # Jonas Benthin Thyssen, 2015
 # Per Nielsen <>, 2012
 # scootergrisen, 2017
-# scootergrisen, 2017
+# scootergrisen, 2017-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-12-31 12:30+0000\n"
+"PO-Revision-Date: 2018-01-08 16:10+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -5458,7 +5458,7 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "Specify which encoding your messages will be sent in.\n"
 "UTF-8 should be a sane choice for most networks."
-msgstr ""
+msgstr "Angiv hvilken kodning dine beskeder skal sendes i.\nUTF-8 er et godt valgt til de fleste netværk."
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:689
 msgctxt "NetworksSettingsPage|"
