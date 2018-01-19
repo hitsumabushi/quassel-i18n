@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-01-16 20:31+0000\n"
+"PO-Revision-Date: 2018-01-18 22:32+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -2987,7 +2987,7 @@ msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel"
 " or just /showkey when in a channel or query."
-msgstr ""
+msgstr "[anvendelse] /showkey <kaldenavn|kanal> viser krypteringsnøglen for kaldenavn eller kanal, eller blot /showkey når du er i en kanal eller forespørgsel."
 
 #: ../src/core/coreuserinputhandler.cpp:682
 #, qt-format
@@ -3850,7 +3850,7 @@ msgctxt "IdentityEditWidget|"
 msgid ""
 "Failed to read the key file. It is either incompatible or invalid. Note that"
 " the key file must not have a passphrase."
-msgstr ""
+msgstr "Kunne ikke læse nøglefilen. Den er enten ikke kompatibel eller ugyldig. Bemærk at nøglefilen ikke må have en adgangskode."
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:370
 msgctxt "IdentityEditWidget|"
@@ -4034,7 +4034,7 @@ msgid ""
 "<p>Only enabled rules are filtered.\n"
 "<br />\n"
 "For dynamic rules, disabling actually shows the filtered messages again.</p>"
-msgstr ""
+msgstr "<p><b>Aktivér/deaktivér:</b></p>\n<p>Filtrerer kun aktiverede regler.\n<br />\nDeaktivering af dynamiske regler vises den filtreret meddelelse igen.</p>"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:220
 msgctxt "IgnoreListEditDlg|"
@@ -5484,7 +5484,7 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "This specifies how control messages, nicks and servernames are encoded.\n"
 "Unless you *really* know what you do, leave this as ISO-8859-1!"
-msgstr ""
+msgstr "Angiver hvordan kontrolmeddelelser, kaldenavne og servernavne kodes.\nLad den være ISO-8859-1, medmindre du *virkelig* ved hvad du gør!"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:751
 msgctxt "NetworksSettingsPage|"
