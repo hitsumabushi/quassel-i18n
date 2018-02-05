@@ -1018,12 +1018,12 @@ msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:276
+#: ../src/uisupport/bufferview.cpp:266
 msgctxt "BufferView|"
 msgid "Merge buffers permanently?"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:277
+#: ../src/uisupport/bufferview.cpp:267
 #, qt-format
 msgctxt "BufferView|"
 msgid ""
@@ -1031,7 +1031,7 @@ msgid ""
 " This cannot be reversed!"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:723
+#: ../src/uisupport/bufferview.cpp:706
 msgctxt "BufferViewDock|"
 msgid "Search..."
 msgstr ""
@@ -1413,38 +1413,38 @@ msgctxt "ChatMonitorSettingsPage|"
 msgid "Ignore:"
 msgstr ""
 
-#: ../src/qtui/chatmonitorview.cpp:54
+#: ../src/qtui/chatmonitorview.cpp:57
 msgctxt "ChatMonitorView|"
 msgid "Show Own Messages"
 msgstr ""
 
-#: ../src/qtui/chatmonitorview.cpp:61
+#: ../src/qtui/chatmonitorview.cpp:64
 msgctxt "ChatMonitorView|"
 msgid "Show Network Name"
 msgstr ""
 
-#: ../src/qtui/chatmonitorview.cpp:66
+#: ../src/qtui/chatmonitorview.cpp:69
 msgctxt "ChatMonitorView|"
 msgid "Show Buffer Name"
 msgstr ""
 
-#: ../src/qtui/chatmonitorview.cpp:73
+#: ../src/qtui/chatmonitorview.cpp:76
 msgctxt "ChatMonitorView|"
 msgid "Configure..."
 msgstr ""
 
-#: ../src/qtui/chatscene.cpp:838
+#: ../src/qtui/chatscene.cpp:839
 msgctxt "ChatScene|"
 msgid "Copy Selection"
 msgstr ""
 
-#: ../src/qtui/chatscene.cpp:845
+#: ../src/qtui/chatscene.cpp:846
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
 msgstr ""
 
-#: ../src/qtui/chatscene.cpp:857
+#: ../src/qtui/chatscene.cpp:858
 msgctxt "ChatScene|"
 msgid "Reset Column Widths"
 msgstr ""
@@ -3160,92 +3160,92 @@ msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:290
+#: ../src/core/corenetwork.cpp:293
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:290
+#: ../src/core/corenetwork.cpp:293
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:511
+#: ../src/core/corenetwork.cpp:514
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:513
+#: ../src/core/corenetwork.cpp:516
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:561
+#: ../src/core/corenetwork.cpp:564
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1068
+#: ../src/core/corenetwork.cpp:1071
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1079
+#: ../src/core/corenetwork.cpp:1082
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1185
+#: ../src/core/corenetwork.cpp:1188
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1200
+#: ../src/core/corenetwork.cpp:1203
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1207
+#: ../src/core/corenetwork.cpp:1210
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1215
+#: ../src/core/corenetwork.cpp:1218
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1230
+#: ../src/core/corenetwork.cpp:1233
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1234
+#: ../src/core/corenetwork.cpp:1237
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1358
+#: ../src/core/corenetwork.cpp:1361
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1362 ../src/core/corenetwork.cpp:1375
+#: ../src/core/corenetwork.cpp:1365 ../src/core/corenetwork.cpp:1378
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1371
+#: ../src/core/corenetwork.cpp:1374
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
