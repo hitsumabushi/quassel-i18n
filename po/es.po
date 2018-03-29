@@ -3,7 +3,7 @@
 # Adolfo Jayme-Barrientos, 2013
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
-# Javier Llorente <javier@opensuse.org>, 2011,2016-2017
+# Javier Llorente <javier@opensuse.org>, 2011,2016-2018
 # Javier Llorente <javier@opensuse.org>, 2011
 # Jonathan Farnham <jonathan@haitu-yu.com>, 2013
 # Rafael Belmonte <EagleScreen@gmail.com>, 2009, 2011
@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-12-19 19:42+0000\n"
+"PO-Revision-Date: 2018-03-02 07:42+0000\n"
 "Last-Translator: Javier Llorente <javier@opensuse.org>\n"
-"Language-Team: Spanish (http://www.transifex.com/ald/quassel/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/quassel/quassel/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1627,7 +1627,7 @@ msgstr "Conexión sin encriptar cancelada"
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Connecting to %1..."
-msgstr "Conectando a %1…"
+msgstr "Conectándose a %1…"
 
 #: ../src/client/clientauthhandler.cpp:103
 #, qt-format
@@ -2535,7 +2535,7 @@ msgstr "Por favor, introduzca sus credenciales para %1:"
 #: ../src/qtui/coreconnectdlg.cpp:41
 msgctxt "CoreConnectDlg|"
 msgid "Connect to Core"
-msgstr "Conectar al núcleo"
+msgstr "Conectarse al núcleo"
 
 #: ../src/client/coreconnection.cpp:182
 msgctxt "CoreConnection|"
@@ -2561,7 +2561,7 @@ msgstr "Recibiendo estado de la sesión"
 #, qt-format
 msgctxt "CoreConnection|"
 msgid "Synchronizing to %1..."
-msgstr "Sincronizando a %1..."
+msgstr "Sincronizándose con %1..."
 
 #: ../src/client/coreconnection.cpp:476
 msgctxt "CoreConnection|"
@@ -2572,7 +2572,7 @@ msgstr "Recibiendo estados de red"
 #, qt-format
 msgctxt "CoreConnection|"
 msgid "Synchronized to %1"
-msgstr "Sincronizado a %1"
+msgstr "Sincronizado con %1"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:14
 msgctxt "CoreConnectionSettingsPage|"
@@ -2759,13 +2759,13 @@ msgstr "Conexión fallida. Rotando al siguiente servidor"
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
-msgstr "Conectando a %1:%2…"
+msgstr "Conectándose a %1:%2…"
 
 #: ../src/core/corenetwork.cpp:233
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
-msgstr "Desconectando. (%1)"
+msgstr "Desconectándose. (%1)"
 
 #: ../src/core/corenetwork.cpp:233
 msgctxt "CoreNetwork|"
