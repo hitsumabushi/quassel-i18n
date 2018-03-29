@@ -56,7 +56,6 @@
 #include <stdlib.h>
 
 QPointer<Client> Client::instanceptr = 0;
-Quassel::Features Client::_coreFeatures = 0;
 
 /*** Initialization/destruction ***/
 
@@ -188,9 +187,9 @@ AbstractUi *Client::mainUi()
 }
 
 
-void Client::setCoreFeatures(Quassel::Features features)
+bool Client::isCoreFeatureEnabled(Quassel::Feature feature)
 {
-    _coreFeatures = features;
+    return coreConnection()->peer() ? coreConnection()->peer()->hasFeature(feature) : false;
 }
 
 
@@ -426,16 +425,18 @@ void Client::setSyncedToCore()
     _highlightRuleManager = new HighlightRuleManager(this);
     p->synchronize(highlightRuleManager());
 
+/*  not ready yet
     // create TransferManager and DccConfig if core supports them
     Q_ASSERT(!_dccConfig);
     Q_ASSERT(!_transferManager);
-    if (coreFeatures() & Quassel::DccFileTransfer) {
+    if (isCoreFeatureEnabled(Quassel::Feature::DccFileTransfer)) {
         _dccConfig = new DccConfig(this);
         p->synchronize(dccConfig());
         _transferManager = new ClientTransferManager(this);
         _transferModel->setManager(_transferManager);
         p->synchronize(transferManager());
     }
+*/
 
     // trigger backlog request once all active bufferviews are initialized
     connect(bufferViewOverlay(), SIGNAL(initDone()), this, SLOT(finishConnectionInitialization()));
@@ -459,7 +460,7 @@ void Client::finishConnectionInitialization()
     disconnect(bufferSyncer(), SIGNAL(initDone()), this, SLOT(finishConnectionInitialization()));
 
     requestInitialBacklog();
-    if (coreFeatures().testFlag(Quassel::BufferActivitySync))
+    if (isCoreFeatureEnabled(Quassel::Feature::BufferActivitySync))
         bufferSyncer()->markActivitiesChanged();
 }
 
@@ -482,7 +483,6 @@ void Client::disconnectFromCore()
 void Client::setDisconnectedFromCore()
 {
     _connected = false;
-    _coreFeatures = 0;
 
     emit disconnected();
     emit coreConnectionStateChanged(false);

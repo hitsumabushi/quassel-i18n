@@ -36,12 +36,10 @@
 
 QtUiApplication::QtUiApplication(int &argc, char **argv)
 #ifdef HAVE_KDE4
-    : KApplication(),  // KApplication is deprecated in KF5
+    : KApplication()  // KApplication is deprecated in KF5
 #else
-    : QApplication(argc, argv),
+    : QApplication(argc, argv)
 #endif
-    Quassel(),
-    _aboutToQuit(false)
 {
 #ifdef HAVE_KDE4
     Q_UNUSED(argc); Q_UNUSED(argv);
@@ -74,18 +72,19 @@ QtUiApplication::QtUiApplication(int &argc, char **argv)
     }
 
     dataDirs.removeDuplicates();
-    setDataDirPaths(dataDirs);
+    Quassel::setDataDirPaths(dataDirs);
 
 #else /* HAVE_KDE4 */
 
-    setDataDirPaths(findDataDirPaths());
+    Quassel::setDataDirPaths(Quassel::findDataDirPaths());
 
 #endif /* HAVE_KDE4 */
 
 #if defined(HAVE_KDE4) || defined(Q_OS_MAC)
-    disableCrashhandler();
+    Quassel::disableCrashHandler();
 #endif /* HAVE_KDE4 || Q_OS_MAC */
-    setRunMode(Quassel::ClientOnly);
+
+    Quassel::setRunMode(Quassel::ClientOnly);
 
 #if QT_VERSION < 0x050000
     qInstallMsgHandler(Client::logMessage);
@@ -170,13 +169,17 @@ bool QtUiApplication::init()
             // Some platforms don't set a default icon theme; chances are we can find our bundled theme though
             QIcon::setThemeName("breeze");
 
-        // session resume
-        QtUi *gui = new QtUi();
-        Client::init(gui);
-        // init gui only after the event loop has started
-        // QTimer::singleShot(0, gui, SLOT(init()));
-        gui->init();
-        resumeSessionIfPossible();
+        Client::init(new QtUi());
+
+        // Init UI only after the event loop has started
+        // TODO Qt5: Make this a lambda
+        QTimer::singleShot(0, this, SLOT(initUi()));
+
+        Quassel::registerQuitHandler([]() {
+            QtUi::mainWindow()->quit();
+        });
+
+
         return true;
     }
     return false;
@@ -186,12 +189,14 @@ bool QtUiApplication::init()
 QtUiApplication::~QtUiApplication()
 {
     Client::destroy();
+    Quassel::destroy();
 }
 
 
-void QtUiApplication::quit()
+void QtUiApplication::initUi()
 {
-    QtUi::mainWindow()->quit();
+    QtUi::instance()->init();
+    resumeSessionIfPossible();
 }
 
 
@@ -214,7 +219,7 @@ bool QtUiApplication::migrateSettings()
     //
     // NOTE:  If you increase the minor version, you MUST ALSO add new version upgrade logic in
     // applySettingsMigration()!  Otherwise, settings upgrades will fail.
-    const uint VERSION_MINOR_CURRENT = 6;
+    const uint VERSION_MINOR_CURRENT = 7;
     // Stored minor version
     uint versionMinor = s.versionMinor();
 
@@ -279,6 +284,22 @@ bool QtUiApplication::applySettingsMigration(QtUiSettings settings, const uint n
     // saved.  Exceptions will be noted below.
     // NOTE:  If you add new upgrade logic here, you MUST ALSO increase VERSION_MINOR_CURRENT in
     // migrateSettings()!  Otherwise, your upgrade logic won't ever be called.
+    case 7:
+    {
+        // New default changes: UseProxy is no longer used in CoreAccountSettings
+        CoreAccountSettings s;
+        for (auto &&accountId : s.knownAccounts()) {
+            auto map = s.retrieveAccountData(accountId);
+            if (!map.value("UseProxy", false).toBool()) {
+                map["ProxyType"] = static_cast<int>(QNetworkProxy::ProxyType::NoProxy);
+            }
+            map.remove("UseProxy");
+            s.storeAccountData(accountId, map);
+        }
+
+        // Migration complete!
+        return true;
+    }
     case 6:
     {
         // New default changes: sender colors switched around to Tango-ish theme
