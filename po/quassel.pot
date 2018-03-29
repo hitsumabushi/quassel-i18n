@@ -686,20 +686,23 @@ msgid ""
 "represents the i'th to j'th parameter separated by spaces.<br /> - <b>$i..</"
 "b> represents all parameters from i on separated by spaces.<br /> - <b>$i:"
 "hostname</b> represents the hostname of the user identified by the i'th "
-"parameter or a * if unknown.<br /> - <b>$0</b> the whole string.<br /> - <b>"
-"$nick</b> your current nickname<br /> - <b>$channel</b> the name of the "
-"selected channel<br /><br />Multiple commands can be separated with "
-"semicolons<br /><br /><b>Example:</b> \"Test $1; Test $2; Test All $0\" will "
-"be expanded to three separate messages \"Test 1\", \"Test 2\" and \"Test All "
-"1 2 3\" when called like /test 1 2 3"
+"parameter or a * if unknown.<br /> - <b>$i:ident</b> represents the ident of "
+"the user identified by the i'th parameter or a * if unknown.<br /> - <b>$i:"
+"account</b> represents the account of the user identified by the i'th "
+"parameter or a * if logged out or unknown.<br /> - <b>$0</b> the whole "
+"string.<br /> - <b>$nick</b> your current nickname<br /> - <b>$channel</b> "
+"the name of the selected channel<br /><br />Multiple commands can be "
+"separated with semicolons<br /><br /><b>Example:</b> \"Test $1; Test $2; "
+"Test All $0\" will be expanded to three separate messages \"Test 1\", \"Test "
+"2\" and \"Test All 1 2 3\" when called like /test 1 2 3"
 msgstr ""
 
-#: ../src/qtui/settingspages/aliasesmodel.cpp:185
+#: ../src/qtui/settingspages/aliasesmodel.cpp:187
 msgctxt "AliasesModel|"
 msgid "Alias"
 msgstr ""
 
-#: ../src/qtui/settingspages/aliasesmodel.cpp:186
+#: ../src/qtui/settingspages/aliasesmodel.cpp:188
 msgctxt "AliasesModel|"
 msgid "Expansion"
 msgstr ""
@@ -1018,12 +1021,12 @@ msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:266
+#: ../src/uisupport/bufferview.cpp:265
 msgctxt "BufferView|"
 msgid "Merge buffers permanently?"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:267
+#: ../src/uisupport/bufferview.cpp:266
 #, qt-format
 msgctxt "BufferView|"
 msgid ""
@@ -1031,7 +1034,7 @@ msgid ""
 " This cannot be reversed!"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:706
+#: ../src/uisupport/bufferview.cpp:705
 msgctxt "BufferViewDock|"
 msgid "Search..."
 msgstr ""
@@ -1769,66 +1772,66 @@ msgctxt "CliParser|"
 msgid "Quassel IRC is a modern, distributed IRC client."
 msgstr ""
 
-#: ../src/client/client.cpp:332
+#: ../src/client/client.cpp:331
 msgctxt "Client|"
 msgid "Identity already exists in client!"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:69
-#: ../src/client/clientauthhandler.cpp:499
+#: ../src/client/clientauthhandler.cpp:76
+#: ../src/client/clientauthhandler.cpp:525
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:91
-#: ../src/client/clientauthhandler.cpp:107
+#: ../src/client/clientauthhandler.cpp:109
+#: ../src/client/clientauthhandler.cpp:125
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Connecting to %1..."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:103
+#: ../src/client/clientauthhandler.cpp:121
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Looking up %1..."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:110
-#: ../src/client/clientauthhandler.cpp:322
+#: ../src/client/clientauthhandler.cpp:128
+#: ../src/client/clientauthhandler.cpp:348
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Connected to %1"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:114
+#: ../src/client/clientauthhandler.cpp:132
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Disconnecting from %1..."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:118
+#: ../src/client/clientauthhandler.cpp:136
 msgctxt "ClientAuthHandler|"
 msgid "Disconnected"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:153
+#: ../src/client/clientauthhandler.cpp:171
 msgctxt "ClientAuthHandler|"
 msgid "Reconnecting in compatibility mode..."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:241
+#: ../src/client/clientauthhandler.cpp:259
 msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>Incompatible Quassel Core!</b><br>None of the protocols this client "
 "speaks are supported by the core you are trying to connect to."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:244
+#: ../src/client/clientauthhandler.cpp:262
 msgctxt "ClientAuthHandler|"
 msgid "Core speaks none of the protocols we support"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:259
+#: ../src/client/clientauthhandler.cpp:277
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid ""
@@ -1836,32 +1839,44 @@ msgid ""
 "at least protocol v%1, but the core speaks v%2 only."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:261
+#: ../src/client/clientauthhandler.cpp:279
 msgctxt "ClientAuthHandler|"
 msgid "Incompatible protocol version, connection to core refused"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:283
+#: ../src/client/clientauthhandler.cpp:301
 msgctxt "ClientAuthHandler|"
 msgid "Synchronizing to core..."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:298
+#: ../src/client/clientauthhandler.cpp:316
 msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:364
+#: ../src/client/clientauthhandler.cpp:341
+#, qt-format
+msgctxt "ClientAuthHandler|"
+msgid "Core does not support the following features: %1"
+msgstr ""
+
+#: ../src/client/clientauthhandler.cpp:344
+#, qt-format
+msgctxt "ClientAuthHandler|"
+msgid "Core supports unknown features: %1"
+msgstr ""
+
+#: ../src/client/clientauthhandler.cpp:390
 msgctxt "ClientAuthHandler|"
 msgid "Logging in..."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:369
+#: ../src/client/clientauthhandler.cpp:395
 msgctxt "ClientAuthHandler|"
 msgid "Login canceled"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:427
+#: ../src/client/clientauthhandler.cpp:453
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr ""
@@ -1877,12 +1892,12 @@ msgctxt "ClientBufferViewManager|"
 msgid "All Chats"
 msgstr ""
 
-#: ../src/client/clientuserinputhandler.cpp:98
+#: ../src/client/clientuserinputhandler.cpp:100
 msgctxt "ClientUserInputHandler|"
 msgid "/JOIN expects a channel"
 msgstr ""
 
-#: ../src/client/clientuserinputhandler.cpp:110
+#: ../src/client/clientuserinputhandler.cpp:112
 msgctxt "ClientUserInputHandler|"
 msgid "/QUERY expects at least a nick"
 msgstr ""
@@ -2406,7 +2421,7 @@ msgid "Internal Core"
 msgstr ""
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:14
-#: ../src/qtui/settingspages/coreaccountsettingspage.cpp:261
+#: ../src/qtui/settingspages/coreaccountsettingspage.cpp:289
 msgctxt "CoreAccountEditDlg|"
 msgid "Edit Core Account"
 msgstr ""
@@ -2427,7 +2442,7 @@ msgid "Local Core"
 msgstr ""
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:40
-#: ../src/qtui/settingspages/coreaccounteditdlg.ui:173
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:170
 msgctxt "CoreAccountEditDlg|"
 msgid "Hostname:"
 msgstr ""
@@ -2439,13 +2454,13 @@ msgid "localhost"
 msgstr ""
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:54
-#: ../src/qtui/settingspages/coreaccounteditdlg.ui:187
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:133
 msgctxt "CoreAccountEditDlg|"
 msgid "Port:"
 msgstr ""
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:93
-#: ../src/qtui/settingspages/coreaccounteditdlg.ui:226
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:229
 msgctxt "CoreAccountEditDlg|"
 msgid "User:"
 msgstr ""
@@ -2463,25 +2478,40 @@ msgstr ""
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:127
 msgctxt "CoreAccountEditDlg|"
-msgid "Use a Proxy"
+msgid "Proxy Settings"
 msgstr ""
 
-#: ../src/qtui/settingspages/coreaccounteditdlg.ui:139
-msgctxt "CoreAccountEditDlg|"
-msgid "Proxy Type:"
-msgstr ""
-
-#: ../src/qtui/settingspages/coreaccounteditdlg.ui:147
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:144
 msgctxt "CoreAccountEditDlg|"
 msgid "SOCKS 5"
 msgstr ""
 
-#: ../src/qtui/settingspages/coreaccounteditdlg.ui:152
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:149
 msgctxt "CoreAccountEditDlg|"
 msgid "HTTP"
 msgstr ""
 
-#: ../src/qtui/settingspages/coreaccountsettingspage.cpp:263
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:279
+msgctxt "CoreAccountEditDlg|"
+msgid "Proxy Type:"
+msgstr ""
+
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:288
+msgctxt "CoreAccountEditDlg|"
+msgid "No pro&xy"
+msgstr ""
+
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:298
+msgctxt "CoreAccountEditDlg|"
+msgid "S&ystem proxy"
+msgstr ""
+
+#: ../src/qtui/settingspages/coreaccounteditdlg.ui:311
+msgctxt "CoreAccountEditDlg|"
+msgid "&Manual proxy configuration"
+msgstr ""
+
+#: ../src/qtui/settingspages/coreaccountsettingspage.cpp:291
 msgctxt "CoreAccountEditDlg|"
 msgid "Add Core Account"
 msgstr ""
@@ -2579,27 +2609,39 @@ msgid ""
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:231
+#: ../src/core/coreauthhandler.cpp:232
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:232
+#: ../src/core/coreauthhandler.cpp:233
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:237
+#: ../src/core/coreauthhandler.cpp:238
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:256
+#: ../src/core/coreauthhandler.cpp:243
+#, qt-format
+msgctxt "CoreAuthHandler|"
+msgid "Client does not support the following features: %1"
+msgstr ""
+
+#: ../src/core/coreauthhandler.cpp:246
+#, qt-format
+msgctxt "CoreAuthHandler|"
+msgid "Client supports unknown features: %1"
+msgstr ""
+
+#: ../src/core/coreauthhandler.cpp:266
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -2821,33 +2863,33 @@ msgctxt "CoreConnection|"
 msgid "Network is down"
 msgstr ""
 
-#: ../src/client/coreconnection.cpp:265
+#: ../src/client/coreconnection.cpp:274
 msgctxt "CoreConnection|"
 msgid "Disconnected"
 msgstr ""
 
-#: ../src/client/coreconnection.cpp:300
+#: ../src/client/coreconnection.cpp:309
 msgctxt "CoreConnection|"
 msgid "Disconnected from core."
 msgstr ""
 
-#: ../src/client/coreconnection.cpp:438
+#: ../src/client/coreconnection.cpp:447
 msgctxt "CoreConnection|"
 msgid "Receiving session state"
 msgstr ""
 
-#: ../src/client/coreconnection.cpp:440
+#: ../src/client/coreconnection.cpp:449
 #, qt-format
 msgctxt "CoreConnection|"
 msgid "Synchronizing to %1..."
 msgstr ""
 
-#: ../src/client/coreconnection.cpp:476
+#: ../src/client/coreconnection.cpp:482
 msgctxt "CoreConnection|"
 msgid "Receiving network states"
 msgstr ""
 
-#: ../src/client/coreconnection.cpp:527
+#: ../src/client/coreconnection.cpp:533
 #, qt-format
 msgctxt "CoreConnection|"
 msgid "Synchronized to %1"
@@ -2991,54 +3033,59 @@ msgid "Custom Highlights"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:97
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:184
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:191
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Enabled"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:102
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:189
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:196
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Rule"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:107
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:194
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:201
 msgctxt "CoreHighlightSettingsPage|"
 msgid "RegEx"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:112
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:199
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:206
 msgctxt "CoreHighlightSettingsPage|"
 msgid "CS"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:117
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:204
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:211
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Sender"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:122
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:209
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:216
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Channel"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:138
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:225
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:232
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Add"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:145
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:232
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:239
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Remove"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:171
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:165
+msgctxt "CoreHighlightSettingsPage|"
+msgid "Import"
+msgstr ""
+
+#: ../src/qtui/settingspages/corehighlightsettingspage.ui:178
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Highlight Ignore Rules"
 msgstr ""
@@ -3050,7 +3097,7 @@ msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:29
 msgctxt "CoreHighlightSettingsPage|"
-msgid "Core-Side Highlights"
+msgid "Remote Highlights"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:36
@@ -3068,24 +3115,24 @@ msgctxt "CoreHighlightSettingsPage|"
 msgid "None"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:85
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:87
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:99
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:101
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule should be "
 "interpreted as a <b>regular expression</b> or just as a keyword."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:90
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:92
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:104
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:106
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule should be "
 "interpreted <b>case sensitive</b>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:95
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:97
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:109
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:111
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>Channel</b>: This regular expression determines for which <b>channels</b> "
@@ -3093,14 +3140,14 @@ msgid ""
 "the beginning to negate. Case insensitive."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:325
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:363
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:343
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:381
 msgctxt "CoreHighlightSettingsPage|"
 msgid "this shouldn't be empty"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.h:49
 #: ../src/qtui/settingspages/corehighlightsettingspage.h:52
+#: ../src/qtui/settingspages/corehighlightsettingspage.h:55
 msgctxt "CoreHighlightSettingsPage|"
 msgid "highlight rule"
 msgstr ""
@@ -3316,29 +3363,49 @@ msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
 msgstr ""
 
-#: ../src/qtui/ui/coresessionwidget.ui:85
+#: ../src/qtui/ui/coresessionwidget.ui:29
+msgctxt "CoreSessionWidget|"
+msgid "12.34.56.78"
+msgstr ""
+
+#: ../src/qtui/ui/coresessionwidget.ui:37
 msgctxt "CoreSessionWidget|"
 msgid "Client:"
 msgstr ""
 
-#: ../src/qtui/ui/coresessionwidget.ui:105
+#: ../src/qtui/ui/coresessionwidget.ui:51
 msgctxt "CoreSessionWidget|"
 msgid "Version Date:"
 msgstr ""
 
-#: ../src/qtui/ui/coresessionwidget.ui:125
+#: ../src/qtui/ui/coresessionwidget.ui:65
 msgctxt "CoreSessionWidget|"
 msgid "Location:"
 msgstr ""
 
-#: ../src/qtui/ui/coresessionwidget.ui:145
+#: ../src/qtui/ui/coresessionwidget.ui:79
 msgctxt "CoreSessionWidget|"
 msgid "Connected Since:"
 msgstr ""
 
-#: ../src/qtui/ui/coresessionwidget.ui:179
+#: ../src/qtui/ui/coresessionwidget.ui:93
+msgctxt "CoreSessionWidget|"
+msgid "Secure:"
+msgstr ""
+
+#: ../src/qtui/ui/coresessionwidget.ui:124
 msgctxt "CoreSessionWidget|"
 msgid "End Session"
+msgstr ""
+
+#: ../src/qtui/coresessionwidget.cpp:45
+msgctxt "CoreSessionWidget|"
+msgid "Yes"
+msgstr ""
+
+#: ../src/qtui/coresessionwidget.cpp:45
+msgctxt "CoreSessionWidget|"
+msgid "No"
 msgstr ""
 
 #: ../src/core/coretransfer.cpp:64
@@ -3502,12 +3569,12 @@ msgctxt "CreateIdentityDlg|"
 msgid "Duplicate:"
 msgstr ""
 
-#: ../src/common/protocols/datastream/datastreampeer.cpp:114
+#: ../src/common/protocols/datastream/datastreampeer.cpp:115
 msgctxt "DataStreamPeer|"
 msgid "Invalid handshake message!"
 msgstr ""
 
-#: ../src/common/protocols/datastream/datastreampeer.cpp:161
+#: ../src/common/protocols/datastream/datastreampeer.cpp:171
 #, qt-format
 msgctxt "DataStreamPeer|"
 msgid "Unknown protocol message of type %1"
@@ -4001,7 +4068,6 @@ msgid "Custom Highlights"
 msgstr ""
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:33
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:29
 msgctxt "HighlightSettingsPage|"
 msgid "Highlight"
 msgstr ""
@@ -4061,12 +4127,17 @@ msgctxt "HighlightSettingsPage|"
 msgid "Case sensitive"
 msgstr ""
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:29
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:30
 msgctxt "HighlightSettingsPage|"
 msgid "Interface"
 msgstr ""
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:192
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:30
+msgctxt "HighlightSettingsPage|"
+msgid "Local Highlights"
+msgstr ""
+
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:193
 msgctxt "HighlightSettingsPage|"
 msgid "this shouldn't be empty"
 msgstr ""
@@ -5004,7 +5075,7 @@ msgctxt "InputWidgetSettingsPage|"
 msgid "Input Widget"
 msgstr ""
 
-#: ../src/common/internalpeer.cpp:58 ../src/common/internalpeer.cpp:63
+#: ../src/common/internalpeer.cpp:60 ../src/common/internalpeer.cpp:65
 msgctxt "InternalPeer|"
 msgid "internal connection"
 msgstr ""
@@ -5377,12 +5448,12 @@ msgctxt "LdapAuthenticator|"
 msgid "UID Attribute"
 msgstr ""
 
-#: ../src/common/protocols/legacy/legacypeer.cpp:136
+#: ../src/common/protocols/legacy/legacypeer.cpp:137
 msgctxt "LegacyPeer|"
 msgid "Invalid handshake message!"
 msgstr ""
 
-#: ../src/common/protocols/legacy/legacypeer.cpp:207
+#: ../src/common/protocols/legacy/legacypeer.cpp:215
 #, qt-format
 msgctxt "LegacyPeer|"
 msgid "Unknown protocol message of type %1"
@@ -5393,421 +5464,421 @@ msgctxt "MainPage|"
 msgid "Connect to Core..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:390
+#: ../src/qtui/mainwin.cpp:392
 msgctxt "MainWin|"
 msgid "General"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:392
+#: ../src/qtui/mainwin.cpp:394
 msgctxt "MainWin|"
 msgid "&Connect to Core..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:394
+#: ../src/qtui/mainwin.cpp:396
 msgctxt "MainWin|"
 msgid "&Disconnect from Core"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:396
+#: ../src/qtui/mainwin.cpp:398
 msgctxt "MainWin|"
 msgid "Change &Password..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:398
+#: ../src/qtui/mainwin.cpp:400
 msgctxt "MainWin|"
 msgid "Core &Info..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:400
+#: ../src/qtui/mainwin.cpp:402
 msgctxt "MainWin|"
 msgid "Configure &Networks..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:403
+#: ../src/qtui/mainwin.cpp:405
 msgctxt "MainWin|"
 msgid "&Quit"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:407
+#: ../src/qtui/mainwin.cpp:409
 msgctxt "MainWin|"
 msgid "&Configure Chat Lists..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:410
+#: ../src/qtui/mainwin.cpp:412
 msgctxt "MainWin|"
 msgid "&Lock Layout"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:414
+#: ../src/qtui/mainwin.cpp:416
 msgctxt "MainWin|"
 msgid "Show &Search Bar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:416
+#: ../src/qtui/mainwin.cpp:418
 msgctxt "MainWin|"
 msgid "Show Away Log"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:418
+#: ../src/qtui/mainwin.cpp:420
 msgctxt "MainWin|"
 msgid "Show &Menubar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:421
+#: ../src/qtui/mainwin.cpp:423
 msgctxt "MainWin|"
 msgid "Show Status &Bar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:427
+#: ../src/qtui/mainwin.cpp:429
 msgctxt "MainWin|"
 msgid "&Full Screen Mode"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:434
+#: ../src/qtui/mainwin.cpp:436
 msgctxt "MainWin|"
 msgid "Configure &Shortcuts..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:440 ../src/qtui/mainwin.cpp:444
+#: ../src/qtui/mainwin.cpp:442 ../src/qtui/mainwin.cpp:446
 msgctxt "MainWin|"
 msgid "&Configure Quassel..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:450
+#: ../src/qtui/mainwin.cpp:452
 msgctxt "MainWin|"
 msgid "&About Quassel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:455
+#: ../src/qtui/mainwin.cpp:457
 msgctxt "MainWin|"
 msgid "About &Qt"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:459
+#: ../src/qtui/mainwin.cpp:461
 msgctxt "MainWin|"
 msgid "Debug &NetworkModel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:461
+#: ../src/qtui/mainwin.cpp:463
 msgctxt "MainWin|"
 msgid "Debug &BufferViewOverlay"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:463
+#: ../src/qtui/mainwin.cpp:465
 msgctxt "MainWin|"
 msgid "Debug &MessageModel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:465
+#: ../src/qtui/mainwin.cpp:467
 msgctxt "MainWin|"
 msgid "Debug &HotList"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:467
+#: ../src/qtui/mainwin.cpp:469
 msgctxt "MainWin|"
 msgid "Debug &Log"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:469
+#: ../src/qtui/mainwin.cpp:471
 msgctxt "MainWin|"
 msgid "Reload Stylesheet"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:472
+#: ../src/qtui/mainwin.cpp:474
 msgctxt "MainWin|"
 msgid "Hide Current Buffer"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:476
+#: ../src/qtui/mainwin.cpp:478
 msgctxt "MainWin|"
 msgid "Navigation"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:478
+#: ../src/qtui/mainwin.cpp:480
 msgctxt "MainWin|"
 msgid "Jump to hot chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:481
+#: ../src/qtui/mainwin.cpp:483
 msgctxt "MainWin|"
 msgid "Activate the buffer search"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:493
+#: ../src/qtui/mainwin.cpp:495
 msgctxt "MainWin|"
 msgid "Set Quick Access #0"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:495
+#: ../src/qtui/mainwin.cpp:497
 msgctxt "MainWin|"
 msgid "Set Quick Access #1"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:497
+#: ../src/qtui/mainwin.cpp:499
 msgctxt "MainWin|"
 msgid "Set Quick Access #2"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:499
+#: ../src/qtui/mainwin.cpp:501
 msgctxt "MainWin|"
 msgid "Set Quick Access #3"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:501
+#: ../src/qtui/mainwin.cpp:503
 msgctxt "MainWin|"
 msgid "Set Quick Access #4"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:503
+#: ../src/qtui/mainwin.cpp:505
 msgctxt "MainWin|"
 msgid "Set Quick Access #5"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:505
+#: ../src/qtui/mainwin.cpp:507
 msgctxt "MainWin|"
 msgid "Set Quick Access #6"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:507
+#: ../src/qtui/mainwin.cpp:509
 msgctxt "MainWin|"
 msgid "Set Quick Access #7"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:509
+#: ../src/qtui/mainwin.cpp:511
 msgctxt "MainWin|"
 msgid "Set Quick Access #8"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:511
+#: ../src/qtui/mainwin.cpp:513
 msgctxt "MainWin|"
 msgid "Set Quick Access #9"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:514
+#: ../src/qtui/mainwin.cpp:516
 msgctxt "MainWin|"
 msgid "Quick Access #0"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:516
+#: ../src/qtui/mainwin.cpp:518
 msgctxt "MainWin|"
 msgid "Quick Access #1"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:518
+#: ../src/qtui/mainwin.cpp:520
 msgctxt "MainWin|"
 msgid "Quick Access #2"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:520
+#: ../src/qtui/mainwin.cpp:522
 msgctxt "MainWin|"
 msgid "Quick Access #3"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:522
+#: ../src/qtui/mainwin.cpp:524
 msgctxt "MainWin|"
 msgid "Quick Access #4"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:524
+#: ../src/qtui/mainwin.cpp:526
 msgctxt "MainWin|"
 msgid "Quick Access #5"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:526
+#: ../src/qtui/mainwin.cpp:528
 msgctxt "MainWin|"
 msgid "Quick Access #6"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:528
+#: ../src/qtui/mainwin.cpp:530
 msgctxt "MainWin|"
 msgid "Quick Access #7"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:530
+#: ../src/qtui/mainwin.cpp:532
 msgctxt "MainWin|"
 msgid "Quick Access #8"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:532
+#: ../src/qtui/mainwin.cpp:534
 msgctxt "MainWin|"
 msgid "Quick Access #9"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:536
+#: ../src/qtui/mainwin.cpp:538
 msgctxt "MainWin|"
 msgid "Activate Next Chat List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:538
+#: ../src/qtui/mainwin.cpp:540
 msgctxt "MainWin|"
 msgid "Activate Previous Chat List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:540
+#: ../src/qtui/mainwin.cpp:542
 msgctxt "MainWin|"
 msgid "Go to Next Chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:542
+#: ../src/qtui/mainwin.cpp:544
 msgctxt "MainWin|"
 msgid "Go to Previous Chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:551
+#: ../src/qtui/mainwin.cpp:553
 msgctxt "MainWin|"
 msgid "&File"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:564
+#: ../src/qtui/mainwin.cpp:566
 msgctxt "MainWin|"
 msgid "&Networks"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:570
+#: ../src/qtui/mainwin.cpp:572
 msgctxt "MainWin|"
 msgid "&View"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:571
+#: ../src/qtui/mainwin.cpp:573
 msgctxt "MainWin|"
 msgid "&Chat Lists"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:573
+#: ../src/qtui/mainwin.cpp:575
 msgctxt "MainWin|"
 msgid "&Toolbars"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:587
+#: ../src/qtui/mainwin.cpp:589
 msgctxt "MainWin|"
 msgid "&Settings"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:597
+#: ../src/qtui/mainwin.cpp:599
 msgctxt "MainWin|"
 msgid "&Help"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:606
+#: ../src/qtui/mainwin.cpp:608
 msgctxt "MainWin|"
 msgid "Debug"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:781
+#: ../src/qtui/mainwin.cpp:783
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:782
+#: ../src/qtui/mainwin.cpp:784
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:784
+#: ../src/qtui/mainwin.cpp:786
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:897
+#: ../src/qtui/mainwin.cpp:899
 msgctxt "MainWin|"
 msgid "Nicks"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:906
+#: ../src/qtui/mainwin.cpp:908
 msgctxt "MainWin|"
 msgid "Show Nick List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:921
+#: ../src/qtui/mainwin.cpp:923
 msgctxt "MainWin|"
 msgid "Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:932
+#: ../src/qtui/mainwin.cpp:934
 msgctxt "MainWin|"
 msgid "Show Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:938
+#: ../src/qtui/mainwin.cpp:940
 msgctxt "MainWin|"
 msgid "Inputline"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:947
+#: ../src/qtui/mainwin.cpp:949
 msgctxt "MainWin|"
 msgid "Show Input Line"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:960
+#: ../src/qtui/mainwin.cpp:962
 msgctxt "MainWin|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:972
+#: ../src/qtui/mainwin.cpp:974
 msgctxt "MainWin|"
 msgid "Show Topic Line"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:978
+#: ../src/qtui/mainwin.cpp:980
 msgctxt "MainWin|"
 msgid "Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:989
+#: ../src/qtui/mainwin.cpp:991
 msgctxt "MainWin|"
 msgid "Show File Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1087
+#: ../src/qtui/mainwin.cpp:1089
 msgctxt "MainWin|"
 msgid "Main Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1105
+#: ../src/qtui/mainwin.cpp:1107
 msgctxt "MainWin|"
 msgid "Nick Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1172
+#: ../src/qtui/mainwin.cpp:1174
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1272
+#: ../src/qtui/mainwin.cpp:1274
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1291 ../src/qtui/mainwin.cpp:1301
+#: ../src/qtui/mainwin.cpp:1293 ../src/qtui/mainwin.cpp:1303
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1291
+#: ../src/qtui/mainwin.cpp:1293
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1293 ../src/qtui/mainwin.cpp:1303
+#: ../src/qtui/mainwin.cpp:1295 ../src/qtui/mainwin.cpp:1305
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1301
+#: ../src/qtui/mainwin.cpp:1303
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1319 ../src/qtui/mainwin.cpp:1340
+#: ../src/qtui/mainwin.cpp:1321 ../src/qtui/mainwin.cpp:1342
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1320
+#: ../src/qtui/mainwin.cpp:1322
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -5815,33 +5886,33 @@ msgid ""
 "following reasons:</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1323
+#: ../src/qtui/mainwin.cpp:1325
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1324
+#: ../src/qtui/mainwin.cpp:1326
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1341
+#: ../src/qtui/mainwin.cpp:1343
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1343
+#: ../src/qtui/mainwin.cpp:1345
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1344
+#: ../src/qtui/mainwin.cpp:1346
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1355
+#: ../src/qtui/mainwin.cpp:1357
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr ""
@@ -6706,159 +6777,165 @@ msgid ""
 "wizard any time and use the settings dialog for more detailed changes."
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:146 ../src/uisupport/qssparser.cpp:196
-#: ../src/uisupport/qssparser.cpp:352
+#: ../src/uisupport/qssparser.cpp:151 ../src/uisupport/qssparser.cpp:206
+#: ../src/uisupport/qssparser.cpp:363
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid block declaration: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:165
+#: ../src/uisupport/qssparser.cpp:170
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid palette role assignment: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:184
+#: ../src/uisupport/qssparser.cpp:189
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unknown palette role name: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:222
+#: ../src/uisupport/qssparser.cpp:233
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid subelement name in %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:266
+#: ../src/uisupport/qssparser.cpp:277
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid message type in %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:275
+#: ../src/uisupport/qssparser.cpp:286
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid condition %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:287
+#: ../src/uisupport/qssparser.cpp:297
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid message label: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:299
+#: ../src/uisupport/qssparser.cpp:308
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid senderhash specification: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:303
+#: ../src/uisupport/qssparser.cpp:312
 msgctxt "QssParser|"
 msgid "Senderhash can be at most \"0x0f\"!"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:319
+#: ../src/uisupport/qssparser.cpp:328
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid format name: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:327
+#: ../src/uisupport/qssparser.cpp:336
 #, qt-format
 msgctxt "QssParser|"
 msgid "Illegal IRC color specification (must be between 00 and 0f): %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:336
+#: ../src/uisupport/qssparser.cpp:345
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unhandled condition: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:367
+#: ../src/uisupport/qssparser.cpp:378
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid proplist %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:386
+#: ../src/uisupport/qssparser.cpp:397
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid chatlist item type %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:402
+#: ../src/uisupport/qssparser.cpp:413
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid chatlist state %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:432
+#: ../src/uisupport/qssparser.cpp:443
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid property declaration: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:456
+#: ../src/uisupport/qssparser.cpp:481
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font property: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:462
+#: ../src/uisupport/qssparser.cpp:487
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unknown ChatLine property: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:500
+#: ../src/uisupport/qssparser.cpp:506
+#, qt-format
+msgctxt "QssParser|"
+msgid "Invalid boolean value: %1"
+msgstr ""
+
+#: ../src/uisupport/qssparser.cpp:542
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid palette color role specification: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:507
+#: ../src/uisupport/qssparser.cpp:549
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unknown palette color role: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:514 ../src/uisupport/qssparser.cpp:537
-#: ../src/uisupport/qssparser.cpp:559
+#: ../src/uisupport/qssparser.cpp:556 ../src/uisupport/qssparser.cpp:579
+#: ../src/uisupport/qssparser.cpp:601
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid gradient declaration: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:523 ../src/uisupport/qssparser.cpp:545
-#: ../src/uisupport/qssparser.cpp:569
+#: ../src/uisupport/qssparser.cpp:565 ../src/uisupport/qssparser.cpp:587
+#: ../src/uisupport/qssparser.cpp:611
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid gradient stops list: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:678
+#: ../src/uisupport/qssparser.cpp:720
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font specification: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:719
+#: ../src/uisupport/qssparser.cpp:765
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font style specification: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:734
+#: ../src/uisupport/qssparser.cpp:780
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font weight specification: %1"
 msgstr ""
 
-#: ../src/uisupport/qssparser.cpp:746
+#: ../src/uisupport/qssparser.cpp:792
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font size specification: %1"
@@ -6888,6 +6965,12 @@ msgstr ""
 #: ../src/qtui/ui/qtmultimedianotificationconfigwidget.ui:69
 msgctxt "QtMultimediaNotificationConfigWidget|"
 msgid "Select the sound file to play"
+msgstr ""
+
+#: ../src/common/quassel.cpp:133
+#, qt-format
+msgctxt "Quassel|"
+msgid "Invalid log level %1; supported are Debug|Info|Warning|Error"
 msgstr ""
 
 #: ../src/common/util.cpp:173
@@ -7169,45 +7252,45 @@ msgid "Configure Quassel"
 msgstr ""
 
 #: ../src/qtui/ui/settingsdlg.ui:35 ../src/qtui/ui/settingsdlg.ui:50
-#: ../src/qtui/settingsdlg.cpp:127
+#: ../src/qtui/settingsdlg.cpp:129
 msgctxt "SettingsDlg|"
 msgid "Settings"
 msgstr ""
 
-#: ../src/qtui/settingsdlg.cpp:137
+#: ../src/qtui/settingsdlg.cpp:139
 msgctxt "SettingsDlg|"
 msgid "Save changes"
 msgstr ""
 
-#: ../src/qtui/settingsdlg.cpp:138
+#: ../src/qtui/settingsdlg.cpp:140
 msgctxt "SettingsDlg|"
 msgid ""
 "There are unsaved changes on the current configuration page. Would you like "
 "to apply your changes now?"
 msgstr ""
 
-#: ../src/qtui/settingsdlg.cpp:152 ../src/qtui/settingsdlg.cpp:156
+#: ../src/qtui/settingsdlg.cpp:154 ../src/qtui/settingsdlg.cpp:158
 #, qt-format
 msgctxt "SettingsDlg|"
 msgid "Configure %1"
 msgstr ""
 
-#: ../src/qtui/settingsdlg.cpp:236
+#: ../src/qtui/settingsdlg.cpp:238
 msgctxt "SettingsDlg|"
 msgid "Reload Settings"
 msgstr ""
 
-#: ../src/qtui/settingsdlg.cpp:236
+#: ../src/qtui/settingsdlg.cpp:238
 msgctxt "SettingsDlg|"
 msgid "Do you like to reload the settings, undoing your changes on this page?"
 msgstr ""
 
-#: ../src/qtui/settingsdlg.cpp:247
+#: ../src/qtui/settingsdlg.cpp:249
 msgctxt "SettingsDlg|"
 msgid "Restore Defaults"
 msgstr ""
 
-#: ../src/qtui/settingsdlg.cpp:247
+#: ../src/qtui/settingsdlg.cpp:249
 msgctxt "SettingsDlg|"
 msgid "Do you like to restore the default values for this page?"
 msgstr ""
@@ -7882,79 +7965,79 @@ msgid "Receive"
 msgstr ""
 
 #. Nick Message
-#: ../src/uisupport/uistyle.cpp:796
+#: ../src/uisupport/uistyle.cpp:936
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "You are now known as %DN%1%DN"
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:797
+#: ../src/uisupport/uistyle.cpp:937
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN is now known as %DN%2%DN"
 msgstr ""
 
 #. Mode Message
-#: ../src/uisupport/uistyle.cpp:801
+#: ../src/uisupport/uistyle.cpp:941
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "User mode: %DM%1%DM"
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:802
+#: ../src/uisupport/uistyle.cpp:942
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Mode %DM%1%DM by %DN%2%DN"
 msgstr ""
 
 #. Join Message
-#: ../src/uisupport/uistyle.cpp:806
+#: ../src/uisupport/uistyle.cpp:946
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has joined %DC%4%DC"
 msgstr ""
 
 #. Part Message
-#: ../src/uisupport/uistyle.cpp:809
+#: ../src/uisupport/uistyle.cpp:949
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has left %DC%4%DC"
 msgstr ""
 
 #. Quit Message
-#: ../src/uisupport/uistyle.cpp:814
+#: ../src/uisupport/uistyle.cpp:954
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has quit"
 msgstr ""
 
 #. Kick Message
-#: ../src/uisupport/uistyle.cpp:822
+#: ../src/uisupport/uistyle.cpp:962
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN has kicked %DN%2%DN from %DC%3%DC"
 msgstr ""
 
 #. Day Change Message
-#: ../src/uisupport/uistyle.cpp:837
+#: ../src/uisupport/uistyle.cpp:977
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "{Day changed to %1}"
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:850
+#: ../src/uisupport/uistyle.cpp:990
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH ended. Users joined: "
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:854 ../src/uisupport/uistyle.cpp:870
+#: ../src/uisupport/uistyle.cpp:994 ../src/uisupport/uistyle.cpp:1010
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN (%2 more)"
 msgstr ""
 
-#: ../src/uisupport/uistyle.cpp:865
+#: ../src/uisupport/uistyle.cpp:1005
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
