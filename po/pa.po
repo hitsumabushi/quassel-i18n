@@ -1,12 +1,13 @@
 # 
 # Translators:
 # A S Alam <aalam@users.sf.net>, 2013
+# A S Alam <alam.yellow@gmail.com>, 2018
 # A S Alam <alam.yellow@gmail.com>, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-03-29 11:46+0000\n"
+"PO-Revision-Date: 2018-04-08 01:28+0000\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/quassel/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -863,7 +864,7 @@ msgstr ""
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:110
 msgctxt "AppearanceSettingsPage|"
 msgid "Oxygen"
-msgstr ""
+msgstr "ਆਕਸੀਜਨ"
 
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:280
 msgctxt "AppearanceSettingsPage|"
@@ -1135,7 +1136,7 @@ msgstr "ਵਰਣਮਾਲਾ ਨਾਲ ਲੜੀਬੱਧ"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:163
 msgctxt "BufferViewSettingsPage|"
 msgid "Show search"
-msgstr ""
+msgstr "ਖੋਜ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:170
 msgctxt "BufferViewSettingsPage|"
@@ -1222,7 +1223,7 @@ msgstr "ਮਾਰਕਰ ਲਾਈਨ ਉੱਤੇ ਜਾਓ"
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "Channel %1"
-msgstr ""
+msgstr "ਚੈਨਲ %1"
 
 #: ../src/client/networkmodel.cpp:762
 msgctxt "ChannelBufferItem|"
