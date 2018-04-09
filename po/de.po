@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-03-29 11:46+0000\n"
+"PO-Revision-Date: 2018-04-08 13:05+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: German (http://www.transifex.com/quassel/quassel/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -610,11 +610,12 @@ msgstr ""
 msgctxt "AboutDlg|"
 msgid ""
 "<b>A modern, distributed IRC Client</b><br><br>&copy;%1 by the Quassel "
-"Project<br><a href=\"http://quassel-irc.org\">http://quassel-"
+"Project<br><a href=\"https://quassel-irc.org\">https://quassel-"
 "irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a> on <a"
-" href=\"http://www.freenode.net\">Freenode</a><br><br>Quassel IRC is dual-"
-"licensed under <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a>"
-" and <a href=\"http://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br><a "
+" href=\"https://www.freenode.net\">Freenode</a><br><br>Quassel IRC is dual-"
+"licensed under <a "
+"href=\"https://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> and <a "
+"href=\"https://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br><a "
 "href=\"https://api.kde.org/frameworks/breeze-icons/html\">Breeze icon "
 "theme</a> &copy; Uri Herrera and others, licensed under the <a "
 "href=\"https://github.com/KDE/breeze-icons/blob/21ffd9b/COPYING-"
@@ -622,7 +623,7 @@ msgid ""
 "icons5/html\">Oxygen icon theme</a> &copy; Nuno Pinheiro and others, "
 "licensed under the <a href=\"https://github.com/KDE/oxygen-"
 "icons/blob/master/COPYING\">LGPLv3</a>.<br><br>Please use <a "
-"href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to "
+"href=\"https://bugs.quassel-irc.org\">https://bugs.quassel-irc.org</a> to "
 "report bugs."
 msgstr ""
 
@@ -3248,37 +3249,37 @@ msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1218
+#: ../src/core/corenetwork.cpp:1219
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1233
+#: ../src/core/corenetwork.cpp:1234
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1237
+#: ../src/core/corenetwork.cpp:1238
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1361
+#: ../src/core/corenetwork.cpp:1362
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1365 ../src/core/corenetwork.cpp:1378
+#: ../src/core/corenetwork.cpp:1366 ../src/core/corenetwork.cpp:1379
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1374
+#: ../src/core/corenetwork.cpp:1375
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
@@ -3434,8 +3435,8 @@ msgstr "Sende CTCP-%1-Anfrage an %2"
 
 #: ../src/core/coreuserinputhandler.cpp:206
 #: ../src/core/coreuserinputhandler.cpp:377
-#: ../src/core/coreuserinputhandler.cpp:684
-#: ../src/core/coreuserinputhandler.cpp:722
+#: ../src/core/coreuserinputhandler.cpp:680
+#: ../src/core/coreuserinputhandler.cpp:718
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl"
@@ -3450,7 +3451,7 @@ msgid ""
 msgstr "[Benutzung] /delkey <nick|channel> löscht den Schlüssel für die Verschlüsselung des Nicks oder Channels oder nur /delkey in einem aktiven Raum/Dialog"
 
 #: ../src/core/coreuserinputhandler.cpp:224
-#: ../src/core/coreuserinputhandler.cpp:740
+#: ../src/core/coreuserinputhandler.cpp:736
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "No key has been set for %1."
@@ -3463,7 +3464,7 @@ msgid "The key for %1 has been deleted."
 msgstr "Der Schlüssel für %1 wurde entfernt."
 
 #: ../src/core/coreuserinputhandler.cpp:233
-#: ../src/core/coreuserinputhandler.cpp:748
+#: ../src/core/coreuserinputhandler.cpp:744
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3496,7 +3497,7 @@ msgid "Initiated key exchange with %1."
 msgstr "Schlüsselaustausch mit %1 initiiert."
 
 #: ../src/core/coreuserinputhandler.cpp:413
-#: ../src/core/coreuserinputhandler.cpp:706
+#: ../src/core/coreuserinputhandler.cpp:702
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3505,13 +3506,13 @@ msgid ""
 "with QCA present."
 msgstr "Fehler: Die Nutzung der Verschlüsselung setzt vorraus, dass Quassel mit Unterstützung für die \"Qt Cryptographic Architecture\" (QCA2) Bibliothek kompiliert worden ist. Kontaktieren Sie ihren Distributor, dass Quassel mit Unterstützung für QCA2 kompiliert wird, oder kompilieren Sie Quassel selber mit QCA2."
 
-#: ../src/core/coreuserinputhandler.cpp:614
+#: ../src/core/coreuserinputhandler.cpp:611
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Starting query with %1"
 msgstr "Dialog mit %1 starten"
 
-#: ../src/core/coreuserinputhandler.cpp:694
+#: ../src/core/coreuserinputhandler.cpp:690
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
@@ -3519,20 +3520,20 @@ msgid ""
 "it."
 msgstr "[Benutzung] /setkey <nick|channel> <key> setzt den Schlüssel für die Verschlüsselung des Dialogs oder des Raums; oder ohne Argument für den derzeit aktiven Raum oder Dialog"
 
-#: ../src/core/coreuserinputhandler.cpp:703
+#: ../src/core/coreuserinputhandler.cpp:699
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been set."
 msgstr "Der Schlüssel für %1 wurde gesetzt."
 
-#: ../src/core/coreuserinputhandler.cpp:732
+#: ../src/core/coreuserinputhandler.cpp:728
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel"
 " or just /showkey when in a channel or query."
 msgstr "[Benutzung] /delkey <nick|channel> löscht den Schlüssel für die Verschlüsselung des Nicks oder Channels oder nur /delkey in einem aktiven Raum/Dialog"
 
-#: ../src/core/coreuserinputhandler.cpp:744
+#: ../src/core/coreuserinputhandler.cpp:740
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
@@ -4259,8 +4260,8 @@ msgstr "Der Kindergarten ist woanders!"
 
 #: ../src/common/identity.cpp:194 ../src/common/identity.cpp:195
 msgctxt "Identity|"
-msgid "http://quassel-irc.org - Chat comfortably. Anywhere."
-msgstr "http://quassel-irc.org - Chat comfortably. Anywhere."
+msgid "https://quassel-irc.org - Chat comfortably. Anywhere."
+msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:30
 msgctxt "IdentityEditWidget|"
@@ -5745,121 +5746,121 @@ msgctxt "MainWin|"
 msgid "Debug"
 msgstr "Debug"
 
-#: ../src/qtui/mainwin.cpp:783
+#: ../src/qtui/mainwin.cpp:785
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
 msgstr "Funktion nicht unterstützt"
 
-#: ../src/qtui/mainwin.cpp:784
+#: ../src/qtui/mainwin.cpp:786
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
 msgstr "<b>Ihr Quassel Core unterstützt diese Funktion nicht</b>"
 
-#: ../src/qtui/mainwin.cpp:786
+#: ../src/qtui/mainwin.cpp:788
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
 msgstr "Sie benötigen Quassel Core v0.12.0 oder neuer um Ihr Passwort vom Client aus ändern zu können."
 
-#: ../src/qtui/mainwin.cpp:899
+#: ../src/qtui/mainwin.cpp:916
 msgctxt "MainWin|"
 msgid "Nicks"
 msgstr "Spitznamen"
 
-#: ../src/qtui/mainwin.cpp:908
+#: ../src/qtui/mainwin.cpp:926
 msgctxt "MainWin|"
 msgid "Show Nick List"
 msgstr "Spitznamenliste anzeigen"
 
-#: ../src/qtui/mainwin.cpp:923
+#: ../src/qtui/mainwin.cpp:941
 msgctxt "MainWin|"
 msgid "Chat Monitor"
 msgstr "Chatmonitor"
 
-#: ../src/qtui/mainwin.cpp:934
+#: ../src/qtui/mainwin.cpp:952
 msgctxt "MainWin|"
 msgid "Show Chat Monitor"
 msgstr "Chatmonitor anzeigen"
 
-#: ../src/qtui/mainwin.cpp:940
+#: ../src/qtui/mainwin.cpp:958
 msgctxt "MainWin|"
 msgid "Inputline"
 msgstr "Eingabezeile"
 
-#: ../src/qtui/mainwin.cpp:949
+#: ../src/qtui/mainwin.cpp:967
 msgctxt "MainWin|"
 msgid "Show Input Line"
 msgstr "Eingabezeile anzeigen"
 
-#: ../src/qtui/mainwin.cpp:962
+#: ../src/qtui/mainwin.cpp:980
 msgctxt "MainWin|"
 msgid "Topic"
 msgstr "Thema"
 
-#: ../src/qtui/mainwin.cpp:974
+#: ../src/qtui/mainwin.cpp:992
 msgctxt "MainWin|"
 msgid "Show Topic Line"
 msgstr "Thema anzeigen"
 
-#: ../src/qtui/mainwin.cpp:980
+#: ../src/qtui/mainwin.cpp:998
 msgctxt "MainWin|"
 msgid "Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:991
+#: ../src/qtui/mainwin.cpp:1009
 msgctxt "MainWin|"
 msgid "Show File Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1089
+#: ../src/qtui/mainwin.cpp:1107
 msgctxt "MainWin|"
 msgid "Main Toolbar"
 msgstr "Hauptwerkzeugleiste"
 
-#: ../src/qtui/mainwin.cpp:1107
+#: ../src/qtui/mainwin.cpp:1127
 msgctxt "MainWin|"
 msgid "Nick Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1174
+#: ../src/qtui/mainwin.cpp:1195
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr "Mit Quassel-Core verbunden."
 
-#: ../src/qtui/mainwin.cpp:1274
+#: ../src/qtui/mainwin.cpp:1295
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr "Nicht mit Core verbunden."
 
-#: ../src/qtui/mainwin.cpp:1293 ../src/qtui/mainwin.cpp:1303
+#: ../src/qtui/mainwin.cpp:1314 ../src/qtui/mainwin.cpp:1324
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr "Unverschlüsselte Verbindung"
 
-#: ../src/qtui/mainwin.cpp:1293
+#: ../src/qtui/mainwin.cpp:1314
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr "<b>Ihr Client unterstüzt keine SSL-Verschlüsselung</b>"
 
-#: ../src/qtui/mainwin.cpp:1295 ../src/qtui/mainwin.cpp:1305
+#: ../src/qtui/mainwin.cpp:1316 ../src/qtui/mainwin.cpp:1326
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr "Persönliche Daten, wie Passwörter, werden unverschlüsselt zum Quassel-Core gesendet."
 
-#: ../src/qtui/mainwin.cpp:1303
+#: ../src/qtui/mainwin.cpp:1324
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr "<b>Ihr Quassel-Core unterstüzt keine SSL-Verschlüsselung</b>"
 
-#: ../src/qtui/mainwin.cpp:1321 ../src/qtui/mainwin.cpp:1342
+#: ../src/qtui/mainwin.cpp:1342 ../src/qtui/mainwin.cpp:1363
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr "Nicht vertrauenswürdiges SSL-Zertifikat"
 
-#: ../src/qtui/mainwin.cpp:1322
+#: ../src/qtui/mainwin.cpp:1343
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -5867,33 +5868,33 @@ msgid ""
 "following reasons:</b>"
 msgstr "<b>Das SSL-Zertifikat des Quassel-Core auf %1 ist nicht vertrauenswürdig, weil:</b>"
 
-#: ../src/qtui/mainwin.cpp:1325
+#: ../src/qtui/mainwin.cpp:1346
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr "Fortfahren"
 
-#: ../src/qtui/mainwin.cpp:1326
+#: ../src/qtui/mainwin.cpp:1347
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr "SSL-Zertifikat anzeigen"
 
-#: ../src/qtui/mainwin.cpp:1343
+#: ../src/qtui/mainwin.cpp:1364
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr "Möchten sie das Zertifikat dauerhaft, ohne künftige Nachfragen akzeptieren?"
 
-#: ../src/qtui/mainwin.cpp:1345
+#: ../src/qtui/mainwin.cpp:1366
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr "Nur aktuelle Sitzung"
 
-#: ../src/qtui/mainwin.cpp:1346
+#: ../src/qtui/mainwin.cpp:1367
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr "Dauerhaft"
 
-#: ../src/qtui/mainwin.cpp:1357
+#: ../src/qtui/mainwin.cpp:1378
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr "Core-Verbindungsfehler"
