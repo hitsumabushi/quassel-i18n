@@ -1021,12 +1021,12 @@ msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:265
+#: ../src/uisupport/bufferview.cpp:267
 msgctxt "BufferView|"
 msgid "Merge buffers permanently?"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:266
+#: ../src/uisupport/bufferview.cpp:268
 #, qt-format
 msgctxt "BufferView|"
 msgid ""
@@ -1034,7 +1034,7 @@ msgid ""
 " This cannot be reversed!"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:705
+#: ../src/uisupport/bufferview.cpp:707
 msgctxt "BufferViewDock|"
 msgid "Search..."
 msgstr ""
