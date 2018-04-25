@@ -2567,6 +2567,7 @@ msgid "Remote Cores"
 msgstr ""
 
 #: ../src/core/coreauthhandler.cpp:138 ../src/core/coreauthhandler.cpp:150
+#: ../src/core/coreauthhandler.cpp:225
 msgctxt "CoreAuthHandler|"
 msgid "Client"
 msgstr ""
@@ -2609,39 +2610,51 @@ msgid ""
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:232
+#: ../src/core/coreauthhandler.cpp:225
+msgctxt "CoreAuthHandler|"
+msgid "attempted to login before the core was configured, rejecting."
+msgstr ""
+
+#: ../src/core/coreauthhandler.cpp:226
+msgctxt "CoreAuthHandler|"
+msgid ""
+"<b>Attempted to login before core was configured!</b><br>The core must be "
+"configured before attempting to login."
+msgstr ""
+
+#: ../src/core/coreauthhandler.cpp:238
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:233
+#: ../src/core/coreauthhandler.cpp:239
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:238
+#: ../src/core/coreauthhandler.cpp:244
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:243
+#: ../src/core/coreauthhandler.cpp:249
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support the following features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:246
+#: ../src/core/coreauthhandler.cpp:252
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:266
+#: ../src/core/coreauthhandler.cpp:272
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -3569,12 +3582,12 @@ msgctxt "CreateIdentityDlg|"
 msgid "Duplicate:"
 msgstr ""
 
-#: ../src/common/protocols/datastream/datastreampeer.cpp:115
+#: ../src/common/protocols/datastream/datastreampeer.cpp:117
 msgctxt "DataStreamPeer|"
 msgid "Invalid handshake message!"
 msgstr ""
 
-#: ../src/common/protocols/datastream/datastreampeer.cpp:171
+#: ../src/common/protocols/datastream/datastreampeer.cpp:173
 #, qt-format
 msgctxt "DataStreamPeer|"
 msgid "Unknown protocol message of type %1"
@@ -5448,12 +5461,12 @@ msgctxt "LdapAuthenticator|"
 msgid "UID Attribute"
 msgstr ""
 
-#: ../src/common/protocols/legacy/legacypeer.cpp:137
+#: ../src/common/protocols/legacy/legacypeer.cpp:146
 msgctxt "LegacyPeer|"
 msgid "Invalid handshake message!"
 msgstr ""
 
-#: ../src/common/protocols/legacy/legacypeer.cpp:215
+#: ../src/common/protocols/legacy/legacypeer.cpp:224
 #, qt-format
 msgctxt "LegacyPeer|"
 msgid "Unknown protocol message of type %1"
