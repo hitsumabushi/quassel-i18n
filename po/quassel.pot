@@ -3519,8 +3519,8 @@ msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:206
 #: ../src/core/coreuserinputhandler.cpp:377
-#: ../src/core/coreuserinputhandler.cpp:680
-#: ../src/core/coreuserinputhandler.cpp:718
+#: ../src/core/coreuserinputhandler.cpp:681
+#: ../src/core/coreuserinputhandler.cpp:719
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl "
@@ -3535,7 +3535,7 @@ msgid ""
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:224
-#: ../src/core/coreuserinputhandler.cpp:736
+#: ../src/core/coreuserinputhandler.cpp:737
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "No key has been set for %1."
@@ -3548,7 +3548,7 @@ msgid "The key for %1 has been deleted."
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:233
-#: ../src/core/coreuserinputhandler.cpp:744
+#: ../src/core/coreuserinputhandler.cpp:745
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3580,7 +3580,7 @@ msgid "Initiated key exchange with %1."
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:413
-#: ../src/core/coreuserinputhandler.cpp:702
+#: ../src/core/coreuserinputhandler.cpp:703
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3589,33 +3589,38 @@ msgid ""
 "with QCA present."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:611
+#: ../src/core/coreuserinputhandler.cpp:482
+msgctxt "CoreUserInputHandler|"
+msgid "Your persistent modes have been reset."
+msgstr ""
+
+#: ../src/core/coreuserinputhandler.cpp:612
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Starting query with %1"
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:690
+#: ../src/core/coreuserinputhandler.cpp:691
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
 "channel. /setkey <key> when in a channel or query buffer sets the key for it."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:699
+#: ../src/core/coreuserinputhandler.cpp:700
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been set."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:728
+#: ../src/core/coreuserinputhandler.cpp:729
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel "
 "or just /showkey when in a channel or query."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:740
+#: ../src/core/coreuserinputhandler.cpp:741
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
