@@ -2274,201 +2274,201 @@ msgid ""
 "to work."
 msgstr ""
 
-#: ../src/core/core.cpp:276
+#: ../src/core/core.cpp:280
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr ""
 
-#: ../src/core/core.cpp:310
+#: ../src/core/core.cpp:314
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr ""
 
-#: ../src/core/core.cpp:313
+#: ../src/core/core.cpp:317
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr ""
 
-#: ../src/core/core.cpp:316
+#: ../src/core/core.cpp:320
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr ""
 
-#: ../src/core/core.cpp:322
+#: ../src/core/core.cpp:326
 msgctxt "Core|"
 msgid "Could not setup authenticator!"
 msgstr ""
 
-#: ../src/core/core.cpp:326
+#: ../src/core/core.cpp:330
 msgctxt "Core|"
 msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:330
+#: ../src/core/core.cpp:334
 msgctxt "Core|"
 msgid "Creating admin user..."
 msgstr ""
 
-#: ../src/core/core.cpp:568
+#: ../src/core/core.cpp:601
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1"
 msgstr ""
 
-#: ../src/core/core.cpp:577
+#: ../src/core/core.cpp:610
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:586
+#: ../src/core/core.cpp:619
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:594
+#: ../src/core/core.cpp:627
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:605
+#: ../src/core/core.cpp:638
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:613
+#: ../src/core/core.cpp:646
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr ""
 
-#: ../src/core/core.cpp:622
+#: ../src/core/core.cpp:655
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr ""
 
-#: ../src/core/core.cpp:662
+#: ../src/core/core.cpp:695
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr ""
 
-#: ../src/core/core.cpp:665
+#: ../src/core/core.cpp:698
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr ""
 
-#: ../src/core/core.cpp:677
+#: ../src/core/core.cpp:710
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
 msgstr ""
 
-#: ../src/core/core.cpp:831
+#: ../src/core/core.cpp:864
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:832
+#: ../src/core/core.cpp:865
 msgctxt "Core|"
 msgid "Supported backends are:"
 msgstr ""
 
-#: ../src/core/core.cpp:844 ../src/core/core.cpp:864
+#: ../src/core/core.cpp:877 ../src/core/core.cpp:897
 #, qt-format
 msgctxt "Core|"
 msgid "Switched storage backend to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:845
+#: ../src/core/core.cpp:878
 msgctxt "Core|"
 msgid "Backend already initialized. Skipping Migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:848
+#: ../src/core/core.cpp:881
 #, qt-format
 msgctxt "Core|"
 msgid "Storage backend is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:852
+#: ../src/core/core.cpp:885
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:857
+#: ../src/core/core.cpp:890
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:872
+#: ../src/core/core.cpp:905
 #, qt-format
 msgctxt "Core|"
 msgid "Migrating storage backend %1 to %2..."
 msgstr ""
 
-#: ../src/core/core.cpp:877
+#: ../src/core/core.cpp:910
 msgctxt "Core|"
 msgid "Migration finished!"
 msgstr ""
 
-#: ../src/core/core.cpp:884
+#: ../src/core/core.cpp:917
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to migrate storage backend! (No migration writer for %1)"
 msgstr ""
 
-#: ../src/core/core.cpp:890
+#: ../src/core/core.cpp:923
 msgctxt "Core|"
 msgid "No currently active storage backend. Skipping migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:893
+#: ../src/core/core.cpp:926
 #, qt-format
 msgctxt "Core|"
 msgid "Currently active storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:896
+#: ../src/core/core.cpp:929
 #, qt-format
 msgctxt "Core|"
 msgid "New storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:918
+#: ../src/core/core.cpp:951
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:919
+#: ../src/core/core.cpp:952
 msgctxt "Core|"
 msgid "Supported authenticators are:"
 msgstr ""
 
-#: ../src/core/core.cpp:929 ../src/core/core.cpp:946
+#: ../src/core/core.cpp:962 ../src/core/core.cpp:979
 #, qt-format
 msgctxt "Core|"
 msgid "Switched authenticator to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:932
+#: ../src/core/core.cpp:965
 #, qt-format
 msgctxt "Core|"
 msgid "Authenticator is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:936
+#: ../src/core/core.cpp:969
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:941
+#: ../src/core/core.cpp:974
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize authenticator: %1"
@@ -3382,7 +3382,7 @@ msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr ""
 
-#: ../src/core/coresession.cpp:554
+#: ../src/core/coresession.cpp:557
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3390,7 +3390,7 @@ msgid ""
 "create network %1!"
 msgstr ""
 
-#: ../src/core/coresession.cpp:586
+#: ../src/core/coresession.cpp:589
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -4547,16 +4547,15 @@ msgid "Key Type:"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:605
-#: ../src/qtui/settingspages/identityeditwidget.cpp:410
-#: ../src/qtui/settingspages/identityeditwidget.cpp:422
+#: ../src/qtui/settingspages/identityeditwidget.cpp:425
 msgctxt "IdentityEditWidget|"
 msgid "No Key loaded"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:625
 #: ../src/qtui/settingspages/identityeditwidget.ui:723
-#: ../src/qtui/settingspages/identityeditwidget.cpp:411
-#: ../src/qtui/settingspages/identityeditwidget.cpp:469
+#: ../src/qtui/settingspages/identityeditwidget.cpp:426
+#: ../src/qtui/settingspages/identityeditwidget.cpp:489
 msgctxt "IdentityEditWidget|"
 msgid "Load"
 msgstr ""
@@ -4573,8 +4572,8 @@ msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:663
 #: ../src/qtui/settingspages/identityeditwidget.ui:697
-#: ../src/qtui/settingspages/identityeditwidget.cpp:467
-#: ../src/qtui/settingspages/identityeditwidget.cpp:468
+#: ../src/qtui/settingspages/identityeditwidget.cpp:487
+#: ../src/qtui/settingspages/identityeditwidget.cpp:488
 msgctxt "IdentityEditWidget|"
 msgid "No Certificate loaded"
 msgstr ""
@@ -4644,35 +4643,57 @@ msgctxt "IdentityEditWidget|"
 msgid "Load a Key"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:401
+#: ../src/qtui/settingspages/identityeditwidget.cpp:410
 msgctxt "IdentityEditWidget|"
 msgid "Failed to read key"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:401
+#: ../src/qtui/settingspages/identityeditwidget.cpp:410
 msgctxt "IdentityEditWidget|"
 msgid ""
 "Failed to read the key file. It is either incompatible or invalid. Note that "
 "the key file must not have a passphrase."
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:416
+#: ../src/qtui/settingspages/identityeditwidget.cpp:414
+msgctxt "IdentityEditWidget|"
+msgid "Core does not support ECDSA keys"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:414
+msgctxt "IdentityEditWidget|"
+msgid ""
+"You loaded an ECDSA key, but the core does not support ECDSA keys. Please "
+"contact the core administrator."
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:431
 msgctxt "IdentityEditWidget|"
 msgid "RSA"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:419
+#: ../src/qtui/settingspages/identityeditwidget.cpp:435
+msgctxt "IdentityEditWidget|"
+msgid "ECDSA"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:439
 msgctxt "IdentityEditWidget|"
 msgid "DSA"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:424
-#: ../src/qtui/settingspages/identityeditwidget.cpp:479
+#: ../src/qtui/settingspages/identityeditwidget.cpp:442
+msgctxt "IdentityEditWidget|"
+msgid "Invalid key or no key loaded"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:444
+#: ../src/qtui/settingspages/identityeditwidget.cpp:499
 msgctxt "IdentityEditWidget|"
 msgid "Clear"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:436
+#: ../src/qtui/settingspages/identityeditwidget.cpp:456
 msgctxt "IdentityEditWidget|"
 msgid "Load a Certificate"
 msgstr ""
