@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=( n % 1 == 0 && n % 10 =1 && n % 100 != 11) ? 1 : ( n %1 == 0 && ( n >= 2 && n <=4) && ( n % 100 <12 || n % 100 > 14)) ? 3 : ( n % 1 ==0 && (n% 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14));\n"
 "X-Qt-Contexts: true\n"
 
 #: ../src/uisupport/aboutdata.cpp:136
@@ -3166,6 +3166,7 @@ msgid_plural "%n Day(s)"
 msgstr[0] "%n день"
 msgstr[1] "%n дні"
 msgstr[2] "%n днів"
+msgstr[3] "%n днів"
 
 #: ../src/qtui/coreinfodlg.cpp:75
 #, qt-format
@@ -5296,6 +5297,7 @@ msgid_plural "%n pending highlight(s)"
 msgstr[0] "%n підсвічування у черзі"
 msgstr[1] "%n підсвічування у черзі"
 msgstr[2] "%n підсвічувань у черзі"
+msgstr[3] "%n підсвічувань у черзі"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:80
 msgctxt "KeySequenceButton|"
@@ -5914,6 +5916,7 @@ msgid_plural "Do you really want to paste %n line(s)?"
 msgstr[0] "Справді бажаєте вставити %n рядок?"
 msgstr[1] "Справді бажаєте вставити %n рядки?"
 msgstr[2] "Справді бажаєте вставити %n рядків?"
+msgstr[3] "Справді бажаєте вставити %n рядків?"
 
 #: ../src/uisupport/multilineedit.cpp:747
 msgctxt "MultiLineEdit|"
@@ -6058,6 +6061,7 @@ msgid_plural "Do you want to delete the following buffer(s) permanently?"
 msgstr[0] "Бажаєте назавжди вилучити наведені нижче буфер?"
 msgstr[1] "Бажаєте назавжди вилучити наведені нижче буфери?"
 msgstr[2] "Бажаєте назавжди вилучити наведені нижче буфери?"
+msgstr[3] "Бажаєте назавжди вилучити наведені нижче буфери?"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:190
 #, qt-format
@@ -7628,6 +7632,7 @@ msgid_plural "%n pending highlight(s)"
 msgstr[0] "%n підсвічування у черзі"
 msgstr[1] "%n підсвічування у черзі"
 msgstr[2] "%n підсвічувань у черзі"
+msgstr[3] "%n підсвічувань у черзі"
 
 #: ../src/qtui/systraynotificationbackend.cpp:159
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
@@ -8028,6 +8033,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] "%n власник"
 msgstr[1] "%n власники"
 msgstr[2] "%n власників"
+msgstr[3] "%n власників"
 
 #: ../src/client/networkmodel.cpp:1008
 #, qt-format
@@ -8037,6 +8043,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] "%n адміністратор"
 msgstr[1] "%n адміністратора"
 msgstr[2] "%n адміністраторів"
+msgstr[3] "%n адміністраторів"
 
 #: ../src/client/networkmodel.cpp:1010
 #, qt-format
@@ -8046,6 +8053,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] "%n оператор"
 msgstr[1] "%n оператора"
 msgstr[2] "%n операторів"
+msgstr[3] "%n операторів"
 
 #: ../src/client/networkmodel.cpp:1012
 #, qt-format
@@ -8055,6 +8063,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] "%n напівоператор"
 msgstr[1] "%n напівоператора"
 msgstr[2] "%n напівоператорів"
+msgstr[3] "%n напівоператорів"
 
 #: ../src/client/networkmodel.cpp:1014
 #, qt-format
@@ -8064,6 +8073,7 @@ msgid_plural "%n Voiced"
 msgstr[0] "%n з правом допису"
 msgstr[1] "%n з правом допису"
 msgstr[2] "%n з правом допису"
+msgstr[3] "%n з правом допису"
 
 #: ../src/client/networkmodel.cpp:1016
 #, qt-format
@@ -8073,3 +8083,4 @@ msgid_plural "%n User(s)"
 msgstr[0] "%n користувач"
 msgstr[1] "%n користувачі"
 msgstr[2] "%n користувачів"
+msgstr[3] "%n користувачів"

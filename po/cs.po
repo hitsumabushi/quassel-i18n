@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n < 10 && n % 1 == 0) ? 1 : (n < 9999 && n >= 10 && n % 1 == 0) ? 3 : (n % 1 != 0) : 4;\n"
 "X-Qt-Contexts: true\n"
 
 #: ../src/uisupport/aboutdata.cpp:136
@@ -3169,6 +3169,7 @@ msgid_plural "%n Day(s)"
 msgstr[0] "%n Den"
 msgstr[1] "%n Dny"
 msgstr[2] "%n Dní"
+msgstr[3] "%n Dní"
 
 #: ../src/qtui/coreinfodlg.cpp:75
 #, qt-format
@@ -5299,6 +5300,7 @@ msgid_plural "%n pending highlight(s)"
 msgstr[0] "%n zbývající zvýraznění"
 msgstr[1] "%n zbývající zvýraznění"
 msgstr[2] "%n zbývajících zvýraznění"
+msgstr[3] "%n zbývajících zvýraznění"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:80
 msgctxt "KeySequenceButton|"
@@ -5917,6 +5919,7 @@ msgid_plural "Do you really want to paste %n line(s)?"
 msgstr[0] "Opravdu chcete vložit %n řádek?"
 msgstr[1] "Opravdu chcete vložit %n řádky?"
 msgstr[2] "Opravdu chcete vložit %n řádků?"
+msgstr[3] "Opravdu chcete vložit %n řádků?"
 
 #: ../src/uisupport/multilineedit.cpp:747
 msgctxt "MultiLineEdit|"
@@ -6061,6 +6064,7 @@ msgid_plural "Do you want to delete the following buffer(s) permanently?"
 msgstr[0] "Opravdu chcete trvale smazat následující záložku(y)?"
 msgstr[1] "Opravdu chcete trvale smazat následující záložku(y)?"
 msgstr[2] "Opravdu chcete trvale smazat následující záložku(y)?"
+msgstr[3] "Opravdu chcete trvale smazat následující záložku(y)?"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:190
 #, qt-format
@@ -7631,6 +7635,7 @@ msgid_plural "%n pending highlight(s)"
 msgstr[0] "%n zbývající zvýraznění"
 msgstr[1] "%n zbývající zvýraznění"
 msgstr[2] "%n zbývajících zvýraznění"
+msgstr[3] "%n zbývajících zvýraznění"
 
 #: ../src/qtui/systraynotificationbackend.cpp:159
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
@@ -8031,6 +8036,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] "%n Vlastník"
 msgstr[1] "%n Vlastníci"
 msgstr[2] "%n Vlastníků"
+msgstr[3] "%n Vlastníků"
 
 #: ../src/client/networkmodel.cpp:1008
 #, qt-format
@@ -8040,6 +8046,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] "%n Administrátor"
 msgstr[1] "%n Administrátoři"
 msgstr[2] "%n Administrátorů"
+msgstr[3] "%n Administrátorů"
 
 #: ../src/client/networkmodel.cpp:1010
 #, qt-format
@@ -8049,6 +8056,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] "%n Stálý Správce"
 msgstr[1] "%n Stálý Správci"
 msgstr[2] "%n Stálých Správců"
+msgstr[3] "%n Stálých Správců"
 
 #: ../src/client/networkmodel.cpp:1012
 #, qt-format
@@ -8058,6 +8066,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] "%n Správce"
 msgstr[1] "%n Správci"
 msgstr[2] "%n Správců"
+msgstr[3] "%n Správců"
 
 #: ../src/client/networkmodel.cpp:1014
 #, qt-format
@@ -8067,6 +8076,7 @@ msgid_plural "%n Voiced"
 msgstr[0] "%n Uživatel"
 msgstr[1] "%n Uživatelé"
 msgstr[2] "%n Uživatelů"
+msgstr[3] "%n Uživatelů"
 
 #: ../src/client/networkmodel.cpp:1016
 #, qt-format
@@ -8076,3 +8086,4 @@ msgid_plural "%n User(s)"
 msgstr[0] "%n Uživatel"
 msgstr[1] "%n Uživatelé"
 msgstr[2] "%n Uživatelů"
+msgstr[3] "%n Uživatelů"
