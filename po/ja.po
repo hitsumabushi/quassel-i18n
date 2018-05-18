@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-04-08 13:05+0000\n"
+"PO-Revision-Date: 2018-05-17 12:42+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Japanese (http://www.transifex.com/quassel/quassel/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -28,17 +28,17 @@ msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
-msgid "Project Founder, Lead Developer"
+msgid "Project founder, lead developer"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
-msgid "Project Motivator, Lead Developer"
+msgid "Project motivator, lead developer"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
-msgid "Former Lead Developer"
+msgid "Former lead developer"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:177
@@ -58,496 +58,555 @@ msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:180
 msgctxt "AboutData|"
-msgid "IRCv3 support, documentation, many other improvements, outstanding PRs"
+msgid ""
+"IRCv3 support, documentation, many other improvements, testing, outstanding "
+"PRs"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:184
+#: ../src/uisupport/aboutdata.cpp:181
+msgctxt "AboutData|"
+msgid ""
+"QuasselDroid, architecture, (mobile) performance, many other improvements "
+"and fixes, testing"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:185
 msgctxt "AboutData|"
 msgid "OSX UI improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:185 ../src/uisupport/aboutdata.cpp:195
+#: ../src/uisupport/aboutdata.cpp:186 ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "Chatview improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:186
+#: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter, Danish translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:187 ../src/uisupport/aboutdata.cpp:274
-#: ../src/uisupport/aboutdata.cpp:300
+#: ../src/uisupport/aboutdata.cpp:188 ../src/uisupport/aboutdata.cpp:267
+#: ../src/uisupport/aboutdata.cpp:295 ../src/uisupport/aboutdata.cpp:307
 msgctxt "AboutData|"
 msgid "Spanish translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:188
+#: ../src/uisupport/aboutdata.cpp:189
+msgctxt "AboutData|"
+msgid "Build system fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:330
+msgctxt "AboutData|"
+msgid "Database performance improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:191
 msgctxt "AboutData|"
 msgid "Tray icon fix"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:189
+#: ../src/uisupport/aboutdata.cpp:192
 msgctxt "AboutData|"
 msgid "Language improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:190
+#: ../src/uisupport/aboutdata.cpp:193
 msgctxt "AboutData|"
 msgid "Documentation improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:191 ../src/uisupport/aboutdata.cpp:217
-#: ../src/uisupport/aboutdata.cpp:240 ../src/uisupport/aboutdata.cpp:258
-#: ../src/uisupport/aboutdata.cpp:270 ../src/uisupport/aboutdata.cpp:301
+#: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
-msgid "Fixes"
+msgid "Brazilian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:192 ../src/uisupport/aboutdata.cpp:304
-msgctxt "AboutData|"
-msgid "Romanian translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:193 ../src/uisupport/aboutdata.cpp:247
-#: ../src/uisupport/aboutdata.cpp:259 ../src/uisupport/aboutdata.cpp:260
-msgctxt "AboutData|"
-msgid "Finnish translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:194
-msgctxt "AboutData|"
-msgid "Message indicator support"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:196 ../src/uisupport/aboutdata.cpp:197
-#: ../src/uisupport/aboutdata.cpp:317
-msgctxt "AboutData|"
-msgid "Build system fix"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:198
-msgctxt "AboutData|"
-msgid "Windows build system fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:199
-msgctxt "AboutData|"
-msgid "AppData metadata"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:200
-msgctxt "AboutData|"
-msgid "Nicer tooltips, spell check and other improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:201
-msgctxt "AboutData|"
-msgid "Crash fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:202 ../src/uisupport/aboutdata.cpp:223
-#: ../src/uisupport/aboutdata.cpp:285
-msgctxt "AboutData|"
-msgid "French translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:203
-msgctxt "AboutData|"
-msgid "Usability review"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:204
-msgctxt "AboutData|"
-msgid "SASL support"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:205
-msgctxt "AboutData|"
-msgid "Various improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:206 ../src/uisupport/aboutdata.cpp:207
-#: ../src/uisupport/aboutdata.cpp:211
-msgctxt "AboutData|"
-msgid "Various fixes and improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:208
-msgctxt "AboutData|"
-msgid "Galician translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:209
-msgctxt "AboutData|"
-msgid "Esperanto translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:210
-msgctxt "AboutData|"
-msgid "Japanese translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:212 ../src/uisupport/aboutdata.cpp:276
-msgctxt "AboutData|"
-msgid "Gentoo maintainer"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:213 ../src/uisupport/aboutdata.cpp:227
-#: ../src/uisupport/aboutdata.cpp:314
-msgctxt "AboutData|"
-msgid "Certificate handling improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:214
-msgctxt "AboutData|"
-msgid "Early beta tester and bughunter (on Vista™!)"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:215
-msgctxt "AboutData|"
-msgid "Translation system fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:216
-msgctxt "AboutData|"
-msgid "OSX Notification Center support"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:218 ../src/uisupport/aboutdata.cpp:272
-msgctxt "AboutData|"
-msgid "Mac fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:219
-msgctxt "AboutData|"
-msgid "D-Bus notifications"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:220
-msgctxt "AboutData|"
-msgid "Polish translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:221 ../src/uisupport/aboutdata.cpp:302
-msgctxt "AboutData|"
-msgid "Build system improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:222
-msgctxt "AboutData|"
-msgid "Formatting support and other input line improvements, many other fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:224
-msgctxt "AboutData|"
-msgid "BluesTheme stylesheet"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:225 ../src/uisupport/aboutdata.cpp:264
-#: ../src/uisupport/aboutdata.cpp:295
-msgctxt "AboutData|"
-msgid "Russian translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:226 ../src/uisupport/aboutdata.cpp:266
-msgctxt "AboutData|"
-msgid "Italian translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:228
-msgctxt "AboutData|"
-msgid "Sanitize topic handling"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:229
-msgctxt "AboutData|"
-msgid "Norwegian translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:230
-msgctxt "AboutData|"
-msgid "Hungarian translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:231
-msgctxt "AboutData|"
-msgid "IRC parser improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:232 ../src/uisupport/aboutdata.cpp:316
-#: ../src/uisupport/aboutdata.cpp:321
-msgctxt "AboutData|"
-msgid "Turkish translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:233
-msgctxt "AboutData|"
-msgid "Windows build support and Appveyor maintenance, snorenotify backend"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:234
-msgctxt "AboutData|"
-msgid "Initial Qt5 support"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:235
-msgctxt "AboutData|"
-msgid "{Ku|U}buntu packager, motivator, promoter"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:236
-msgctxt "AboutData|"
-msgid "Various features and improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:237 ../src/uisupport/aboutdata.cpp:238
-#: ../src/uisupport/aboutdata.cpp:246 ../src/uisupport/aboutdata.cpp:251
-#: ../src/uisupport/aboutdata.cpp:289
-msgctxt "AboutData|"
-msgid "Various fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:239 ../src/uisupport/aboutdata.cpp:243
-#: ../src/uisupport/aboutdata.cpp:284 ../src/uisupport/aboutdata.cpp:287
-#: ../src/uisupport/aboutdata.cpp:292 ../src/uisupport/aboutdata.cpp:297
-msgctxt "AboutData|"
-msgid "Bugfixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:241
-msgctxt "AboutData|"
-msgid ""
-"QuasselDroid and Java wizardess, documentation, bugfixes, many valuable "
-"technical discussions"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:242
-msgctxt "AboutData|"
-msgid "Python improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:244
-msgctxt "AboutData|"
-msgid "Postgres migration fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:245
-msgctxt "AboutData|"
-msgid "Context menu fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:248
-msgctxt "AboutData|"
-msgid "Many fixes and improvements, bug triaging"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:249
-msgctxt "AboutData|"
-msgid "Original \"All-Seeing Eye\" logo"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:250
-msgctxt "AboutData|"
-msgid "Project founder, various improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:252
-msgctxt "AboutData|"
-msgid "Serbian translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:253
+#: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:270
 msgctxt "AboutData|"
 msgid "Slovenian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:254
+#: ../src/uisupport/aboutdata.cpp:196 ../src/uisupport/aboutdata.cpp:222
+#: ../src/uisupport/aboutdata.cpp:226 ../src/uisupport/aboutdata.cpp:244
+#: ../src/uisupport/aboutdata.cpp:253 ../src/uisupport/aboutdata.cpp:275
+#: ../src/uisupport/aboutdata.cpp:290 ../src/uisupport/aboutdata.cpp:310
+#: ../src/uisupport/aboutdata.cpp:347
+msgctxt "AboutData|"
+msgid "Fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:197 ../src/uisupport/aboutdata.cpp:322
+msgctxt "AboutData|"
+msgid "Romanian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:198
+msgctxt "AboutData|"
+msgid "Punjabi translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:262
+#: ../src/uisupport/aboutdata.cpp:277 ../src/uisupport/aboutdata.cpp:278
+msgctxt "AboutData|"
+msgid "Finnish translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:200
+msgctxt "AboutData|"
+msgid "Message indicator support"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:202 ../src/uisupport/aboutdata.cpp:203
+#: ../src/uisupport/aboutdata.cpp:346
+msgctxt "AboutData|"
+msgid "Build system fix"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:204
+msgctxt "AboutData|"
+msgid "Windows build system fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:205
+msgctxt "AboutData|"
+msgid "AppData metadata, LDAP support"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:206
+msgctxt "AboutData|"
+msgid "Nicer tooltips, spell check and other improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:207
+msgctxt "AboutData|"
+msgid "Crash fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:208 ../src/uisupport/aboutdata.cpp:233
+#: ../src/uisupport/aboutdata.cpp:311
+msgctxt "AboutData|"
+msgid "French translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:209
+msgctxt "AboutData|"
+msgid "Occitan translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:210
+msgctxt "AboutData|"
+msgid "Usability review"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:211
+msgctxt "AboutData|"
+msgid "SASL support"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:212
+msgctxt "AboutData|"
+msgid "Various improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:213 ../src/uisupport/aboutdata.cpp:214
+#: ../src/uisupport/aboutdata.cpp:219
+msgctxt "AboutData|"
+msgid "Various fixes and improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:215
+msgctxt "AboutData|"
+msgid "Settings fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:216 ../src/uisupport/aboutdata.cpp:294
+msgctxt "AboutData|"
+msgid "Galician translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:217 ../src/uisupport/aboutdata.cpp:339
+msgctxt "AboutData|"
+msgid "Esperanto translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:218
+msgctxt "AboutData|"
+msgid "Japanese translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:220 ../src/uisupport/aboutdata.cpp:297
+msgctxt "AboutData|"
+msgid "Gentoo maintainer"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:221 ../src/uisupport/aboutdata.cpp:237
+#: ../src/uisupport/aboutdata.cpp:342
+msgctxt "AboutData|"
+msgid "Certificate handling improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:223
+msgctxt "AboutData|"
+msgid "Early beta tester and bughunter (on Vista™!)"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:224
+msgctxt "AboutData|"
+msgid "Translation system fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:225
+msgctxt "AboutData|"
+msgid "OSX Notification Center support"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:227 ../src/uisupport/aboutdata.cpp:245
+#: ../src/uisupport/aboutdata.cpp:345 ../src/uisupport/aboutdata.cpp:351
+msgctxt "AboutData|"
+msgid "Turkish translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:228 ../src/uisupport/aboutdata.cpp:292
+msgctxt "AboutData|"
+msgid "Mac fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:229
+msgctxt "AboutData|"
+msgid "D-Bus notifications"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:230
+msgctxt "AboutData|"
+msgid "Polish translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:231 ../src/uisupport/aboutdata.cpp:312
+msgctxt "AboutData|"
+msgid "Build system improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:232
+msgctxt "AboutData|"
+msgid "Formatting support and other input line improvements, many other fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:234
+msgctxt "AboutData|"
+msgid "BluesTheme stylesheet"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:235 ../src/uisupport/aboutdata.cpp:282
+#: ../src/uisupport/aboutdata.cpp:323 ../src/uisupport/aboutdata.cpp:343
+msgctxt "AboutData|"
+msgid "Russian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:236 ../src/uisupport/aboutdata.cpp:286
+msgctxt "AboutData|"
+msgid "Italian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:238 ../src/uisupport/aboutdata.cpp:273
+#: ../src/uisupport/aboutdata.cpp:283 ../src/uisupport/aboutdata.cpp:287
+#: ../src/uisupport/aboutdata.cpp:289 ../src/uisupport/aboutdata.cpp:340
+msgctxt "AboutData|"
+msgid "German translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:239
+msgctxt "AboutData|"
+msgid "Sanitize topic handling, twitch.tv support"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:240
+msgctxt "AboutData|"
+msgid "Norwegian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:241
+msgctxt "AboutData|"
+msgid "Hungarian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:242 ../src/uisupport/aboutdata.cpp:250
+#: ../src/uisupport/aboutdata.cpp:251 ../src/uisupport/aboutdata.cpp:261
+#: ../src/uisupport/aboutdata.cpp:268 ../src/uisupport/aboutdata.cpp:304
+#: ../src/uisupport/aboutdata.cpp:317
+msgctxt "AboutData|"
+msgid "Various fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:243
+msgctxt "AboutData|"
+msgid "IRC parser improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:246
+msgctxt "AboutData|"
+msgid "Windows build support and Appveyor maintenance, snorenotify backend"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:247
+msgctxt "AboutData|"
+msgid "Initial Qt5 support"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:248
+msgctxt "AboutData|"
+msgid "{Ku|U}buntu packager, motivator, promoter"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:249
+msgctxt "AboutData|"
+msgid "Various features and improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:252 ../src/uisupport/aboutdata.cpp:256
+#: ../src/uisupport/aboutdata.cpp:309 ../src/uisupport/aboutdata.cpp:314
+#: ../src/uisupport/aboutdata.cpp:326
+msgctxt "AboutData|"
+msgid "Bugfixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:254 ../src/uisupport/aboutdata.cpp:341
+#: ../src/uisupport/aboutdata.cpp:344
+msgctxt "AboutData|"
+msgid "Czech translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:255
+msgctxt "AboutData|"
+msgid "Python improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:257
+msgctxt "AboutData|"
+msgid "Proxy improvements, Spanish translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:258
+msgctxt "AboutData|"
+msgid "Postgres migration fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:259 ../src/uisupport/aboutdata.cpp:263
+#: ../src/uisupport/aboutdata.cpp:301
+msgctxt "AboutData|"
+msgid "Danish translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:260
+msgctxt "AboutData|"
+msgid "Context menu fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:264
+msgctxt "AboutData|"
+msgid "Many fixes and improvements, bug triaging"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:265
+msgctxt "AboutData|"
+msgid "Original \"All-Seeing Eye\" logo"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:266
+msgctxt "AboutData|"
+msgid "Project founder, various improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:269
+msgctxt "AboutData|"
+msgid "Serbian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid ""
 "Tireless tester, {Ku|U}buntu tester and lobbyist, liters of delicious "
 "Finnish alcohol"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:255
+#: ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
 msgid "Qt5 porting help, Travis CI setup"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:267
-#: ../src/uisupport/aboutdata.cpp:269 ../src/uisupport/aboutdata.cpp:312
-msgctxt "AboutData|"
-msgid "German translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:257
+#: ../src/uisupport/aboutdata.cpp:274
 msgctxt "AboutData|"
 msgid "Buffer merge improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:261
-msgctxt "AboutData|"
-msgid "OSX improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:262
-msgctxt "AboutData|"
-msgid "Lithuanian translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:263
-msgctxt "AboutData|"
-msgid "Documentation fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:265
-msgctxt "AboutData|"
-msgid "Ideas, hacking, initial motivation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:268
-msgctxt "AboutData|"
-msgid "Many fixes and improvements, Sonnet support, QuasselDroid"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:271
-msgctxt "AboutData|"
-msgid "German translation, fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:273
-msgctxt "AboutData|"
-msgid "Many fixes and improvements; Ubuntu PPAs"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:275
-msgctxt "AboutData|"
-msgid "Tons of Oxygen icons including the Quassel logo"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:277
-msgctxt "AboutData|"
-msgid "Initial design and main window layout"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:278
-msgctxt "AboutData|"
-msgid "Early beta tester and bughunter"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:279
-msgctxt "AboutData|"
-msgid "Danish translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:280
-msgctxt "AboutData|"
-msgid "Linewrap for input line"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:281
-msgctxt "AboutData|"
-msgid "Performance improvements and cleanups"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:282
-msgctxt "AboutData|"
-msgid "/print command"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:283
-msgctxt "AboutData|"
-msgid "Performance improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:286
-msgctxt "AboutData|"
-msgid "Build system fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:288
-msgctxt "AboutData|"
-msgid "Emacs keybindings"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:290
-msgctxt "AboutData|"
-msgid "Highlight configuration improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:291
-msgctxt "AboutData|"
-msgid "Kubuntu packager, (packaging/build system) bughunter"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:293
-msgctxt "AboutData|"
-msgid "Audio backend improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:294
-msgctxt "AboutData|"
-msgid "Improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:296
-msgctxt "AboutData|"
-msgid "Dutch translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:298 ../src/uisupport/aboutdata.cpp:299
-#: ../src/uisupport/aboutdata.cpp:307 ../src/uisupport/aboutdata.cpp:308
+#: ../src/uisupport/aboutdata.cpp:276 ../src/uisupport/aboutdata.cpp:327
+#: ../src/uisupport/aboutdata.cpp:328 ../src/uisupport/aboutdata.cpp:334
+#: ../src/uisupport/aboutdata.cpp:335
 msgctxt "AboutData|"
 msgid "Greek translation"
 msgstr ""
 
+#: ../src/uisupport/aboutdata.cpp:279
+msgctxt "AboutData|"
+msgid "OSX improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:280
+msgctxt "AboutData|"
+msgid "Lithuanian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:281
+msgctxt "AboutData|"
+msgid "Documentation fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:284 ../src/uisupport/aboutdata.cpp:316
+msgctxt "AboutData|"
+msgid "Improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:285
+msgctxt "AboutData|"
+msgid "Ideas, hacking, initial motivation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:288
+msgctxt "AboutData|"
+msgid "Many fixes and improvements, Sonnet support, QuasselDroid"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:291
+msgctxt "AboutData|"
+msgid "German translation, fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:293
+msgctxt "AboutData|"
+msgid "Many fixes and improvements; Ubuntu PPAs"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:296
+msgctxt "AboutData|"
+msgid "Tons of Oxygen icons including the Quassel logo"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:298
+msgctxt "AboutData|"
+msgid "Initial design and main window layout"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:299
+msgctxt "AboutData|"
+msgid "Early beta tester and bughunter"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:302
+msgctxt "AboutData|"
+msgid "Linewrap for input line"
+msgstr ""
+
 #: ../src/uisupport/aboutdata.cpp:303
+msgctxt "AboutData|"
+msgid "Performance improvements and cleanups"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:305
+msgctxt "AboutData|"
+msgid "/print command"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:306
+msgctxt "AboutData|"
+msgid "Performance improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:308
+msgctxt "AboutData|"
+msgid "Hindi and Marathi translations"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
 msgid ""
 "Windows build support, automated OSX builds in Travis, various improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:305
+#: ../src/uisupport/aboutdata.cpp:315
 msgctxt "AboutData|"
-msgid "Korean translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:306
-msgctxt "AboutData|"
-msgid "Norwegian translation, documentation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:309
-msgctxt "AboutData|"
-msgid "Former Windows builder"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:310
-msgctxt "AboutData|"
-msgid "Fixes, Debian packaging"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:311
-msgctxt "AboutData|"
-msgid "Fixes and feedback"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:313 ../src/uisupport/aboutdata.cpp:315
-msgctxt "AboutData|"
-msgid "Czech translation"
+msgid "Emacs keybindings"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:318
 msgctxt "AboutData|"
-msgid "Network detection improvements"
+msgid "Highlight configuration improvements"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:319
 msgctxt "AboutData|"
-msgid "Ukrainian translation"
+msgid "Debian/Kubuntu packager, (packaging/build system) bughunter"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:320
+msgctxt "AboutData|"
+msgid "Bugfixes, German translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:321
+msgctxt "AboutData|"
+msgid "Audio backend improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:324
+msgctxt "AboutData|"
+msgid "Chinese translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:325
+msgctxt "AboutData|"
+msgid "Dutch translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:329 ../src/uisupport/aboutdata.cpp:332
+msgctxt "AboutData|"
+msgid "Korean translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:331
+msgctxt "AboutData|"
+msgid "Alias improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:333
+msgctxt "AboutData|"
+msgid "Norwegian translation, documentation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:336
+msgctxt "AboutData|"
+msgid "Former Windows builder"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:337
+msgctxt "AboutData|"
+msgid "Fixes, Debian packaging"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:338
+msgctxt "AboutData|"
+msgid "Fixes and feedback"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:348
+msgctxt "AboutData|"
+msgid "Network detection improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:349
+msgctxt "AboutData|"
+msgid "Ukrainian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:350
 msgctxt "AboutData|"
 msgid "Portuguese translation"
 msgstr ""
@@ -1017,12 +1076,12 @@ msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
 msgstr "<p> %1 - %2 </p>"
 
-#: ../src/uisupport/bufferview.cpp:265
+#: ../src/uisupport/bufferview.cpp:267
 msgctxt "BufferView|"
 msgid "Merge buffers permanently?"
 msgstr "完全にバッファをマージしますか？"
 
-#: ../src/uisupport/bufferview.cpp:266
+#: ../src/uisupport/bufferview.cpp:268
 #, qt-format
 msgctxt "BufferView|"
 msgid ""
@@ -1030,7 +1089,7 @@ msgid ""
 " This cannot be reversed!"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:705
+#: ../src/uisupport/bufferview.cpp:715
 msgctxt "BufferViewDock|"
 msgid "Search..."
 msgstr ""
@@ -2190,201 +2249,201 @@ msgid ""
 "to work."
 msgstr ""
 
-#: ../src/core/core.cpp:276
+#: ../src/core/core.cpp:280
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr ""
 
-#: ../src/core/core.cpp:310
+#: ../src/core/core.cpp:314
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr ""
 
-#: ../src/core/core.cpp:313
+#: ../src/core/core.cpp:317
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr ""
 
-#: ../src/core/core.cpp:316
+#: ../src/core/core.cpp:320
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr ""
 
-#: ../src/core/core.cpp:322
+#: ../src/core/core.cpp:326
 msgctxt "Core|"
 msgid "Could not setup authenticator!"
 msgstr ""
 
-#: ../src/core/core.cpp:326
+#: ../src/core/core.cpp:330
 msgctxt "Core|"
 msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:330
+#: ../src/core/core.cpp:334
 msgctxt "Core|"
 msgid "Creating admin user..."
 msgstr "管理ユーザを作成"
 
-#: ../src/core/core.cpp:568
+#: ../src/core/core.cpp:601
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1"
 msgstr ""
 
-#: ../src/core/core.cpp:577
+#: ../src/core/core.cpp:610
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:586
+#: ../src/core/core.cpp:619
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:594
+#: ../src/core/core.cpp:627
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:605
+#: ../src/core/core.cpp:638
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:613
+#: ../src/core/core.cpp:646
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr ""
 
-#: ../src/core/core.cpp:622
+#: ../src/core/core.cpp:655
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr ""
 
-#: ../src/core/core.cpp:662
+#: ../src/core/core.cpp:695
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr "コアから切断しました。"
 
-#: ../src/core/core.cpp:665
+#: ../src/core/core.cpp:698
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr ""
 
-#: ../src/core/core.cpp:677
+#: ../src/core/core.cpp:710
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
 msgstr ""
 
-#: ../src/core/core.cpp:831
+#: ../src/core/core.cpp:864
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:832
+#: ../src/core/core.cpp:865
 msgctxt "Core|"
 msgid "Supported backends are:"
 msgstr ""
 
-#: ../src/core/core.cpp:844 ../src/core/core.cpp:864
+#: ../src/core/core.cpp:877 ../src/core/core.cpp:897
 #, qt-format
 msgctxt "Core|"
 msgid "Switched storage backend to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:845
+#: ../src/core/core.cpp:878
 msgctxt "Core|"
 msgid "Backend already initialized. Skipping Migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:848
+#: ../src/core/core.cpp:881
 #, qt-format
 msgctxt "Core|"
 msgid "Storage backend is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:852
+#: ../src/core/core.cpp:885
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:857
+#: ../src/core/core.cpp:890
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:872
+#: ../src/core/core.cpp:905
 #, qt-format
 msgctxt "Core|"
 msgid "Migrating storage backend %1 to %2..."
 msgstr ""
 
-#: ../src/core/core.cpp:877
+#: ../src/core/core.cpp:910
 msgctxt "Core|"
 msgid "Migration finished!"
 msgstr ""
 
-#: ../src/core/core.cpp:884
+#: ../src/core/core.cpp:917
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to migrate storage backend! (No migration writer for %1)"
 msgstr ""
 
-#: ../src/core/core.cpp:890
+#: ../src/core/core.cpp:923
 msgctxt "Core|"
 msgid "No currently active storage backend. Skipping migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:893
+#: ../src/core/core.cpp:926
 #, qt-format
 msgctxt "Core|"
 msgid "Currently active storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:896
+#: ../src/core/core.cpp:929
 #, qt-format
 msgctxt "Core|"
 msgid "New storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:918
+#: ../src/core/core.cpp:951
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:919
+#: ../src/core/core.cpp:952
 msgctxt "Core|"
 msgid "Supported authenticators are:"
 msgstr ""
 
-#: ../src/core/core.cpp:929 ../src/core/core.cpp:946
+#: ../src/core/core.cpp:962 ../src/core/core.cpp:979
 #, qt-format
 msgctxt "Core|"
 msgid "Switched authenticator to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:932
+#: ../src/core/core.cpp:965
 #, qt-format
 msgctxt "Core|"
 msgid "Authenticator is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:936
+#: ../src/core/core.cpp:969
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:941
+#: ../src/core/core.cpp:974
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize authenticator: %1"
@@ -2542,6 +2601,7 @@ msgid "Remote Cores"
 msgstr "リモートコア"
 
 #: ../src/core/coreauthhandler.cpp:138 ../src/core/coreauthhandler.cpp:150
+#: ../src/core/coreauthhandler.cpp:225
 msgctxt "CoreAuthHandler|"
 msgid "Client"
 msgstr "クライアント"
@@ -2585,39 +2645,51 @@ msgid ""
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:232
+#: ../src/core/coreauthhandler.cpp:225
+msgctxt "CoreAuthHandler|"
+msgid "attempted to login before the core was configured, rejecting."
+msgstr ""
+
+#: ../src/core/coreauthhandler.cpp:226
+msgctxt "CoreAuthHandler|"
+msgid ""
+"<b>Attempted to login before core was configured!</b><br>The core must be "
+"configured before attempting to login."
+msgstr ""
+
+#: ../src/core/coreauthhandler.cpp:238
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:233
+#: ../src/core/coreauthhandler.cpp:239
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:238
+#: ../src/core/coreauthhandler.cpp:244
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:243
+#: ../src/core/coreauthhandler.cpp:249
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support the following features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:246
+#: ../src/core/coreauthhandler.cpp:252
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:266
+#: ../src/core/coreauthhandler.cpp:272
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -3284,7 +3356,7 @@ msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr ""
 
-#: ../src/core/coresession.cpp:554
+#: ../src/core/coresession.cpp:557
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3292,7 +3364,7 @@ msgid ""
 " create network %1!"
 msgstr ""
 
-#: ../src/core/coresession.cpp:586
+#: ../src/core/coresession.cpp:589
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -3422,8 +3494,8 @@ msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:206
 #: ../src/core/coreuserinputhandler.cpp:377
-#: ../src/core/coreuserinputhandler.cpp:680
-#: ../src/core/coreuserinputhandler.cpp:718
+#: ../src/core/coreuserinputhandler.cpp:681
+#: ../src/core/coreuserinputhandler.cpp:719
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl"
@@ -3438,7 +3510,7 @@ msgid ""
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:224
-#: ../src/core/coreuserinputhandler.cpp:736
+#: ../src/core/coreuserinputhandler.cpp:737
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "No key has been set for %1."
@@ -3451,7 +3523,7 @@ msgid "The key for %1 has been deleted."
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:233
-#: ../src/core/coreuserinputhandler.cpp:744
+#: ../src/core/coreuserinputhandler.cpp:745
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3484,7 +3556,7 @@ msgid "Initiated key exchange with %1."
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:413
-#: ../src/core/coreuserinputhandler.cpp:702
+#: ../src/core/coreuserinputhandler.cpp:703
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3493,13 +3565,18 @@ msgid ""
 "with QCA present."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:611
+#: ../src/core/coreuserinputhandler.cpp:482
+msgctxt "CoreUserInputHandler|"
+msgid "Your persistent modes have been reset."
+msgstr ""
+
+#: ../src/core/coreuserinputhandler.cpp:612
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Starting query with %1"
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:690
+#: ../src/core/coreuserinputhandler.cpp:691
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
@@ -3507,20 +3584,20 @@ msgid ""
 "it."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:699
+#: ../src/core/coreuserinputhandler.cpp:700
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been set."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:728
+#: ../src/core/coreuserinputhandler.cpp:729
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel"
 " or just /showkey when in a channel or query."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:740
+#: ../src/core/coreuserinputhandler.cpp:741
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
@@ -3546,12 +3623,12 @@ msgctxt "CreateIdentityDlg|"
 msgid "Duplicate:"
 msgstr "個人情報を複製："
 
-#: ../src/common/protocols/datastream/datastreampeer.cpp:115
+#: ../src/common/protocols/datastream/datastreampeer.cpp:117
 msgctxt "DataStreamPeer|"
 msgid "Invalid handshake message!"
 msgstr ""
 
-#: ../src/common/protocols/datastream/datastreampeer.cpp:171
+#: ../src/common/protocols/datastream/datastreampeer.cpp:173
 #, qt-format
 msgctxt "DataStreamPeer|"
 msgid "Unknown protocol message of type %1"
@@ -4445,16 +4522,15 @@ msgid "Key Type:"
 msgstr "Proxy タイプ"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:605
-#: ../src/qtui/settingspages/identityeditwidget.cpp:410
-#: ../src/qtui/settingspages/identityeditwidget.cpp:422
+#: ../src/qtui/settingspages/identityeditwidget.cpp:425
 msgctxt "IdentityEditWidget|"
 msgid "No Key loaded"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:625
 #: ../src/qtui/settingspages/identityeditwidget.ui:723
-#: ../src/qtui/settingspages/identityeditwidget.cpp:411
-#: ../src/qtui/settingspages/identityeditwidget.cpp:469
+#: ../src/qtui/settingspages/identityeditwidget.cpp:426
+#: ../src/qtui/settingspages/identityeditwidget.cpp:489
 msgctxt "IdentityEditWidget|"
 msgid "Load"
 msgstr "ロード"
@@ -4471,8 +4547,8 @@ msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:663
 #: ../src/qtui/settingspages/identityeditwidget.ui:697
-#: ../src/qtui/settingspages/identityeditwidget.cpp:467
-#: ../src/qtui/settingspages/identityeditwidget.cpp:468
+#: ../src/qtui/settingspages/identityeditwidget.cpp:487
+#: ../src/qtui/settingspages/identityeditwidget.cpp:488
 msgctxt "IdentityEditWidget|"
 msgid "No Certificate loaded"
 msgstr ""
@@ -4542,35 +4618,57 @@ msgctxt "IdentityEditWidget|"
 msgid "Load a Key"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:401
+#: ../src/qtui/settingspages/identityeditwidget.cpp:410
 msgctxt "IdentityEditWidget|"
 msgid "Failed to read key"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:401
+#: ../src/qtui/settingspages/identityeditwidget.cpp:410
 msgctxt "IdentityEditWidget|"
 msgid ""
 "Failed to read the key file. It is either incompatible or invalid. Note that"
 " the key file must not have a passphrase."
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:416
+#: ../src/qtui/settingspages/identityeditwidget.cpp:414
+msgctxt "IdentityEditWidget|"
+msgid "Core does not support ECDSA keys"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:414
+msgctxt "IdentityEditWidget|"
+msgid ""
+"You loaded an ECDSA key, but the core does not support ECDSA keys. Please "
+"contact the core administrator."
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:431
 msgctxt "IdentityEditWidget|"
 msgid "RSA"
 msgstr "RSA"
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:419
+#: ../src/qtui/settingspages/identityeditwidget.cpp:435
+msgctxt "IdentityEditWidget|"
+msgid "ECDSA"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:439
 msgctxt "IdentityEditWidget|"
 msgid "DSA"
 msgstr "DSA"
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:424
-#: ../src/qtui/settingspages/identityeditwidget.cpp:479
+#: ../src/qtui/settingspages/identityeditwidget.cpp:442
+msgctxt "IdentityEditWidget|"
+msgid "Invalid key or no key loaded"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:444
+#: ../src/qtui/settingspages/identityeditwidget.cpp:499
 msgctxt "IdentityEditWidget|"
 msgid "Clear"
 msgstr "クリア"
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:436
+#: ../src/qtui/settingspages/identityeditwidget.cpp:456
 msgctxt "IdentityEditWidget|"
 msgid "Load a Certificate"
 msgstr ""
@@ -5416,12 +5514,12 @@ msgctxt "LdapAuthenticator|"
 msgid "UID Attribute"
 msgstr ""
 
-#: ../src/common/protocols/legacy/legacypeer.cpp:137
+#: ../src/common/protocols/legacy/legacypeer.cpp:146
 msgctxt "LegacyPeer|"
 msgid "Invalid handshake message!"
 msgstr ""
 
-#: ../src/common/protocols/legacy/legacypeer.cpp:215
+#: ../src/common/protocols/legacy/legacypeer.cpp:224
 #, qt-format
 msgctxt "LegacyPeer|"
 msgid "Unknown protocol message of type %1"
