@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-05-17 12:42+0000\n"
+"PO-Revision-Date: 2018-05-18 12:28+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Galician (http://www.transifex.com/quassel/quassel/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -2681,19 +2681,24 @@ msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:249
-#, qt-format
+#: ../src/core/coreauthhandler.cpp:250
 msgctxt "CoreAuthHandler|"
-msgid "Client does not support the following features: %1"
+msgid "Client does not support extended features."
 msgstr ""
 
 #: ../src/core/coreauthhandler.cpp:252
 #, qt-format
 msgctxt "CoreAuthHandler|"
+msgid "Client does not support the following features: %1"
+msgstr ""
+
+#: ../src/core/coreauthhandler.cpp:256
+#, qt-format
+msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:272
+#: ../src/core/coreauthhandler.cpp:276
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -7040,7 +7045,7 @@ msgctxt "QtMultimediaNotificationConfigWidget|"
 msgid "Select the sound file to play"
 msgstr "Seleccione o ficheiro de son a reproducir"
 
-#: ../src/common/quassel.cpp:133
+#: ../src/common/quassel.cpp:135
 #, qt-format
 msgctxt "Quassel|"
 msgid "Invalid log level %1; supported are Debug|Info|Warning|Error"

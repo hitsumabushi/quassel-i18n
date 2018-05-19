@@ -1,14 +1,15 @@
 # 
 # Translators:
 # Daniel Albers <daniel@lbers.com>, 2011
+# Vitor <droider.pc@gmail.com>, 2018
 # Vitor Luis <ptirc@protonmail.com>, 2018
 # Zé <mmodem00@gmail.com>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-05-17 12:42+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2018-05-18 14:26+0000\n"
+"Last-Translator: Vitor <droider.pc@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/quassel/quassel/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,51 +31,51 @@ msgstr "Um cliente de IRC moderno e distribuído"
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project founder, lead developer"
-msgstr ""
+msgstr "Fundador do projeto, desenvolvedor líder"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
 msgid "Project motivator, lead developer"
-msgstr ""
+msgstr "Motivador do projeto, desenvolvedor líder"
 
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former lead developer"
-msgstr ""
+msgstr "Ex-desenvolvedor líder"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
 msgid "Master of Translation, many fixes and enhancements, Travis support"
-msgstr ""
+msgstr "Mestre de Tradução, muitas correções e melhorias, suporte a Travis"
 
 #: ../src/uisupport/aboutdata.cpp:178
 msgctxt "AboutData|"
 msgid "Many features, fixes and improvements"
-msgstr "Diversas características, correcções e melhorias"
+msgstr "Muitos recursos, correções e melhorias"
 
 #: ../src/uisupport/aboutdata.cpp:179
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug and patch triaging, community support"
-msgstr "Muitas correções e melhorias, triagem de erros e reparações, suporte comunitário"
+msgstr "Muitas correções e melhorias, triagem de bugs e patches, suporte à comunidade"
 
 #: ../src/uisupport/aboutdata.cpp:180
 msgctxt "AboutData|"
 msgid ""
 "IRCv3 support, documentation, many other improvements, testing, outstanding "
 "PRs"
-msgstr ""
+msgstr "Suporte a IRCv3, documentação, muitas outras melhorias, testes, PRs excepcionais"
 
 #: ../src/uisupport/aboutdata.cpp:181
 msgctxt "AboutData|"
 msgid ""
 "QuasselDroid, architecture, (mobile) performance, many other improvements "
 "and fixes, testing"
-msgstr ""
+msgstr "QuasselDroid, arquitetura, desempenho (móvel), muitas outras melhorias e correções, testes"
 
 #: ../src/uisupport/aboutdata.cpp:185
 msgctxt "AboutData|"
 msgid "OSX UI improvements"
-msgstr ""
+msgstr "Melhorias na UI de utilizador do OSX"
 
 #: ../src/uisupport/aboutdata.cpp:186 ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
@@ -100,7 +101,7 @@ msgstr "Correcções no sistema de compilação"
 #: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:330
 msgctxt "AboutData|"
 msgid "Database performance improvements"
-msgstr ""
+msgstr "Melhorias no desempenho do banco de dados"
 
 #: ../src/uisupport/aboutdata.cpp:191
 msgctxt "AboutData|"
@@ -120,7 +121,7 @@ msgstr "Melhorias de documentação"
 #: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Brazilian translation"
-msgstr ""
+msgstr "Tradução Brasileira"
 
 #: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:270
 msgctxt "AboutData|"
@@ -144,7 +145,7 @@ msgstr "Tradução Romena"
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Punjabi translation"
-msgstr ""
+msgstr "Tradução Punjabi"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:262
 #: ../src/uisupport/aboutdata.cpp:277 ../src/uisupport/aboutdata.cpp:278
@@ -171,12 +172,12 @@ msgstr "Correcções no sistema de compilação em Windows"
 #: ../src/uisupport/aboutdata.cpp:205
 msgctxt "AboutData|"
 msgid "AppData metadata, LDAP support"
-msgstr ""
+msgstr "Meta-dados AppData, suporte LDAP"
 
 #: ../src/uisupport/aboutdata.cpp:206
 msgctxt "AboutData|"
 msgid "Nicer tooltips, spell check and other improvements"
-msgstr ""
+msgstr "Sugestões de ferramentas, verificação ortográfica e outras melhorias"
 
 #: ../src/uisupport/aboutdata.cpp:207
 msgctxt "AboutData|"
@@ -192,7 +193,7 @@ msgstr "Tradução Francesa"
 #: ../src/uisupport/aboutdata.cpp:209
 msgctxt "AboutData|"
 msgid "Occitan translation"
-msgstr ""
+msgstr "Tradução Occitana"
 
 #: ../src/uisupport/aboutdata.cpp:210
 msgctxt "AboutData|"
@@ -218,7 +219,7 @@ msgstr "Diversas reparações e melhorias"
 #: ../src/uisupport/aboutdata.cpp:215
 msgctxt "AboutData|"
 msgid "Settings fixes"
-msgstr ""
+msgstr "Correções de configurações"
 
 #: ../src/uisupport/aboutdata.cpp:216 ../src/uisupport/aboutdata.cpp:294
 msgctxt "AboutData|"
@@ -249,7 +250,7 @@ msgstr "Melhorias no tratamento de certificados"
 #: ../src/uisupport/aboutdata.cpp:223
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter (on Vista™!)"
-msgstr ""
+msgstr "Testador beta inicial e caçador de erros (no Vista™!)"
 
 #: ../src/uisupport/aboutdata.cpp:224
 msgctxt "AboutData|"
@@ -318,7 +319,7 @@ msgstr "Tradução alemã"
 #: ../src/uisupport/aboutdata.cpp:239
 msgctxt "AboutData|"
 msgid "Sanitize topic handling, twitch.tv support"
-msgstr ""
+msgstr "Limpeza da manipulação de tópicos, suporte a twitch.tv"
 
 #: ../src/uisupport/aboutdata.cpp:240
 msgctxt "AboutData|"
@@ -361,7 +362,7 @@ msgstr "Pacotes {Ku|U}buntu, motivador, promotor"
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
 msgid "Various features and improvements"
-msgstr ""
+msgstr "Vários recursos e melhorias"
 
 #: ../src/uisupport/aboutdata.cpp:252 ../src/uisupport/aboutdata.cpp:256
 #: ../src/uisupport/aboutdata.cpp:309 ../src/uisupport/aboutdata.cpp:314
@@ -374,7 +375,7 @@ msgstr "Correção de erros"
 #: ../src/uisupport/aboutdata.cpp:344
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Tradução Checa"
 
 #: ../src/uisupport/aboutdata.cpp:255
 msgctxt "AboutData|"
@@ -384,7 +385,7 @@ msgstr "Melhorias em Python"
 #: ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Proxy improvements, Spanish translation"
-msgstr ""
+msgstr "Melhorias de proxy, tradução em espanhol"
 
 #: ../src/uisupport/aboutdata.cpp:258
 msgctxt "AboutData|"
@@ -464,7 +465,7 @@ msgstr "Correcções de documentação"
 #: ../src/uisupport/aboutdata.cpp:284 ../src/uisupport/aboutdata.cpp:316
 msgctxt "AboutData|"
 msgid "Improvements"
-msgstr ""
+msgstr "Melhorias"
 
 #: ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
@@ -474,7 +475,7 @@ msgstr "Ideias, ajustes, motivação inicial"
 #: ../src/uisupport/aboutdata.cpp:288
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, Sonnet support, QuasselDroid"
-msgstr ""
+msgstr "Muitas correções e melhorias, suporte ao Sonnet, QuasselDroid"
 
 #: ../src/uisupport/aboutdata.cpp:291
 msgctxt "AboutData|"
@@ -484,7 +485,7 @@ msgstr "Tradução Alemã, correcções"
 #: ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
 msgid "Many fixes and improvements; Ubuntu PPAs"
-msgstr ""
+msgstr "Muitas correções e melhorias; PPAs do Ubuntu"
 
 #: ../src/uisupport/aboutdata.cpp:296
 msgctxt "AboutData|"
@@ -524,13 +525,13 @@ msgstr "Melhorias de performance"
 #: ../src/uisupport/aboutdata.cpp:308
 msgctxt "AboutData|"
 msgid "Hindi and Marathi translations"
-msgstr ""
+msgstr "Traduções Hindi e Marata"
 
 #: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
 msgid ""
 "Windows build support, automated OSX builds in Travis, various improvements"
-msgstr ""
+msgstr "Suporte de compilação em Windows, compilações OSX automatizadas no Travis, várias melhorias"
 
 #: ../src/uisupport/aboutdata.cpp:315
 msgctxt "AboutData|"
@@ -545,12 +546,12 @@ msgstr "Melhorias na configuração de menções"
 #: ../src/uisupport/aboutdata.cpp:319
 msgctxt "AboutData|"
 msgid "Debian/Kubuntu packager, (packaging/build system) bughunter"
-msgstr ""
+msgstr "Pacote Debian/Ubuntu, caçador de erros (empacotamento/sistema de compilação)"
 
 #: ../src/uisupport/aboutdata.cpp:320
 msgctxt "AboutData|"
 msgid "Bugfixes, German translation"
-msgstr ""
+msgstr "Correção de erros, tradução em Alemão"
 
 #: ../src/uisupport/aboutdata.cpp:321
 msgctxt "AboutData|"
@@ -560,7 +561,7 @@ msgstr "Melhorias de backend de áudio"
 #: ../src/uisupport/aboutdata.cpp:324
 msgctxt "AboutData|"
 msgid "Chinese translation"
-msgstr ""
+msgstr "Tradução Chinesa"
 
 #: ../src/uisupport/aboutdata.cpp:325
 msgctxt "AboutData|"
@@ -575,7 +576,7 @@ msgstr "Tradução Coreana"
 #: ../src/uisupport/aboutdata.cpp:331
 msgctxt "AboutData|"
 msgid "Alias improvements"
-msgstr ""
+msgstr "Melhorias de alias"
 
 #: ../src/uisupport/aboutdata.cpp:333
 msgctxt "AboutData|"
@@ -590,27 +591,27 @@ msgstr "Antigo criador de compilações para Windows"
 #: ../src/uisupport/aboutdata.cpp:337
 msgctxt "AboutData|"
 msgid "Fixes, Debian packaging"
-msgstr ""
+msgstr "Correções, pacote Debian"
 
 #: ../src/uisupport/aboutdata.cpp:338
 msgctxt "AboutData|"
 msgid "Fixes and feedback"
-msgstr ""
+msgstr "Correções e feedback"
 
 #: ../src/uisupport/aboutdata.cpp:348
 msgctxt "AboutData|"
 msgid "Network detection improvements"
-msgstr ""
+msgstr "Melhorias na detecção de rede"
 
 #: ../src/uisupport/aboutdata.cpp:349
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Tradução Ucraniana"
 
 #: ../src/uisupport/aboutdata.cpp:350
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Tradução Portuguesa"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -651,7 +652,7 @@ msgstr "Agradecimen&tos"
 msgctxt "AboutDlg|"
 msgid ""
 "<b>Version:</b> %1<br><b>Version date:</b> %2<br><b>Protocol version:</b> %3"
-msgstr ""
+msgstr "<b>Versão:</b> %1<br><b>Data da Versão:</b> %2<br><b>Versão do Protocolo:</b> %3"
 
 #: ../src/qtui/aboutdlg.cpp:53
 #, qt-format
@@ -673,7 +674,7 @@ msgid ""
 "icons/blob/master/COPYING\">LGPLv3</a>.<br><br>Please use <a "
 "href=\"https://bugs.quassel-irc.org\">https://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr ""
+msgstr "<b>Um cliente IRC moderno e distribuído</b><br><br>&copy;%1 pelo Projeto Quassel<br><a href=\"https://quassel-irc.org\">https://quassel-irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a> na <a href=\"https://www.freenode.net\">Freenode</a><br><br>O Quassel IRC tem licença dupla sob <a href=\"https://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> e <a href=\"https://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br><a href=\"https://api.kde.org/frameworks/breeze-icons/html\">tema de icones Breeze</a> &copy; Uri Herrera e outros, licenciados sob <a href=\"https://github.com/KDE/breeze-icons/blob/21ffd9b/COPYING-ICONS\">LGPLv3</a>.<br><a href=\"https://api.kde.org/frameworks/oxygen-icons5/html\">Tema de icones Oxygen</a> &copy; Nuno Pinheiro e outros, licenciados sob <a href=\"https://github.com/KDE/oxygen-icons/blob/master/COPYING\">LGPLv3</a>.<br><br>Por favor, use <a href=\"https://bugs.quassel-irc.org\">https://bugs.quassel-irc.org</a> para relatar erros."
 
 #: ../src/qtui/aboutdlg.cpp:73
 msgctxt "AboutDlg|"
@@ -692,34 +693,34 @@ msgctxt "AboutDlg|"
 msgid ""
 "...and anybody else finding and reporting bugs, giving feedback, helping "
 "others and being part of the community!"
-msgstr ""
+msgstr "…e qualquer outra pessoa encontrando e relatando erros, dando feedback, ajudando os outros e fazendo parte da comunidade!"
 
 #: ../src/qtui/aboutdlg.cpp:98
 msgctxt "AboutDlg|"
 msgid "Special thanks goes to:"
-msgstr ""
+msgstr "Um agradecimento especial vai para:"
 
 #: ../src/qtui/aboutdlg.cpp:102
 msgctxt "AboutDlg|"
 msgid "for the original Quassel logo - The All-Seeing Eye"
-msgstr ""
+msgstr "pelo logótipo original do Quassel - The All-Seeing Eye"
 
 #: ../src/qtui/aboutdlg.cpp:106
 msgctxt "AboutDlg|"
 msgid "for the current Quassel logo"
-msgstr ""
+msgstr "pelo atual logótipo do Quassel"
 
 #: ../src/qtui/aboutdlg.cpp:110
 msgctxt "AboutDlg|"
 msgid "for the amazing Breeze and Oxygen icon themes"
-msgstr ""
+msgstr "pelos incríveis temas de ícones Breeze e Oxygen"
 
 #: ../src/qtui/aboutdlg.cpp:114
 msgctxt "AboutDlg|"
 msgid ""
 "for creating an awesome framework, and for sponsoring development with "
 "Greenphones, N810s, N950s and more"
-msgstr ""
+msgstr "por criar uma estrutura impressionante e por patrocinar o desenvolvimento com Greenphones, N810s, N950s e mais"
 
 #: ../src/core/abstractsqlstorage.cpp:140
 #, qt-format
@@ -834,12 +835,12 @@ msgstr "<Predefinição do Sistema>"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:73
 msgctxt "AppearanceSettingsPage|"
 msgid "Icon theme:"
-msgstr ""
+msgstr "Tema do ícone:"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:80
 msgctxt "AppearanceSettingsPage|"
 msgid "Choose from the bundled icon themes! May need restart..."
-msgstr ""
+msgstr "Escolha entre os temas de ícones incluídos! Pode precisar de reiniciar…"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:94
 msgctxt "AppearanceSettingsPage|"
@@ -914,17 +915,17 @@ msgstr "Interface"
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:104
 msgctxt "AppearanceSettingsPage|"
 msgid "Breeze Light"
-msgstr ""
+msgstr "Breeze Claro"
 
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:107
 msgctxt "AppearanceSettingsPage|"
 msgid "Breeze Dark"
-msgstr ""
+msgstr "Breeze Escuro"
 
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:110
 msgctxt "AppearanceSettingsPage|"
 msgid "Oxygen"
-msgstr ""
+msgstr "Oxygen"
 
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:280
 msgctxt "AppearanceSettingsPage|"
@@ -995,7 +996,7 @@ msgctxt "BacklogSettingsPage|"
 msgid ""
 "Amount of messages per buffer that are requested after the core connection "
 "has been established."
-msgstr ""
+msgstr "Quantidade de mensagens por buffer solicitadas após a conexão principal ter sido estabelecida."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:141
 msgctxt "BacklogSettingsPage|"
@@ -1093,7 +1094,7 @@ msgstr "Deseja juntar o 'buffer' \"%1\" permanentemente no 'buffer' \"%2\"?\n Is
 #: ../src/uisupport/bufferview.cpp:715
 msgctxt "BufferViewDock|"
 msgid "Search..."
-msgstr ""
+msgstr "Pesquisar…"
 
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:14
 msgctxt "BufferViewEditDlg|"
@@ -1181,7 +1182,7 @@ msgstr "Esconder conversas inactivas"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive networks"
-msgstr ""
+msgstr "Ocultar redes inactivas"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
@@ -1196,7 +1197,7 @@ msgstr "Ordenar alfabeticamente"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:163
 msgctxt "BufferViewSettingsPage|"
 msgid "Show search"
-msgstr ""
+msgstr "Mostrar pesquisa"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:170
 msgctxt "BufferViewSettingsPage|"
@@ -1283,7 +1284,7 @@ msgstr "Ir para a Linha de Marcação"
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "Channel %1"
-msgstr ""
+msgstr "Canal %1"
 
 #: ../src/client/networkmodel.cpp:762
 msgctxt "ChannelBufferItem|"
@@ -1293,7 +1294,7 @@ msgstr "Utilizadores"
 #: ../src/client/networkmodel.cpp:767
 msgctxt "ChannelBufferItem|"
 msgid "Mode"
-msgstr ""
+msgstr "Modo"
 
 #: ../src/client/networkmodel.cpp:777
 msgctxt "ChannelBufferItem|"
@@ -1303,7 +1304,7 @@ msgstr "Tópico"
 #: ../src/client/networkmodel.cpp:783
 msgctxt "ChannelBufferItem|"
 msgid "Not active, double-click to join"
-msgstr ""
+msgstr "Não ativo, clique duas vezes para entrar"
 
 #: ../src/qtui/ui/channellistdlg.ui:14
 msgctxt "ChannelListDlg|"
@@ -1410,22 +1411,22 @@ msgstr "Mostrar as próprias mensagens"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:164
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Display messages from backlog on reconnect"
-msgstr ""
+msgstr "Exibir mensagens do histórico na reconexão"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:167
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show messages from backlog"
-msgstr ""
+msgstr "Mostrar mensagens do histórico"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:192
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
-msgstr ""
+msgstr "Incluir mensagens lidas do histórico na reconexão"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "Incluir mensagens lidas"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
@@ -1481,12 +1482,12 @@ msgstr "Copiar Selecção"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "Pesquisar '%1'"
 
 #: ../src/qtui/chatscene.cpp:858
 msgctxt "ChatScene|"
 msgid "Reset Column Widths"
-msgstr ""
+msgstr "Redefinir larguras de coluna"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:14
 msgctxt "ChatViewColorSettingsPage|"
@@ -1592,7 +1593,7 @@ msgstr "Fundo:"
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:332
 msgctxt "ChatViewColorSettingsPage|"
 msgid "Color senders in chat based on nicknames"
-msgstr ""
+msgstr "Colorir remetentes no chat baseado nas alcunhas"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:335
 msgctxt "ChatViewColorSettingsPage|"
@@ -1609,12 +1610,12 @@ msgctxt "ChatViewColorSettingsPage|"
 msgid ""
 "Color sender nicknames in action messages, e.g.<br/>-*- <span style=\" font-"
 "style:italic;\">Nick</span> does an action"
-msgstr ""
+msgstr "Colorir alcunha do remetente em mensagens de ação, ex:<br/>-*- <span style=\" font-style:italic;\">Alcunha</span> faz uma ação"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:692
 msgctxt "ChatViewColorSettingsPage|"
 msgid "Color senders in action messages"
-msgstr ""
+msgstr "Colorir remetentes em mensagens de ação"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:708
 msgctxt "ChatViewColorSettingsPage|"
@@ -2678,19 +2679,24 @@ msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:249
-#, qt-format
+#: ../src/core/coreauthhandler.cpp:250
 msgctxt "CoreAuthHandler|"
-msgid "Client does not support the following features: %1"
+msgid "Client does not support extended features."
 msgstr ""
 
 #: ../src/core/coreauthhandler.cpp:252
 #, qt-format
 msgctxt "CoreAuthHandler|"
+msgid "Client does not support the following features: %1"
+msgstr ""
+
+#: ../src/core/coreauthhandler.cpp:256
+#, qt-format
+msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:272
+#: ../src/core/coreauthhandler.cpp:276
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -7037,7 +7043,7 @@ msgctxt "QtMultimediaNotificationConfigWidget|"
 msgid "Select the sound file to play"
 msgstr "Seleccione o ficheiro de som a ser reproduzido"
 
-#: ../src/common/quassel.cpp:133
+#: ../src/common/quassel.cpp:135
 #, qt-format
 msgctxt "Quassel|"
 msgid "Invalid log level %1; supported are Debug|Info|Warning|Error"
