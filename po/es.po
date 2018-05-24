@@ -2,6 +2,7 @@
 # Translators:
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme-Barrientos, 2013
+# Chris Egeland <chris@chrisegeland.com>, 2018
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
 # enjolras <yo@miguelrevilla.com>, 2012
@@ -14,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-05-18 12:28+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2018-05-23 15:39+0000\n"
+"Last-Translator: Chris Egeland <chris@chrisegeland.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/quassel/quassel/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +38,7 @@ msgstr "Un cliente de IRC moderno y distribuido"
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project founder, lead developer"
-msgstr ""
+msgstr "Fundador del proyecto, desarrollador principal"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
@@ -127,12 +128,12 @@ msgstr "Mejoras en la documentación"
 #: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Brazilian translation"
-msgstr ""
+msgstr "Traducción al brasileña"
 
 #: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:270
 msgctxt "AboutData|"
 msgid "Slovenian translation"
-msgstr ""
+msgstr "Traducción al esloveno"
 
 #: ../src/uisupport/aboutdata.cpp:196 ../src/uisupport/aboutdata.cpp:222
 #: ../src/uisupport/aboutdata.cpp:226 ../src/uisupport/aboutdata.cpp:244
@@ -151,7 +152,7 @@ msgstr "Traducción al rumano"
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Punjabi translation"
-msgstr ""
+msgstr "Traducción al panyabí"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:262
 #: ../src/uisupport/aboutdata.cpp:277 ../src/uisupport/aboutdata.cpp:278
@@ -199,7 +200,7 @@ msgstr "Traducción al francés"
 #: ../src/uisupport/aboutdata.cpp:209
 msgctxt "AboutData|"
 msgid "Occitan translation"
-msgstr ""
+msgstr "Traducción al occitano"
 
 #: ../src/uisupport/aboutdata.cpp:210
 msgctxt "AboutData|"
@@ -402,7 +403,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:301
 msgctxt "AboutData|"
 msgid "Danish translation"
-msgstr ""
+msgstr "Traducción al danés"
 
 #: ../src/uisupport/aboutdata.cpp:260
 msgctxt "AboutData|"
@@ -427,7 +428,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
 msgid "Serbian translation"
-msgstr ""
+msgstr "Traducción al serbio"
 
 #: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
@@ -461,7 +462,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Lithuanian translation"
-msgstr ""
+msgstr "Traducción al lituana"
 
 #: ../src/uisupport/aboutdata.cpp:281
 msgctxt "AboutData|"
@@ -486,7 +487,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:291
 msgctxt "AboutData|"
 msgid "German translation, fixes"
-msgstr ""
+msgstr "Traducción al alemán, correcciones de fallos"
 
 #: ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
@@ -531,7 +532,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:308
 msgctxt "AboutData|"
 msgid "Hindi and Marathi translations"
-msgstr ""
+msgstr "Traducción al hindi y marathi"
 
 #: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
@@ -557,7 +558,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:320
 msgctxt "AboutData|"
 msgid "Bugfixes, German translation"
-msgstr ""
+msgstr "Correcciones de fallos, traducción al alemán"
 
 #: ../src/uisupport/aboutdata.cpp:321
 msgctxt "AboutData|"
@@ -572,7 +573,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:325
 msgctxt "AboutData|"
 msgid "Dutch translation"
-msgstr ""
+msgstr "Traducción al holandés"
 
 #: ../src/uisupport/aboutdata.cpp:329 ../src/uisupport/aboutdata.cpp:332
 msgctxt "AboutData|"
@@ -1002,7 +1003,7 @@ msgctxt "BacklogSettingsPage|"
 msgid ""
 "Amount of messages per buffer that are requested after the core connection "
 "has been established."
-msgstr ""
+msgstr "Cantidad de mensajes por área de conversación que son solicitados después de que la conexión con el núcleo haya sido establecida."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:141
 msgctxt "BacklogSettingsPage|"
@@ -1100,7 +1101,7 @@ msgstr "¿Quiere combinar la conversación \"%1\" permanentemente con la convers
 #: ../src/uisupport/bufferview.cpp:715
 msgctxt "BufferViewDock|"
 msgid "Search..."
-msgstr ""
+msgstr "Patrón de búsqueda..."
 
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:14
 msgctxt "BufferViewEditDlg|"
@@ -1310,7 +1311,7 @@ msgstr "Tema"
 #: ../src/client/networkmodel.cpp:783
 msgctxt "ChannelBufferItem|"
 msgid "Not active, double-click to join"
-msgstr ""
+msgstr "No activo, doble clic para unirse"
 
 #: ../src/qtui/ui/channellistdlg.ui:14
 msgctxt "ChannelListDlg|"
@@ -1327,7 +1328,7 @@ msgctxt "ChannelListDlg|"
 msgid ""
 "Toggle between simple and advanced mode.\n"
 "Advanced mode allows one to pass search strings to the IRC Server."
-msgstr ""
+msgstr "Conmutar entre el modo simple y el modo avanzado.\nEl modo avanzado permite pasar cadenas de texto de búsqueda al servidor IRC."
 
 #: ../src/qtui/ui/channellistdlg.ui:62
 msgctxt "ChannelListDlg|"
@@ -5194,7 +5195,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:1159
 msgctxt "IrcUserItem|"
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: ../src/client/networkmodel.cpp:1165
 msgctxt "IrcUserItem|"
@@ -5214,7 +5215,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:1175
 msgctxt "IrcUserItem|"
 msgid "Available for help"
-msgstr ""
+msgstr "Disponible para ayudar"
 
 #: ../src/client/networkmodel.cpp:1178
 msgctxt "IrcUserItem|"
@@ -5229,7 +5230,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:1194 ../src/client/networkmodel.cpp:1203
 msgctxt "IrcUserItem|"
 msgid "Account"
-msgstr ""
+msgstr "Cuenta"
 
 #: ../src/client/networkmodel.cpp:1204
 msgctxt "IrcUserItem|"
@@ -5249,7 +5250,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:1218
 msgctxt "IrcUserItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Operador"
 
 #: ../src/client/networkmodel.cpp:1226
 msgctxt "IrcUserItem|"
@@ -5264,7 +5265,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:1233
 msgctxt "IrcUserItem|"
 msgid "Server"
-msgstr ""
+msgstr "Servidor"
 
 #: ../src/client/networkmodel.cpp:1238
 msgctxt "IrcUserItem|"
@@ -5502,7 +5503,7 @@ msgstr ""
 #: ../src/core/ldapauthenticator.cpp:92
 msgctxt "LdapAuthenticator|"
 msgid "Port"
-msgstr ""
+msgstr "Puerto"
 
 #: ../src/core/ldapauthenticator.cpp:93
 msgctxt "LdapAuthenticator|"
@@ -6120,7 +6121,7 @@ msgstr "Añadir red"
 #: ../src/client/networkmodel.cpp:244
 msgctxt "NetworkItem|"
 msgid "Server"
-msgstr ""
+msgstr "Servidor"
 
 #: ../src/client/networkmodel.cpp:245
 msgctxt "NetworkItem|"
@@ -6805,12 +6806,12 @@ msgstr "PostgreSQL Turbo Bomber HD!"
 #: ../src/core/postgresqlstorage.cpp:88
 msgctxt "PostgreSqlStorage|"
 msgid "Username"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: ../src/core/postgresqlstorage.cpp:89
 msgctxt "PostgreSqlStorage|"
 msgid "Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: ../src/core/postgresqlstorage.cpp:90
 msgctxt "PostgreSqlStorage|"
@@ -6820,7 +6821,7 @@ msgstr ""
 #: ../src/core/postgresqlstorage.cpp:91
 msgctxt "PostgreSqlStorage|"
 msgid "Port"
-msgstr ""
+msgstr "Puerto"
 
 #: ../src/core/postgresqlstorage.cpp:92
 msgctxt "PostgreSqlStorage|"
@@ -7089,7 +7090,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:593
 msgctxt "QueryBufferItem|"
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: ../src/client/networkmodel.cpp:599
 msgctxt "QueryBufferItem|"
@@ -7109,7 +7110,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:608
 msgctxt "QueryBufferItem|"
 msgid "Available for help"
-msgstr ""
+msgstr "Disponible para ayudar"
 
 #: ../src/client/networkmodel.cpp:611
 msgctxt "QueryBufferItem|"
@@ -7124,7 +7125,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:627 ../src/client/networkmodel.cpp:636
 msgctxt "QueryBufferItem|"
 msgid "Account"
-msgstr ""
+msgstr "Cuenta"
 
 #: ../src/client/networkmodel.cpp:637
 msgctxt "QueryBufferItem|"
@@ -7144,7 +7145,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:651
 msgctxt "QueryBufferItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Operador"
 
 #: ../src/client/networkmodel.cpp:659
 msgctxt "QueryBufferItem|"
@@ -7159,7 +7160,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:666
 msgctxt "QueryBufferItem|"
 msgid "Server"
-msgstr ""
+msgstr "Servidor"
 
 #: ../src/client/networkmodel.cpp:672
 msgctxt "QueryBufferItem|"
@@ -7561,12 +7562,12 @@ msgstr "Formulario"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:29
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Snore"
-msgstr ""
+msgstr "Snore"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:40
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Enable Snore"
-msgstr ""
+msgstr "Activar Snore"
 
 #: ../src/qtui/settingspages/sonnetsettingspage.cpp:28
 msgctxt "SonnetSettingsPage|"
