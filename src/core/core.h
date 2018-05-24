@@ -273,6 +273,33 @@ public:
     }
 
 
+    //! Get a hash of buffers with their ciphers for a given network
+    /** The keys are channel names and values are ciphers (possibly empty)
+     *  \note This method is threadsafe
+     *
+     *  \param user       The id of the networks owner
+     *  \param networkId  The Id of the network
+     */
+    static inline QHash<QString, QByteArray> bufferCiphers(UserId user, const NetworkId &networkId)
+    {
+        return instance()->_storage->bufferCiphers(user, networkId);
+    }
+
+
+    //! Update the cipher of a buffer
+    /** \note This method is threadsafe
+     *
+     *  \param user        The Id of the networks owner
+     *  \param networkId   The Id of the network
+     *  \param bufferName The Cname of the buffer
+     *  \param cipher      The cipher for the buffer
+     */
+    static inline void setBufferCipher(UserId user, const NetworkId &networkId, const QString &bufferName, const QByteArray &cipher)
+    {
+        return instance()->_storage->setBufferCipher(user, networkId, bufferName, cipher);
+    }
+
+
     //! Update the key of a channel
     /** \note This method is threadsafe
      *
@@ -402,6 +429,22 @@ public:
     }
 
 
+    //! Request a certain number messages stored in a given buffer, matching certain filters
+    /** \param buffer   The buffer we request messages from
+     *  \param first    if != -1 return only messages with a MsgId >= first
+     *  \param last     if != -1 return only messages with a MsgId < last
+     *  \param limit    if != -1 limit the returned list to a max of \limit entries
+     *  \param type     The Message::Types that should be returned
+     *  \return The requested list of messages
+     */
+    static inline QList<Message> requestMsgsFiltered(UserId user, BufferId bufferId, MsgId first = -1, MsgId last = -1,
+                                                     int limit = -1, Message::Types type = Message::Types{-1},
+                                                     Message::Flags flags = Message::Flags{-1})
+    {
+        return instance()->_storage->requestMsgsFiltered(user, bufferId, first, last, limit, type, flags);
+    }
+
+
     //! Request a certain number of messages across all buffers
     /** \param first    if != -1 return only messages with a MsgId >= first
      *  \param last     if != -1 return only messages with a MsgId < last
@@ -411,6 +454,21 @@ public:
     static inline QList<Message> requestAllMsgs(UserId user, MsgId first = -1, MsgId last = -1, int limit = -1)
     {
         return instance()->_storage->requestAllMsgs(user, first, last, limit);
+    }
+
+
+    //! Request a certain number of messages across all buffers, matching certain filters
+    /** \param first    if != -1 return only messages with a MsgId >= first
+     *  \param last     if != -1 return only messages with a MsgId < last
+     *  \param limit    Max amount of messages
+     *  \param type     The Message::Types that should be returned
+     *  \return The requested list of messages
+     */
+    static inline QList<Message> requestAllMsgsFiltered(UserId user, MsgId first = -1, MsgId last = -1, int limit = -1,
+                                                        Message::Types type = Message::Types{-1},
+                                                        Message::Flags flags = Message::Flags{-1})
+    {
+        return instance()->_storage->requestAllMsgsFiltered(user, first, last, limit, type, flags);
     }
 
 
@@ -579,6 +637,39 @@ public:
         return instance()->_storage->bufferActivity(bufferId, lastSeenMsgId);
     }
 
+    //! Update the highlight count for a Buffer
+    /** This Method is used to make the highlight count state of a Buffer persistent
+     *  \note This method is threadsafe.
+     *
+     * \param user      The Owner of that Buffer
+     * \param bufferId  The buffer id
+     * \param MsgId     The Message id where the marker line should be placed
+     */
+    static inline void setHighlightCount(UserId user, BufferId bufferId, int highlightCount) {
+        return instance()->_storage->setHighlightCount(user, bufferId, highlightCount);
+    }
+
+
+    //! Get a Hash of all highlight count states
+    /** This Method is called when the Quassel Core is started to restore the highlight count
+     *  \note This method is threadsafe.
+     *
+     * \param user      The Owner of the buffers
+     */
+    static inline QHash<BufferId, int> highlightCounts(UserId user) {
+        return instance()->_storage->highlightCounts(user);
+    }
+    //! Get the highlight count states for a buffer
+    /** This method is used to load the highlight count of a buffer when its last seen message changes.
+     *  \note This method is threadsafe.
+     *
+     * \param bufferId The buffer
+     * \param lastSeenMsgId     The last seen message
+     */
+    static inline int highlightCount(BufferId bufferId, MsgId lastSeenMsgId) {
+        return instance()->_storage->highlightCount(bufferId, lastSeenMsgId);
+    }
+
     static inline QDateTime startTime() { return instance()->_startTime; }
     static inline bool isConfigured() { return instance()->_configured; }
     static bool sslSupported();
@@ -627,8 +718,12 @@ private slots:
     void incomingConnection();
     void clientDisconnected();
 
-    bool initStorage(const QString &backend, const QVariantMap &settings, bool setup = false);
-    bool initAuthenticator(const QString &backend, const QVariantMap &settings, bool setup = false);
+    bool initStorage(const QString &backend, const QVariantMap &settings,
+                     const QProcessEnvironment &environment, bool loadFromEnvironment,
+                     bool setup = false);
+    bool initAuthenticator(const QString &backend, const QVariantMap &settings,
+                           const QProcessEnvironment &environment, bool loadFromEnvironment,
+                           bool setup = false);
 
     void socketError(QAbstractSocket::SocketError err, const QString &errorString);
     void setupClientSession(RemotePeer *, UserId);

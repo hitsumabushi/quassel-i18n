@@ -55,5 +55,5 @@ QVariant DebugMessageModelFilter::data(const QModelIndex &index, int role) const
         return QVariant();
 
     QModelIndex source_index = mapToSource(index);
-    return sourceModel()->data(source_index, MessageModel::MsgIdRole).value<MsgId>().toInt();
+    return sourceModel()->data(source_index, MessageModel::MsgIdRole).value<MsgId>().toQint64();
 }

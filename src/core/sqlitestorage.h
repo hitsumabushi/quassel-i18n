@@ -58,6 +58,8 @@ public slots:
     void delUser(UserId user) override;
     void setUserSetting(UserId userId, const QString &settingName, const QVariant &data) override;
     QVariant getUserSetting(UserId userId, const QString &settingName, const QVariant &defaultData = QVariant()) override;
+    void setCoreState(const QVariantList &data) override;
+    QVariantList getCoreState(const QVariantList &data) override;
 
     /* Identity handling */
     IdentityId createIdentity(UserId user, CoreIdentity &identity) override;
@@ -99,19 +101,37 @@ public slots:
     void setBufferActivity(UserId id, BufferId bufferId, Message::Types type) override;
     QHash<BufferId, Message::Types> bufferActivities(UserId id) override;
     Message::Types bufferActivity(BufferId bufferId, MsgId lastSeenMsgId) override;
+    void setHighlightCount(UserId id, BufferId bufferId, int count) override;
+    QHash<BufferId, int> highlightCounts(UserId id) override;
+    int highlightCount(BufferId bufferId, MsgId lastSeenMsgId) override;
+    QHash<QString, QByteArray> bufferCiphers(UserId user, const NetworkId &networkId) override;
+    void setBufferCipher(UserId user, const NetworkId &networkId, const QString &bufferName, const QByteArray &cipher) override;
 
     /* Message handling */
     bool logMessage(Message &msg) override;
     bool logMessages(MessageList &msgs) override;
     QList<Message> requestMsgs(UserId user, BufferId bufferId, MsgId first = -1, MsgId last = -1, int limit = -1) override;
+    QList<Message> requestMsgsFiltered(UserId user, BufferId bufferId, MsgId first = -1, MsgId last = -1,
+                                       int limit = -1, Message::Types type = Message::Types{-1},
+                                       Message::Flags flags = Message::Flags{-1}) override;
     QList<Message> requestAllMsgs(UserId user, MsgId first = -1, MsgId last = -1, int limit = -1) override;
+    QList<Message> requestAllMsgsFiltered(UserId user, MsgId first = -1, MsgId last = -1, int limit = -1,
+                                          Message::Types type = Message::Types{-1},
+                                          Message::Flags flags = Message::Flags{-1}) override;
 
     /* Sysident handling */
     QMap<UserId, QString> getAllAuthUserNames() override;
     QString getAuthUserName(UserId user) override;
 
 protected:
-    void setConnectionProperties(const QVariantMap & /* properties */)  override {}
+    void setConnectionProperties(const QVariantMap &properties,
+                                 const QProcessEnvironment &environment,
+                                 bool loadFromEnvironment) override {
+        Q_UNUSED(properties);
+        Q_UNUSED(environment);
+        Q_UNUSED(loadFromEnvironment);
+    }
+    // SQLite does not have any connection properties to set
     QString driverName()  override { return "QSQLITE"; }
     QString databaseName()  override { return backlogFile(); }
     int installedSchemaVersion() override;
@@ -151,10 +171,11 @@ public:
     bool readMo(BacklogMO &backlog) override;
     bool readMo(IrcServerMO &ircserver) override;
     bool readMo(UserSettingMO &userSetting) override;
+    bool readMo(CoreStateMO &coreState) override;
 
     bool prepareQuery(MigrationObject mo) override;
 
-    int stepSize() { return 50000; }
+    qint64 stepSize() { return 50000; }
 
 protected:
     bool transaction()  override { return logDb().transaction(); }
@@ -163,7 +184,7 @@ protected:
 
 private:
     void setMaxId(MigrationObject mo);
-    int _maxId;
+    qint64 _maxId;
 };
 
 

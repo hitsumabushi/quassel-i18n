@@ -116,9 +116,11 @@ void AbstractSqlStorage::dbConnect(QSqlDatabase &db)
 }
 
 
-Storage::State AbstractSqlStorage::init(const QVariantMap &settings)
+Storage::State AbstractSqlStorage::init(const QVariantMap &settings,
+                                        const QProcessEnvironment &environment,
+                                        bool loadFromEnvironment)
 {
-    setConnectionProperties(settings);
+    setConnectionProperties(settings, environment, loadFromEnvironment);
 
     _debug = Quassel::isOptionSet("debug");
 
@@ -137,11 +139,20 @@ Storage::State AbstractSqlStorage::init(const QVariantMap &settings)
     }
 
     if (installedSchemaVersion() < schemaVersion()) {
-        qWarning() << qPrintable(tr("Installed Schema (version %1) is not up to date. Upgrading to version %2...").arg(installedSchemaVersion()).arg(schemaVersion()));
+        qWarning() << qPrintable(tr("Installed Schema (version %1) is not up to date. Upgrading to "
+                                    "version %2...  This may take a while for major upgrades."
+                                    ).arg(installedSchemaVersion()).arg(schemaVersion()));
+        // TODO: The monolithic client won't show this message unless one looks into the debug log.
+        // This should be made more friendly, e.g. a popup message in the GUI.
         if (!upgradeDb()) {
             qWarning() << qPrintable(tr("Upgrade failed..."));
             return NotAvailable;
         }
+        // Warning messages are also sent to the console, while Info messages aren't.  Add a message
+        // when migration succeeds to avoid confusing folks by implying the schema upgrade failed if
+        // later functionality does not work.
+        qWarning() << qPrintable(tr("Installed Schema successfully upgraded to version %1."
+                                    ).arg(schemaVersion()));
     }
 
     quInfo() << qPrintable(displayName()) << "storage backend is ready. Schema version:" << installedSchemaVersion();
@@ -192,9 +203,10 @@ QStringList AbstractSqlStorage::setupQueries()
 }
 
 
-bool AbstractSqlStorage::setup(const QVariantMap &settings)
+bool AbstractSqlStorage::setup(const QVariantMap &settings, const QProcessEnvironment &environment,
+                               bool loadFromEnvironment)
 {
-    setConnectionProperties(settings);
+    setConnectionProperties(settings, environment, loadFromEnvironment);
     QSqlDatabase db = logDb();
     if (!db.isOpen()) {
         qCritical() << "Unable to setup Logging Backend!";
@@ -409,6 +421,8 @@ QString AbstractSqlMigrator::migrationObject(MigrationObject moType)
         return "IrcServer";
     case UserSetting:
         return "UserSetting";
+    case CoreState:
+        return "CoreState";
     };
     return QString();
 }
@@ -502,6 +516,10 @@ bool AbstractSqlMigrationReader::migrateTo(AbstractSqlMigrationWriter *writer)
     if (!transferMo(UserSetting, userSettingMo))
         return false;
 
+    CoreStateMO coreStateMO;
+    if (!transferMo(CoreState, coreStateMO))
+        return false;
+
     if (!_writer->postProcess())
         abortMigration();
     return finalizeMigration();
@@ -583,4 +601,14 @@ bool AbstractSqlMigrationReader::transferMo(MigrationObject moType, T &mo)
 
     qDebug() << "Done.";
     return true;
+}
+
+uint qHash(const SenderData &key) {
+    return qHash(QString(key.sender + "\n" + key.realname + "\n" + key.avatarurl));
+}
+
+bool operator==(const SenderData &a, const SenderData &b) {
+    return a.sender == b.sender &&
+        a.realname == b.realname &&
+        a.avatarurl == b.avatarurl;
 }

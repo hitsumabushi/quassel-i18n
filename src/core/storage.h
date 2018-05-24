@@ -85,13 +85,17 @@ public slots:
      *  \param settings   Hostname, port, username, password, ...
      *  \return True if and only if the storage provider was initialized successfully.
      */
-    virtual bool setup(const QVariantMap &settings = QVariantMap()) = 0;
+    virtual bool setup(const QVariantMap &settings = QVariantMap(),
+                       const QProcessEnvironment &environment = {},
+                       bool loadFromEnvironment = false) = 0;
 
     //! Initialize the storage provider
     /** \param settings   Hostname, port, username, password, ...
      *  \return the State the storage backend is now in (see Storage::State)
      */
-    virtual State init(const QVariantMap &settings = QVariantMap()) = 0;
+    virtual State init(const QVariantMap &settings = QVariantMap(),
+                       const QProcessEnvironment &environment = {},
+                       bool loadFromEnvironment = false) = 0;
 
     //! Makes temp data persistent
     /** This Method is periodically called by the Quassel Core to make temporary
@@ -170,6 +174,19 @@ public slots:
      * \return the Value of the Setting or the default value if it is unset.
      */
     virtual QVariant getUserSetting(UserId userId, const QString &settingName, const QVariant &data = QVariant()) = 0;
+
+    //! Store core state
+    /**
+     * \param data         Active Sessions
+     */
+    virtual void setCoreState(const QVariantList &data) = 0;
+
+    //! Retrieve core state
+    /**
+     * \param default      Value to return in case it's unset.
+     * \return Active Sessions
+     */
+    virtual QVariantList getCoreState(const QVariantList &data = QVariantList()) = 0;
 
     /* Identity handling */
     virtual IdentityId createIdentity(UserId user, CoreIdentity &identity) = 0;
@@ -411,6 +428,52 @@ public slots:
      */
     virtual Message::Types bufferActivity(BufferId bufferId, MsgId lastSeenMsgId) = 0;
 
+    //! Get a hash of buffers with their ciphers for a given network
+    /** The keys are channel names and values are ciphers (possibly empty)
+     *  \note This method is threadsafe
+     *
+     *  \param user       The id of the networks owner
+     *  \param networkId  The Id of the network
+     */
+    virtual QHash<QString, QByteArray> bufferCiphers(UserId user, const NetworkId &networkId) = 0;
+
+    //! Update the cipher of a buffer
+    /** \note This method is threadsafe
+     *
+     *  \param user        The Id of the networks owner
+     *  \param networkId   The Id of the network
+     *  \param bufferName The Cname of the buffer
+     *  \param cipher      The cipher for the buffer
+     */
+    virtual void setBufferCipher(UserId user, const NetworkId &networkId, const QString &bufferName, const QByteArray &cipher) = 0;
+
+    //! Update the highlight count for a Buffer
+    /** This Method is used to make the activity state of a Buffer persistent
+     *  \note This method is threadsafe.
+     *
+     * \param user      The Owner of that Buffer
+     * \param bufferId  The buffer id
+     * \param MsgId     The Message id where the marker line should be placed
+     */
+    virtual void setHighlightCount(UserId id, BufferId bufferId, int count) = 0;
+
+    //! Get a Hash of all highlight count states
+    /** This Method is called when the Quassel Core is started to restore the HighlightCounts
+     *  \note This method is threadsafe.
+     *
+     * \param user      The Owner of the buffers
+     */
+    virtual QHash<BufferId, int> highlightCounts(UserId id) = 0;
+
+    //! Get the highlight count states for a buffer
+    /** This method is used to load the activity state of a buffer when its last seen message changes.
+     *  \note This method is threadsafe.
+     *
+     * \param bufferId The buffer
+     * \param lastSeenMsgId     The last seen message
+     */
+    virtual int highlightCount(BufferId bufferId, MsgId lastSeenMsgId) = 0;
+
     /* Message handling */
 
     //! Store a Message in the storage backend and set its unique Id.
@@ -434,6 +497,18 @@ public slots:
      */
     virtual QList<Message> requestMsgs(UserId user, BufferId bufferId, MsgId first = -1, MsgId last = -1, int limit = -1) = 0;
 
+    //! Request a certain number messages stored in a given buffer, matching certain filters
+    /** \param buffer   The buffer we request messages from
+     *  \param first    if != -1 return only messages with a MsgId >= first
+     *  \param last     if != -1 return only messages with a MsgId < last
+     *  \param limit    if != -1 limit the returned list to a max of \limit entries
+     *  \param type     The Message::Types that should be returned
+     *  \return The requested list of messages
+     */
+    virtual QList<Message> requestMsgsFiltered(UserId user, BufferId bufferId, MsgId first = -1, MsgId last = -1,
+                                               int limit = -1, Message::Types type = Message::Types{-1},
+                                               Message::Flags flags = Message::Flags{-1}) = 0;
+
     //! Request a certain number of messages across all buffers
     /** \param first    if != -1 return only messages with a MsgId >= first
      *  \param last     if != -1 return only messages with a MsgId < last
@@ -441,6 +516,17 @@ public slots:
      *  \return The requested list of messages
      */
     virtual QList<Message> requestAllMsgs(UserId user, MsgId first = -1, MsgId last = -1, int limit = -1) = 0;
+
+    //! Request a certain number of messages across all buffers, matching certain filters
+    /** \param first    if != -1 return only messages with a MsgId >= first
+     *  \param last     if != -1 return only messages with a MsgId < last
+     *  \param limit    Max amount of messages
+     *  \param type     The Message::Types that should be returned
+     *  \return The requested list of messages
+     */
+    virtual QList<Message> requestAllMsgsFiltered(UserId user, MsgId first = -1, MsgId last = -1, int limit = -1,
+                                                  Message::Types type = Message::Types{-1},
+                                                  Message::Flags flags = Message::Flags{-1}) = 0;
 
     //! Fetch all authusernames
     /** \return      Map of all current UserIds to permitted idents

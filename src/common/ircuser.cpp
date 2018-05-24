@@ -40,7 +40,7 @@ IrcUser::IrcUser(const QString &hostmask, Network *network) : SyncableObject(net
     _server(),
     // _idleTime(QDateTime::currentDateTime()),
     _ircOperator(),
-    _lastAwayMessage(0),
+    _lastAwayMessageTime(),
     _whoisServiceReply(),
     _encrypted(false),
     _network(network),
@@ -48,6 +48,8 @@ IrcUser::IrcUser(const QString &hostmask, Network *network) : SyncableObject(net
     _codecForDecoding(0)
 {
     updateObjectName();
+    _lastAwayMessageTime.setTimeSpec(Qt::UTC);
+    _lastAwayMessageTime.setMSecsSinceEpoch(0);
 }
 
 
@@ -68,8 +70,12 @@ QString IrcUser::hostmask() const
 
 QDateTime IrcUser::idleTime()
 {
-    if (QDateTime::currentDateTime().toTime_t() - _idleTimeSet.toTime_t() > 1200)
+    if ((QDateTime::currentDateTime().toMSecsSinceEpoch() - _idleTimeSet.toMSecsSinceEpoch())
+            > 1200000) {
+        // 20 * 60 * 1000 = 1200000
+        // 20 minutes have elapsed, clear the known idle time as it's likely inaccurate by now
         _idleTime = QDateTime();
+    }
     return _idleTime;
 }
 
@@ -211,11 +217,28 @@ void IrcUser::setIrcOperator(const QString &ircOperator)
 }
 
 
+// This function is only ever called by SYNC calls from legacy cores (pre-0.13).
+// Therefore, no SYNC call is needed here.
 void IrcUser::setLastAwayMessage(const int &lastAwayMessage)
 {
-    if (lastAwayMessage > _lastAwayMessage) {
-        _lastAwayMessage = lastAwayMessage;
-        SYNC(ARG(lastAwayMessage))
+    QDateTime lastAwayMessageTime = QDateTime();
+    lastAwayMessageTime.setTimeSpec(Qt::UTC);
+#if QT_VERSION >= 0x050800
+    lastAwayMessageTime.fromSecsSinceEpoch(lastAwayMessage);
+#else
+    // toSecsSinceEpoch() was added in Qt 5.8.  Manually downconvert to seconds for now.
+    // See https://doc.qt.io/qt-5/qdatetime.html#toMSecsSinceEpoch
+    lastAwayMessageTime.fromMSecsSinceEpoch(lastAwayMessage * 1000);
+#endif
+    setLastAwayMessageTime(lastAwayMessageTime);
+}
+
+
+void IrcUser::setLastAwayMessageTime(const QDateTime &lastAwayMessageTime)
+{
+    if (lastAwayMessageTime > _lastAwayMessageTime) {
+        _lastAwayMessageTime = lastAwayMessageTime;
+        SYNC(ARG(lastAwayMessageTime))
     }
 }
 
