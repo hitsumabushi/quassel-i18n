@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-05-23 15:41+0000\n"
-"Last-Translator: Chris Egeland <chris@chrisegeland.com>\n"
+"PO-Revision-Date: 2018-05-24 12:43+0000\n"
+"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/quassel/quassel/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -727,17 +727,24 @@ msgid ""
 "Greenphones, N810s, N950s and more"
 msgstr ""
 
-#: ../src/core/abstractsqlstorage.cpp:140
+#: ../src/core/abstractsqlstorage.cpp:142
 #, qt-format
 msgctxt "AbstractSqlStorage|"
 msgid ""
 "Installed Schema (version %1) is not up to date. Upgrading to version %2..."
-msgstr "Installert skjema (versjon %1) er ikke oppdatert. Oppgraderer til versjon %2..."
+"  This may take a while for major upgrades."
+msgstr ""
 
-#: ../src/core/abstractsqlstorage.cpp:142
+#: ../src/core/abstractsqlstorage.cpp:148
 msgctxt "AbstractSqlStorage|"
 msgid "Upgrade failed..."
 msgstr "Oppgraderingen feilet..."
+
+#: ../src/core/abstractsqlstorage.cpp:154
+#, qt-format
+msgctxt "AbstractSqlStorage|"
+msgid "Installed Schema successfully upgraded to version %1."
+msgstr ""
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:57
 msgctxt "AliasesModel|"
@@ -1077,7 +1084,7 @@ msgctxt "BacklogSettingsPage|"
 msgid "Backlog Fetching"
 msgstr "Henting av historikken"
 
-#: ../src/client/networkmodel.cpp:462
+#: ../src/client/networkmodel.cpp:466
 #, qt-format
 msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
@@ -1285,28 +1292,28 @@ msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
 msgstr "Gå til markeringslinje"
 
-#: ../src/client/networkmodel.cpp:758
+#: ../src/client/networkmodel.cpp:762
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "Channel %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:762
+#: ../src/client/networkmodel.cpp:766
 msgctxt "ChannelBufferItem|"
 msgid "Users"
 msgstr "Brukere"
 
-#: ../src/client/networkmodel.cpp:767
+#: ../src/client/networkmodel.cpp:771
 msgctxt "ChannelBufferItem|"
 msgid "Mode"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:777
+#: ../src/client/networkmodel.cpp:781
 msgctxt "ChannelBufferItem|"
 msgid "Topic"
 msgstr "Emne"
 
-#: ../src/client/networkmodel.cpp:783
+#: ../src/client/networkmodel.cpp:787
 msgctxt "ChannelBufferItem|"
 msgid "Not active, double-click to join"
 msgstr ""
@@ -2243,12 +2250,12 @@ msgctxt "ContextMenuActionProvider|"
 msgid "Existing Rules"
 msgstr "Eksisterende regler"
 
-#: ../src/core/core.cpp:210
+#: ../src/core/core.cpp:244
 msgctxt "Core|"
 msgid "Could not initialize any storage backend! Exiting..."
 msgstr "Kunne ikke initialisere lagringsstøtte! Avslutter..."
 
-#: ../src/core/core.cpp:211
+#: ../src/core/core.cpp:246
 msgctxt "Core|"
 msgid ""
 "Currently, Quassel supports SQLite3 and PostgreSQL. You need to build your\n"
@@ -2256,201 +2263,201 @@ msgid ""
 "to work."
 msgstr "Quassel støtter SQLite3 og PostgreSQL. Du må ha Qt med støtte\nfor sqlite og/eller postgresql tilgjengelig for at Quassel-kjernen skal\nfungere."
 
-#: ../src/core/core.cpp:280
+#: ../src/core/core.cpp:311
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr "Kaller restoreState() selv om aktive sesjoner finnes!"
 
-#: ../src/core/core.cpp:314
+#: ../src/core/core.cpp:347
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr "Kjernen er allerede konfigurert! Konfigurerer ikke på nytt ..."
 
-#: ../src/core/core.cpp:317
+#: ../src/core/core.cpp:350
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr "Administratorbrukernavn eller -passord er ikke satt."
 
-#: ../src/core/core.cpp:320
+#: ../src/core/core.cpp:353
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr "Kunne ikke sette opp lagring!"
 
-#: ../src/core/core.cpp:326
+#: ../src/core/core.cpp:359
 msgctxt "Core|"
 msgid "Could not setup authenticator!"
 msgstr ""
 
-#: ../src/core/core.cpp:330
+#: ../src/core/core.cpp:363
 msgctxt "Core|"
 msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:334
+#: ../src/core/core.cpp:367
 msgctxt "Core|"
 msgid "Creating admin user..."
 msgstr "Oppretter administrasjonsbruker..."
 
-#: ../src/core/core.cpp:601
+#: ../src/core/core.cpp:637
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1"
 msgstr "Ugyldig lytteadresse %1"
 
-#: ../src/core/core.cpp:610
+#: ../src/core/core.cpp:646
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
 msgstr "Lytter for GUI-klienter på IPv6-adresse %1 og port %2 med protokollversjon %3"
 
-#: ../src/core/core.cpp:619
+#: ../src/core/core.cpp:655
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr "Kunne ikke åpne IPv6-grensesnittet %1:%2: %3"
 
-#: ../src/core/core.cpp:627
+#: ../src/core/core.cpp:663
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr "Lytter etter klienter på IPv4 %1 port %2 med protokollversjon %3"
 
-#: ../src/core/core.cpp:638
+#: ../src/core/core.cpp:674
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr "Kunne ikke åpne IPv4-grensesnittet %1:%2: %3"
 
-#: ../src/core/core.cpp:646
+#: ../src/core/core.cpp:682
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr "Ugyldig lytteadresse %1, ukjent nettverksprotokoll"
 
-#: ../src/core/core.cpp:655
+#: ../src/core/core.cpp:691
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr "Kunne ikke velge noen nettverksgrensesnitt for lytting!"
 
-#: ../src/core/core.cpp:695
+#: ../src/core/core.cpp:731
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr "Klient koblet til fra"
 
-#: ../src/core/core.cpp:698
+#: ../src/core/core.cpp:734
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr "Lukker tjener for grunnleggende oppsett."
 
-#: ../src/core/core.cpp:710
+#: ../src/core/core.cpp:746
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
 msgstr "Ikke-autentisert klient frakoblet:"
 
-#: ../src/core/core.cpp:864
+#: ../src/core/core.cpp:900
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:865
+#: ../src/core/core.cpp:901
 msgctxt "Core|"
 msgid "Supported backends are:"
 msgstr ""
 
-#: ../src/core/core.cpp:877 ../src/core/core.cpp:897
+#: ../src/core/core.cpp:913 ../src/core/core.cpp:933
 #, qt-format
 msgctxt "Core|"
 msgid "Switched storage backend to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:878
+#: ../src/core/core.cpp:914
 msgctxt "Core|"
 msgid "Backend already initialized. Skipping Migration..."
-msgstr ""
-
-#: ../src/core/core.cpp:881
-#, qt-format
-msgctxt "Core|"
-msgid "Storage backend is not available: %1"
-msgstr ""
-
-#: ../src/core/core.cpp:885
-#, qt-format
-msgctxt "Core|"
-msgid "Unable to setup storage backend: %1"
-msgstr ""
-
-#: ../src/core/core.cpp:890
-#, qt-format
-msgctxt "Core|"
-msgid "Unable to initialize storage backend: %1"
-msgstr ""
-
-#: ../src/core/core.cpp:905
-#, qt-format
-msgctxt "Core|"
-msgid "Migrating storage backend %1 to %2..."
-msgstr ""
-
-#: ../src/core/core.cpp:910
-msgctxt "Core|"
-msgid "Migration finished!"
 msgstr ""
 
 #: ../src/core/core.cpp:917
 #, qt-format
 msgctxt "Core|"
-msgid "Unable to migrate storage backend! (No migration writer for %1)"
+msgid "Storage backend is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:923
+#: ../src/core/core.cpp:921
+#, qt-format
 msgctxt "Core|"
-msgid "No currently active storage backend. Skipping migration..."
+msgid "Unable to setup storage backend: %1"
 msgstr ""
 
 #: ../src/core/core.cpp:926
 #, qt-format
 msgctxt "Core|"
+msgid "Unable to initialize storage backend: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:941
+#, qt-format
+msgctxt "Core|"
+msgid "Migrating storage backend %1 to %2..."
+msgstr ""
+
+#: ../src/core/core.cpp:946
+msgctxt "Core|"
+msgid "Migration finished!"
+msgstr ""
+
+#: ../src/core/core.cpp:953
+#, qt-format
+msgctxt "Core|"
+msgid "Unable to migrate storage backend! (No migration writer for %1)"
+msgstr ""
+
+#: ../src/core/core.cpp:959
+msgctxt "Core|"
+msgid "No currently active storage backend. Skipping migration..."
+msgstr ""
+
+#: ../src/core/core.cpp:962
+#, qt-format
+msgctxt "Core|"
 msgid "Currently active storage backend does not support migration: %1"
-msgstr ""
-
-#: ../src/core/core.cpp:929
-#, qt-format
-msgctxt "Core|"
-msgid "New storage backend does not support migration: %1"
-msgstr ""
-
-#: ../src/core/core.cpp:951
-#, qt-format
-msgctxt "Core|"
-msgid "Unsupported authenticator: %1"
-msgstr ""
-
-#: ../src/core/core.cpp:952
-msgctxt "Core|"
-msgid "Supported authenticators are:"
-msgstr ""
-
-#: ../src/core/core.cpp:962 ../src/core/core.cpp:979
-#, qt-format
-msgctxt "Core|"
-msgid "Switched authenticator to: %1"
 msgstr ""
 
 #: ../src/core/core.cpp:965
 #, qt-format
 msgctxt "Core|"
+msgid "New storage backend does not support migration: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:987
+#, qt-format
+msgctxt "Core|"
+msgid "Unsupported authenticator: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:988
+msgctxt "Core|"
+msgid "Supported authenticators are:"
+msgstr ""
+
+#: ../src/core/core.cpp:998 ../src/core/core.cpp:1015
+#, qt-format
+msgctxt "Core|"
+msgid "Switched authenticator to: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:1001
+#, qt-format
+msgctxt "Core|"
 msgid "Authenticator is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:969
+#: ../src/core/core.cpp:1005
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:974
+#: ../src/core/core.cpp:1010
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize authenticator: %1"
@@ -3255,121 +3262,121 @@ msgctxt "CoreInfoDlg|"
 msgid " %1:%2:%3 (since %4)"
 msgstr " %1:%2:%3 (siden %4)"
 
-#: ../src/core/corenetwork.cpp:218
+#: ../src/core/corenetwork.cpp:223
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next Server"
 msgstr "Greide ikke å koble til. Prøver neste tjener"
 
-#: ../src/core/corenetwork.cpp:229 ../src/core/corenetwork.cpp:230
+#: ../src/core/corenetwork.cpp:234 ../src/core/corenetwork.cpp:235
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr "Kobler til %1:%2:..."
 
-#: ../src/core/corenetwork.cpp:293
+#: ../src/core/corenetwork.cpp:298
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr "Kobler fra (%1)"
 
-#: ../src/core/corenetwork.cpp:293
+#: ../src/core/corenetwork.cpp:298
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr "Kjerne avslutting"
 
-#: ../src/core/corenetwork.cpp:514
+#: ../src/core/corenetwork.cpp:521
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr "Kunne ikke koble til %1 (%2)"
 
-#: ../src/core/corenetwork.cpp:516
+#: ../src/core/corenetwork.cpp:523
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr "Tilkoblingsfeil: %1"
 
-#: ../src/core/corenetwork.cpp:564
+#: ../src/core/corenetwork.cpp:571
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1071
+#: ../src/core/corenetwork.cpp:1083
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1082
+#: ../src/core/corenetwork.cpp:1094
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1188
+#: ../src/core/corenetwork.cpp:1200
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1203
+#: ../src/core/corenetwork.cpp:1215
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1210
+#: ../src/core/corenetwork.cpp:1222
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1219
+#: ../src/core/corenetwork.cpp:1231
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1234
+#: ../src/core/corenetwork.cpp:1246
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1238
+#: ../src/core/corenetwork.cpp:1250
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1362
+#: ../src/core/corenetwork.cpp:1374
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1366 ../src/core/corenetwork.cpp:1379
+#: ../src/core/corenetwork.cpp:1378 ../src/core/corenetwork.cpp:1391
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1375
+#: ../src/core/corenetwork.cpp:1387
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
 "not required"
 msgstr ""
 
-#: ../src/core/coresession.cpp:281
+#: ../src/core/coresession.cpp:285
 msgctxt "CoreSession|"
 msgid "Client"
 msgstr "Klient"
 
-#: ../src/core/coresession.cpp:281
+#: ../src/core/coresession.cpp:285
 #, qt-format
 msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr "Frakoblet (BrukerID: %1)."
 
-#: ../src/core/coresession.cpp:557
+#: ../src/core/coresession.cpp:602
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3377,7 +3384,7 @@ msgid ""
 " create network %1!"
 msgstr "CoreSession::createNetwork(): Fikk ugyldig nettverksID fra kjernen under forsøket på å opprette nettverket %1!"
 
-#: ../src/core/coresession.cpp:589
+#: ../src/core/coresession.cpp:634
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -3412,12 +3419,12 @@ msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr "Kunne ikke tolke DH1080_FINISH. Nøkkelutveksling feilet."
 
-#: ../src/core/coresessioneventprocessor.cpp:1514
+#: ../src/core/coresessioneventprocessor.cpp:1526
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1532
+#: ../src/core/coresessioneventprocessor.cpp:1544
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
@@ -3879,205 +3886,205 @@ msgid ""
 "behavior!"
 msgstr "Mottok RPL_ISUPPORT som ikke passer med IRC-standarden: dette kan føre til uventet oppførsel!"
 
-#: ../src/core/eventstringifier.cpp:460
+#: ../src/core/eventstringifier.cpp:462
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 is away: \"%2\""
 msgstr "%1 er borte: \"%2\""
 
-#: ../src/core/eventstringifier.cpp:467
+#: ../src/core/eventstringifier.cpp:469
 msgctxt "EventStringifier|"
 msgid "You are no longer marked as being away"
 msgstr "Du er ikke lenger satt som ikke tilgjengelig"
 
-#: ../src/core/eventstringifier.cpp:475
+#: ../src/core/eventstringifier.cpp:477
 msgctxt "EventStringifier|"
 msgid "You have been marked as being away"
 msgstr "Du er satt som ikke tilgjengelig"
 
-#: ../src/core/eventstringifier.cpp:497
+#: ../src/core/eventstringifier.cpp:499
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is %2 (%3)"
 msgstr "[Whois] %1 er %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:513
+#: ../src/core/eventstringifier.cpp:515
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is online via %2 (%3)"
 msgstr "%1 is online via %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:515
+#: ../src/core/eventstringifier.cpp:517
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was online via %2 (%3)"
 msgstr "[Whowas] %1 var %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:525
+#: ../src/core/eventstringifier.cpp:527
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was %2@%3 (%4)"
 msgstr "[Whowas] %1 var %2@%3 (%4)"
 
-#: ../src/core/eventstringifier.cpp:534
+#: ../src/core/eventstringifier.cpp:536
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] End of /WHO list for %1"
 msgstr "[Who] Slutt på /WHO listen for %1"
 
-#: ../src/core/eventstringifier.cpp:546
+#: ../src/core/eventstringifier.cpp:557
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is logged in since %2"
 msgstr "[Whois] %1 er logget inn siden %2"
 
-#: ../src/core/eventstringifier.cpp:550
+#: ../src/core/eventstringifier.cpp:561
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is idling for %2 (since %3)"
 msgstr "[Whois] %1 har vært inaktiv for %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:560
+#: ../src/core/eventstringifier.cpp:571
 msgctxt "EventStringifier|"
 msgid "[Whois] End of /WHOIS list"
 msgstr "[Who] Slutt på /WHO listen for %1"
 
-#: ../src/core/eventstringifier.cpp:583
+#: ../src/core/eventstringifier.cpp:594
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is a user on channels: %2"
 msgstr "[Whois] %1 er en bruker på kanalene: %2"
 
-#: ../src/core/eventstringifier.cpp:585
+#: ../src/core/eventstringifier.cpp:596
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 has voice on channels: %2"
 msgstr "[Whois] %1 har stemme på kanalene: %2"
 
-#: ../src/core/eventstringifier.cpp:587
+#: ../src/core/eventstringifier.cpp:598
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is an operator on channels: %2"
 msgstr "[Whois] %1 er en operatør på kanalene: %2"
 
-#: ../src/core/eventstringifier.cpp:611
+#: ../src/core/eventstringifier.cpp:622
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 has %2 users. Topic is: \"%3\""
 msgstr "Kanal %1 har %2 brukere. Emnet er: %3"
 
-#: ../src/core/eventstringifier.cpp:619
+#: ../src/core/eventstringifier.cpp:630
 msgctxt "EventStringifier|"
 msgid "End of channel list"
 msgstr "Slutt på kanallisten"
 
-#: ../src/core/eventstringifier.cpp:637
+#: ../src/core/eventstringifier.cpp:648
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Homepage for %1 is %2"
 msgstr "Hjemmeside for %1 er %2"
 
-#: ../src/core/eventstringifier.cpp:654
+#: ../src/core/eventstringifier.cpp:674
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 created on %2"
 msgstr "Kanal %1 opprettet %2"
 
-#: ../src/core/eventstringifier.cpp:668
+#: ../src/core/eventstringifier.cpp:688
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is authed as %2"
 msgstr "[Whois] %1 er borte: \"%2\""
 
-#: ../src/core/eventstringifier.cpp:671
+#: ../src/core/eventstringifier.cpp:691
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was authed as %2"
 msgstr "[Whowas] %1 ble autentisert som %2"
 
-#: ../src/core/eventstringifier.cpp:680
+#: ../src/core/eventstringifier.cpp:700
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "No topic is set for %1."
 msgstr "Inget emne satt for %1."
 
-#: ../src/core/eventstringifier.cpp:688
+#: ../src/core/eventstringifier.cpp:708
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic for %1 is \"%2\""
 msgstr "Emne for %1 er \"%2\""
 
-#: ../src/core/eventstringifier.cpp:700
+#: ../src/core/eventstringifier.cpp:729
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic set by %1 on %2"
 msgstr "Emne satt av %1 på %2"
 
-#: ../src/core/eventstringifier.cpp:713
+#: ../src/core/eventstringifier.cpp:742
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has been invited to %2"
 msgstr "%1 har blitt invitert til %2"
 
-#: ../src/core/eventstringifier.cpp:721
+#: ../src/core/eventstringifier.cpp:750
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] %1"
 msgstr "[Who] %1"
 
-#: ../src/core/eventstringifier.cpp:731
+#: ../src/core/eventstringifier.cpp:760
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[WhoX] %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:738
+#: ../src/core/eventstringifier.cpp:767
 msgctxt "EventStringifier|"
 msgid "End of /WHOWAS"
 msgstr "Slutt på /WHOWAS"
 
-#: ../src/core/eventstringifier.cpp:748
+#: ../src/core/eventstringifier.cpp:777
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick %1 contains illegal characters"
 msgstr "Kallenavn %1 inneholder ugyldige tegn"
 
-#: ../src/core/eventstringifier.cpp:758
+#: ../src/core/eventstringifier.cpp:787
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick already in use: %1"
 msgstr "Kallenavnet er allerede i bruk: %1"
 
-#: ../src/core/eventstringifier.cpp:768
+#: ../src/core/eventstringifier.cpp:797
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick/channel is temporarily unavailable: %1"
 msgstr "Kallenavn/kanal er for tiden ikke tilgjengelig: %1"
 
-#: ../src/core/eventstringifier.cpp:792
+#: ../src/core/eventstringifier.cpp:821
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
 msgstr "sender CTCP-%1-forespørsel til %2"
 
-#: ../src/core/eventstringifier.cpp:808
+#: ../src/core/eventstringifier.cpp:837
 msgctxt "EventStringifier|"
 msgid "unknown"
 msgstr "ukjent"
 
-#: ../src/core/eventstringifier.cpp:809
+#: ../src/core/eventstringifier.cpp:838
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received %1CTCP-%2 request by %3"
 msgstr "Mottok %1CTCP-%2-forespørsel fra %3"
 
-#: ../src/core/eventstringifier.cpp:812
+#: ../src/core/eventstringifier.cpp:841
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-%1 answer from %2: %3"
 msgstr "Mottok CTCP-%1-svar fra %2: %3"
 
-#: ../src/core/eventstringifier.cpp:827
+#: ../src/core/eventstringifier.cpp:856
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
@@ -5185,87 +5192,87 @@ msgctxt "IrcParser|"
 msgid "Capability negotiation not supported"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1155
+#: ../src/client/networkmodel.cpp:1159
 msgctxt "IrcUserItem|"
 msgid "Modes"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1159
+#: ../src/client/networkmodel.cpp:1163
 msgctxt "IrcUserItem|"
 msgid "Unknown"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1165
+#: ../src/client/networkmodel.cpp:1169
 msgctxt "IrcUserItem|"
 msgid "Away message"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1167
+#: ../src/client/networkmodel.cpp:1171
 msgctxt "IrcUserItem|"
 msgid "Realname"
 msgstr "Virkelig navn"
 
-#: ../src/client/networkmodel.cpp:1174
+#: ../src/client/networkmodel.cpp:1178
 msgctxt "IrcUserItem|"
 msgid "Help status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1175
+#: ../src/client/networkmodel.cpp:1179
 msgctxt "IrcUserItem|"
 msgid "Available for help"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1178
+#: ../src/client/networkmodel.cpp:1182
 msgctxt "IrcUserItem|"
 msgid "Service status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1188
+#: ../src/client/networkmodel.cpp:1192
 msgctxt "IrcUserItem|"
 msgid "Not logged in"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1194 ../src/client/networkmodel.cpp:1203
+#: ../src/client/networkmodel.cpp:1198 ../src/client/networkmodel.cpp:1207
 msgctxt "IrcUserItem|"
 msgid "Account"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1204
+#: ../src/client/networkmodel.cpp:1208
 msgctxt "IrcUserItem|"
 msgid "Identified for this nick"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1210
+#: ../src/client/networkmodel.cpp:1214
 msgctxt "IrcUserItem|"
 msgid "Service Reply"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1214
+#: ../src/client/networkmodel.cpp:1218
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1218
+#: ../src/client/networkmodel.cpp:1222
 msgctxt "IrcUserItem|"
 msgid "Operator"
 msgstr "Operatør"
 
-#: ../src/client/networkmodel.cpp:1226
+#: ../src/client/networkmodel.cpp:1230
 msgctxt "IrcUserItem|"
 msgid "Idling since"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1230
+#: ../src/client/networkmodel.cpp:1234
 msgctxt "IrcUserItem|"
 msgid "Login time"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1233
+#: ../src/client/networkmodel.cpp:1237
 msgctxt "IrcUserItem|"
 msgid "Server"
 msgstr "Server"
 
-#: ../src/client/networkmodel.cpp:1238
+#: ../src/client/networkmodel.cpp:1242
 msgctxt "IrcUserItem|"
 msgid "No information available"
 msgstr ""
@@ -5997,7 +6004,7 @@ msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr "Kjerne tilkoblingsfeil"
 
-#: ../src/client/messagemodel.cpp:404
+#: ../src/client/messagemodel.cpp:405
 #, qt-format
 msgctxt "MessageModel|"
 msgid "Requesting %1 messages from backlog for buffer %2:%3"
@@ -6116,43 +6123,43 @@ msgctxt "NetworkEditDlg|"
 msgid "Add Network"
 msgstr "Legg til nettverk"
 
-#: ../src/client/networkmodel.cpp:244
+#: ../src/client/networkmodel.cpp:248
 msgctxt "NetworkItem|"
 msgid "Server"
 msgstr "Server"
 
-#: ../src/client/networkmodel.cpp:245
+#: ../src/client/networkmodel.cpp:249
 msgctxt "NetworkItem|"
 msgid "Users"
 msgstr "Brukere"
 
-#: ../src/client/networkmodel.cpp:247
+#: ../src/client/networkmodel.cpp:251
 msgctxt "NetworkItem|"
 msgid "Lag"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:247
+#: ../src/client/networkmodel.cpp:251
 #, qt-format
 msgctxt "NetworkItem|"
 msgid "%1 msecs"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:251
+#: ../src/client/networkmodel.cpp:255
 msgctxt "NetworkItem|"
 msgid "Not connected"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1282
+#: ../src/client/networkmodel.cpp:1286
 msgctxt "NetworkModel|"
 msgid "Chat"
 msgstr "Samtale"
 
-#: ../src/client/networkmodel.cpp:1282
+#: ../src/client/networkmodel.cpp:1286
 msgctxt "NetworkModel|"
 msgid "Topic"
 msgstr "Emne"
 
-#: ../src/client/networkmodel.cpp:1282
+#: ../src/client/networkmodel.cpp:1286
 msgctxt "NetworkModel|"
 msgid "Nick Count"
 msgstr "Antall kallenavn"
@@ -7048,10 +7055,16 @@ msgctxt "QtMultimediaNotificationConfigWidget|"
 msgid "Select the sound file to play"
 msgstr "Velg lydfilen som skal spilles av"
 
-#: ../src/common/quassel.cpp:135
+#: ../src/common/quassel.cpp:134
 #, qt-format
 msgctxt "Quassel|"
 msgid "Invalid log level %1; supported are Debug|Info|Warning|Error"
+msgstr ""
+
+#: ../src/common/quassel.cpp:143
+#, qt-format
+msgctxt "Quassel|"
+msgid "Could not open log file \"%1\": %2"
 msgstr ""
 
 #: ../src/common/util.cpp:173
@@ -7079,88 +7092,88 @@ msgctxt "Quassel::secondsToString()|"
 msgid "sec"
 msgstr "sek"
 
-#: ../src/client/networkmodel.cpp:571
+#: ../src/client/networkmodel.cpp:575
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "Query with %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:593
+#: ../src/client/networkmodel.cpp:597
 msgctxt "QueryBufferItem|"
 msgid "Unknown"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:599
+#: ../src/client/networkmodel.cpp:603
 msgctxt "QueryBufferItem|"
 msgid "Away message"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:601
+#: ../src/client/networkmodel.cpp:605
 msgctxt "QueryBufferItem|"
 msgid "Realname"
 msgstr "Virkelig navn"
 
-#: ../src/client/networkmodel.cpp:607
+#: ../src/client/networkmodel.cpp:611
 msgctxt "QueryBufferItem|"
 msgid "Help status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:608
+#: ../src/client/networkmodel.cpp:612
 msgctxt "QueryBufferItem|"
 msgid "Available for help"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:611
+#: ../src/client/networkmodel.cpp:615
 msgctxt "QueryBufferItem|"
 msgid "Service status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:621
+#: ../src/client/networkmodel.cpp:625
 msgctxt "QueryBufferItem|"
 msgid "Not logged in"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:627 ../src/client/networkmodel.cpp:636
+#: ../src/client/networkmodel.cpp:631 ../src/client/networkmodel.cpp:640
 msgctxt "QueryBufferItem|"
 msgid "Account"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:637
+#: ../src/client/networkmodel.cpp:641
 msgctxt "QueryBufferItem|"
 msgid "Identified for this nick"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:643
+#: ../src/client/networkmodel.cpp:647
 msgctxt "QueryBufferItem|"
 msgid "Service Reply"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:647
+#: ../src/client/networkmodel.cpp:651
 msgctxt "QueryBufferItem|"
 msgid "Hostmask"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:651
+#: ../src/client/networkmodel.cpp:655
 msgctxt "QueryBufferItem|"
 msgid "Operator"
 msgstr "Operatør"
 
-#: ../src/client/networkmodel.cpp:659
+#: ../src/client/networkmodel.cpp:663
 msgctxt "QueryBufferItem|"
 msgid "Idling since"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:663
+#: ../src/client/networkmodel.cpp:667
 msgctxt "QueryBufferItem|"
 msgid "Login time"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:666
+#: ../src/client/networkmodel.cpp:670
 msgctxt "QueryBufferItem|"
 msgid "Server"
 msgstr "Server"
 
-#: ../src/client/networkmodel.cpp:672
+#: ../src/client/networkmodel.cpp:676
 msgctxt "QueryBufferItem|"
 msgid "No information available"
 msgstr ""
@@ -8124,7 +8137,7 @@ msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
 msgstr "Nettverkssplitt mellom %DH%1%DH og %DH%2%DH. Brukere avsluttet: "
 
-#: ../src/client/networkmodel.cpp:1006
+#: ../src/client/networkmodel.cpp:1010
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
@@ -8132,7 +8145,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] "%n eier"
 msgstr[1] "%n eiere"
 
-#: ../src/client/networkmodel.cpp:1008
+#: ../src/client/networkmodel.cpp:1012
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
@@ -8140,7 +8153,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] "%n administrato"
 msgstr[1] "%n administratorer"
 
-#: ../src/client/networkmodel.cpp:1010
+#: ../src/client/networkmodel.cpp:1014
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
@@ -8148,7 +8161,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] "%n operatør"
 msgstr[1] "%n operatører"
 
-#: ../src/client/networkmodel.cpp:1012
+#: ../src/client/networkmodel.cpp:1016
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
@@ -8156,7 +8169,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] "%n halvoperatør"
 msgstr[1] "%n halvoperatører"
 
-#: ../src/client/networkmodel.cpp:1014
+#: ../src/client/networkmodel.cpp:1018
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
@@ -8164,7 +8177,7 @@ msgid_plural "%n Voiced"
 msgstr[0] "%n med talerstatus"
 msgstr[1] "%n med talerstatus"
 
-#: ../src/client/networkmodel.cpp:1016
+#: ../src/client/networkmodel.cpp:1020
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
