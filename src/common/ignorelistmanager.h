@@ -26,6 +26,8 @@
 
 #include "message.h"
 #include "syncableobject.h"
+// Scope matching
+#include "util.h"
 
 class IgnoreListManager : public SyncableObject
 {
@@ -147,7 +149,6 @@ public slots:
 
 protected:
     void setIgnoreList(const QList<IgnoreListItem> &ignoreList) { _ignoreList = ignoreList; }
-    bool scopeMatch(const QString &scopeRule, const QString &string) const; // scopeRule is a ';'-separated list, string is a network/channel-name
 
     StrictnessType _match(const QString &msgContents, const QString &msgSender, Message::Type msgType, const QString &network, const QString &bufferName);
 

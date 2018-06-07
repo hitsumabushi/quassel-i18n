@@ -20,23 +20,34 @@
 
 #pragma once
 
+#include <QPointer>
+#include <QThread>
+
 #include "qtuiapplication.h"
 
-class CoreApplicationInternal;
+class Core;
+class InternalPeer;
 
 class MonolithicApplication : public QtUiApplication
 {
     Q_OBJECT
+
 public:
     MonolithicApplication(int &, char **);
-    ~MonolithicApplication();
+    ~MonolithicApplication() override;
 
     bool init() override;
 
+signals:
+    void connectInternalPeer(QPointer<InternalPeer> peer);
+
 private slots:
+    void onConnectionRequest(QPointer<InternalPeer> peer);
+
+private:
     void startInternalCore();
 
 private:
-    CoreApplicationInternal *_internal;
-    bool _internalInitDone;
+    QPointer<Core> _core;
+    QThread _coreThread;
 };

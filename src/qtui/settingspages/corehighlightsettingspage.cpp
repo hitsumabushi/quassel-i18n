@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QHeaderView>
+#include <QMessageBox>
 #include <QTableWidget>
 
 #include "client.h"
@@ -26,7 +27,11 @@
 #include "qtui.h"
 
 CoreHighlightSettingsPage::CoreHighlightSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Remote Highlights"), parent)
+    : SettingsPage(tr("Interface"),
+                   // In Monolithic mode, local highlights are replaced by remote highlights
+                   Quassel::runMode() == Quassel::Monolithic ?
+                       tr("Highlights") : tr("Remote Highlights"),
+                   parent)
 {
     ui.setupUi(this);
 
@@ -57,6 +62,11 @@ CoreHighlightSettingsPage::CoreHighlightSettingsPage(QWidget *parent)
             this,
             SLOT(selectIgnoredRow(QTableWidgetItem * )));
 
+    // Update the "Case sensitive" checkbox
+    connect(ui.highlightNicksComboBox,
+            SIGNAL(currentIndexChanged(int)),
+            this,
+            SLOT(highlightNicksChanged(int)));
 
     connect(ui.highlightNicksComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(widgetHasChanged()));
     connect(ui.nicksCaseSensitive, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
@@ -78,10 +88,14 @@ CoreHighlightSettingsPage::CoreHighlightSettingsPage(QWidget *parent)
             SLOT(ignoredTableChanged(QTableWidgetItem * )));
 
     connect(Client::instance(), SIGNAL(connected()), this, SLOT(clientConnected()));
+
+    // Warning icon
+    ui.coreUnsupportedIcon->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(16));
 }
 
 void CoreHighlightSettingsPage::coreConnectionStateChanged(bool state)
 {
+    updateCoreSupportStatus(state);
     setEnabled(state);
     if (state) {
         load();
@@ -95,20 +109,60 @@ void CoreHighlightSettingsPage::setupRuleTable(QTableWidget *table) const
     table->verticalHeader()->hide();
     table->setShowGrid(false);
 
+    table->horizontalHeaderItem(CoreHighlightSettingsPage::EnableColumn)->setToolTip(
+                tr("Enable/disable this rule"));
+    table->horizontalHeaderItem(CoreHighlightSettingsPage::EnableColumn)->setWhatsThis(
+                table->horizontalHeaderItem(CoreHighlightSettingsPage::EnableColumn)->toolTip());
+
+    table->horizontalHeaderItem(CoreHighlightSettingsPage::NameColumn)->setToolTip(
+                tr("Phrase to match"));
+    table->horizontalHeaderItem(CoreHighlightSettingsPage::NameColumn)->setWhatsThis(
+                table->horizontalHeaderItem(CoreHighlightSettingsPage::NameColumn)->toolTip());
+
     table->horizontalHeaderItem(CoreHighlightSettingsPage::RegExColumn)->setToolTip(
-        tr("<b>RegEx</b>: This option determines if the highlight rule should be interpreted as a <b>regular expression</b> or just as a keyword."));
+                tr("<b>RegEx</b>: This option determines if the highlight rule, <i>Sender</i>, and "
+                   "<i>Channel</i> should be interpreted as <b>regular expressions</b> or just as "
+                   "keywords."));
     table->horizontalHeaderItem(CoreHighlightSettingsPage::RegExColumn)->setWhatsThis(
-        tr("<b>RegEx</b>: This option determines if the highlight rule should be interpreted as a <b>regular expression</b> or just as a keyword."));
+                table->horizontalHeaderItem(CoreHighlightSettingsPage::RegExColumn)->toolTip());
 
     table->horizontalHeaderItem(CoreHighlightSettingsPage::CsColumn)->setToolTip(
-        tr("<b>CS</b>: This option determines if the highlight rule should be interpreted <b>case sensitive</b>."));
+                tr("<b>CS</b>: This option determines if the highlight rule, <i>Sender</i>, and "
+                   "<i>Channel</i> should be interpreted <b>case sensitive</b>."));
     table->horizontalHeaderItem(CoreHighlightSettingsPage::CsColumn)->setWhatsThis(
-        tr("<b>CS</b>: This option determines if the highlight rule should be interpreted <b>case sensitive</b>."));
+                table->horizontalHeaderItem(CoreHighlightSettingsPage::CsColumn)->toolTip());
+
+    table->horizontalHeaderItem(CoreHighlightSettingsPage::SenderColumn)->setToolTip(
+                tr("<p><b>Sender</b>: Semicolon separated list of <i>nick!ident@host</i> names, "
+                   "leave blank to match any nickname.</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>Alice!*; Bob!*@example.com; Carol*!*; !Caroline!*</i><br />"
+                   "would match on <i>Alice</i>, <i>Bob</i> with hostmask <i>example.com</i>, and "
+                   "any nickname starting with <i>Carol</i> except for <i>Caroline</i><br />"
+                   "<p>If only inverted names are specified, it will match anything except for "
+                   "what's specified (implicit wildcard).</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>!Announce*!*; !Wheatley!aperture@*</i><br />"
+                   "would match anything except for <i>Wheatley</i> with ident <i>aperture</i> or "
+                   "any nickname starting with <i>Announce</i></p>"));
+    table->horizontalHeaderItem(CoreHighlightSettingsPage::SenderColumn)->setWhatsThis(
+                table->horizontalHeaderItem(CoreHighlightSettingsPage::SenderColumn)->toolTip());
 
     table->horizontalHeaderItem(CoreHighlightSettingsPage::ChanColumn)->setToolTip(
-        tr("<b>Channel</b>: This regular expression determines for which <b>channels</b> the highlight rule works. Leave blank to match any channel. Put <b>!</b> in the beginning to negate. Case insensitive."));
+                tr("<p><b>Channel</b>: Semicolon separated list of channel names, leave blank to "
+                   "match any name.</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>#quassel*; #foobar; !#quasseldroid</i><br />"
+                   "would match on <i>#foobar</i> and any channel starting with <i>#quassel</i> "
+                   "except for <i>#quasseldroid</i><br />"
+                   "<p>If only inverted names are specified, it will match anything except for "
+                   "what's specified (implicit wildcard).</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>!#quassel*; !#foobar</i><br />"
+                   "would match anything except for <i>#foobar</i> or any channel starting with "
+                   "<i>#quassel</i></p>"));
     table->horizontalHeaderItem(CoreHighlightSettingsPage::ChanColumn)->setWhatsThis(
-        tr("<b>Channel</b>: This regular expression determines for which <b>channels</b> the highlight rule works. Leave blank to match any channel. Put <b>!</b> in the beginning to negate. Case insensitive."));
+                table->horizontalHeaderItem(CoreHighlightSettingsPage::ChanColumn)->toolTip());
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
     table->horizontalHeader()->setResizeMode(CoreHighlightSettingsPage::EnableColumn, QHeaderView::ResizeToContents);
@@ -123,6 +177,21 @@ void CoreHighlightSettingsPage::setupRuleTable(QTableWidget *table) const
     table->horizontalHeader()->setSectionResizeMode(CoreHighlightSettingsPage::CsColumn, QHeaderView::ResizeToContents);
     table->horizontalHeader()->setSectionResizeMode(CoreHighlightSettingsPage::ChanColumn, QHeaderView::ResizeToContents);
 #endif
+}
+
+void CoreHighlightSettingsPage::updateCoreSupportStatus(bool state)
+{
+    // Assume connected state as enforced by the settings page UI
+    if (!state || Client::isCoreFeatureEnabled(Quassel::Feature::CoreSideHighlights)) {
+        // Either disconnected or core supports highlights, enable highlight configuration and hide
+        // warning.  Don't show the warning needlessly when disconnected.
+        ui.highlightsConfigWidget->setEnabled(true);
+        ui.coreUnsupportedWidget->setVisible(false);
+    } else {
+        // Core does not support highlights, show warning and disable highlight configuration
+        ui.highlightsConfigWidget->setEnabled(false);
+        ui.coreUnsupportedWidget->setVisible(true);
+    }
 }
 
 void CoreHighlightSettingsPage::clientConnected()
@@ -184,9 +253,45 @@ void CoreHighlightSettingsPage::addNewHighlightRow(bool enable, const QString &n
         enableItem->setCheckState(Qt::Unchecked);
     enableItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 
+    auto *senderItem = new QTableWidgetItem(sender);
+
     auto *chanNameItem = new QTableWidgetItem(chanName);
 
-    auto *senderItem = new QTableWidgetItem(sender);
+    enableItem->setToolTip(tr("Enable/disable this rule"));
+    nameItem->setToolTip(tr("Phrase to match"));
+    regexItem->setToolTip(
+                tr("<b>RegEx</b>: This option determines if the highlight rule, <i>Sender</i>, and "
+                   "<i>Channel</i> should be interpreted as <b>regular expressions</b> or just as "
+                   "keywords."));
+    csItem->setToolTip(
+                tr("<b>CS</b>: This option determines if the highlight rule, <i>Sender</i>, and "
+                   "<i>Channel</i> should be interpreted <b>case sensitive</b>."));
+    senderItem->setToolTip(
+                tr("<p><b>Sender</b>: Semicolon separated list of <i>nick!ident@host</i> names, "
+                   "leave blank to match any nickname.</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>Alice!*; Bob!*@example.com; Carol*!*; !Caroline!*</i><br />"
+                   "would match on <i>Alice</i>, <i>Bob</i> with hostmask <i>example.com</i>, and "
+                   "any nickname starting with <i>Carol</i> except for <i>Caroline</i><br />"
+                   "<p>If only inverted names are specified, it will match anything except for "
+                   "what's specified (implicit wildcard).</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>!Announce*!*; !Wheatley!aperture@*</i><br />"
+                   "would match anything except for <i>Wheatley</i> with ident <i>aperture</i> or "
+                   "any nickname starting with <i>Announce</i></p>"));
+    chanNameItem->setToolTip(
+                tr("<p><b>Channel</b>: Semicolon separated list of channel names, leave blank to "
+                   "match any name.</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>#quassel*; #foobar; !#quasseldroid</i><br />"
+                   "would match on <i>#foobar</i> and any channel starting with <i>#quassel</i> "
+                   "except for <i>#quasseldroid</i><br />"
+                   "<p>If only inverted names are specified, it will match anything except for "
+                   "what's specified (implicit wildcard).</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>!#quassel*; !#foobar</i><br />"
+                   "would match anything except for <i>#foobar</i> or any channel starting with "
+                   "<i>#quassel</i></p>"));
 
     int lastRow = ui.highlightTable->rowCount() - 1;
     ui.highlightTable->setItem(lastRow, CoreHighlightSettingsPage::NameColumn, nameItem);
@@ -233,6 +338,30 @@ void CoreHighlightSettingsPage::addNewIgnoredRow(bool enable, const QString &nam
     auto *chanNameItem = new QTableWidgetItem(chanName);
 
     auto *senderItem = new QTableWidgetItem(sender);
+
+    enableItem->setToolTip(tr("Enable/disable this rule"));
+    nameItem->setToolTip(tr("Phrase to match"));
+    regexItem->setToolTip(
+                tr("<b>RegEx</b>: This option determines if the highlight rule should be "
+                   "interpreted as a <b>regular expression</b> or just as a keyword."));
+    csItem->setToolTip(
+                tr("<b>CS</b>: This option determines if the highlight rule should be interpreted "
+                   "<b>case sensitive</b>."));
+    senderItem->setToolTip(
+                tr("<b>Sender</b>: This option specifies which sender nicknames match.  Leave "
+                   "blank to match any nickname."));
+    chanNameItem->setToolTip(
+                tr("<p><b>Channel</b>: Semicolon separated list of channel names.</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>#quassel*; #foobar; !#quasseldroid</i><br />"
+                   "would match on #foobar and any channel starting with <i>#quassel</i> except "
+                   "for <i>#quasseldroid</i><br />"
+                   "<p>If only inverted names are specified, it will match anything except for "
+                   "what's specified (implicit wildcard).</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>!#quassel*; !#foobar</i><br />"
+                   "would match anything except for #foobar or any channel starting with "
+                   "<i>#quassel</i></p>"));
 
     int lastRow = ui.ignoredTable->rowCount() - 1;
     ui.ignoredTable->setItem(lastRow, CoreHighlightSettingsPage::NameColumn, nameItem);
@@ -282,6 +411,12 @@ void CoreHighlightSettingsPage::removeSelectedIgnoredRows()
         }
         lastRow = row;
     }
+}
+
+void CoreHighlightSettingsPage::highlightNicksChanged(const int index) {
+    // Only allow toggling "Case sensitive" when a nickname will be highlighted
+    auto highlightNickType = ui.highlightNicksComboBox->itemData(index).value<int>();
+    ui.nicksCaseSensitive->setEnabled(highlightNickType != HighlightRuleManager::NoNick);
 }
 
 void CoreHighlightSettingsPage::selectHighlightRow(QTableWidgetItem *item)
@@ -426,6 +561,8 @@ void CoreHighlightSettingsPage::load()
 
         int highlightNickType = ruleManager->highlightNick();
         ui.highlightNicksComboBox->setCurrentIndex(ui.highlightNicksComboBox->findData(QVariant(highlightNickType)));
+        // Trigger the initial update of nicksCaseSensitive being enabled or not
+        highlightNicksChanged(ui.highlightNicksComboBox->currentIndex());
         ui.nicksCaseSensitive->setChecked(ruleManager->nicksCaseSensitive());
 
         setChangedState(false);
@@ -476,8 +613,54 @@ void CoreHighlightSettingsPage::widgetHasChanged()
     setChangedState(true);
 }
 
+void CoreHighlightSettingsPage::on_coreUnsupportedDetails_clicked()
+{
+    // Re-use translations of "Local Highlights" as this is a word-for-word reference, forcing all
+    // spaces to non-breaking
+    const QString localHighlightsName = tr("Local Highlights").replace(" ", "&nbsp;");
+
+    const QString remoteHighlightsMsgText =
+            QString("<p><b>%1</b></p></br><p>%2</p></br><p>%3</p>"
+                    ).arg(tr("Your Quassel core is too old to support remote highlights"),
+                          tr("You need a Quassel core v0.13.0 or newer to configure remote "
+                             "highlights."),
+                          tr("You can still configure highlights for this device only in "
+                             "<i>%1</i>.").arg(localHighlightsName));
+
+    QMessageBox::warning(this,
+                         tr("Remote Highlights unsupported"),
+                         remoteHighlightsMsgText);
+}
+
 void CoreHighlightSettingsPage::importRules() {
     NotificationSettings notificationSettings;
+
+    const auto localHighlightList = notificationSettings.highlightList();
+
+    // Re-use translations of "Local Highlights" as this is a word-for-word reference, forcing all
+    // spaces to non-breaking
+    const QString localHighlightsName = tr("Local Highlights").replace(" ", "&nbsp;");
+
+    if (localHighlightList.count() == 0) {
+        // No highlight rules exist to import, do nothing
+        QMessageBox::information(this,
+                                 tr("No local highlights"),
+                                 tr("No highlight rules in <i>%1</i>."
+                                    ).arg(localHighlightsName));
+        return;
+    }
+
+    int ret = QMessageBox::question(this,
+                                    tr("Import local highlights?"),
+                                    tr("Import all highlight rules from <i>%1</i>?"
+                                       ).arg(localHighlightsName),
+                                    QMessageBox::Yes|QMessageBox::No,
+                                    QMessageBox::No);
+
+    if (ret == QMessageBox::No) {
+        // Only two options, Yes or No, just return if No
+        return;
+    }
 
     auto clonedManager = HighlightRuleManager();
     clonedManager.fromVariantMap(Client::highlightRuleManager()->toVariantMap());
@@ -499,8 +682,16 @@ void CoreHighlightSettingsPage::importRules() {
     Client::highlightRuleManager()->requestUpdate(clonedManager.toVariantMap());
     setChangedState(false);
     load();
+
+    // Give a heads-up that all succeeded
+    QMessageBox::information(this,
+                             tr("Imported local highlights"),
+                             tr("%1 highlight rules successfully imported."
+                                ).arg(QString::number(localHighlightList.count())));
 }
 
 bool CoreHighlightSettingsPage::isSelectable() const {
-    return Client::isConnected() && Client::isCoreFeatureEnabled(Quassel::Feature::CoreSideHighlights);
+    return Client::isConnected();
+    // We check for Quassel::Feature::CoreSideHighlights when loading this page, allowing us to show
+    // a friendly error message.
 }

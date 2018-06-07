@@ -24,6 +24,7 @@
 #include <QPointer>
 
 #include "bufferinfo.h"
+#include "coreinfo.h"
 #include "coreaccount.h"
 #include "coreconnection.h"
 #include "highlightrulemanager.h"
@@ -115,6 +116,7 @@ public:
 
     static inline ClientAliasManager *aliasManager() { return instance()->_aliasManager; }
     static inline ClientBacklogManager *backlogManager() { return instance()->_backlogManager; }
+    static inline CoreInfo *coreInfo() { return instance()->_coreInfo; }
     static inline DccConfig *dccConfig() { return instance()->_dccConfig; }
     static inline ClientIrcListHelper *ircListHelper() { return instance()->_ircListHelper; }
     static inline ClientBufferViewManager *bufferViewManager() { return instance()->_bufferViewManager; }
@@ -215,6 +217,9 @@ signals:
     void requestKickClient(int peerId);
     void passwordChanged(bool success);
 
+    //! Emitted when database schema upgrade starts or ends (only mono client)
+    void dbUpgradeInProgress(bool inProgress);
+
 public slots:
     void disconnectFromCore();
 
@@ -223,6 +228,8 @@ public slots:
     void buffersPermanentlyMerged(BufferId bufferId1, BufferId bufferId2);
 
     void markBufferAsRead(BufferId id);
+
+    void onDbUpgradeInProgress(bool inProgress);
 
 private slots:
     void setSyncedToCore();
@@ -264,6 +271,7 @@ private:
     ClientBacklogManager *_backlogManager;
     ClientBufferViewManager *_bufferViewManager;
     BufferViewOverlay *_bufferViewOverlay;
+    CoreInfo *_coreInfo;
     DccConfig *_dccConfig;
     ClientIrcListHelper *_ircListHelper;
     ClientUserInputHandler *_inputHandler;

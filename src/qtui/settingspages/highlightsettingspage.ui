@@ -30,6 +30,11 @@
         </property>
         <column>
          <property name="text">
+          <string>Enabled</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
           <string>Highlight</string>
          </property>
         </column>
@@ -41,11 +46,6 @@
         <column>
          <property name="text">
           <string>CS</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Enable</string>
          </property>
         </column>
         <column>
@@ -137,6 +137,37 @@
       </item>
      </layout>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QLabel" name="localHighlightsIcon">
+       <property name="text">
+        <string notr="true">[icon]</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="localHighlightsLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Local Highlights apply to this device only</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="localHighlightsDetails">
+       <property name="text">
+        <string>Details...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

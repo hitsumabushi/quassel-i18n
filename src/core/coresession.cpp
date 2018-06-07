@@ -31,6 +31,7 @@
 #include "coreeventmanager.h"
 #include "coreidentity.h"
 #include "coreignorelistmanager.h"
+#include "coreinfo.h"
 #include "coreirclisthelper.h"
 #include "corenetwork.h"
 #include "corenetworkconfig.h"
@@ -57,9 +58,10 @@ public:
 };
 
 
-CoreSession::CoreSession(UserId uid, bool restoreState, QObject *parent)
+CoreSession::CoreSession(UserId uid, bool restoreState, bool strictIdentEnabled, QObject *parent)
     : QObject(parent),
     _user(uid),
+    _strictIdentEnabled(strictIdentEnabled),
     _signalProxy(new SignalProxy(SignalProxy::Server, this)),
     _aliasManager(this),
     _bufferSyncer(new CoreBufferSyncer(this)),
@@ -68,7 +70,7 @@ CoreSession::CoreSession(UserId uid, bool restoreState, QObject *parent)
     _dccConfig(new CoreDccConfig(this)),
     _ircListHelper(new CoreIrcListHelper(this)),
     _networkConfig(new CoreNetworkConfig("GlobalNetworkConfig", this)),
-    _coreInfo(this),
+    _coreInfo(new CoreInfo(this)),
     _transferManager(new CoreTransferManager(this)),
     _eventManager(new CoreEventManager(this)),
     _eventStringifier(new EventStringifier(this)),
@@ -109,6 +111,13 @@ CoreSession::CoreSession(UserId uid, bool restoreState, QObject *parent)
     p->attachSlot(SIGNAL(kickClient(int)), this, SLOT(kickClient(int)));
     p->attachSignal(this, SIGNAL(disconnectFromCore()));
 
+    QVariantMap data;
+    data["quasselVersion"] = Quassel::buildInfo().fancyVersionString;
+    data["quasselBuildDate"] = Quassel::buildInfo().commitDate; // "BuildDate" for compatibility
+    data["startTime"] = Core::instance()->startTime();
+    data["sessionConnectedClients"] = 0;
+    _coreInfo->setCoreData(data);
+
     loadSettings();
     initScriptEngine();
 
@@ -122,7 +131,7 @@ CoreSession::CoreSession(UserId uid, bool restoreState, QObject *parent)
     eventManager()->registerObject(ctcpParser(), EventManager::LowPriority, "send");
 
     // periodically save our session state
-    connect(&(Core::instance()->syncTimer()), SIGNAL(timeout()), this, SLOT(saveSessionState()));
+    connect(Core::instance()->syncTimer(), SIGNAL(timeout()), this, SLOT(saveSessionState()));
 
     p->synchronize(_bufferSyncer);
     p->synchronize(&aliasManager());
@@ -130,7 +139,7 @@ CoreSession::CoreSession(UserId uid, bool restoreState, QObject *parent)
     p->synchronize(dccConfig());
     p->synchronize(ircListHelper());
     p->synchronize(networkConfig());
-    p->synchronize(&_coreInfo);
+    p->synchronize(_coreInfo);
     p->synchronize(&_ignoreListManager);
     p->synchronize(&_highlightRuleManager);
     p->synchronize(transferManager());
@@ -266,6 +275,7 @@ void CoreSession::addClient(RemotePeer *peer)
 
     peer->dispatch(sessionState());
     signalProxy()->addPeer(peer);
+    _coreInfo->setConnectedClientData(signalProxy()->peerCount(), signalProxy()->peerData());
 
     signalProxy()->setTargetPeer(nullptr);
 }
@@ -283,6 +293,7 @@ void CoreSession::removeClient(Peer *peer)
     RemotePeer *p = qobject_cast<RemotePeer *>(peer);
     if (p)
         quInfo() << qPrintable(tr("Client")) << p->description() << qPrintable(tr("disconnected (UserId: %1).").arg(user().toInt()));
+    _coreInfo->setConnectedClientData(signalProxy()->peerCount(), signalProxy()->peerData());
 }
 
 
@@ -553,8 +564,14 @@ void CoreSession::createIdentity(const Identity &identity, const QVariantMap &ad
         createIdentity(coreIdentity);
 }
 
-const QString CoreSession::strictSysident() {
-    return Core::instance()->strictSysIdent(_user);
+const QString CoreSession::strictCompliantIdent(const CoreIdentity *identity) {
+    if (_strictIdentEnabled) {
+        // Strict mode enabled: only allow the user's Quassel username as an ident
+        return Core::instance()->strictSysIdent(_user);
+    } else {
+        // Strict mode disabled: allow any identity specified
+        return identity->ident();
+    }
 }
 
 void CoreSession::createIdentity(const CoreIdentity &identity)

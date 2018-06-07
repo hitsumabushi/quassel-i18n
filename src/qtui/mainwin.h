@@ -50,8 +50,9 @@ class NickListWidget;
 class SystemTray;
 class TopicWidget;
 
-class QMenu;
 class QLabel;
+class QMenu;
+class QMessageBox;
 class QToolBar;
 
 class KHelpMenu;
@@ -97,6 +98,8 @@ public slots:
     void nextBuffer();
     void previousBuffer();
 
+    void showMigrationWarning(bool show);
+
     //! Quit application
     void quit();
 
@@ -119,6 +122,7 @@ private slots:
     void messagesInserted(const QModelIndex &parent, int start, int end);
     void showAboutDlg();
     void showChannelList(NetworkId netId = NetworkId());
+    void showNetworkConfig(NetworkId netId = NetworkId());
     void showCoreConnectionDlg();
     void showCoreConfigWizard(const QVariantList &, const QVariantList &);
     void showCoreInfoDlg();
@@ -142,6 +146,49 @@ private slots:
     void on_actionConfigureNetworks_triggered();
     void on_actionConfigureViews_triggered();
     void on_actionLockLayout_toggled(bool lock);
+
+    /**
+     * Apply the active color to the input widget selected or typed text
+     *
+     * @seealso InputWidget::applyFormatActiveColor()
+     */
+    void on_inputFormatApplyColor_triggered();
+
+    /**
+     * Apply the active fill color to the input widget selected or typed text background
+     *
+     * @seealso InputWidget::applyFormatActiveColorFill()
+     */
+    void on_inputFormatApplyColorFill_triggered();
+
+    /**
+     * Toggle the boldness of the input widget selected or typed text
+     *
+     * @seealso InputWidget::toggleFormatBold()
+     */
+    void on_inputFormatBold_triggered();
+
+    /**
+     * Toggle the italicness of the input widget selected or typed text
+     *
+     * @seealso InputWidget::toggleFormatItalic()
+     */
+    void on_inputFormatItalic_triggered();
+
+    /**
+     * Toggle the underlining of the input widget selected or typed text
+     *
+     * @seealso InputWidget::toggleFormatUnderline()
+     */
+    void on_inputFormatUnderline_triggered();
+
+    /**
+     * Clear the formatting of the input widget selected or typed text
+     *
+     * @seealso InputWidget::clearFormat()
+     */
+    void on_inputFormatClear_triggered();
+
     void on_jumpHotBuffer_triggered();
     void on_bufferSearch_triggered();
     void on_actionDebugNetworkModel_triggered();
@@ -216,6 +263,8 @@ private:
     QToolBar *_mainToolBar, *_chatViewToolBar, *_nickToolBar;
 
     QWidget *_awayLog;
+
+    QMessageBox* _migrationWarning{nullptr};
 
     bool _layoutLoaded;
 

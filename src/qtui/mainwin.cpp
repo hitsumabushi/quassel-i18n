@@ -204,8 +204,10 @@ void MainWin::init()
         SLOT(messagesInserted(const QModelIndex &, int, int)));
     connect(GraphicalUi::contextMenuActionProvider(), SIGNAL(showChannelList(NetworkId)), SLOT(showChannelList(NetworkId)));
     connect(Client::instance(), SIGNAL(showChannelList(NetworkId)), SLOT(showChannelList(NetworkId)));
+    connect(GraphicalUi::contextMenuActionProvider(), SIGNAL(showNetworkConfig(NetworkId)), SLOT(showNetworkConfig(NetworkId)));
     connect(GraphicalUi::contextMenuActionProvider(), SIGNAL(showIgnoreList(QString)), SLOT(showIgnoreList(QString)));
     connect(Client::instance(), SIGNAL(showIgnoreList(QString)), SLOT(showIgnoreList(QString)));
+    connect(Client::instance(), SIGNAL(dbUpgradeInProgress(bool)), SLOT(showMigrationWarning(bool)));
 
     connect(Client::coreConnection(), SIGNAL(startCoreSetup(QVariantList, QVariantList)), SLOT(showCoreConfigWizard(QVariantList, QVariantList)));
     connect(Client::coreConnection(), SIGNAL(connectionErrorPopup(QString)), SLOT(handleCoreConnectionError(QString)));
@@ -401,7 +403,11 @@ void MainWin::setupActions()
             this, SLOT(showCoreInfoDlg())));
     coll->addAction("ConfigureNetworks", new Action(QIcon::fromTheme("configure"), tr("Configure &Networks..."), coll,
             this, SLOT(on_actionConfigureNetworks_triggered())));
-    // FIXME: use QKeySequence::Quit once we depend on Qt 4.6
+    // QKeySequence::Quit was added in Qt 4.6, and could be used instead.  However, that key
+    // sequence is empty by default on Windows, which would remove Ctrl-Q to quit.  It may be best
+    // to just keep it this way.
+    //
+    // See https://doc.qt.io/qt-5/qkeysequence.html
     coll->addAction("Quit", new Action(QIcon::fromTheme("application-exit"), tr("&Quit"), coll,
             this, SLOT(quit()), Qt::CTRL + Qt::Key_Q));
 
@@ -469,10 +475,42 @@ void MainWin::setupActions()
     coll->addAction("DebugLog", new Action(QIcon::fromTheme("tools-report-bug"), tr("Debug &Log"), coll,
             this, SLOT(on_actionDebugLog_triggered())));
     coll->addAction("ReloadStyle", new Action(QIcon::fromTheme("view-refresh"), tr("Reload Stylesheet"), coll,
-            QtUi::style(), SLOT(reload()), QKeySequence::Refresh));
+            QtUi::style(), SLOT(reload()), QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_R)));
 
     coll->addAction("HideCurrentBuffer", new Action(tr("Hide Current Buffer"), coll,
             this, SLOT(hideCurrentBuffer()), QKeySequence::Close));
+
+    // Text formatting
+    coll = QtUi::actionCollection("TextFormat", tr("Text formatting"));
+
+    coll->addAction("FormatApplyColor", new Action(
+                        QIcon::fromTheme("format-text-color"), tr("Apply foreground color"), coll,
+                        this, SLOT(on_inputFormatApplyColor_triggered()),
+                        QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_G)));
+
+    coll->addAction("FormatApplyColorFill", new Action(
+                        QIcon::fromTheme("format-fill-color"), tr("Apply background color"), coll,
+                        this, SLOT(on_inputFormatApplyColorFill_triggered()),
+                        QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_B)));
+
+    coll->addAction("FormatClear", new Action(
+                        QIcon::fromTheme("edit-clear"), tr("Clear formatting"), coll,
+                        this, SLOT(on_inputFormatClear_triggered()),
+                        QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_C)));
+
+    coll->addAction("FormatBold", new Action(
+                        QIcon::fromTheme("format-text-bold"), tr("Toggle bold"), coll,
+                        this, SLOT(on_inputFormatBold_triggered()),
+                        QKeySequence::Bold));
+
+    coll->addAction("FormatItalic", new Action(
+                        QIcon::fromTheme("format-text-italic"), tr("Toggle italics"), coll,
+                        this, SLOT(on_inputFormatItalic_triggered()),
+                        QKeySequence::Italic));
+
+    coll->addAction("FormatUnderline", new Action(
+                        QIcon::fromTheme("format-text-underline"), tr("Toggle underline"), coll,
+                        this, SLOT(on_inputFormatUnderline_triggered()), QKeySequence::Underline));
 
     // Navigation
     coll = QtUi::actionCollection("Navigation", tr("Navigation"));
@@ -787,6 +825,29 @@ void MainWin::showPasswordChangeDlg()
                         QMessageBox::Ok, this);
         box.setInformativeText(tr("You need a Quassel Core v0.12.0 or newer in order to be able to remotely change your password."));
         box.exec();
+    }
+}
+
+
+void MainWin::showMigrationWarning(bool show)
+{
+    if (show && !_migrationWarning) {
+        _migrationWarning = new QMessageBox(QMessageBox::Information,
+                                            tr("Upgrading..."),
+                                            "<b>" + tr("Your database is being upgraded") + "</b>",
+                                            QMessageBox::NoButton, this);
+        _migrationWarning->setInformativeText("<p>"
+                                              + tr("In order to support new features, we need to make changes to your backlog database. This may take a long while.")
+                                              + "</p><p>"
+                                              + tr("Do not exit Quassel until the upgrade is complete!")
+                                              + "</p>");
+        _migrationWarning->setStandardButtons(QMessageBox::NoButton);
+        _migrationWarning->show();
+    }
+    else if (!show && _migrationWarning) {
+        _migrationWarning->close();
+        _migrationWarning->deleteLater();
+        _migrationWarning = nullptr;
     }
 }
 
@@ -1414,6 +1475,15 @@ void MainWin::showChannelList(NetworkId netId)
 }
 
 
+void MainWin::showNetworkConfig(NetworkId netId)
+{
+    SettingsPageDlg dlg(new NetworksSettingsPage(this), this);
+    if (netId.isValid())
+        qobject_cast<NetworksSettingsPage *>(dlg.currentPage())->bufferList_Open(netId);
+    dlg.exec();
+}
+
+
 void MainWin::showIgnoreList(QString newRule)
 {
     SettingsPageDlg dlg(new IgnoreListSettingsPage(this), this);
@@ -1738,6 +1808,60 @@ void MainWin::connectOrDisconnectFromNet()
     if (!net) return;
     if (net->connectionState() == Network::Disconnected) net->requestConnect();
     else net->requestDisconnect();
+}
+
+
+void MainWin::on_inputFormatApplyColor_triggered()
+{
+    if (!_inputWidget)
+        return;
+
+    _inputWidget->applyFormatActiveColor();
+}
+
+
+void MainWin::on_inputFormatApplyColorFill_triggered()
+{
+    if (!_inputWidget)
+        return;
+
+    _inputWidget->applyFormatActiveColorFill();
+}
+
+
+void MainWin::on_inputFormatClear_triggered()
+{
+    if (!_inputWidget)
+        return;
+
+    _inputWidget->clearFormat();
+}
+
+
+void MainWin::on_inputFormatBold_triggered()
+{
+    if (!_inputWidget)
+        return;
+
+    _inputWidget->toggleFormatBold();
+}
+
+
+void MainWin::on_inputFormatItalic_triggered()
+{
+    if (!_inputWidget)
+        return;
+
+    _inputWidget->toggleFormatItalic();
+}
+
+
+void MainWin::on_inputFormatUnderline_triggered()
+{
+    if (!_inputWidget)
+        return;
+
+    _inputWidget->toggleFormatUnderline();
 }
 
 

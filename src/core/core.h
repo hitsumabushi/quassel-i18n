@@ -24,6 +24,7 @@
 #include <vector>
 
 #include <QDateTime>
+#include <QPointer>
 #include <QString>
 #include <QVariant>
 #include <QTimer>
@@ -47,9 +48,11 @@
 
 class CoreAuthHandler;
 class CoreSession;
-struct NetworkInfo;
+class InternalPeer;
 class SessionThread;
 class SignalProxy;
+
+struct NetworkInfo;
 
 class AbstractSqlMigrationReader;
 class AbstractSqlMigrationWriter;
@@ -60,10 +63,9 @@ class Core : public QObject
 
 public:
     static Core *instance();
-    static void destroy();
 
-    static void saveState();
-    static void restoreState();
+    Core();
+    ~Core() override;
 
     /*** Storage access ***/
     // These methods are threadsafe.
@@ -672,35 +674,26 @@ public:
 
     static inline QDateTime startTime() { return instance()->_startTime; }
     static inline bool isConfigured() { return instance()->_configured; }
-    static bool sslSupported();
 
     /**
-     * Reloads SSL certificates used for connection with clients
+     * Whether or not strict ident mode is enabled, locking users' idents to Quassel username
      *
-     * @return True if certificates reloaded successfully, otherwise false.
+     * @return True if strict mode enabled, otherwise false
      */
-    static bool reloadCerts();
+    static inline bool strictIdentEnabled() { return instance()->_strictIdentEnabled; }
 
-    static void cacheSysIdent();
+    static bool sslSupported();
 
     static QVariantList backendInfo();
     static QVariantList authenticatorInfo();
 
     static QString setup(const QString &adminUser, const QString &adminPassword, const QString &backend, const QVariantMap &setupData, const QString &authenticator, const QVariantMap &authSetupMap);
 
-    static inline QTimer &syncTimer() { return instance()->_storageSyncTimer; }
+    static inline QTimer *syncTimer() { return &instance()->_storageSyncTimer; }
 
     inline OidentdConfigGenerator *oidentdConfigGenerator() const { return _oidentdConfigGenerator; }
 
     static const int AddClientEventId;
-
-public slots:
-    //! Make storage data persistent
-    /** \note This method is threadsafe.
-     */
-    void syncStorage();
-    void setupInternalClientSession(InternalPeer *clientConnection);
-    QString setupCore(const QString &adminUser, const QString &adminPassword, const QString &backend, const QVariantMap &setupData, const QString &authenticator, const QVariantMap &authSetupMap);
 
 signals:
     //! Sent when a BufferInfo is updated in storage.
@@ -709,8 +702,33 @@ signals:
     //! Relay from CoreSession::sessionState(). Used for internal connection only
     void sessionState(const Protocol::SessionState &sessionState);
 
+    //! Emitted when database schema upgrade starts or ends
+    void dbUpgradeInProgress(bool inProgress);
+
+public slots:
+    bool init();
+
+    /** Persist storage.
+     *
+     * @note This method is threadsafe.
+     */
+    void syncStorage();
+
+    /**
+     * Reload SSL certificates used for connection with clients.
+     *
+     * @return True if certificates reloaded successfully, otherwise false.
+     */
+    bool reloadCerts();
+
+    void cacheSysIdent();
+
+    QString setupCore(const QString &adminUser, const QString &adminPassword, const QString &backend, const QVariantMap &setupData, const QString &authenticator, const QVariantMap &authSetupMap);
+
+    void connectInternalPeer(QPointer<InternalPeer> peer);
+
 protected:
-    virtual void customEvent(QEvent *event);
+    void customEvent(QEvent *event) override;
 
 private slots:
     bool startListening();
@@ -731,15 +749,11 @@ private slots:
     bool changeUserPass(const QString &username);
 
 private:
-    Core();
-    ~Core();
-    void init();
-    static Core *instanceptr;
-
     SessionThread *sessionForUser(UserId userId, bool restoreState = false);
     void addClientHelper(RemotePeer *peer, UserId uid);
     //void processCoreSetup(QTcpSocket *socket, QVariantMap &msg);
     QString setupCoreForInternalUsage();
+    void setupInternalClientSession(QPointer<InternalPeer> peer);
 
     bool createUser();
 
@@ -761,16 +775,21 @@ private:
     bool saveBackendSettings(const QString &backend, const QVariantMap &settings);
     void saveAuthenticatorSettings(const QString &backend, const QVariantMap &settings);
 
+    void saveState();
+    void restoreState();
+
     template<typename Backend>
     QVariantMap promptForSettings(const Backend *backend);
 
 private:
+    static Core *_instance;
     QSet<CoreAuthHandler *> _connectingClients;
     QHash<UserId, SessionThread *> _sessions;
     DeferredSharedPtr<Storage>       _storage;        ///< Active storage backend
     DeferredSharedPtr<Authenticator> _authenticator;  ///< Active authenticator
-    QTimer _storageSyncTimer;
     QMap<UserId, QString> _authUserNames;
+
+    QTimer _storageSyncTimer;
 
 #ifdef HAVE_SSL
     SslServer _server, _v6server;
@@ -785,7 +804,13 @@ private:
 
     QDateTime _startTime;
 
-    bool _configured;
+    bool _initialized{false};
+    bool _configured{false};
+
+    QPointer<InternalPeer> _pendingInternalConnection;
+
+    /// Whether or not strict ident mode is enabled, locking users' idents to Quassel username
+    bool _strictIdentEnabled;
 
     static std::unique_ptr<AbstractSqlMigrationReader> getMigrationReader(Storage *storage);
     static std::unique_ptr<AbstractSqlMigrationWriter> getMigrationWriter(Storage *storage);

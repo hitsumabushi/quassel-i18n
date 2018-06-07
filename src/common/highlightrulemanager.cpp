@@ -104,7 +104,11 @@ void HighlightRuleManager::initSetHighlightRuleList(const QVariantMap &highlight
         _highlightRuleList << HighlightRule(name[i], isRegEx[i].toBool(), isCaseSensitive[i].toBool(),
                                             isActive[i].toBool(), isInverse[i].toBool(), sender[i], channel[i]);
     }
-    _highlightNick = HighlightNickType(highlightRuleList["highlightNick"].toInt());
+
+    // Make sure the default for _highlightNick is "CurrentNick" if not set
+    _highlightNick = HighlightNickType(
+                highlightRuleList.value("highlightNick", HighlightNickType::CurrentNick).toInt());
+
     _nicksCaseSensitive = highlightRuleList["nicksCaseSensitive"].toBool();
 }
 
@@ -141,17 +145,11 @@ bool HighlightRuleManager::match(const QString &msgContents,
         if (!rule.isEnabled)
             continue;
 
-        if (rule.chanName.size() > 0 && rule.chanName.compare(".*") != 0) {
-            if (rule.chanName.startsWith("!")) {
-                QRegExp rx(rule.chanName.mid(1), Qt::CaseInsensitive);
-                if (rx.exactMatch(bufferName))
-                    continue;
-            }
-            else {
-                QRegExp rx(rule.chanName, Qt::CaseInsensitive);
-                if (!rx.exactMatch(bufferName))
-                    continue;
-            }
+        if (!rule.chanName.isEmpty()
+                && !scopeMatch(bufferName, rule.chanName, rule.isRegEx, rule.isCaseSensitive)) {
+            // A channel name rule is specified and does NOT match the current buffer name, skip
+            // this rule
+            continue;
         }
 
         QRegExp rx;
@@ -166,12 +164,8 @@ bool HighlightRuleManager::match(const QString &msgContents,
         if (rule.sender.isEmpty()) {
             senderMatch = true;
         } else {
-            if (rule.isRegEx) {
-                rx = QRegExp(rule.sender, rule.isCaseSensitive ? Qt::CaseSensitive : Qt::CaseInsensitive);
-            } else {
-                rx = QRegExp(rule.sender, Qt::CaseInsensitive, QRegExp::Wildcard);
-            }
-            senderMatch = rx.exactMatch(msgSender);
+            // A sender name rule is specified, match according to scope rules.
+            senderMatch = scopeMatch(msgSender, rule.sender, rule.isRegEx, rule.isCaseSensitive);
         }
 
         if (nameMatch && senderMatch) {

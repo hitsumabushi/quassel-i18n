@@ -21,6 +21,11 @@
 #include <cstdlib>
 #include <memory>
 
+#ifdef HAVE_UMASK
+#  include <sys/types.h>
+#  include <sys/stat.h>
+#endif /* HAVE_UMASK */
+
 #include <QTextCodec>
 
 #ifdef BUILD_CORE
@@ -68,6 +73,10 @@ Q_IMPORT_PLUGIN(qgif)
 
 int main(int argc, char **argv)
 {
+#ifdef HAVE_UMASK
+    umask(S_IRWXG | S_IRWXO);
+#endif
+
 #if QT_VERSION < 0x050000
     // All our source files are in UTF-8, and Qt5 even requires that
     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
@@ -168,9 +177,9 @@ int main(int argc, char **argv)
     cliParser->addOption("select-authenticator", 0, "Select authentication backend", "authidentifier");
     cliParser->addSwitch("add-user", 0, "Starts an interactive session to add a new core user");
     cliParser->addOption("change-userpass", 0, "Starts an interactive session to change the password of the user identified by <username>", "username");
-    cliParser->addSwitch("oidentd", 0, "Enable oidentd integration");
+    cliParser->addSwitch("oidentd", 0, "Enable oidentd integration.  In most cases you should also enable --strict-ident");
     cliParser->addOption("oidentd-conffile", 0, "Set path to oidentd configuration file", "file");
-    cliParser->addSwitch("oidentd-strict", 0, "Use users' quasselcore username as ident reply. Ignores each user's configured ident setting. Only meaningful with --oidentd.");
+    cliParser->addSwitch("strict-ident", 0, "Use users' quasselcore username as ident reply. Ignores each user's configured ident setting.");
 #ifdef HAVE_SSL
     cliParser->addSwitch("require-ssl", 0, "Require SSL for remote (non-loopback) client connections");
     cliParser->addOption("ssl-cert", 0, "Specify the path to the SSL Certificate", "path", "configdir/quasselCert.pem");

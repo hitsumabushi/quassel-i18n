@@ -24,7 +24,7 @@
 #include <QString>
 #include <QVariant>
 
-#include "corecoreinfo.h"
+#include "coreinfo.h"
 #include "corealiasmanager.h"
 #include "corehighlightrulemanager.h"
 #include "coreignorelistmanager.h"
@@ -62,14 +62,24 @@ class CoreSession : public QObject
     Q_OBJECT
 
 public:
-    CoreSession(UserId, bool restoreState, QObject *parent = 0);
+    CoreSession(UserId, bool restoreState, bool strictIdentEnabled, QObject *parent = 0);
     ~CoreSession();
 
     QList<BufferInfo> buffers() const;
     inline UserId user() const { return _user; }
     CoreNetwork *network(NetworkId) const;
     CoreIdentity *identity(IdentityId) const;
-    const QString strictSysident();
+
+    /**
+     * Returns the optionally strict-compliant ident for the given user identity
+     *
+     * If strict mode is enabled, this will return the user's Quassel username for any identity,
+     * otherwise this will return the given identity's ident, whatever it may be.
+     *
+     * @return The user's ident, compliant with strict mode (when enabled)
+     */
+    const QString strictCompliantIdent(const CoreIdentity *identity);
+
     inline CoreNetworkConfig *networkConfig() const { return _networkConfig; }
     NetworkConnection *networkConnection(NetworkId) const;
 
@@ -210,6 +220,9 @@ private:
 
     UserId _user;
 
+    /// Whether or not strict ident mode is enabled, locking users' idents to Quassel username
+    bool _strictIdentEnabled;
+
     SignalProxy *_signalProxy;
     CoreAliasManager _aliasManager;
     // QHash<NetworkId, NetworkConnection *> _connections;
@@ -223,7 +236,7 @@ private:
     CoreDccConfig *_dccConfig;
     CoreIrcListHelper *_ircListHelper;
     CoreNetworkConfig *_networkConfig;
-    CoreCoreInfo _coreInfo;
+    CoreInfo *_coreInfo;
     CoreTransferManager *_transferManager;
 
     EventManager *_eventManager;

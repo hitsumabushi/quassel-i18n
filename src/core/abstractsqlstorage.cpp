@@ -139,20 +139,19 @@ Storage::State AbstractSqlStorage::init(const QVariantMap &settings,
     }
 
     if (installedSchemaVersion() < schemaVersion()) {
-        qWarning() << qPrintable(tr("Installed Schema (version %1) is not up to date. Upgrading to "
-                                    "version %2...  This may take a while for major upgrades."
-                                    ).arg(installedSchemaVersion()).arg(schemaVersion()));
-        // TODO: The monolithic client won't show this message unless one looks into the debug log.
-        // This should be made more friendly, e.g. a popup message in the GUI.
-        if (!upgradeDb()) {
+        quInfo() << qPrintable(tr("Installed database schema (version %1) is not up to date. Upgrading to "
+                                  "version %2...  This may take a while for major upgrades."
+                                 ).arg(installedSchemaVersion()).arg(schemaVersion()));
+        emit dbUpgradeInProgress(true);
+        auto upgradeResult = upgradeDb();
+        emit dbUpgradeInProgress(false);
+        if (!upgradeResult) {
             qWarning() << qPrintable(tr("Upgrade failed..."));
             return NotAvailable;
         }
-        // Warning messages are also sent to the console, while Info messages aren't.  Add a message
-        // when migration succeeds to avoid confusing folks by implying the schema upgrade failed if
+        // Add a message when migration succeeds to avoid confusing folks by implying the schema upgrade failed if
         // later functionality does not work.
-        qWarning() << qPrintable(tr("Installed Schema successfully upgraded to version %1."
-                                    ).arg(schemaVersion()));
+        quInfo() << qPrintable(tr("Installed database schema successfully upgraded to version %1.").arg(schemaVersion()));
     }
 
     quInfo() << qPrintable(displayName()) << "storage backend is ready. Schema version:" << installedSchemaVersion();
@@ -250,16 +249,47 @@ bool AbstractSqlStorage::upgradeDb()
 
     QSqlDatabase db = logDb();
 
+    // TODO: For databases that support it (e.g. almost only PostgreSQL), wrap upgrades in a
+    // transaction.  This will need careful testing of potential additional space requirements and
+    // any database modifications that might not be allowed in a transaction.
+
     for (int ver = installedSchemaVersion() + 1; ver <= schemaVersion(); ver++) {
         foreach(QString queryString, upgradeQueries(ver)) {
             QSqlQuery query = db.exec(queryString);
             if (!watchQuery(query)) {
-                qCritical() << "Unable to upgrade Logging Backend!";
+                // Individual upgrade query failed, bail out
+                qCritical() << "Unable to upgrade Logging Backend!  Upgrade query in schema version"
+                            << ver << "failed.";
                 return false;
             }
         }
+
+        // Update the schema version for each intermediate step.  This ensures that any interrupted
+        // upgrades have a greater chance of resuming correctly after core restart.
+        //
+        // Almost all databases make single queries atomic (fully works or fully fails, no partial),
+        // and with many of the longest migrations being a single query, this makes upgrade
+        // interruptions much more likely to leave the database in a valid intermediate schema
+        // version.
+        if (!updateSchemaVersion(ver)) {
+            // Updating the schema version failed, bail out
+            qCritical() << "Unable to upgrade Logging Backend!  Setting schema version"
+                        << ver << "failed.";
+            return false;
+        }
     }
-    return updateSchemaVersion(schemaVersion());
+
+    // Update the schema version for the final step.  Split this out to offer more informative
+    // logging (though setting schema version really should not fail).
+    if (!updateSchemaVersion(schemaVersion())) {
+        // Updating the final schema version failed, bail out
+        qCritical() << "Unable to upgrade Logging Backend!  Setting final schema version"
+                    << schemaVersion() << "failed.";
+        return false;
+    }
+
+    // If we made it here, everything seems to have worked!
+    return true;
 }
 
 

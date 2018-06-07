@@ -49,11 +49,6 @@
 #  include <termios.h>
 #endif /* Q_OS_WIN */
 
-#ifdef HAVE_UMASK
-#  include <sys/types.h>
-#  include <sys/stat.h>
-#endif /* HAVE_UMASK */
-
 // ==============================
 //  Custom Events
 // ==============================
@@ -71,119 +66,61 @@ public:
 // ==============================
 //  Core
 // ==============================
-Core *Core::instanceptr = 0;
+Core *Core::_instance{nullptr};
 
 Core *Core::instance()
 {
-    if (instanceptr) return instanceptr;
-    instanceptr = new Core();
-    instanceptr->init();
-    return instanceptr;
-}
-
-
-void Core::destroy()
-{
-    delete instanceptr;
-    instanceptr = 0;
+    return _instance;
 }
 
 
 Core::Core()
 {
-#ifdef HAVE_UMASK
-    umask(S_IRWXG | S_IRWXO);
-#endif
+    if (_instance) {
+        qWarning() << "Recreating core instance!";
+        delete _instance;
+    }
+    _instance = this;
+
+    // Parent all QObject-derived attributes, so when the Core instance gets moved into another
+    // thread, they get moved with it
+    _server.setParent(this);
+    _v6server.setParent(this);
+    _storageSyncTimer.setParent(this);
+}
+
+
+Core::~Core()
+{
+    saveState();
+    qDeleteAll(_connectingClients);
+    qDeleteAll(_sessions);
+    syncStorage();
+    _instance = nullptr;
+}
+
+
+bool Core::init()
+{
     _startTime = QDateTime::currentDateTime().toUTC(); // for uptime :)
 
-    Quassel::loadTranslation(QLocale::system());
-
-    // FIXME: MIGRATION 0.3 -> 0.4: Move database and core config to new location
-    // Move settings, note this does not delete the old files
-#ifdef Q_OS_MAC
-    QSettings newSettings("quassel-irc.org", "quasselcore");
-#else
-
-# ifdef Q_OS_WIN
-    QSettings::Format format = QSettings::IniFormat;
-# else
-    QSettings::Format format = QSettings::NativeFormat;
-# endif
-    QString newFilePath = Quassel::configDirPath() + "quasselcore"
-                          + ((format == QSettings::NativeFormat) ? QLatin1String(".conf") : QLatin1String(".ini"));
-    QSettings newSettings(newFilePath, format);
-#endif /* Q_OS_MAC */
-
-    if (newSettings.value("Config/Version").toUInt() == 0) {
-#   ifdef Q_OS_MAC
-        QString org = "quassel-irc.org";
-#   else
-        QString org = "Quassel Project";
-#   endif
-        QSettings oldSettings(org, "Quassel Core");
-        if (oldSettings.allKeys().count()) {
-            quWarning() << "\n\n*** IMPORTANT: Config and data file locations have changed. Attempting to auto-migrate your core settings...";
-            foreach(QString key, oldSettings.allKeys())
-            newSettings.setValue(key, oldSettings.value(key));
-            newSettings.setValue("Config/Version", 1);
-            quWarning() << "*   Your core settings have been migrated to" << newSettings.fileName();
-
-#ifndef Q_OS_MAC /* we don't need to move the db and cert for mac */
-#ifdef Q_OS_WIN
-            QString quasselDir = qgetenv("APPDATA") + "/quassel/";
-#elif defined Q_OS_MAC
-            QString quasselDir = QDir::homePath() + "/Library/Application Support/Quassel/";
-#else
-            QString quasselDir = QDir::homePath() + "/.quassel/";
-#endif
-
-            QFileInfo info(Quassel::configDirPath() + "quassel-storage.sqlite");
-            if (!info.exists()) {
-                // move database, if we found it
-                QFile oldDb(quasselDir + "quassel-storage.sqlite");
-                if (oldDb.exists()) {
-                    bool success = oldDb.rename(Quassel::configDirPath() + "quassel-storage.sqlite");
-                    if (success)
-                        quWarning() << "*   Your database has been moved to" << Quassel::configDirPath() + "quassel-storage.sqlite";
-                    else
-                        quWarning() << "!!! Moving your database has failed. Please move it manually into" << Quassel::configDirPath();
-                }
-            }
-            // move certificate
-            QFileInfo certInfo(quasselDir + "quasselCert.pem");
-            if (certInfo.exists()) {
-                QFile cert(quasselDir + "quasselCert.pem");
-                bool success = cert.rename(Quassel::configDirPath() + "quasselCert.pem");
-                if (success)
-                    quWarning() << "*   Your certificate has been moved to" << Quassel::configDirPath() + "quasselCert.pem";
-                else
-                    quWarning() << "!!! Moving your certificate has failed. Please move it manually into" << Quassel::configDirPath();
-            }
-#endif /* !Q_OS_MAC */
-            quWarning() << "*** Migration completed.\n\n";
-        }
+    if (Quassel::runMode() == Quassel::RunMode::CoreOnly) {
+        Quassel::loadTranslation(QLocale::system());
     }
-    // MIGRATION end
 
     // check settings version
     // so far, we only have 1
     CoreSettings s;
     if (s.version() != 1) {
         qCritical() << "Invalid core settings version, terminating!";
-        exit(EXIT_FAILURE);
+        QCoreApplication::exit(EXIT_FAILURE);
+        return false;
     }
 
     // Set up storage and authentication backends
     registerStorageBackends();
     registerAuthenticators();
 
-    connect(&_storageSyncTimer, SIGNAL(timeout()), this, SLOT(syncStorage()));
-    _storageSyncTimer.start(10 * 60 * 1000); // 10 minutes
-}
-
-
-void Core::init()
-{
     QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();
     bool config_from_environment = Quassel::isOptionSet("config-from-environment");
 
@@ -221,13 +158,15 @@ void Core::init()
     }
 
     if (Quassel::isOptionSet("select-backend") || Quassel::isOptionSet("select-authenticator")) {
+        bool success{true};
         if (Quassel::isOptionSet("select-backend")) {
-            selectBackend(Quassel::optionValue("select-backend"));
+            success &= selectBackend(Quassel::optionValue("select-backend"));
         }
         if (Quassel::isOptionSet("select-authenticator")) {
-            selectAuthenticator(Quassel::optionValue("select-authenticator"));
+            success &= selectAuthenticator(Quassel::optionValue("select-authenticator"));
         }
-        exit(EXIT_SUCCESS);
+        QCoreApplication::exit(success ? EXIT_SUCCESS : EXIT_FAILURE);
+        return success;
     }
 
     if (!_configured) {
@@ -237,80 +176,112 @@ void Core::init()
 
             if (!_configured) {
                 qWarning() << "Cannot configure from environment";
-                exit(EXIT_FAILURE);
+                QCoreApplication::exit(EXIT_FAILURE);
+                return false;
             }
-        } else {
+        }
+        else {
             if (_registeredStorageBackends.empty()) {
                 quWarning() << qPrintable(tr("Could not initialize any storage backend! Exiting..."));
                 quWarning()
                         << qPrintable(tr("Currently, Quassel supports SQLite3 and PostgreSQL. You need to build your\n"
                                          "Qt library with the sqlite or postgres plugin enabled in order for quasselcore\n"
                                          "to work."));
-                exit(EXIT_FAILURE); // TODO make this less brutal (especially for mono client -> popup)
+                QCoreApplication::exit(EXIT_FAILURE); // TODO make this less brutal (especially for mono client -> popup)
+                return false;
             }
-            quWarning() << "Core is currently not configured! Please connect with a Quassel Client for basic setup.";
 
             if (writeError) {
                 qWarning() << "Cannot write quasselcore configuration; probably a permission problem.";
-                exit(EXIT_FAILURE);
+                QCoreApplication::exit(EXIT_FAILURE);
+                return false;
             }
+
+            quInfo() << "Core is currently not configured! Please connect with a Quassel Client for basic setup.";
         }
     }
+    else {
+        if (Quassel::isOptionSet("add-user")) {
+            bool success = createUser();
+            QCoreApplication::exit(success ? EXIT_SUCCESS : EXIT_FAILURE);
+            return success;
+        }
 
-    if (Quassel::isOptionSet("add-user")) {
-        exit(createUser() ? EXIT_SUCCESS : EXIT_FAILURE);
+        if (Quassel::isOptionSet("change-userpass")) {
+            bool success = changeUserPass(Quassel::optionValue("change-userpass"));
+            QCoreApplication::exit(success ? EXIT_SUCCESS : EXIT_FAILURE);
+            return success;
+        }
 
-    }
+        _strictIdentEnabled = Quassel::isOptionSet("strict-ident");
+        if (_strictIdentEnabled) {
+            cacheSysIdent();
+        }
 
-    if (Quassel::isOptionSet("change-userpass")) {
-        exit(changeUserPass(Quassel::optionValue("change-userpass")) ?
-                       EXIT_SUCCESS : EXIT_FAILURE);
+        if (Quassel::isOptionSet("oidentd")) {
+            _oidentdConfigGenerator = new OidentdConfigGenerator(this);
+        }
+
+        Quassel::registerReloadHandler([]() {
+            // Currently, only reloading SSL certificates and the sysident cache is supported
+            if (Core::instance()) {
+                Core::instance()->cacheSysIdent();
+                Core::instance()->reloadCerts();
+                return true;
+            }
+            return false;
+        });
+
+        connect(&_storageSyncTimer, SIGNAL(timeout()), this, SLOT(syncStorage()));
+        _storageSyncTimer.start(10 * 60 * 1000); // 10 minutes
     }
 
     connect(&_server, SIGNAL(newConnection()), this, SLOT(incomingConnection()));
     connect(&_v6server, SIGNAL(newConnection()), this, SLOT(incomingConnection()));
-    if (!startListening()) exit(1);  // TODO make this less brutal
 
-    if (Quassel::isOptionSet("oidentd")) {
-        _oidentdConfigGenerator = new OidentdConfigGenerator(Quassel::isOptionSet("oidentd-strict"), this);
-        if (Quassel::isOptionSet("oidentd-strict")) {
-            cacheSysIdent();
-        }
+    if (!startListening()) {
+        QCoreApplication::exit(EXIT_FAILURE);  // TODO make this less brutal
+        return false;
     }
-}
 
-
-Core::~Core()
-{
-    // FIXME do we need more cleanup for handlers?
-    foreach(CoreAuthHandler *handler, _connectingClients) {
-        handler->deleteLater(); // disconnect non authed clients
+    if (_configured && !Quassel::isOptionSet("norestore")) {
+        Core::restoreState();
     }
-    qDeleteAll(_sessions);
-}
 
+    _initialized = true;
+
+    if (_pendingInternalConnection) {
+        connectInternalPeer(_pendingInternalConnection);
+        _pendingInternalConnection = {};
+    }
+
+    return true;
+}
 
 /*** Session Restore ***/
 
 void Core::saveState()
 {
-    QVariantList activeSessions;
-    foreach(UserId user, instance()->_sessions.keys())
-        activeSessions << QVariant::fromValue<UserId>(user);
-    instance()->_storage->setCoreState(activeSessions);
+    if (_storage) {
+        QVariantList activeSessions;
+        for (auto &&user : instance()->_sessions.keys())
+            activeSessions << QVariant::fromValue<UserId>(user);
+        _storage->setCoreState(activeSessions);
+    }
 }
 
 
 void Core::restoreState()
 {
-    if (!instance()->_configured) {
-        // quWarning() << qPrintable(tr("Cannot restore a state for an unconfigured core!"));
+    if (!_configured) {
+        quWarning() << qPrintable(tr("Cannot restore a state for an unconfigured core!"));
         return;
     }
-    if (instance()->_sessions.count()) {
+    if (_sessions.count()) {
         quWarning() << qPrintable(tr("Calling restoreState() even though active sessions exist!"));
         return;
     }
+
     CoreSettings s;
     /* We don't check, since we are at the first version since switching to Git
     uint statever = s.coreState().toMap()["CoreStateVersion"].toUInt();
@@ -325,9 +296,9 @@ void Core::restoreState()
 
     if (activeSessions.count() > 0) {
         quInfo() << "Restoring previous core state...";
-        foreach(QVariant v, activeSessions) {
+        for(auto &&v : activeSessions) {
             UserId user = v.value<UserId>();
-            instance()->sessionForUser(user, true);
+            sessionForUser(user, true);
         }
     }
 }
@@ -435,6 +406,8 @@ bool Core::initStorage(const QString &backend, const QVariantMap &settings,
         return false;
     }
 
+    connect(storage.get(), SIGNAL(dbUpgradeInProgress(bool)), this, SIGNAL(dbUpgradeInProgress(bool)));
+
     Storage::State storageState = storage->init(settings, environment, loadFromEnvironment);
     switch (storageState) {
     case Storage::NeedsSetup:
@@ -447,8 +420,9 @@ bool Core::initStorage(const QString &backend, const QVariantMap &settings,
     // if initialization wasn't successful, we quit to keep from coming up unconfigured
     case Storage::NotAvailable:
         qCritical() << "FATAL: Selected storage backend is not available:" << backend;
-        if (!setup)
-            exit(EXIT_FAILURE);
+        if (!setup) {
+            QCoreApplication::exit(EXIT_FAILURE);
+        }
         return false;
 
     case Storage::IsReady:
@@ -546,8 +520,9 @@ bool Core::initAuthenticator(const QString &backend, const QVariantMap &settings
     // if initialization wasn't successful, we quit to keep from coming up unconfigured
     case Authenticator::NotAvailable:
         qCritical() << "FATAL: Selected auth backend is not available:" << backend;
-        if (!setup)
-            exit(EXIT_FAILURE);
+        if (!setup) {
+            QCoreApplication::exit(EXIT_FAILURE);
+        }
         return false;
 
     case Authenticator::IsReady:
@@ -576,10 +551,10 @@ bool Core::sslSupported()
 bool Core::reloadCerts()
 {
 #ifdef HAVE_SSL
-    SslServer *sslServerv4 = qobject_cast<SslServer *>(&instance()->_server);
+    SslServer *sslServerv4 = qobject_cast<SslServer *>(&_server);
     bool retv4 = sslServerv4->reloadCerts();
 
-    SslServer *sslServerv6 = qobject_cast<SslServer *>(&instance()->_v6server);
+    SslServer *sslServerv6 = qobject_cast<SslServer *>(&_v6server);
     bool retv6 = sslServerv6->reloadCerts();
 
     return retv4 && retv6;
@@ -593,7 +568,7 @@ bool Core::reloadCerts()
 void Core::cacheSysIdent()
 {
     if (isConfigured()) {
-        instance()->_authUserNames = instance()->_storage->getAllAuthUserNames();
+        _authUserNames = _storage->getAllAuthUserNames();
     }
 }
 
@@ -606,7 +581,7 @@ QString Core::strictSysIdent(UserId user) const
 
     // A new user got added since we last pulled our cache from the database.
     // There's no way to avoid a database hit - we don't even know the authname!
-    cacheSysIdent();
+    instance()->cacheSysIdent();
 
     if (_authUserNames.contains(user)) {
         return _authUserNames[user];
@@ -794,7 +769,18 @@ void Core::addClientHelper(RemotePeer *peer, UserId uid)
 }
 
 
-void Core::setupInternalClientSession(InternalPeer *clientPeer)
+void Core::connectInternalPeer(QPointer<InternalPeer> peer)
+{
+    if (_initialized && peer) {
+        setupInternalClientSession(peer);
+    }
+    else {
+        _pendingInternalConnection = peer;
+    }
+}
+
+
+void Core::setupInternalClientSession(QPointer<InternalPeer> clientPeer)
 {
     if (!_configured) {
         stopListening();
@@ -807,6 +793,12 @@ void Core::setupInternalClientSession(InternalPeer *clientPeer)
     }
     else {
         quWarning() << "Core::setupInternalClientSession(): You're trying to run monolithic Quassel with an unusable Backend! Go fix it!";
+        QCoreApplication::exit(EXIT_FAILURE);
+        return;
+    }
+
+    if (!clientPeer) {
+        quWarning() << "Client peer went away, not starting a session";
         return;
     }
 
@@ -825,7 +817,7 @@ SessionThread *Core::sessionForUser(UserId uid, bool restore)
     if (_sessions.contains(uid))
         return _sessions[uid];
 
-    SessionThread *session = new SessionThread(uid, restore, this);
+    SessionThread *session = new SessionThread(uid, restore, strictIdentEnabled(), this);
     _sessions[uid] = session;
     session->start();
     return session;

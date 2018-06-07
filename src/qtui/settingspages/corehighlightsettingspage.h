@@ -56,10 +56,22 @@ private slots:
                           bool cs = false, const QString &sender = "", const QString &chanName = "", bool self = false);
     void removeSelectedHighlightRows();
     void removeSelectedIgnoredRows();
+    void highlightNicksChanged(const int index);
     void selectHighlightRow(QTableWidgetItem *item);
     void selectIgnoredRow(QTableWidgetItem *item);
     void highlightTableChanged(QTableWidgetItem *item);
     void ignoredTableChanged(QTableWidgetItem *item);
+
+    /** Import local Highlight rules into the Core Highlight rules
+     *
+     * Iterates through all local highlight rules, converting each into core-side highlight rules.
+     */
+    void importRules();
+
+    /**
+     * Event handler for core unspported Details button
+     */
+    void on_coreUnsupportedDetails_clicked();
 
 private:
     Ui::CoreHighlightSettingsPage ui;
@@ -82,7 +94,14 @@ private:
 
     void setupRuleTable(QTableWidget *highlightTable) const;
 
-    void importRules();
+    /** Update the UI to show core support for highlights
+     *
+     * Shows or hides the UI warnings around core-side highlights according to core connection and
+     * core feature support.
+     *
+     * @param state  True if connected to core, otherwise false
+     */
+    void updateCoreSupportStatus(bool state);
 
     bool _initialized;
 };

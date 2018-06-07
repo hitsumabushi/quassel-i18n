@@ -25,22 +25,57 @@
 #include "uisettings.h"
 
 #include <QHeaderView>
+#include <QMessageBox>
 
 HighlightSettingsPage::HighlightSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Local Highlights"), parent)
+    : SettingsPage(tr("Interface"),
+                   // In Monolithic mode, local highlights are replaced by remote highlights
+                   Quassel::runMode() == Quassel::Monolithic ?
+                       tr("Legacy Highlights") : tr("Local Highlights"),
+                   parent)
 {
     ui.setupUi(this);
     ui.highlightTable->verticalHeader()->hide();
     ui.highlightTable->setShowGrid(false);
 
-    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::RegExColumn)->setToolTip("<b>RegEx</b>: This option determines if the highlight rule should be interpreted as a <b>regular expression</b> or just as a keyword.");
-    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::RegExColumn)->setWhatsThis("<b>RegEx</b>: This option determines if the highlight rule should be interpreted as a <b>regular expression</b> or just as a keyword.");
 
-    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::CsColumn)->setToolTip("<b>CS</b>: This option determines if the highlight rule should be interpreted <b>case sensitive</b>.");
-    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::CsColumn)->setWhatsThis("<b>CS</b>: This option determines if the highlight rule should be interpreted <b>case sensitive</b>.");
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::EnableColumn)->setToolTip(
+                tr("Enable/disable this rule"));
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::EnableColumn)->setWhatsThis(
+                ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::EnableColumn)->toolTip());
 
-    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::ChanColumn)->setToolTip("<b>Channel</b>: This regular expression determines for which <b>channels</b> the highlight rule works. Leave blank to match any channel. Put <b>!</b> in the beginning to negate. Case insensitive.");
-    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::ChanColumn)->setWhatsThis("<b>Channel</b>: This regular expression determines for which <b>channels</b> the highlight rule works. Leave blank to match any channel. Put <b>!</b> in the beginning to negate. Case insensitive.");
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::NameColumn)->setToolTip(
+                tr("Phrase to match"));
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::NameColumn)->setWhatsThis(
+                ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::NameColumn)->toolTip());
+
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::RegExColumn)->setToolTip(
+                tr("<b>RegEx</b>: This option determines if the highlight rule and <i>Channel</i> "
+                   "should be interpreted as <b>regular expressions</b> or just as keywords."));
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::RegExColumn)->setWhatsThis(
+                ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::RegExColumn)->toolTip());
+
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::CsColumn)->setToolTip(
+                tr("<b>CS</b>: This option determines if the highlight rule and <i>Channel</i> "
+                   "should be interpreted <b>case sensitive</b>."));
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::CsColumn)->setWhatsThis(
+                ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::CsColumn)->toolTip());
+
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::ChanColumn)->setToolTip(
+                tr("<p><b>Channel</b>: Semicolon separated list of channel names, leave blank to "
+                   "match any name.</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>#quassel*; #foobar; !#quasseldroid</i><br />"
+                   "would match on <i>#foobar</i> and any channel starting with <i>#quassel</i> "
+                   "except for <i>#quasseldroid</i><br />"
+                   "<p>If only inverted names are specified, it will match anything except for "
+                   "what's specified (implicit wildcard).</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>!#quassel*; !#foobar</i><br />"
+                   "would match anything except for <i>#foobar</i> or any channel starting with "
+                   "<i>#quassel</i></p>"));
+    ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::ChanColumn)->setWhatsThis(
+                ui.highlightTable->horizontalHeaderItem(HighlightSettingsPage::ChanColumn)->toolTip());
 
 #if QT_VERSION < 0x050000
     ui.highlightTable->horizontalHeader()->setResizeMode(HighlightSettingsPage::NameColumn, QHeaderView::Stretch);
@@ -55,6 +90,20 @@ HighlightSettingsPage::HighlightSettingsPage(QWidget *parent)
     ui.highlightTable->horizontalHeader()->setSectionResizeMode(HighlightSettingsPage::EnableColumn, QHeaderView::ResizeToContents);
     ui.highlightTable->horizontalHeader()->setSectionResizeMode(HighlightSettingsPage::ChanColumn, QHeaderView::ResizeToContents);
 #endif
+
+    // Information icon
+    ui.localHighlightsIcon->setPixmap(QIcon::fromTheme("dialog-information").pixmap(16));
+
+    // Set up client/monolithic local highlights information
+    if (Quassel::runMode() == Quassel::Monolithic) {
+        // We're running in Monolithic mode, core/client version in total sync.  Discourage the use
+        // of local (legacy) highlights as it's identical to setting remote highlights.
+        ui.localHighlightsLabel->setText(
+                    tr("Legacy Highlights are replaced by Highlights"));
+    } else {
+        // We're running in client/split mode, allow for splitting the details.
+        ui.localHighlightsLabel->setText(tr("Local Highlights apply to this device only"));
+    }
 
     connect(ui.add, SIGNAL(clicked(bool)), this, SLOT(addNewRow()));
     connect(ui.remove, SIGNAL(clicked(bool)), this, SLOT(removeSelectedRows()));
@@ -91,6 +140,13 @@ void HighlightSettingsPage::addNewRow(QString name, bool regex, bool cs, bool en
 {
     ui.highlightTable->setRowCount(ui.highlightTable->rowCount()+1);
 
+    QTableWidgetItem *enableItem = new QTableWidgetItem("");
+    if (enable)
+        enableItem->setCheckState(Qt::Checked);
+    else
+        enableItem->setCheckState(Qt::Unchecked);
+    enableItem->setFlags(Qt::ItemIsUserCheckable|Qt::ItemIsEnabled|Qt::ItemIsSelectable);
+
     QTableWidgetItem *nameItem = new QTableWidgetItem(name);
 
     QTableWidgetItem *regexItem = new QTableWidgetItem("");
@@ -107,20 +163,35 @@ void HighlightSettingsPage::addNewRow(QString name, bool regex, bool cs, bool en
         csItem->setCheckState(Qt::Unchecked);
     csItem->setFlags(Qt::ItemIsUserCheckable|Qt::ItemIsEnabled|Qt::ItemIsSelectable);
 
-    QTableWidgetItem *enableItem = new QTableWidgetItem("");
-    if (enable)
-        enableItem->setCheckState(Qt::Checked);
-    else
-        enableItem->setCheckState(Qt::Unchecked);
-    enableItem->setFlags(Qt::ItemIsUserCheckable|Qt::ItemIsEnabled|Qt::ItemIsSelectable);
-
     QTableWidgetItem *chanNameItem = new QTableWidgetItem(chanName);
 
+    enableItem->setToolTip(tr("Enable/disable this rule"));
+    nameItem->setToolTip(tr("Phrase to match"));
+    regexItem->setToolTip(
+                tr("<b>RegEx</b>: This option determines if the highlight rule and <i>Channel</i> "
+                   "should be interpreted as <b>regular expressions</b> or just as keywords."));
+    csItem->setToolTip(
+                tr("<b>CS</b>: This option determines if the highlight rule and <i>Channel</i> "
+                   "should be interpreted <b>case sensitive</b>."));
+    chanNameItem->setToolTip(
+                tr("<p><b>Channel</b>: Semicolon separated list of channel names, leave blank to "
+                   "match any name.</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>#quassel*; #foobar; !#quasseldroid</i><br />"
+                   "would match on <i>#foobar</i> and any channel starting with <i>#quassel</i> "
+                   "except for <i>#quasseldroid</i><br />"
+                   "<p>If only inverted names are specified, it will match anything except for "
+                   "what's specified (implicit wildcard).</p>"
+                   "<p><i>Example:</i><br />"
+                   "<i>!#quassel*; !#foobar</i><br />"
+                   "would match anything except for <i>#foobar</i> or any channel starting with "
+                   "<i>#quassel</i></p>"));
+
     int lastRow = ui.highlightTable->rowCount()-1;
+    ui.highlightTable->setItem(lastRow, HighlightSettingsPage::EnableColumn, enableItem);
     ui.highlightTable->setItem(lastRow, HighlightSettingsPage::NameColumn, nameItem);
     ui.highlightTable->setItem(lastRow, HighlightSettingsPage::RegExColumn, regexItem);
     ui.highlightTable->setItem(lastRow, HighlightSettingsPage::CsColumn, csItem);
-    ui.highlightTable->setItem(lastRow, HighlightSettingsPage::EnableColumn, enableItem);
     ui.highlightTable->setItem(lastRow, HighlightSettingsPage::ChanColumn, chanNameItem);
 
     if (!self)
@@ -188,6 +259,9 @@ void HighlightSettingsPage::tableChanged(QTableWidgetItem *item)
 
     switch (item->column())
     {
+    case HighlightSettingsPage::EnableColumn:
+        highlightRule["Enable"] = (item->checkState() == Qt::Checked);
+        break;
     case HighlightSettingsPage::NameColumn:
         if (item->text() == "")
             item->setText(tr("this shouldn't be empty"));
@@ -199,9 +273,6 @@ void HighlightSettingsPage::tableChanged(QTableWidgetItem *item)
     case HighlightSettingsPage::CsColumn:
         highlightRule["CS"] = (item->checkState() == Qt::Checked);
         break;
-    case HighlightSettingsPage::EnableColumn:
-        highlightRule["Enable"] = (item->checkState() == Qt::Checked);
-        break;
     case HighlightSettingsPage::ChanColumn:
         if (!item->text().isEmpty() && item->text().trimmed().isEmpty())
             item->setText("");
@@ -210,6 +281,38 @@ void HighlightSettingsPage::tableChanged(QTableWidgetItem *item)
     }
     highlightList[item->row()] = highlightRule;
     emit widgetHasChanged();
+}
+
+
+void HighlightSettingsPage::on_localHighlightsDetails_clicked()
+{
+    // Show information specific to client/monolithic differences
+    if (Quassel::runMode() == Quassel::Monolithic) {
+        // We're running in Monolithic mode, core/client version in total sync.  Discourage the use
+        // of local (legacy) highlights as it's identical to setting remote highlights.
+        QMessageBox::information(
+                    this,
+                    tr("Legacy Highlights vs. Highlights"),
+                    QString("<p><b>%1</b></p></br><p>%2</p></br><p>%3</p>")
+                    .arg(tr("Legacy Highlights are replaced by Highlights"),
+                         tr("These highlights will keep working for now, but you should move to "
+                            "the improved highlight rules when you can."),
+                         tr("Configure the new style of highlights in "
+                            "<i>%1</i>.").arg(tr("Highlights"))));
+    } else {
+        // We're running in client/split mode, allow for splitting the details.
+        QMessageBox::information(
+                    this,
+                    tr("Local Highlights vs. Remote Highlights"),
+                    QString("<p><b>%1</b></p></br><p>%2</p></br><p>%3</p>")
+                    .arg(tr("Local Highlights apply to this device only"),
+                         tr("Highlights configured on this page only apply to your current "
+                            "device."),
+                         tr("Configure highlights for all of your devices in "
+                            "<i>%1</i>.").arg(tr("Remote Highlights").replace(" ", "&nbsp;"))));
+        // Re-use translations of "Remote Highlights" as this is a word-for-word reference, forcing
+        // all spaces to be non-breaking
+    }
 }
 
 
