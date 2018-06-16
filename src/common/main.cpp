@@ -100,22 +100,25 @@ int main(int argc, char **argv)
 #endif
 #ifndef BUILD_CORE
     Q_INIT_RESOURCE(pics);
-    Q_INIT_RESOURCE(hicolor);
+    Q_INIT_RESOURCE(hicolor_icons);
 #endif
 
 #ifdef EMBED_DATA
     Q_INIT_RESOURCE(i18n);
 # ifndef BUILD_CORE
     Q_INIT_RESOURCE(data);
-#   ifdef WITH_OXYGEN
-    Q_INIT_RESOURCE(oxygen);
+    Q_INIT_RESOURCE(breeze_icons);
+    Q_INIT_RESOURCE(breeze_dark_icons);
+#  ifdef WITH_OXYGEN_ICONS
+    Q_INIT_RESOURCE(oxygen_icons);
+#  endif
+#  ifdef WITH_BUNDLED_ICONS
+      Q_INIT_RESOURCE(breeze_icon_theme);
+      Q_INIT_RESOURCE(breeze_dark_icon_theme);
+#   ifdef WITH_OXYGEN_ICONS
+      Q_INIT_RESOURCE(oxygen_icon_theme);
 #   endif
-#   ifdef WITH_BREEZE
-    Q_INIT_RESOURCE(breeze);
-#   endif
-#   ifdef WITH_BREEZE_DARK
-    Q_INIT_RESOURCE(breezedark);
-#   endif
+#  endif
 # endif
 #endif
 

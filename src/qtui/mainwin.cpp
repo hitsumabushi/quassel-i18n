@@ -193,6 +193,8 @@ MainWin::MainWin(QWidget *parent)
 
     setWindowTitle("Quassel IRC");
     setWindowIconText("Quassel IRC");
+    // Set the default icon for all windows
+    QApplication::setWindowIcon(QIcon::fromTheme("quassel"));
     updateIcon();
 }
 
@@ -297,11 +299,7 @@ void MainWin::init()
     // restore locked state of docks
     QtUi::actionCollection("General")->action("LockLayout")->setChecked(s.value("LockLayout", false).toBool());
 
-    CoreConnection *conn = Client::coreConnection();
-    if (!conn->connectToCore()) {
-        // No autoconnect selected (or no accounts)
-        showCoreConnectionDlg();
-    }
+    QTimer::singleShot(0, this, SLOT(doAutoConnect()));
 }
 
 
@@ -389,7 +387,6 @@ void MainWin::updateIcon()
     else
         icon = QIcon::fromTheme("inactive-quassel", QIcon(":/icons/inactive-quassel.png"));
     setWindowIcon(icon);
-    qApp->setWindowIcon(icon);
 }
 
 
@@ -459,7 +456,7 @@ void MainWin::setupActions()
     coll->addAction("ConfigureQuassel", configureQuasselAct);
 
     // Help
-    QAction *aboutQuasselAct = new Action(QIcon(":/icons/quassel.png"), tr("&About Quassel"), coll,
+    QAction *aboutQuasselAct = new Action(QIcon::fromTheme("quassel"), tr("&About Quassel"), coll,
         this, SLOT(showAboutDlg()));
     aboutQuasselAct->setMenuRole(QAction::AboutRole);
     coll->addAction("AboutQuassel", aboutQuasselAct);
@@ -1148,7 +1145,6 @@ void MainWin::setupSystray()
 #else
     _systemTray = new SystemTray(this); // dummy
 #endif
-    _systemTray->init();
 }
 
 
@@ -1214,6 +1210,15 @@ void MainWin::saveMainToolBarStatus(bool enabled)
 #else
     Q_UNUSED(enabled);
 #endif
+}
+
+
+void MainWin::doAutoConnect()
+{
+    if (!Client::coreConnection()->connectToCore()) {
+        // No autoconnect selected (or no accounts)
+        showCoreConnectionDlg();
+    }
 }
 
 

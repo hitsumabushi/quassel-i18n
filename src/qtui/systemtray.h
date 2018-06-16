@@ -18,10 +18,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef SYSTEMTRAY_H_
-#define SYSTEMTRAY_H_
+#pragma once
 
-#include <QIcon>
+#include <QObject>
+#include <QString>
+#include <QTimer>
 
 class Action;
 class QMenu;
@@ -31,8 +32,8 @@ class SystemTray : public QObject
     Q_OBJECT
     Q_ENUMS(State Mode MessageIcon ActivationReason)
 
-public :
-        enum State {
+public:
+    enum State {
         Passive,
         Active,
         NeedsAttention
@@ -61,32 +62,42 @@ public :
         MiddleClick
     };
 
+    enum class AttentionBehavior {
+        DoNothing,
+        ChangeColor,
+        Blink
+    };
+
     explicit SystemTray(QWidget *parent);
-    virtual ~SystemTray();
-    virtual void init();
+    ~SystemTray() override;
 
-    inline Mode mode() const;
-    inline State state() const;
-    inline bool isAlerted() const;
-    virtual inline bool isSystemTrayAvailable() const;
+    Mode mode() const;
+    State state() const;
+    bool isVisible() const;
+    bool isAlerted() const;
 
-    void setAlert(bool alerted);
-    virtual inline bool isVisible() const { return false; }
+    virtual bool isSystemTrayAvailable() const;
 
     QWidget *associatedWidget() const;
 
 public slots:
-    virtual void setState(State);
-    virtual void setVisible(bool visible = true);
-    virtual void setToolTip(const QString &title, const QString &subtitle);
+    void setVisible(bool visible = true);
+    void setState(State);
+    void setAlert(bool alerted);
+
+    void setToolTip(const QString &title, const QString &subtitle);
     virtual void showMessage(const QString &title, const QString &message, MessageIcon icon = Information, int msTimeout = 10000, uint notificationId = 0);
-    virtual void closeMessage(uint notificationId) { Q_UNUSED(notificationId) }
+    virtual void closeMessage(uint notificationId);
 
 signals:
-    void activated(SystemTray::ActivationReason);
-    void iconChanged(const QIcon &icon);
-    void animationEnabledChanged(bool);
+    void modeChanged(Mode mode);
+    void stateChanged(State state);
+    void visibilityChanged(bool isVisible);
+    void iconsChanged();
+    void currentIconNameChanged();
     void toolTipChanged(const QString &title, const QString &subtitle);
+
+    void activated(SystemTray::ActivationReason);
     void messageClicked(uint notificationId);
     void messageClosed(uint notificationId);
 
@@ -94,47 +105,39 @@ protected slots:
     virtual void activate(SystemTray::ActivationReason = Trigger);
 
 protected:
-    virtual void setMode(Mode mode);
-    inline bool shouldBeVisible() const;
+    void setMode(Mode mode);
 
-    virtual QIcon stateIcon() const;
-    QIcon stateIcon(State state) const;
-    inline QString toolTipTitle() const;
-    inline QString toolTipSubTitle() const;
-    inline QMenu *trayMenu() const;
+    QString toolTipTitle() const;
+    QString toolTipSubTitle() const;
+    QMenu *trayMenu() const;
 
-    inline bool animationEnabled() const;
+    QString iconName(State state) const;
+    QString currentIconName() const;
+    QString currentAttentionIconName() const;
 
 private slots:
     void minimizeRestore();
     void trayMenuAboutToShow();
-    void enableAnimationChanged(const QVariant &);
+    void invertTrayIconChanged(const QVariant &);
+    void enableChangeColorChanged(const QVariant &);
+    void enableBlinkChanged(const QVariant &);
+
+    void onBlinkTimeout();
 
 private:
-    Mode _mode;
-    State _state;
-    bool _shouldBeVisible;
+    bool _isVisible{false};
+    Mode _mode{Mode::Invalid};
+    State _state{State::Passive};
+    bool _trayIconInverted{false};
+    AttentionBehavior _attentionBehavior{AttentionBehavior::ChangeColor};
 
-    QString _toolTipTitle, _toolTipSubTitle;
-    QIcon _passiveIcon, _activeIcon, _needsAttentionIcon;
-    bool _animationEnabled;
+    QTimer _blinkTimer;
+    bool _blinkState{false};
 
-    QMenu *_trayMenu;
-    QWidget *_associatedWidget;
-    Action *_minimizeRestoreAction;
+    QString _toolTipTitle;
+    QString _toolTipSubTitle;
+
+    QMenu *_trayMenu{nullptr};
+    QWidget *_associatedWidget{nullptr};
+    Action *_minimizeRestoreAction{nullptr};
 };
-
-
-// inlines
-
-bool SystemTray::isSystemTrayAvailable() const { return false; }
-bool SystemTray::isAlerted() const { return state() == NeedsAttention; }
-SystemTray::Mode SystemTray::mode() const { return _mode; }
-SystemTray::State SystemTray::state() const { return _state; }
-bool SystemTray::shouldBeVisible() const { return _shouldBeVisible; }
-QMenu *SystemTray::trayMenu() const { return _trayMenu; }
-QString SystemTray::toolTipTitle() const { return _toolTipTitle; }
-QString SystemTray::toolTipSubTitle() const { return _toolTipSubTitle; }
-bool SystemTray::animationEnabled() const { return _animationEnabled; }
-
-#endif

@@ -18,19 +18,17 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef LEGACYSYSTEMTRAY_H_
-#define LEGACYSYSTEMTRAY_H_
+#pragma once
 
 #ifndef QT_NO_SYSTEMTRAYICON
+
+#include <QString>
 
 #ifdef HAVE_KDE4
 #  include <KSystemTrayIcon>
 #else
 #  include <QSystemTrayIcon>
 #endif
-
-#include <QIcon>
-#include <QTimer>
 
 #include "systemtray.h"
 
@@ -40,35 +38,25 @@ class LegacySystemTray : public SystemTray
 
 public:
     explicit LegacySystemTray(QWidget *parent);
-    virtual ~LegacySystemTray() {}
-    virtual void init();
 
-    virtual bool isVisible() const;
-    virtual inline bool isSystemTrayAvailable() const;
-    virtual QIcon stateIcon() const; // overriden to care about blinkState
+    bool isSystemTrayAvailable() const override;
 
 public slots:
-    virtual void setState(State state);
-    virtual void setVisible(bool visible = true);
-    virtual void showMessage(const QString &title, const QString &message, MessageIcon icon = Information, int msTimeout = 10000, uint notificationId = 0);
-    virtual void closeMessage(uint notificationId);
-
-protected slots:
-
-protected:
-    virtual void setMode(Mode mode);
+    void showMessage(const QString &title, const QString &message, MessageIcon icon = Information, int msTimeout = 10000, uint notificationId = 0) override;
+    void closeMessage(uint notificationId) override;
 
 private slots:
-    void on_blinkTimeout();
-    void on_activated(QSystemTrayIcon::ActivationReason);
-    void on_messageClicked();
+    void onModeChanged(Mode mode);
+    void onVisibilityChanged(bool isVisible);
 
-    void syncLegacyIcon();
+    void onActivated(QSystemTrayIcon::ActivationReason);
+    void onMessageClicked();
+
+    void updateIcon();
+    void updateToolTip();
 
 private:
-    QTimer _blinkTimer;
-    bool _blinkState;
-    uint _lastMessageId;
+    uint _lastMessageId {0};
 
 #ifdef HAVE_KDE4
     KSystemTrayIcon *_trayIcon;
@@ -77,16 +65,4 @@ private:
 #endif
 };
 
-
-// inlines
-
-bool LegacySystemTray::isSystemTrayAvailable() const
-{
-    return mode() == Legacy ? QSystemTrayIcon::isSystemTrayAvailable()
-           : SystemTray::isSystemTrayAvailable();
-}
-
-
 #endif /* QT_NO_SYSTEMTRAYICON */
-
-#endif /* LEGACYSYSTEMTRAY_H_ */

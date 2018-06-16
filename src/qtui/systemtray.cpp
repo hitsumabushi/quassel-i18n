@@ -36,33 +36,14 @@
 
 SystemTray::SystemTray(QWidget *parent)
     : QObject(parent),
-    _mode(Invalid),
-    _state(Passive),
-    _shouldBeVisible(true),
-    _passiveIcon(QIcon::fromTheme("inactive-quassel", QIcon(":/icons/inactive-quassel.png"))),
-    _activeIcon(QIcon::fromTheme("quassel", QIcon(":/icons/quassel.png"))),
-    _needsAttentionIcon(QIcon::fromTheme("message-quassel", QIcon(":/icons/message-quassel.png"))),
-    _trayMenu(0),
     _associatedWidget(parent)
 {
     Q_ASSERT(parent);
-}
 
+    NotificationSettings{}.initAndNotify("Systray/ChangeColor", this, SLOT(enableChangeColorChanged(QVariant)), true);
+    NotificationSettings{}.initAndNotify("Systray/Animate", this, SLOT(enableBlinkChanged(QVariant)), false);
+    UiStyleSettings{}.initAndNotify("Icons/InvertTray", this, SLOT(invertTrayIconChanged(QVariant)), false);
 
-SystemTray::~SystemTray()
-{
-    _trayMenu->deleteLater();
-}
-
-
-QWidget *SystemTray::associatedWidget() const
-{
-    return _associatedWidget;
-}
-
-
-void SystemTray::init()
-{
     ActionCollection *coll = QtUi::actionCollection("General");
     _minimizeRestoreAction = new Action(tr("&Minimize"), this, this, SLOT(minimizeRestore()));
 
@@ -86,11 +67,175 @@ void SystemTray::init()
     _trayMenu->addSeparator();
     _trayMenu->addAction(_minimizeRestoreAction);
     _trayMenu->addAction(coll->action("Quit"));
-
     connect(_trayMenu, SIGNAL(aboutToShow()), SLOT(trayMenuAboutToShow()));
 
-    NotificationSettings notificationSettings;
-    notificationSettings.initAndNotify("Systray/Animate", this, SLOT(enableAnimationChanged(QVariant)), true);
+    connect(QtUi::instance(), SIGNAL(iconThemeRefreshed()), this, SIGNAL(iconsChanged()));
+
+    _blinkTimer.setInterval(1000);
+    _blinkTimer.setSingleShot(false);
+    connect(&_blinkTimer, SIGNAL(timeout()), SLOT(onBlinkTimeout()));
+}
+
+
+SystemTray::~SystemTray()
+{
+    _trayMenu->deleteLater();
+}
+
+
+QWidget *SystemTray::associatedWidget() const
+{
+    return _associatedWidget;
+}
+
+
+bool SystemTray::isSystemTrayAvailable() const
+{
+    return false;
+}
+
+
+bool SystemTray::isVisible() const
+{
+    return _isVisible;
+}
+
+
+void SystemTray::setVisible(bool visible)
+{
+    if (visible != _isVisible) {
+        _isVisible = visible;
+        emit visibilityChanged(visible);
+    }
+}
+
+
+SystemTray::Mode SystemTray::mode() const
+{
+    return _mode;
+}
+
+
+void SystemTray::setMode(Mode mode)
+{
+    if (mode != _mode) {
+        _mode = mode;
+#ifdef HAVE_KDE4
+        if (_trayMenu) {
+            if (mode == Mode::Legacy) {
+                _trayMenu->setWindowFlags(Qt::Popup);
+            }
+            else {
+                _trayMenu->setWindowFlags(Qt::Window);
+            }
+        }
+#endif
+        emit modeChanged(mode);
+    }
+}
+
+
+SystemTray::State SystemTray::state() const
+{
+    return _state;
+}
+
+
+void SystemTray::setState(State state)
+{
+    if (_state != state) {
+        _state = state;
+        emit stateChanged(state);
+
+        if (state == NeedsAttention && _attentionBehavior == AttentionBehavior::Blink) {
+            _blinkTimer.start();
+            _blinkState = true;
+        }
+        else {
+            _blinkTimer.stop();
+            _blinkState = false;
+        }
+        emit currentIconNameChanged();
+    }
+}
+
+
+QString SystemTray::iconName(State state) const
+{
+    QString name;
+    switch (state) {
+    case State::Passive:
+        name = "inactive-quassel-tray";
+        break;
+    case State::Active:
+        name = "active-quassel-tray";
+        break;
+    case State::NeedsAttention:
+        name = "message-quassel-tray";
+        break;
+    }
+
+    if (_trayIconInverted) {
+        name += "-inverted";
+    }
+
+    return name;
+}
+
+
+QString SystemTray::currentIconName() const
+{
+    if (state() == State::NeedsAttention) {
+        if (_attentionBehavior == AttentionBehavior::ChangeColor) {
+            return iconName(State::NeedsAttention);
+        }
+        if (_attentionBehavior == AttentionBehavior::Blink && _blinkState) {
+            return iconName(State::NeedsAttention);
+        }
+        return iconName(State::Active);
+    }
+    else {
+        return iconName(state());
+    }
+}
+
+
+QString SystemTray::currentAttentionIconName() const
+{
+    if (state() == State::NeedsAttention && _attentionBehavior == AttentionBehavior::Blink && !_blinkState) {
+        return iconName(State::Active);
+    }
+    return iconName(State::NeedsAttention);
+}
+
+
+bool SystemTray::isAlerted() const
+{
+    return state() == State::NeedsAttention;
+}
+
+
+void SystemTray::setAlert(bool alerted)
+{
+    if (alerted) {
+        setState(NeedsAttention);
+    }
+    else {
+        setState(Client::isConnected() ? Active : Passive);
+    }
+}
+
+
+void SystemTray::onBlinkTimeout()
+{
+    _blinkState = !_blinkState;
+    emit currentIconNameChanged();
+}
+
+
+QMenu *SystemTray::trayMenu() const
+{
+    return _trayMenu;
 }
 
 
@@ -103,64 +248,50 @@ void SystemTray::trayMenuAboutToShow()
 }
 
 
-void SystemTray::setMode(Mode mode_)
+void SystemTray::enableChangeColorChanged(const QVariant &v)
 {
-    if (mode_ != _mode) {
-        _mode = mode_;
-#ifdef HAVE_KDE4
-        if (_trayMenu) {
-            if (_mode == Legacy) {
-                _trayMenu->setWindowFlags(Qt::Popup);
-            }
-            else {
-                _trayMenu->setWindowFlags(Qt::Window);
-            }
+    if (v.toBool()) {
+        _attentionBehavior = AttentionBehavior::ChangeColor;
+    }
+    else {
+        if (_attentionBehavior == AttentionBehavior::ChangeColor) {
+            _attentionBehavior = AttentionBehavior::DoNothing;
         }
-#endif
     }
+    emit currentIconNameChanged();
 }
 
 
-QIcon SystemTray::stateIcon() const
+void SystemTray::enableBlinkChanged(const QVariant &v)
 {
-    return stateIcon(state());
-}
-
-
-QIcon SystemTray::stateIcon(State state) const
-{
-    switch (state) {
-    case Passive:
-        return _passiveIcon;
-    case Active:
-        return _activeIcon;
-    case NeedsAttention:
-        return _needsAttentionIcon;
+    if (v.toBool()) {
+        _attentionBehavior = AttentionBehavior::Blink;
     }
-    return QIcon();
-}
-
-
-void SystemTray::setState(State state)
-{
-    if (_state != state) {
-        _state = state;
+    else {
+        if (_attentionBehavior == AttentionBehavior::Blink) {
+            _attentionBehavior = AttentionBehavior::DoNothing;
+        }
     }
+    emit currentIconNameChanged();
 }
 
 
-void SystemTray::setAlert(bool alerted)
+void SystemTray::invertTrayIconChanged(const QVariant &v)
 {
-    if (alerted)
-        setState(NeedsAttention);
-    else
-        setState(Client::isConnected() ? Active : Passive);
+    _trayIconInverted = v.toBool();
+    emit iconsChanged();
 }
 
 
-void SystemTray::setVisible(bool visible)
+QString SystemTray::toolTipTitle() const
 {
-    _shouldBeVisible = visible;
+    return _toolTipTitle;
+}
+
+
+QString SystemTray::toolTipSubTitle() const
+{
+    return _toolTipSubTitle;
 }
 
 
@@ -182,6 +313,12 @@ void SystemTray::showMessage(const QString &title, const QString &message, Messa
 }
 
 
+void SystemTray::closeMessage(uint notificationId)
+{
+    Q_UNUSED(notificationId)
+}
+
+
 void SystemTray::activate(SystemTray::ActivationReason reason)
 {
     emit activated(reason);
@@ -191,11 +328,4 @@ void SystemTray::activate(SystemTray::ActivationReason reason)
 void SystemTray::minimizeRestore()
 {
     GraphicalUi::toggleMainWidget();
-}
-
-
-void SystemTray::enableAnimationChanged(const QVariant &v)
-{
-    _animationEnabled = v.toBool();
-    emit animationEnabledChanged(v.toBool());
 }
