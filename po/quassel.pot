@@ -703,7 +703,7 @@ msgstr ""
 
 #: ../src/qtui/aboutdlg.cpp:106
 msgctxt "AboutDlg|"
-msgid "for the current Quassel logo"
+msgid "for the Oxygen Quassel logo"
 msgstr ""
 
 #: ../src/qtui/aboutdlg.cpp:110
@@ -887,127 +887,138 @@ msgstr ""
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:22
 msgctxt "AppearanceSettingsPage|"
-msgid "Client style:"
+msgid "Language:"
 msgstr ""
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:29
 msgctxt "AppearanceSettingsPage|"
-msgid "Set application style"
-msgstr ""
-
-#: ../src/qtui/settingspages/appearancesettingspage.ui:36
-msgctxt "AppearanceSettingsPage|"
-msgid "Language:"
-msgstr ""
-
-#: ../src/qtui/settingspages/appearancesettingspage.ui:43
-msgctxt "AppearanceSettingsPage|"
 msgid "Set the application language. Requires restart!"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:47
+#: ../src/qtui/settingspages/appearancesettingspage.ui:33
 msgctxt "AppearanceSettingsPage|"
 msgid "<Untranslated>"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:52
-#: ../src/qtui/settingspages/appearancesettingspage.ui:84
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:74
+#: ../src/qtui/settingspages/appearancesettingspage.ui:38
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:86
 msgctxt "AppearanceSettingsPage|"
 msgid "<System Default>"
 msgstr ""
 
+#: ../src/qtui/settingspages/appearancesettingspage.ui:59
+msgctxt "AppearanceSettingsPage|"
+msgid "Widget style:"
+msgstr ""
+
+#: ../src/qtui/settingspages/appearancesettingspage.ui:66
+msgctxt "AppearanceSettingsPage|"
+msgid "Set application style"
+msgstr ""
+
 #: ../src/qtui/settingspages/appearancesettingspage.ui:73
 msgctxt "AppearanceSettingsPage|"
-msgid "Icon theme:"
+msgid "Fallback icon theme:"
 msgstr ""
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:80
 msgctxt "AppearanceSettingsPage|"
-msgid "Choose from the bundled icon themes! May need restart..."
+msgid ""
+"<html><head/><body><p>Icon theme to use for icons that are not found in the "
+"current system theme. Requires the selected theme to be installed either "
+"system-wide, or as part of the Quassel installation.</p><p>Supported themes "
+"are Breeze, Breeze Dark and Oxygen, all of KDE fame.</p></body></html>"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:94
+#: ../src/qtui/settingspages/appearancesettingspage.ui:87
+msgctxt "AppearanceSettingsPage|"
+msgid ""
+"<html><head/><body><p>If enabled, uses the selected fallback icon theme "
+"instead of the configured system theme for all icons. Recommended if you "
+"want Quassel to have a consistent look-and-feel.</p></body></html>"
+msgstr ""
+
+#: ../src/qtui/settingspages/appearancesettingspage.ui:90
+msgctxt "AppearanceSettingsPage|"
+msgid "Override system theme"
+msgstr ""
+
+#: ../src/qtui/settingspages/appearancesettingspage.ui:110
 msgctxt "AppearanceSettingsPage|"
 msgid "Use custom stylesheet"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:128
-msgctxt "AppearanceSettingsPage|"
-msgid "Path:"
-msgstr ""
-
-#: ../src/qtui/settingspages/appearancesettingspage.ui:160
+#: ../src/qtui/settingspages/appearancesettingspage.ui:148
 msgctxt "AppearanceSettingsPage|"
 msgid "..."
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:169
+#: ../src/qtui/settingspages/appearancesettingspage.ui:172
 msgctxt "AppearanceSettingsPage|"
 msgid "Show system tray icon"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:203
+#: ../src/qtui/settingspages/appearancesettingspage.ui:188
+msgctxt "AppearanceSettingsPage|"
+msgid "Invert brightness"
+msgstr ""
+
+#: ../src/qtui/settingspages/appearancesettingspage.ui:233
 msgctxt "AppearanceSettingsPage|"
 msgid "Hide to tray on close button"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:218
+#: ../src/qtui/settingspages/appearancesettingspage.ui:248
 msgctxt "AppearanceSettingsPage|"
 msgid "Message Redirection"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:227
+#: ../src/qtui/settingspages/appearancesettingspage.ui:257
 msgctxt "AppearanceSettingsPage|"
 msgid "User Notices:"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:270
+#: ../src/qtui/settingspages/appearancesettingspage.ui:300
 msgctxt "AppearanceSettingsPage|"
 msgid "Server Notices:"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:284
+#: ../src/qtui/settingspages/appearancesettingspage.ui:314
 msgctxt "AppearanceSettingsPage|"
 msgid "Default Target"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:291
+#: ../src/qtui/settingspages/appearancesettingspage.ui:321
 msgctxt "AppearanceSettingsPage|"
 msgid "Status Window"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:298
+#: ../src/qtui/settingspages/appearancesettingspage.ui:328
 msgctxt "AppearanceSettingsPage|"
 msgid "Current Chat"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.ui:305
+#: ../src/qtui/settingspages/appearancesettingspage.ui:335
 msgctxt "AppearanceSettingsPage|"
 msgid "Errors:"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:35
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:36
 msgctxt "AppearanceSettingsPage|"
 msgid "Interface"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:104
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:51
 msgctxt "AppearanceSettingsPage|"
-msgid "Breeze Light"
+msgid "Icon theme:"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:107
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:115
 msgctxt "AppearanceSettingsPage|"
-msgid "Breeze Dark"
+msgid "Automatic"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:110
-msgctxt "AppearanceSettingsPage|"
-msgid "Oxygen"
-msgstr ""
-
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:280
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:294
 msgctxt "AppearanceSettingsPage|"
 msgid "Please choose a stylesheet file"
 msgstr ""
@@ -5428,102 +5439,102 @@ msgctxt "InputWidget|"
 msgid "Clear formatting"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:76
+#: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "White"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:76
+#: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Black"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:76
+#: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark blue"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:76
+#: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark green"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:76
+#: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Red"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:76
+#: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark red"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:76
+#: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark magenta"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:76
+#: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Orange"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:77
+#: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Yellow"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:77
+#: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Green"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:77
+#: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Dark cyan"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:77
+#: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Cyan"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:77
+#: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Blue"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:77
+#: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Magenta"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:77
+#: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Dark gray"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:77
+#: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Light gray"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:87 ../src/qtui/inputwidget.cpp:88
+#: ../src/qtui/inputwidget.cpp:85 ../src/qtui/inputwidget.cpp:86
 msgctxt "InputWidget|"
 msgid "Clear Color"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:149
+#: ../src/qtui/inputwidget.cpp:151
 msgctxt "InputWidget|"
 msgid "Focus Input Line"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:628
+#: ../src/qtui/inputwidget.cpp:630
 msgctxt "InputWidget|"
 msgid "Hide formatting options"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:631
+#: ../src/qtui/inputwidget.cpp:633
 msgctxt "InputWidget|"
 msgid "Show formatting options"
 msgstr ""
@@ -5869,7 +5880,7 @@ msgctxt "ItemViewSettingsPage|"
 msgid "Other activity"
 msgstr ""
 
-#: ../src/qtui/knotificationbackend.cpp:139
+#: ../src/qtui/knotificationbackend.cpp:137
 #, qt-format
 msgctxt "KNotificationBackend|"
 msgid "%n pending highlight(s)"
@@ -6017,478 +6028,478 @@ msgctxt "MainPage|"
 msgid "Connect to Core..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:398
+#: ../src/qtui/mainwin.cpp:395
 msgctxt "MainWin|"
 msgid "General"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:400
+#: ../src/qtui/mainwin.cpp:397
 msgctxt "MainWin|"
 msgid "&Connect to Core..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:402
+#: ../src/qtui/mainwin.cpp:399
 msgctxt "MainWin|"
 msgid "&Disconnect from Core"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:404
+#: ../src/qtui/mainwin.cpp:401
 msgctxt "MainWin|"
 msgid "Change &Password..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:406
+#: ../src/qtui/mainwin.cpp:403
 msgctxt "MainWin|"
 msgid "Core &Info..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:408
+#: ../src/qtui/mainwin.cpp:405
 msgctxt "MainWin|"
 msgid "Configure &Networks..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:415
+#: ../src/qtui/mainwin.cpp:412
 msgctxt "MainWin|"
 msgid "&Quit"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:419
+#: ../src/qtui/mainwin.cpp:416
 msgctxt "MainWin|"
 msgid "&Configure Chat Lists..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:422
+#: ../src/qtui/mainwin.cpp:419
 msgctxt "MainWin|"
 msgid "&Lock Layout"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:426
+#: ../src/qtui/mainwin.cpp:423
 msgctxt "MainWin|"
 msgid "Show &Search Bar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:428
+#: ../src/qtui/mainwin.cpp:425
 msgctxt "MainWin|"
 msgid "Show Away Log"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:430
+#: ../src/qtui/mainwin.cpp:427
 msgctxt "MainWin|"
 msgid "Show &Menubar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:433
+#: ../src/qtui/mainwin.cpp:430
 msgctxt "MainWin|"
 msgid "Show Status &Bar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:439
+#: ../src/qtui/mainwin.cpp:436
 msgctxt "MainWin|"
 msgid "&Full Screen Mode"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:446
+#: ../src/qtui/mainwin.cpp:443
 msgctxt "MainWin|"
 msgid "Configure &Shortcuts..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:452 ../src/qtui/mainwin.cpp:456
+#: ../src/qtui/mainwin.cpp:449 ../src/qtui/mainwin.cpp:453
 msgctxt "MainWin|"
 msgid "&Configure Quassel..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:462
+#: ../src/qtui/mainwin.cpp:459
 msgctxt "MainWin|"
 msgid "&About Quassel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:467
+#: ../src/qtui/mainwin.cpp:464
 msgctxt "MainWin|"
 msgid "About &Qt"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:471
+#: ../src/qtui/mainwin.cpp:468
 msgctxt "MainWin|"
 msgid "Debug &NetworkModel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:473
+#: ../src/qtui/mainwin.cpp:470
 msgctxt "MainWin|"
 msgid "Debug &BufferViewOverlay"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:475
+#: ../src/qtui/mainwin.cpp:472
 msgctxt "MainWin|"
 msgid "Debug &MessageModel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:477
+#: ../src/qtui/mainwin.cpp:474
 msgctxt "MainWin|"
 msgid "Debug &HotList"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:479
+#: ../src/qtui/mainwin.cpp:476
 msgctxt "MainWin|"
 msgid "Debug &Log"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:481
+#: ../src/qtui/mainwin.cpp:478
 msgctxt "MainWin|"
 msgid "Reload Stylesheet"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:484
+#: ../src/qtui/mainwin.cpp:481
 msgctxt "MainWin|"
 msgid "Hide Current Buffer"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:488
+#: ../src/qtui/mainwin.cpp:485
 msgctxt "MainWin|"
 msgid "Text formatting"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:491
+#: ../src/qtui/mainwin.cpp:488
 msgctxt "MainWin|"
 msgid "Apply foreground color"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:496
+#: ../src/qtui/mainwin.cpp:493
 msgctxt "MainWin|"
 msgid "Apply background color"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:501
+#: ../src/qtui/mainwin.cpp:498
 msgctxt "MainWin|"
 msgid "Clear formatting"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:506
+#: ../src/qtui/mainwin.cpp:503
 msgctxt "MainWin|"
 msgid "Toggle bold"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:511
+#: ../src/qtui/mainwin.cpp:508
 msgctxt "MainWin|"
 msgid "Toggle italics"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:516
+#: ../src/qtui/mainwin.cpp:513
 msgctxt "MainWin|"
 msgid "Toggle underline"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:520
+#: ../src/qtui/mainwin.cpp:517
 msgctxt "MainWin|"
 msgid "Navigation"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:522
+#: ../src/qtui/mainwin.cpp:519
 msgctxt "MainWin|"
 msgid "Jump to hot chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:525
+#: ../src/qtui/mainwin.cpp:522
 msgctxt "MainWin|"
 msgid "Activate the buffer search"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:537
+#: ../src/qtui/mainwin.cpp:534
 msgctxt "MainWin|"
 msgid "Set Quick Access #0"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:539
+#: ../src/qtui/mainwin.cpp:536
 msgctxt "MainWin|"
 msgid "Set Quick Access #1"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:541
+#: ../src/qtui/mainwin.cpp:538
 msgctxt "MainWin|"
 msgid "Set Quick Access #2"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:543
+#: ../src/qtui/mainwin.cpp:540
 msgctxt "MainWin|"
 msgid "Set Quick Access #3"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:545
+#: ../src/qtui/mainwin.cpp:542
 msgctxt "MainWin|"
 msgid "Set Quick Access #4"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:547
+#: ../src/qtui/mainwin.cpp:544
 msgctxt "MainWin|"
 msgid "Set Quick Access #5"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:549
+#: ../src/qtui/mainwin.cpp:546
 msgctxt "MainWin|"
 msgid "Set Quick Access #6"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:551
+#: ../src/qtui/mainwin.cpp:548
 msgctxt "MainWin|"
 msgid "Set Quick Access #7"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:553
+#: ../src/qtui/mainwin.cpp:550
 msgctxt "MainWin|"
 msgid "Set Quick Access #8"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:555
+#: ../src/qtui/mainwin.cpp:552
 msgctxt "MainWin|"
 msgid "Set Quick Access #9"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:558
+#: ../src/qtui/mainwin.cpp:555
 msgctxt "MainWin|"
 msgid "Quick Access #0"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:560
+#: ../src/qtui/mainwin.cpp:557
 msgctxt "MainWin|"
 msgid "Quick Access #1"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:562
+#: ../src/qtui/mainwin.cpp:559
 msgctxt "MainWin|"
 msgid "Quick Access #2"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:564
+#: ../src/qtui/mainwin.cpp:561
 msgctxt "MainWin|"
 msgid "Quick Access #3"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:566
+#: ../src/qtui/mainwin.cpp:563
 msgctxt "MainWin|"
 msgid "Quick Access #4"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:568
+#: ../src/qtui/mainwin.cpp:565
 msgctxt "MainWin|"
 msgid "Quick Access #5"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:570
+#: ../src/qtui/mainwin.cpp:567
 msgctxt "MainWin|"
 msgid "Quick Access #6"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:572
+#: ../src/qtui/mainwin.cpp:569
 msgctxt "MainWin|"
 msgid "Quick Access #7"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:574
+#: ../src/qtui/mainwin.cpp:571
 msgctxt "MainWin|"
 msgid "Quick Access #8"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:576
+#: ../src/qtui/mainwin.cpp:573
 msgctxt "MainWin|"
 msgid "Quick Access #9"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:580
+#: ../src/qtui/mainwin.cpp:577
 msgctxt "MainWin|"
 msgid "Activate Next Chat List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:582
+#: ../src/qtui/mainwin.cpp:579
 msgctxt "MainWin|"
 msgid "Activate Previous Chat List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:584
+#: ../src/qtui/mainwin.cpp:581
 msgctxt "MainWin|"
 msgid "Go to Next Chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:586
+#: ../src/qtui/mainwin.cpp:583
 msgctxt "MainWin|"
 msgid "Go to Previous Chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:595
+#: ../src/qtui/mainwin.cpp:592
 msgctxt "MainWin|"
 msgid "&File"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:608
+#: ../src/qtui/mainwin.cpp:605
 msgctxt "MainWin|"
 msgid "&Networks"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:614
+#: ../src/qtui/mainwin.cpp:611
 msgctxt "MainWin|"
 msgid "&View"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:615
+#: ../src/qtui/mainwin.cpp:612
 msgctxt "MainWin|"
 msgid "&Chat Lists"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:617
+#: ../src/qtui/mainwin.cpp:614
 msgctxt "MainWin|"
 msgid "&Toolbars"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:631
+#: ../src/qtui/mainwin.cpp:628
 msgctxt "MainWin|"
 msgid "&Settings"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:641
+#: ../src/qtui/mainwin.cpp:638
 msgctxt "MainWin|"
 msgid "&Help"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:650
+#: ../src/qtui/mainwin.cpp:647
 msgctxt "MainWin|"
 msgid "Debug"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:827
+#: ../src/qtui/mainwin.cpp:824
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:828
+#: ../src/qtui/mainwin.cpp:825
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:830
+#: ../src/qtui/mainwin.cpp:827
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:840
+#: ../src/qtui/mainwin.cpp:837
 msgctxt "MainWin|"
 msgid "Upgrading..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:841
+#: ../src/qtui/mainwin.cpp:838
 msgctxt "MainWin|"
 msgid "Your database is being upgraded"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:844
+#: ../src/qtui/mainwin.cpp:841
 msgctxt "MainWin|"
 msgid ""
 "In order to support new features, we need to make changes to your backlog "
 "database. This may take a long while."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:846
+#: ../src/qtui/mainwin.cpp:843
 msgctxt "MainWin|"
 msgid "Do not exit Quassel until the upgrade is complete!"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:981
+#: ../src/qtui/mainwin.cpp:978
 msgctxt "MainWin|"
 msgid "Nicks"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:991
+#: ../src/qtui/mainwin.cpp:988
 msgctxt "MainWin|"
 msgid "Show Nick List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1006
+#: ../src/qtui/mainwin.cpp:1003
 msgctxt "MainWin|"
 msgid "Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1017
+#: ../src/qtui/mainwin.cpp:1014
 msgctxt "MainWin|"
 msgid "Show Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1023
+#: ../src/qtui/mainwin.cpp:1020
 msgctxt "MainWin|"
 msgid "Inputline"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1032
+#: ../src/qtui/mainwin.cpp:1029
 msgctxt "MainWin|"
 msgid "Show Input Line"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1045
+#: ../src/qtui/mainwin.cpp:1042
 msgctxt "MainWin|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1057
+#: ../src/qtui/mainwin.cpp:1054
 msgctxt "MainWin|"
 msgid "Show Topic Line"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1063
+#: ../src/qtui/mainwin.cpp:1060
 msgctxt "MainWin|"
 msgid "Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1074
+#: ../src/qtui/mainwin.cpp:1071
 msgctxt "MainWin|"
 msgid "Show File Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1172
+#: ../src/qtui/mainwin.cpp:1168
 msgctxt "MainWin|"
 msgid "Main Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1192
+#: ../src/qtui/mainwin.cpp:1188
 msgctxt "MainWin|"
 msgid "Nick Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1260
+#: ../src/qtui/mainwin.cpp:1265
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1360
+#: ../src/qtui/mainwin.cpp:1365
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1379 ../src/qtui/mainwin.cpp:1389
+#: ../src/qtui/mainwin.cpp:1384 ../src/qtui/mainwin.cpp:1394
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1379
+#: ../src/qtui/mainwin.cpp:1384
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1381 ../src/qtui/mainwin.cpp:1391
+#: ../src/qtui/mainwin.cpp:1386 ../src/qtui/mainwin.cpp:1396
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1389
+#: ../src/qtui/mainwin.cpp:1394
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1407 ../src/qtui/mainwin.cpp:1428
+#: ../src/qtui/mainwin.cpp:1412 ../src/qtui/mainwin.cpp:1433
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1408
+#: ../src/qtui/mainwin.cpp:1413
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -6496,33 +6507,33 @@ msgid ""
 "following reasons:</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1411
+#: ../src/qtui/mainwin.cpp:1416
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1412
+#: ../src/qtui/mainwin.cpp:1417
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1429
+#: ../src/qtui/mainwin.cpp:1434
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1431
+#: ../src/qtui/mainwin.cpp:1436
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1432
+#: ../src/qtui/mainwin.cpp:1437
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1443
+#: ../src/qtui/mainwin.cpp:1448
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr ""
@@ -7577,6 +7588,29 @@ msgctxt "QtMultimediaNotificationConfigWidget|"
 msgid "Select the sound file to play"
 msgstr ""
 
+#. Supported icon theme names
+#: ../src/qtui/qtui.cpp:274
+msgctxt "QtUi|"
+msgid "Breeze"
+msgstr ""
+
+#: ../src/qtui/qtui.cpp:275
+msgctxt "QtUi|"
+msgid "Breeze Dark"
+msgstr ""
+
+#: ../src/qtui/qtui.cpp:276
+msgctxt "QtUi|"
+msgid "Oxygen"
+msgstr ""
+
+#: ../src/qtui/qtui.cpp:329
+msgctxt "QtUi|"
+msgid ""
+"No supported icon theme installed, you'll lack icons! Supported are the KDE/"
+"Plasma themes Breeze, Breeze Dark and Oxygen."
+msgstr ""
+
 #: ../src/common/quassel.cpp:134
 #, qt-format
 msgctxt "Quassel|"
@@ -8250,19 +8284,50 @@ msgctxt "StatusBufferItem|"
 msgid "Status Buffer"
 msgstr ""
 
-#: ../src/qtui/systemtray.cpp:67 ../src/qtui/systemtray.cpp:100
+#: ../src/qtui/systemtray.cpp:48 ../src/qtui/systemtray.cpp:245
 msgctxt "SystemTray|"
 msgid "&Minimize"
 msgstr ""
 
-#: ../src/qtui/systemtray.cpp:102
+#: ../src/qtui/systemtray.cpp:247
 msgctxt "SystemTray|"
 msgid "&Restore"
 msgstr ""
 
-#: ../src/qtui/systrayanimationnotificationbackend.cpp:76
-msgctxt "SystrayAnimationNotificationBackend::ConfigWidget|"
-msgid "Animate system tray icon"
+#: ../src/qtui/ui/systrayanimationconfigwidget.ui:20
+msgctxt "SystrayAnimationConfigWidget|"
+msgid "Form"
+msgstr ""
+
+#: ../src/qtui/ui/systrayanimationconfigwidget.ui:28
+msgctxt "SystrayAnimationConfigWidget|"
+msgid ""
+"<html><head/><body><p>If enabled, alert the system tray or dock in case of a "
+"notification.</p><p>It depends on your desktop environment how an alert is "
+"visualized. For example, Plasma will pulsate the tray icon, while Windows "
+"will change the icon's color. You may choose to forcefully change color or "
+"even letting the icon blink, if desired.</p><p>Note that not all icon themes "
+"support changing the color of the tray icon.</p></body></html>"
+msgstr ""
+
+#: ../src/qtui/ui/systrayanimationconfigwidget.ui:31
+msgctxt "SystrayAnimationConfigWidget|"
+msgid "Alert tray icon and"
+msgstr ""
+
+#: ../src/qtui/ui/systrayanimationconfigwidget.ui:54
+msgctxt "SystrayAnimationConfigWidget|"
+msgid "do nothing"
+msgstr ""
+
+#: ../src/qtui/ui/systrayanimationconfigwidget.ui:59
+msgctxt "SystrayAnimationConfigWidget|"
+msgid "change color"
+msgstr ""
+
+#: ../src/qtui/ui/systrayanimationconfigwidget.ui:64
+msgctxt "SystrayAnimationConfigWidget|"
+msgid "blink"
 msgstr ""
 
 #: ../src/qtui/systraynotificationbackend.cpp:132
