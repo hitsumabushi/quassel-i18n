@@ -93,23 +93,46 @@
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="showSenderPrefixes">
-     <property name="toolTip">
-      <string>Shows the modes of senders before their name (e.g. @, +)</string>
-     </property>
-     <property name="text">
-      <string>Show sendermodes in front of nicknames</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-     <property name="defaultValue" stdset="0">
-      <bool>true</bool>
-     </property>
-     <property name="settingsKey" stdset="0">
-      <string notr="true">ShowSenderPrefixes</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Show sender modes before nicknames:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="senderPrefixComboBox">
+       <property name="toolTip">
+        <string>&lt;qt&gt;&lt;style&gt;.bold { font-weight: bold; } .italic { font-style: italic; } .underline { text-decoration: underline; }&lt;/style&gt;
+&lt;p&gt;&lt;span class=&quot;bold&quot;&gt;Sender modes:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;underline&quot;&gt;No modes:&lt;/span&gt; Don't show any modes&lt;br/&gt;&lt;span class=&quot;italic&quot;&gt;Example:&lt;/span&gt; &amp;lt;nickname&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;underline&quot;&gt;Highest mode:&lt;/span&gt; Show only the highest active mode&lt;br/&gt;&lt;span class=&quot;italic&quot;&gt;Example:&lt;/span&gt; &amp;lt;@nickname&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;underline&quot;&gt;All modes:&lt;/span&gt; Show all active modes&lt;br/&gt;&lt;span class=&quot;italic&quot;&gt;Example:&lt;/span&gt; &amp;lt;@+nickname&amp;gt;&lt;/p&gt;
+&lt;/qt&gt;</string>
+       </property>
+       <property name="defaultValue" stdset="0">
+        <number>1</number>
+       </property>
+       <property name="settingsKey" stdset="0">
+        <string notr="true">SenderPrefixMode</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -254,6 +277,7 @@
   <tabstop>customTimestampFormat</tabstop>
   <tabstop>timestampFormat</tabstop>
   <tabstop>showSenderBrackets</tabstop>
+  <tabstop>senderPrefixComboBox</tabstop>
   <tabstop>customChatViewFont</tabstop>
   <tabstop>showWebPreview</tabstop>
   <tabstop>autoMarkerLine</tabstop>
