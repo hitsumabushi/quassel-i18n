@@ -1831,62 +1831,73 @@ msgctxt "ChatViewSettingsPage|"
 msgid "Show brackets around sender names"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:98
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:100
 msgctxt "ChatViewSettingsPage|"
-msgid "Shows the modes of senders before their name (e.g. @, +)"
+msgid "Show sender modes before nicknames:"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:101
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:107
 msgctxt "ChatViewSettingsPage|"
-msgid "Show sendermodes in front of nicknames"
+msgid ""
+"<qt><style>.bold { font-weight: bold; } .italic { font-style: italic; } ."
+"underline { text-decoration: underline; }</style>\n"
+"<p><span class=\"bold\">Sender modes:</span></p>\n"
+"<p><span class=\"underline\">No modes:</span> Don't show any modes<br/><span "
+"class=\"italic\">Example:</span> &lt;nickname&gt;</p>\n"
+"<p><span class=\"underline\">Highest mode:</span> Show only the highest "
+"active mode<br/><span class=\"italic\">Example:</span> &lt;@nickname&gt;</"
+"p>\n"
+"<p><span class=\"underline\">All modes:</span> Show all active modes<br/"
+"><span class=\"italic\">Example:</span> &lt;@+nickname&gt;</p>\n"
+"</qt>"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:119
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:142
 msgctxt "ChatViewSettingsPage|"
 msgid "Custom chat window font:"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:152
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:175
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Show a website preview window when hovering the mouse over a web address"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:155
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:178
 msgctxt "ChatViewSettingsPage|"
 msgid "Show previews of webpages on URL hover"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:171
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:194
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when selecting "
 "another channel"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:174
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:197
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when switching chats"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:190
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:213
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:193
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:216
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:211
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:234
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search URL:"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:218
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:241
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "<html><head/><body><p>The URL to open with the selected text as the "
@@ -1896,29 +1907,51 @@ msgid ""
 "font-weight:600;\">%s</span></p></body></html>"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:224
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:247
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.cpp:27
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:29
 msgctxt "ChatViewSettingsPage|"
 msgid "Interface"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.cpp:27
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:29
 msgctxt "ChatViewSettingsPage|"
 msgid "Chat View"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.cpp:40
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:43
 msgctxt "ChatViewSettingsPage|"
 msgid "You need at least version 0.6 of Quassel Core to use this feature"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.cpp:44
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:54
 msgctxt "ChatViewSettingsPage|"
-msgid "You need at least version 0.13 of Quassel Core to use this feature"
+msgid "Your Quassel core does not support this feature"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:55
+msgctxt "ChatViewSettingsPage|"
+msgid ""
+"You need a Quassel core v0.13.0 or newer in order to show sender modes "
+"before nicknames."
+msgstr ""
+
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:68
+msgctxt "ChatViewSettingsPage|"
+msgid "No modes"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:70
+msgctxt "ChatViewSettingsPage|"
+msgid "Highest mode"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatviewsettingspage.cpp:72
+msgctxt "ChatViewSettingsPage|"
+msgid "All modes"
 msgstr ""
 
 #: ../src/common/qt5cliparser.cpp:30
@@ -3200,7 +3233,7 @@ msgid "Form"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:57
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:624
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:641
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Your Quassel core is too old to support remote highlights"
 msgstr ""
@@ -3278,16 +3311,6 @@ msgctxt "CoreHighlightSettingsPage|"
 msgid "Remove"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:234
-msgctxt "CoreHighlightSettingsPage|"
-msgid "Import highlight rules configured in <i>Local Highlights</i>"
-msgstr ""
-
-#: ../src/qtui/settingspages/corehighlightsettingspage.ui:237
-msgctxt "CoreHighlightSettingsPage|"
-msgid "Import Local"
-msgstr ""
-
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:250
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Highlight Ignore Rules"
@@ -3328,22 +3351,52 @@ msgctxt "CoreHighlightSettingsPage|"
 msgid "None"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:113
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:260
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:342
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:98
+msgctxt "CoreHighlightSettingsPage|"
+msgid "Import Legacy"
+msgstr ""
+
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:99
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:106
+#, qt-format
+msgctxt "CoreHighlightSettingsPage|"
+msgid "Import highlight rules configured in <i>%1</i>."
+msgstr ""
+
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:100
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:661
+msgctxt "CoreHighlightSettingsPage|"
+msgid "Legacy Highlights"
+msgstr ""
+
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:105
+msgctxt "CoreHighlightSettingsPage|"
+msgid "Import Local"
+msgstr ""
+
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:107
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:637
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:663
+msgctxt "CoreHighlightSettingsPage|"
+msgid "Local Highlights"
+msgstr ""
+
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:130
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:277
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:359
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Enable/disable this rule"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:118
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:261
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:343
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:135
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:278
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:360
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Phrase to match"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:123
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:263
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:140
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:280
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule, <i>Sender</i>, "
@@ -3351,16 +3404,16 @@ msgid ""
 "just as keywords."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:130
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:267
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:147
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:284
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule, <i>Sender</i>, and "
 "<i>Channel</i> should be interpreted <b>case sensitive</b>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:136
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:270
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:153
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:287
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<p><b>Sender</b>: Semicolon separated list of <i>nick!ident@host</i> names, "
@@ -3374,8 +3427,8 @@ msgid ""
 "<i>aperture</i> or any nickname starting with <i>Announce</i></p>"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:152
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:283
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:169
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:300
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<p><b>Channel</b>: Semicolon separated list of channel names, leave blank to "
@@ -3388,28 +3441,28 @@ msgid ""
 "channel starting with <i>#quassel</i></p>"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:345
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:362
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule should be "
 "interpreted as a <b>regular expression</b> or just as a keyword."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:348
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:365
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule should be "
 "interpreted <b>case sensitive</b>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:351
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:368
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>Sender</b>: This option specifies which sender nicknames match.  Leave "
 "blank to match any nickname."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:354
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:371
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<p><b>Channel</b>: Semicolon separated list of channel names.</"
@@ -3421,63 +3474,57 @@ msgid ""
 "anything except for #foobar or any channel starting with <i>#quassel</i></p>"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:478
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:516
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:495
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:533
 msgctxt "CoreHighlightSettingsPage|"
 msgid "this shouldn't be empty"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:620
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:642
-msgctxt "CoreHighlightSettingsPage|"
-msgid "Local Highlights"
-msgstr ""
-
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:625
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer to configure remote highlights."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:627
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:644
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "You can still configure highlights for this device only in <i>%1</i>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:631
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:648
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Remote Highlights unsupported"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:647
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:669
 msgctxt "CoreHighlightSettingsPage|"
-msgid "No local highlights"
+msgid "No highlights to import"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:648
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:670
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "No highlight rules in <i>%1</i>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:654
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:676
 msgctxt "CoreHighlightSettingsPage|"
-msgid "Import local highlights?"
+msgid "Import highlights?"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:655
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:677
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import all highlight rules from <i>%1</i>?"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:688
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:710
 msgctxt "CoreHighlightSettingsPage|"
-msgid "Imported local highlights"
+msgid "Imported highlights"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:689
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:711
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "%1 highlight rules successfully imported."
