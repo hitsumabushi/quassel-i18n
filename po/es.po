@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Adolfo Jayme-Barrientos, 2013
-# Adolfo Jayme Barrientos, 2013
+# Adolfo Jayme-Barrientos, 2013
 # Chris Egeland <chris@chrisegeland.com>, 2018
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
