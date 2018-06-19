@@ -111,6 +111,7 @@ CoreHighlightSettingsPage::CoreHighlightSettingsPage(QWidget *parent)
     }
 }
 
+
 void CoreHighlightSettingsPage::coreConnectionStateChanged(bool state)
 {
     updateCoreSupportStatus(state);
@@ -121,6 +122,7 @@ void CoreHighlightSettingsPage::coreConnectionStateChanged(bool state)
         revert();
     }
 }
+
 
 void CoreHighlightSettingsPage::setupRuleTable(QTableWidget *table) const
 {
@@ -197,6 +199,7 @@ void CoreHighlightSettingsPage::setupRuleTable(QTableWidget *table) const
 #endif
 }
 
+
 void CoreHighlightSettingsPage::updateCoreSupportStatus(bool state)
 {
     // Assume connected state as enforced by the settings page UI
@@ -212,10 +215,12 @@ void CoreHighlightSettingsPage::updateCoreSupportStatus(bool state)
     }
 }
 
+
 void CoreHighlightSettingsPage::clientConnected()
 {
     connect(Client::highlightRuleManager(), SIGNAL(updated()), SLOT(revert()));
 }
+
 
 void CoreHighlightSettingsPage::revert()
 {
@@ -226,10 +231,12 @@ void CoreHighlightSettingsPage::revert()
     load();
 }
 
+
 bool CoreHighlightSettingsPage::hasDefaults() const
 {
     return true;
 }
+
 
 void CoreHighlightSettingsPage::defaults()
 {
@@ -243,10 +250,15 @@ void CoreHighlightSettingsPage::defaults()
     widgetHasChanged();
 }
 
-void CoreHighlightSettingsPage::addNewHighlightRow(bool enable, const QString &name, bool regex, bool cs,
+
+void CoreHighlightSettingsPage::addNewHighlightRow(bool enable, int id, const QString &name, bool regex, bool cs,
                                                    const QString &sender, const QString &chanName, bool self)
 {
     ui.highlightTable->setRowCount(ui.highlightTable->rowCount() + 1);
+
+    if (id < 0) {
+        id = nextId();
+    }
 
     auto *nameItem = new QTableWidgetItem(name);
 
@@ -322,13 +334,18 @@ void CoreHighlightSettingsPage::addNewHighlightRow(bool enable, const QString &n
     if (!self)
         ui.highlightTable->setCurrentItem(nameItem);
 
-    highlightList << HighlightRuleManager::HighlightRule(name, regex, cs, enable, false, sender, chanName);
+    highlightList << HighlightRuleManager::HighlightRule(id, name, regex, cs, enable, false, sender, chanName);
 }
 
-void CoreHighlightSettingsPage::addNewIgnoredRow(bool enable, const QString &name, bool regex, bool cs,
+
+void CoreHighlightSettingsPage::addNewIgnoredRow(bool enable, int id, const QString &name, bool regex, bool cs,
                                                  const QString &sender, const QString &chanName, bool self)
 {
     ui.ignoredTable->setRowCount(ui.ignoredTable->rowCount() + 1);
+
+    if (id < 0) {
+        id = nextId();
+    }
 
     auto *nameItem = new QTableWidgetItem(name);
 
@@ -392,8 +409,9 @@ void CoreHighlightSettingsPage::addNewIgnoredRow(bool enable, const QString &nam
     if (!self)
         ui.ignoredTable->setCurrentItem(nameItem);
 
-    ignoredList << HighlightRuleManager::HighlightRule(name, regex, cs, enable, true, sender, chanName);
+    ignoredList << HighlightRuleManager::HighlightRule(id, name, regex, cs, enable, true, sender, chanName);
 }
+
 
 void CoreHighlightSettingsPage::removeSelectedHighlightRows()
 {
@@ -413,6 +431,7 @@ void CoreHighlightSettingsPage::removeSelectedHighlightRows()
     }
 }
 
+
 void CoreHighlightSettingsPage::removeSelectedIgnoredRows()
 {
     QList<int> selectedRows;
@@ -431,11 +450,14 @@ void CoreHighlightSettingsPage::removeSelectedIgnoredRows()
     }
 }
 
-void CoreHighlightSettingsPage::highlightNicksChanged(const int index) {
+
+void CoreHighlightSettingsPage::highlightNicksChanged(const int index)
+{
     // Only allow toggling "Case sensitive" when a nickname will be highlighted
     auto highlightNickType = ui.highlightNicksComboBox->itemData(index).value<int>();
     ui.nicksCaseSensitive->setEnabled(highlightNickType != HighlightRuleManager::NoNick);
 }
+
 
 void CoreHighlightSettingsPage::selectHighlightRow(QTableWidgetItem *item)
 {
@@ -446,6 +468,7 @@ void CoreHighlightSettingsPage::selectHighlightRow(QTableWidgetItem *item)
                            selected);
 }
 
+
 void CoreHighlightSettingsPage::selectIgnoredRow(QTableWidgetItem *item)
 {
     int row = item->row();
@@ -454,6 +477,7 @@ void CoreHighlightSettingsPage::selectIgnoredRow(QTableWidgetItem *item)
         ->setRangeSelected(QTableWidgetSelectionRange(row, 0, row, CoreHighlightSettingsPage::ColumnCount - 1),
                            selected);
 }
+
 
 void CoreHighlightSettingsPage::emptyHighlightTable()
 {
@@ -467,6 +491,7 @@ void CoreHighlightSettingsPage::emptyHighlightTable()
     highlightList.clear();
 }
 
+
 void CoreHighlightSettingsPage::emptyIgnoredTable()
 {
     // ui.highlight and highlightList should have the same size, but just to make sure.
@@ -478,6 +503,7 @@ void CoreHighlightSettingsPage::emptyIgnoredTable()
     }
     ignoredList.clear();
 }
+
 
 void CoreHighlightSettingsPage::highlightTableChanged(QTableWidgetItem *item)
 {
@@ -517,6 +543,7 @@ void CoreHighlightSettingsPage::highlightTableChanged(QTableWidgetItem *item)
     emit widgetHasChanged();
 }
 
+
 void CoreHighlightSettingsPage::ignoredTableChanged(QTableWidgetItem *item)
 {
     if (item->row() + 1 > ignoredList.size())
@@ -555,6 +582,7 @@ void CoreHighlightSettingsPage::ignoredTableChanged(QTableWidgetItem *item)
     emit widgetHasChanged();
 }
 
+
 void CoreHighlightSettingsPage::load()
 {
     emptyHighlightTable();
@@ -565,6 +593,7 @@ void CoreHighlightSettingsPage::load()
         for (auto &rule : ruleManager->highlightRuleList()) {
             if (rule.isInverse) {
                 addNewIgnoredRow(rule.isEnabled,
+                                 rule.id,
                                  rule.name,
                                  rule.isRegEx,
                                  rule.isCaseSensitive,
@@ -572,7 +601,7 @@ void CoreHighlightSettingsPage::load()
                                  rule.chanName);
             }
             else {
-                addNewHighlightRow(rule.isEnabled, rule.name, rule.isRegEx, rule.isCaseSensitive, rule.sender,
+                addNewHighlightRow(rule.isEnabled, rule.id, rule.name, rule.isRegEx, rule.isCaseSensitive, rule.sender,
                                    rule.chanName);
             }
         }
@@ -589,6 +618,7 @@ void CoreHighlightSettingsPage::load()
         defaults();
     }
 }
+
 
 void CoreHighlightSettingsPage::save()
 {
@@ -607,12 +637,12 @@ void CoreHighlightSettingsPage::save()
     clonedManager.clear();
 
     for (auto &rule : highlightList) {
-        clonedManager.addHighlightRule(rule.name, rule.isRegEx, rule.isCaseSensitive, rule.isEnabled, false,
+        clonedManager.addHighlightRule(rule.id, rule.name, rule.isRegEx, rule.isCaseSensitive, rule.isEnabled, false,
                                        rule.sender, rule.chanName);
     }
 
     for (auto &rule : ignoredList) {
-        clonedManager.addHighlightRule(rule.name, rule.isRegEx, rule.isCaseSensitive, rule.isEnabled, true,
+        clonedManager.addHighlightRule(rule.id, rule.name, rule.isRegEx, rule.isCaseSensitive, rule.isEnabled, true,
                                        rule.sender, rule.chanName);
     }
 
@@ -626,10 +656,31 @@ void CoreHighlightSettingsPage::save()
     load();
 }
 
+
+int CoreHighlightSettingsPage::nextId()
+{
+    int max = 0;
+    for (int i = 0; i < highlightList.count(); i++) {
+        int id = highlightList[i].id;
+        if (id > max) {
+            max = id;
+        }
+    }
+    for (int i = 0; i < ignoredList.count(); i++) {
+        int id = ignoredList[i].id;
+        if (id > max) {
+            max = id;
+        }
+    }
+    return max + 1;
+}
+
+
 void CoreHighlightSettingsPage::widgetHasChanged()
 {
     setChangedState(true);
 }
+
 
 void CoreHighlightSettingsPage::on_coreUnsupportedDetails_clicked()
 {
@@ -650,7 +701,9 @@ void CoreHighlightSettingsPage::on_coreUnsupportedDetails_clicked()
                          remoteHighlightsMsgText);
 }
 
-void CoreHighlightSettingsPage::importRules() {
+
+void CoreHighlightSettingsPage::importRules()
+{
     NotificationSettings notificationSettings;
 
     const auto localHighlightList = notificationSettings.highlightList();
@@ -692,6 +745,7 @@ void CoreHighlightSettingsPage::importRules() {
         auto highlightRule = variant.toMap();
 
         clonedManager.addHighlightRule(
+                clonedManager.nextId(),
                 highlightRule["Name"].toString(),
                 highlightRule["RegEx"].toBool(),
                 highlightRule["CS"].toBool(),
@@ -713,7 +767,9 @@ void CoreHighlightSettingsPage::importRules() {
                                 ).arg(QString::number(localHighlightList.count())));
 }
 
-bool CoreHighlightSettingsPage::isSelectable() const {
+
+bool CoreHighlightSettingsPage::isSelectable() const
+{
     return Client::isConnected();
     // We check for Quassel::Feature::CoreSideHighlights when loading this page, allowing us to show
     // a friendly error message.

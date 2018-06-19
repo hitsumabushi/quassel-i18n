@@ -30,6 +30,7 @@ set(SOURCES
     coreusersettings.cpp
     ctcpparser.cpp
     eventstringifier.cpp
+    identserver.cpp
     ircparser.cpp
     netsplit.cpp
     oidentdconfiggenerator.cpp

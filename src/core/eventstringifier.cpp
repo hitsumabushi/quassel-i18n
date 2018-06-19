@@ -365,10 +365,11 @@ void EventStringifier::processIrcEventPart(IrcEvent *e)
 
 void EventStringifier::processIrcEventPong(IrcEvent *e)
 {
-    QString timestamp = e->params().at(1);
-    QTime sendTime = QTime::fromString(timestamp, "hh:mm:ss.zzz");
-    if (!sendTime.isValid())
-        displayMsg(e, Message::Server, "PONG " + e->params().join(" "), e->prefix());
+    // CoreSessionEventProcessor will flag automated PONG replies as EventManager::Silent.  There's
+    // no need to handle that specially here.
+
+    // Format the PONG reply for display
+    displayMsg(e, Message::Server, "PONG " + e->params().join(" "), e->prefix());
 }
 
 

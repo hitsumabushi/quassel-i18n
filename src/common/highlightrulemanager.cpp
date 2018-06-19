@@ -20,11 +20,12 @@
 
 #include "highlightrulemanager.h"
 
-#include "util.h"
-
 #include <QDebug>
 
+#include "util.h"
+
 INIT_SYNCABLE_OBJECT(HighlightRuleManager)
+
 HighlightRuleManager &HighlightRuleManager::operator=(const HighlightRuleManager &other)
 {
     if (this == &other)
@@ -38,18 +39,32 @@ HighlightRuleManager &HighlightRuleManager::operator=(const HighlightRuleManager
 }
 
 
-int HighlightRuleManager::indexOf(const QString &name) const
+int HighlightRuleManager::indexOf(int id) const
 {
     for (int i = 0; i < _highlightRuleList.count(); i++) {
-        if (_highlightRuleList[i].name == name)
+        if (_highlightRuleList[i].id == id)
             return i;
     }
     return -1;
 }
 
 
+int HighlightRuleManager::nextId()
+{
+    int max = 0;
+    for (int i = 0; i < _highlightRuleList.count(); i++) {
+        int id = _highlightRuleList[i].id;
+        if (id > max) {
+            max = id;
+        }
+    }
+    return max + 1;
+}
+
+
 QVariantMap HighlightRuleManager::initHighlightRuleList() const
 {
+    QVariantList id;
     QVariantMap highlightRuleListMap;
     QStringList name;
     QVariantList isRegEx;
@@ -60,6 +75,7 @@ QVariantMap HighlightRuleManager::initHighlightRuleList() const
     QStringList channel;
 
     for (int i = 0; i < _highlightRuleList.count(); i++) {
+        id << _highlightRuleList[i].id;
         name << _highlightRuleList[i].name;
         isRegEx << _highlightRuleList[i].isRegEx;
         isCaseSensitive << _highlightRuleList[i].isCaseSensitive;
@@ -69,6 +85,7 @@ QVariantMap HighlightRuleManager::initHighlightRuleList() const
         channel << _highlightRuleList[i].chanName;
     }
 
+    highlightRuleListMap["id"] = id;
     highlightRuleListMap["name"] = name;
     highlightRuleListMap["isRegEx"] = isRegEx;
     highlightRuleListMap["isCaseSensitive"] = isCaseSensitive;
@@ -76,14 +93,13 @@ QVariantMap HighlightRuleManager::initHighlightRuleList() const
     highlightRuleListMap["isInverse"] = isInverse;
     highlightRuleListMap["sender"] = sender;
     highlightRuleListMap["channel"] = channel;
-    highlightRuleListMap["highlightNick"] = _highlightNick;
-    highlightRuleListMap["nicksCaseSensitive"] = _nicksCaseSensitive;
     return highlightRuleListMap;
 }
 
 
 void HighlightRuleManager::initSetHighlightRuleList(const QVariantMap &highlightRuleList)
 {
+    QVariantList id = highlightRuleList["id"].toList();
     QStringList name = highlightRuleList["name"].toStringList();
     QVariantList isRegEx = highlightRuleList["isRegEx"].toList();
     QVariantList isCaseSensitive = highlightRuleList["isCaseSensitive"].toList();
@@ -92,37 +108,35 @@ void HighlightRuleManager::initSetHighlightRuleList(const QVariantMap &highlight
     QStringList sender = highlightRuleList["sender"].toStringList();
     QStringList channel = highlightRuleList["channel"].toStringList();
 
-    int count = name.count();
-    if (count != isRegEx.count() || count != isCaseSensitive.count() || count != isActive.count() ||
-        count != isInverse.count() || count != sender.count() || count != channel.count()) {
+    int count = id.count();
+    if (count != name.count() || count != isRegEx.count() || count != isCaseSensitive.count() ||
+        count != isActive.count() || count != isInverse.count() || count != sender.count() ||
+        count != channel.count()) {
         qWarning() << "Corrupted HighlightRuleList settings! (Count mismatch)";
         return;
     }
 
     _highlightRuleList.clear();
     for (int i = 0; i < name.count(); i++) {
-        _highlightRuleList << HighlightRule(name[i], isRegEx[i].toBool(), isCaseSensitive[i].toBool(),
+        _highlightRuleList << HighlightRule(id[i].toInt(), name[i], isRegEx[i].toBool(), isCaseSensitive[i].toBool(),
                                             isActive[i].toBool(), isInverse[i].toBool(), sender[i], channel[i]);
     }
-
-    // Make sure the default for _highlightNick is "CurrentNick" if not set
-    _highlightNick = HighlightNickType(
-                highlightRuleList.value("highlightNick", HighlightNickType::CurrentNick).toInt());
-
-    _nicksCaseSensitive = highlightRuleList["nicksCaseSensitive"].toBool();
 }
 
-void HighlightRuleManager::addHighlightRule(const QString &name, bool isRegEx, bool isCaseSensitive, bool isActive,
-                                            bool isInverse, const QString &sender, const QString &channel)
+
+void HighlightRuleManager::addHighlightRule(int id, const QString &name, bool isRegEx, bool isCaseSensitive,
+                                            bool isActive, bool isInverse, const QString &sender,
+                                            const QString &channel)
 {
-    if (contains(name)) {
+    if (contains(id)) {
         return;
     }
 
-    HighlightRule newItem = HighlightRule(name, isRegEx, isCaseSensitive, isActive, isInverse, sender, channel);
+    HighlightRule newItem = HighlightRule(id, name, isRegEx, isCaseSensitive, isActive, isInverse, sender, channel);
     _highlightRuleList << newItem;
 
-    SYNC(ARG(name), ARG(isRegEx), ARG(isCaseSensitive), ARG(isActive), ARG(isInverse), ARG(sender), ARG(channel))
+    SYNC(ARG(id), ARG(name), ARG(isRegEx), ARG(isCaseSensitive), ARG(isActive), ARG(isInverse), ARG(sender),
+         ARG(channel))
 }
 
 
@@ -203,14 +217,15 @@ bool HighlightRuleManager::match(const QString &msgContents,
     return false;
 }
 
-void HighlightRuleManager::removeHighlightRule(const QString &highlightRule)
+
+void HighlightRuleManager::removeHighlightRule(int highlightRule)
 {
     removeAt(indexOf(highlightRule));
     SYNC(ARG(highlightRule))
 }
 
 
-void HighlightRuleManager::toggleHighlightRule(const QString &highlightRule)
+void HighlightRuleManager::toggleHighlightRule(int highlightRule)
 {
     int idx = indexOf(highlightRule);
     if (idx == -1)
@@ -218,6 +233,7 @@ void HighlightRuleManager::toggleHighlightRule(const QString &highlightRule)
     _highlightRuleList[idx].isEnabled = !_highlightRuleList[idx].isEnabled;
     SYNC(ARG(highlightRule))
 }
+
 
 bool HighlightRuleManager::match(const Message &msg, const QString &currentNick, const QStringList &identityNicks)
 {

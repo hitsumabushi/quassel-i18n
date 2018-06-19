@@ -20,40 +20,65 @@
 
 #pragma once
 
-#include "syncableobject.h"
+#include <list>
 
-/*
- * gather various information about the core.
- */
+#include <QHash>
+#include <QObject>
+#include <QPointer>
+#include <QString>
+#include <QTcpServer>
+#include <QTcpSocket>
 
-class CoreInfo : public SyncableObject
+#include "coreidentity.h"
+
+struct Request
+{
+    QPointer<QTcpSocket> socket;
+    uint16_t localPort;
+    QString query;
+    qint64 transactionId;
+    qint64 requestId;
+
+    friend bool operator==(const Request &a, const Request &b);
+
+    void respondSuccess(const QString &user);
+    void respondError(const QString &error);
+};
+
+
+class IdentServer : public QObject
 {
     Q_OBJECT
-    SYNCABLE_OBJECT
-
-    Q_PROPERTY(QVariantMap coreData READ coreData WRITE setCoreData)
 
 public:
-    explicit CoreInfo(QObject *parent = nullptr);
-    inline QVariant &at(const QString &key) { return _coreData[key]; }
+    IdentServer(QObject *parent = nullptr);
 
-    void setConnectedClientData(int, QVariantList);
-
-    /**
-     * Reset the core info state, clearing anything saved
-     */
-    void reset();
-
-signals:
-    /**
-     * Signals that core information has changed
-     */
-    void coreDataChanged(QVariantMap);
+    bool startListening();
+    void stopListening(const QString &msg);
+    qint64 addWaitingSocket();
 
 public slots:
-    QVariantMap coreData() const;
-    void setCoreData(const QVariantMap &);
+    void addSocket(const CoreIdentity *identity, const QHostAddress &localAddress, quint16 localPort, const QHostAddress &peerAddress, quint16 peerPort, qint64 socketId);
+    void removeSocket(const CoreIdentity *identity, const QHostAddress &localAddress, quint16 localPort, const QHostAddress &peerAddress, quint16 peerPort, qint64 socketId);
+
+private slots:
+    void incomingConnection();
+    void respond();
 
 private:
-    QVariantMap _coreData;
+    bool responseAvailable(Request request) const;
+
+    qint64 lowestSocketId() const;
+
+    void processWaiting(qint64 socketId);
+
+    void removeWaitingSocket(qint64 socketId);
+
+    QTcpServer _server, _v6server;
+
+    QHash<uint16_t, QString> _connections;
+    std::list<Request> _requestQueue;
+    std::list<qint64> _waiting;
+    qint64 _socketId{0};
+    qint64 _requestId{0};
 };

@@ -44,9 +44,6 @@ CoreNetwork::CoreNetwork(const NetworkId &networkid, CoreSession *session)
     _previousConnectionAttemptFailed(false),
     _lastUsedServerIndex(0),
 
-    _lastPingTime(0),
-    _pingCount(0),
-    _sendPings(false),
     _requestedUserModes('-')
 {
     _autoReconnectTimer.setSingleShot(true);
@@ -105,6 +102,11 @@ CoreNetwork::CoreNetwork(const NetworkId &networkid, CoreSession *session)
     if (Quassel::isOptionSet("oidentd")) {
         connect(this, SIGNAL(socketInitialized(const CoreIdentity*, QHostAddress, quint16, QHostAddress, quint16)), Core::instance()->oidentdConfigGenerator(), SLOT(addSocket(const CoreIdentity*, QHostAddress, quint16, QHostAddress, quint16)), Qt::BlockingQueuedConnection);
         connect(this, SIGNAL(socketDisconnected(const CoreIdentity*, QHostAddress, quint16, QHostAddress, quint16)), Core::instance()->oidentdConfigGenerator(), SLOT(removeSocket(const CoreIdentity*, QHostAddress, quint16, QHostAddress, quint16)));
+    }
+
+    if (Quassel::isOptionSet("ident-daemon")) {
+        connect(this, SIGNAL(socketInitialized(const CoreIdentity*, QHostAddress, quint16, QHostAddress, quint16, qint64)), Core::instance()->identServer(), SLOT(addSocket(const CoreIdentity*, QHostAddress, quint16, QHostAddress, quint16, qint64)), Qt::BlockingQueuedConnection);
+        connect(this, SIGNAL(socketDisconnected(const CoreIdentity*, QHostAddress, quint16, QHostAddress, quint16, qint64)), Core::instance()->identServer(), SLOT(removeSocket(const CoreIdentity*, QHostAddress, quint16, QHostAddress, quint16, qint64)));
     }
 }
 
@@ -186,6 +188,10 @@ QByteArray CoreNetwork::userEncode(const QString &userNick, const QString &strin
 
 void CoreNetwork::connectToIrc(bool reconnecting)
 {
+    if (Core::instance()->identServer()) {
+        _socketId = Core::instance()->identServer()->addWaitingSocket();
+    }
+
     if (!reconnecting && useAutoReconnect() && _autoReconnectCount == 0) {
         _autoReconnectTimer.setInterval(autoReconnectInterval() * 1000);
         if (unlimitedReconnectRetries())
@@ -243,6 +249,9 @@ void CoreNetwork::connectToIrc(bool reconnecting)
     }
 
     enablePingTimeout();
+
+    // Reset tracking for valid timestamps in PONG replies
+    setPongTimestampValid(false);
 
     // Qt caches DNS entries for a minute, resulting in round-robin (e.g. for chat.freenode.net) not working if several users
     // connect at a similar time. QHostInfo::fromName(), however, always performs a fresh lookup, overwriting the cache entry.
@@ -543,7 +552,7 @@ void CoreNetwork::socketInitialized()
     // Non-SSL connections enter here only once, always emit socketInitialized(...) in these cases
     // SSL connections call socketInitialized() twice, only emit socketInitialized(...) on the first (not yet encrypted) run
     if (!server.useSsl || !socket.isEncrypted()) {
-        emit socketInitialized(identity, localAddress(), localPort(), peerAddress(), peerPort());
+        emit socketInitialized(identity, localAddress(), localPort(), peerAddress(), peerPort(), _socketId);
     }
 
     if (server.useSsl && !socket.isEncrypted()) {
@@ -612,7 +621,7 @@ void CoreNetwork::socketDisconnected()
 
     setConnected(false);
     emit disconnected(networkId());
-    emit socketDisconnected(identityPtr(), localAddress(), localPort(), peerAddress(), peerPort());
+    emit socketDisconnected(identityPtr(), localAddress(), localPort(), peerAddress(), peerPort(), _socketId);
     // Reset disconnect expectations
     _disconnectExpected = false;
     if (_quitRequested) {
@@ -931,8 +940,12 @@ void CoreNetwork::sendPing()
         _lastPingTime = now;
         _pingCount++;
         // Don't send pings until the network is initialized
-        if(_sendPings)
+        if(_sendPings) {
+            // Mark as waiting for a reply
+            _pongReplyPending = true;
+            // Send default timestamp ping
             userInputHandler()->handlePing(BufferInfo(), QString());
+        }
     }
 }
 
@@ -943,6 +956,7 @@ void CoreNetwork::enablePingTimeout(bool enable)
         disablePingTimeout();
     else {
         resetPingTimeout();
+        resetPongReplyPending();
         if (networkConfig()->pingTimeoutEnabled())
             _pingTimer.start();
     }
@@ -954,12 +968,19 @@ void CoreNetwork::disablePingTimeout()
     _pingTimer.stop();
     _sendPings = false;
     resetPingTimeout();
+    resetPongReplyPending();
 }
 
 
 void CoreNetwork::setPingInterval(int interval)
 {
     _pingTimer.setInterval(interval * 1000);
+}
+
+
+void CoreNetwork::setPongTimestampValid(bool validTimestamp)
+{
+    _pongTimestampValid = validTimestamp;
 }
 
 

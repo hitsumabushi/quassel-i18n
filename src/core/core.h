@@ -40,6 +40,7 @@
 #include "authenticator.h"
 #include "bufferinfo.h"
 #include "deferredptr.h"
+#include "identserver.h"
 #include "message.h"
 #include "oidentdconfiggenerator.h"
 #include "sessionthread.h"
@@ -692,6 +693,7 @@ public:
     static inline QTimer *syncTimer() { return &instance()->_storageSyncTimer; }
 
     inline OidentdConfigGenerator *oidentdConfigGenerator() const { return _oidentdConfigGenerator; }
+    inline IdentServer *identServer() const { return _identServer; }
 
     static const int AddClientEventId;
 
@@ -803,6 +805,8 @@ private:
     std::vector<DeferredSharedPtr<Authenticator>> _registeredAuthenticators;
 
     QDateTime _startTime;
+
+    IdentServer *_identServer {nullptr};
 
     bool _initialized{false};
     bool _configured{false};

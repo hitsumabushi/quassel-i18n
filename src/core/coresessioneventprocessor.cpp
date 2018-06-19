@@ -636,14 +636,71 @@ void CoreSessionEventProcessor::processIrcEventPing(IrcEvent *e)
 
 void CoreSessionEventProcessor::processIrcEventPong(IrcEvent *e)
 {
-    // the server is supposed to send back what we passed as param. and we send a timestamp
-    // but using quote and whatnought one can send arbitrary pings, so we have to do some sanity checks
-    if (checkParamCount(e, 2)) {
-        QString timestamp = e->params().at(1);
-        QTime sendTime = QTime::fromString(timestamp, "hh:mm:ss.zzz");
-        if (sendTime.isValid())
-            e->network()->setLatency(sendTime.msecsTo(QTime::currentTime()) / 2);
+    // Ensure we get at least one parameter
+    if (!checkParamCount(e, 1))
+        return;
+
+    // Some IRC servers respond with only one parameter, others respond with two, with the latter
+    // being the text sent.  Handle both situations.
+    QString timestamp;
+    if (e->params().count() < 2) {
+        // Only one parameter received
+        // :localhost PONG 02:43:49.565
+        timestamp = e->params().at(0);
+    } else {
+        // Two parameters received, pick the second
+        // :localhost PONG localhost :02:43:49.565
+        timestamp = e->params().at(1);
     }
+
+    // The server is supposed to send back what we passed as parameter, and we send a timestamp.
+    // However, using quote and whatnot, one can send arbitrary pings, and IRC servers may decide to
+    // ignore our requests entirely and send whatever they want, so we have to do some sanity
+    // checks.
+    //
+    // Attempt to parse the timestamp
+    QTime sendTime = QTime::fromString(timestamp, "hh:mm:ss.zzz");
+    if (sendTime.isValid()) {
+        // Mark IRC server as sending valid ping replies
+        if (!coreNetwork(e)->isPongTimestampValid()) {
+            coreNetwork(e)->setPongTimestampValid(true);
+            // Add a message the first time it happens
+            qDebug().nospace() << "Received PONG with valid timestamp, marking pong replies on "
+                                  "network "
+                               << "\"" << qPrintable(e->network()->networkName()) << "\" (ID: "
+                               << qPrintable(QString::number(e->network()->networkId().toInt()))
+                               << ") as usable for latency measurement";
+        }
+        // Remove pending flag
+        coreNetwork(e)->resetPongReplyPending();
+
+        // Don't show this in the UI
+        e->setFlag(EventManager::Silent);
+        // TODO:  To allow for a user-sent /ping (without arguments, so default timestamp is used),
+        // this could track how many automated PINGs have been sent by the core and subtract one
+        // each time, only marking the PING as silent if there's pending automated pong replies.
+        // However, that's a behavior change which warrants further testing.  For now, take the
+        // simpler, previous approach that errs on the side of silencing too much.
+
+        // Calculate latency from time difference, divided by 2 to account for round-trip time
+        e->network()->setLatency(sendTime.msecsTo(QTime::currentTime()) / 2);
+    } else if (coreNetwork(e)->isPongReplyPending() && !coreNetwork(e)->isPongTimestampValid()) {
+        // There's an auto-PING reply pending and we've not yet received a PONG reply with a valid
+        // timestamp.  It's possible this server will never respond with a valid timestamp, and thus
+        // any automated PINGs will result in unwanted spamming of the server buffer.
+
+        // Don't show this in the UI
+        e->setFlag(EventManager::Silent);
+        // Remove pending flag
+        coreNetwork(e)->resetPongReplyPending();
+
+        // Log a message
+        qDebug().nospace() << "Received PONG with invalid timestamp from network "
+                           << "\"" << qPrintable(e->network()->networkName()) << "\" (ID: "
+                           << qPrintable(QString::number(e->network()->networkId().toInt()))
+                           << "), silencing, parameters are " << e->params();
+    }
+    // else: We're not expecting a PONG reply and timestamp is not valid, assume it's from the user
 }
 
 
