@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-06-18 14:10+0000\n"
+"PO-Revision-Date: 2018-06-19 13:11+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Galician (http://www.transifex.com/quassel/quassel/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -1934,7 +1934,7 @@ msgctxt "CliParser|"
 msgid "Quassel IRC is a modern, distributed IRC client."
 msgstr ""
 
-#: ../src/client/client.cpp:338
+#: ../src/client/client.cpp:341
 msgctxt "Client|"
 msgid "Identity already exists in client!"
 msgstr "A identidade xa existe no cliente!"
@@ -2381,218 +2381,218 @@ msgid ""
 "to work."
 msgstr "Actualmente, Quassel admite SQLite3 e PostgreSQL. Precisa compilar\n a biblioteca Qt co complemento de sqlite ou postgres activado para que quasselcore\nfuncione."
 
-#: ../src/core/core.cpp:277
+#: ../src/core/core.cpp:282
 msgctxt "Core|"
 msgid "Cannot restore a state for an unconfigured core!"
 msgstr ""
 
-#: ../src/core/core.cpp:281
+#: ../src/core/core.cpp:286
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr "Chamando a restoreState() aínda que existe unha sesión activa!"
 
-#: ../src/core/core.cpp:318
+#: ../src/core/core.cpp:323
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr ""
 
-#: ../src/core/core.cpp:321
+#: ../src/core/core.cpp:326
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr "Non foi estabelecido o usuario administrador ou o contrasinal."
 
-#: ../src/core/core.cpp:324
+#: ../src/core/core.cpp:329
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr "Non se puido configurar o almacenamento!"
 
-#: ../src/core/core.cpp:330
+#: ../src/core/core.cpp:335
 msgctxt "Core|"
 msgid "Could not setup authenticator!"
 msgstr ""
 
-#: ../src/core/core.cpp:334
+#: ../src/core/core.cpp:339
 msgctxt "Core|"
 msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:338
+#: ../src/core/core.cpp:343
 msgctxt "Core|"
 msgid "Creating admin user..."
 msgstr "Creando usuario administrador..."
 
-#: ../src/core/core.cpp:612
+#: ../src/core/core.cpp:617
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1"
 msgstr "O enderezo de escoita non é válido %1"
 
-#: ../src/core/core.cpp:621
+#: ../src/core/core.cpp:626
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
 msgstr "Agardando por algún IGU de cliente en IPv6 %1 porto %2 empregando o protocolo versión %3"
 
-#: ../src/core/core.cpp:630
+#: ../src/core/core.cpp:635
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr "Non se puido abrir a interface IPv6 %1:%2: %3"
 
-#: ../src/core/core.cpp:638
+#: ../src/core/core.cpp:643
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr "Agardando por algún IGU de cliente en IPv4 %1 porto %2 empregando o protocolo versión %3"
 
-#: ../src/core/core.cpp:649
+#: ../src/core/core.cpp:654
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr "Non se puido abrir a interface IPv4 %1:%2: %3"
 
-#: ../src/core/core.cpp:657
+#: ../src/core/core.cpp:662
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr "Enderezo de escoita non válido %1, protocolo de rede descoñecido"
 
-#: ../src/core/core.cpp:666
+#: ../src/core/core.cpp:671
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr "Non se puido abrir ningunha interface de rede na que escoitar!"
 
-#: ../src/core/core.cpp:706
+#: ../src/core/core.cpp:719
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr "Cliente conectado desde"
 
-#: ../src/core/core.cpp:709
+#: ../src/core/core.cpp:722
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr "Pechando o servidor para configuración básica."
 
-#: ../src/core/core.cpp:721
+#: ../src/core/core.cpp:734
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
 msgstr ""
 
-#: ../src/core/core.cpp:892
+#: ../src/core/core.cpp:905
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:893
+#: ../src/core/core.cpp:906
 msgctxt "Core|"
 msgid "Supported backends are:"
 msgstr ""
 
-#: ../src/core/core.cpp:905 ../src/core/core.cpp:925
+#: ../src/core/core.cpp:918 ../src/core/core.cpp:938
 #, qt-format
 msgctxt "Core|"
 msgid "Switched storage backend to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:906
+#: ../src/core/core.cpp:919
 msgctxt "Core|"
 msgid "Backend already initialized. Skipping Migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:909
+#: ../src/core/core.cpp:922
 #, qt-format
 msgctxt "Core|"
 msgid "Storage backend is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:913
+#: ../src/core/core.cpp:926
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:918
+#: ../src/core/core.cpp:931
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:933
+#: ../src/core/core.cpp:946
 #, qt-format
 msgctxt "Core|"
 msgid "Migrating storage backend %1 to %2..."
 msgstr ""
 
-#: ../src/core/core.cpp:938
+#: ../src/core/core.cpp:951
 msgctxt "Core|"
 msgid "Migration finished!"
 msgstr ""
 
-#: ../src/core/core.cpp:945
+#: ../src/core/core.cpp:958
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to migrate storage backend! (No migration writer for %1)"
 msgstr ""
 
-#: ../src/core/core.cpp:951
+#: ../src/core/core.cpp:964
 msgctxt "Core|"
 msgid "No currently active storage backend. Skipping migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:954
+#: ../src/core/core.cpp:967
 #, qt-format
 msgctxt "Core|"
 msgid "Currently active storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:957
+#: ../src/core/core.cpp:970
 #, qt-format
 msgctxt "Core|"
 msgid "New storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:979
+#: ../src/core/core.cpp:992
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:980
+#: ../src/core/core.cpp:993
 msgctxt "Core|"
 msgid "Supported authenticators are:"
 msgstr ""
 
-#: ../src/core/core.cpp:990 ../src/core/core.cpp:1007
+#: ../src/core/core.cpp:1003 ../src/core/core.cpp:1020
 #, qt-format
 msgctxt "Core|"
 msgid "Switched authenticator to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:993
+#: ../src/core/core.cpp:1006
 #, qt-format
 msgctxt "Core|"
 msgid "Authenticator is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:997
+#: ../src/core/core.cpp:1010
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:1002
+#: ../src/core/core.cpp:1015
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize authenticator: %1"
 msgstr ""
 
-#: ../src/client/coreaccount.h:40
+#: ../src/client/coreaccount.h:41
 msgctxt "CoreAccount|"
 msgid "Internal Core"
 msgstr "Núcleo interno"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:14
-#: ../src/qtui/settingspages/coreaccountsettingspage.cpp:288
+#: ../src/qtui/settingspages/coreaccountsettingspage.cpp:293
 msgctxt "CoreAccountEditDlg|"
 msgid "Edit Core Account"
 msgstr "Editar conta de núcleo"
@@ -2682,7 +2682,7 @@ msgctxt "CoreAccountEditDlg|"
 msgid "&Manual proxy configuration"
 msgstr ""
 
-#: ../src/qtui/settingspages/coreaccountsettingspage.cpp:290
+#: ../src/qtui/settingspages/coreaccountsettingspage.cpp:295
 msgctxt "CoreAccountEditDlg|"
 msgid "Add Core Account"
 msgstr "Engadir conta de núcleo"
@@ -3207,7 +3207,7 @@ msgid "Form"
 msgstr "Formulario"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:57
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:642
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:693
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Your Quassel core is too old to support remote highlights"
 msgstr ""
@@ -3338,7 +3338,7 @@ msgid "Import highlight rules configured in <i>%1</i>."
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:101
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:662
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:715
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Legacy Highlights"
 msgstr ""
@@ -3349,28 +3349,28 @@ msgid "Import Local"
 msgstr ""
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:108
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:638
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:664
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:689
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:717
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Local Highlights"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:131
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:278
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:360
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:133
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:290
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:377
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Enable/disable this rule"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:136
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:279
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:361
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:138
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:291
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:378
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Phrase to match"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:141
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:281
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:143
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:293
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule, <i>Sender</i>, "
@@ -3378,16 +3378,16 @@ msgid ""
 "just as keywords."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:148
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:285
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:150
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:297
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule, <i>Sender</i>, and "
 "<i>Channel</i> should be interpreted <b>case sensitive</b>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:154
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:288
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:156
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:300
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<p><b>Sender</b>: Semicolon separated list of <i>nick!ident@host</i> names, "
@@ -3402,8 +3402,8 @@ msgid ""
 "<i>Announce</i></p>"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:170
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:301
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:172
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:313
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<p><b>Channel</b>: Semicolon separated list of channel names, leave blank to"
@@ -3416,28 +3416,28 @@ msgid ""
 "channel starting with <i>#quassel</i></p>"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:363
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:380
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule should be "
 "interpreted as a <b>regular expression</b> or just as a keyword."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:366
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:383
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule should be "
 "interpreted <b>case sensitive</b>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:369
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:386
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>Sender</b>: This option specifies which sender nicknames match.  Leave "
 "blank to match any nickname."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:372
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:389
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<p><b>Channel</b>: Semicolon separated list of channel "
@@ -3450,57 +3450,57 @@ msgid ""
 "starting with <i>#quassel</i></p>"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:496
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:534
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:522
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:561
 msgctxt "CoreHighlightSettingsPage|"
 msgid "this shouldn't be empty"
 msgstr "isto non debería estar baleiro"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:643
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:694
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer to configure remote highlights."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:645
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:696
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "You can still configure highlights for this device only in <i>%1</i>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:649
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:700
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Remote Highlights unsupported"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:670
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:723
 msgctxt "CoreHighlightSettingsPage|"
 msgid "No highlights to import"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:671
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:724
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "No highlight rules in <i>%1</i>."
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:677
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:730
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import highlights?"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:678
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:731
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import all highlight rules from <i>%1</i>?"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:711
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:765
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Imported highlights"
 msgstr ""
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:712
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:766
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "%1 highlight rules successfully imported."
@@ -3537,7 +3537,7 @@ msgctxt "CoreInfoDlg|"
 msgid "Connected Clients:"
 msgstr "Clientes conectados:"
 
-#: ../src/qtui/ui/coreinfodlg.ui:117 ../src/qtui/coreinfodlg.cpp:120
+#: ../src/qtui/ui/coreinfodlg.ui:117 ../src/qtui/coreinfodlg.cpp:184
 msgctxt "CoreInfoDlg|"
 msgid "Your Quassel core is too old to show active sessions"
 msgstr ""
@@ -3552,7 +3552,23 @@ msgctxt "CoreInfoDlg|"
 msgid "Close"
 msgstr "Pechar"
 
-#: ../src/qtui/coreinfodlg.cpp:101
+#: ../src/qtui/coreinfodlg.cpp:85 ../src/qtui/coreinfodlg.cpp:86
+#: ../src/qtui/coreinfodlg.cpp:152
+msgctxt "CoreInfoDlg|"
+msgid "Unknown"
+msgstr ""
+
+#: ../src/qtui/coreinfodlg.cpp:89
+msgctxt "CoreInfoDlg|"
+msgid "Disconnected from core"
+msgstr ""
+
+#: ../src/qtui/coreinfodlg.cpp:90 ../src/qtui/coreinfodlg.cpp:149
+msgctxt "CoreInfoDlg|"
+msgid "Not available"
+msgstr ""
+
+#: ../src/qtui/coreinfodlg.cpp:165
 #, qt-format
 msgctxt "CoreInfoDlg|"
 msgid "%n Day(s)"
@@ -3560,121 +3576,121 @@ msgid_plural "%n Day(s)"
 msgstr[0] "%n día"
 msgstr[1] "%n días"
 
-#: ../src/qtui/coreinfodlg.cpp:102
+#: ../src/qtui/coreinfodlg.cpp:166
 #, qt-format
 msgctxt "CoreInfoDlg|"
 msgid " %1:%2:%3 (since %4)"
 msgstr " %1:%2:%3 (desde %4)"
 
-#: ../src/qtui/coreinfodlg.cpp:118
+#: ../src/qtui/coreinfodlg.cpp:182
 msgctxt "CoreInfoDlg|"
 msgid "Active sessions unsupported"
 msgstr ""
 
-#: ../src/qtui/coreinfodlg.cpp:121
+#: ../src/qtui/coreinfodlg.cpp:185
 msgctxt "CoreInfoDlg|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer to view and disconnect other "
 "connected clients."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:223
+#: ../src/core/corenetwork.cpp:229
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next Server"
 msgstr "Fallou a conexión. Probando o seguinte servidor"
 
-#: ../src/core/corenetwork.cpp:234 ../src/core/corenetwork.cpp:235
+#: ../src/core/corenetwork.cpp:240 ../src/core/corenetwork.cpp:241
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr "Conectando a %1:%2..."
 
-#: ../src/core/corenetwork.cpp:298
+#: ../src/core/corenetwork.cpp:307
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr "Desconectando. (%1)"
 
-#: ../src/core/corenetwork.cpp:298
+#: ../src/core/corenetwork.cpp:307
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr "Apagar o núcleo"
 
-#: ../src/core/corenetwork.cpp:521
+#: ../src/core/corenetwork.cpp:530
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr "Non se puido conectar a %1 (%2)"
 
-#: ../src/core/corenetwork.cpp:523
+#: ../src/core/corenetwork.cpp:532
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr "Fallo de conexión: %1"
 
-#: ../src/core/corenetwork.cpp:571
+#: ../src/core/corenetwork.cpp:580
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1086
+#: ../src/core/corenetwork.cpp:1107
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1097
+#: ../src/core/corenetwork.cpp:1118
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1203
+#: ../src/core/corenetwork.cpp:1224
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1218
+#: ../src/core/corenetwork.cpp:1239
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1225
+#: ../src/core/corenetwork.cpp:1246
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1234
+#: ../src/core/corenetwork.cpp:1255
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1249
+#: ../src/core/corenetwork.cpp:1270
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1253
+#: ../src/core/corenetwork.cpp:1274
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1377
+#: ../src/core/corenetwork.cpp:1398
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1381 ../src/core/corenetwork.cpp:1394
+#: ../src/core/corenetwork.cpp:1402 ../src/core/corenetwork.cpp:1415
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1390
+#: ../src/core/corenetwork.cpp:1411
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
@@ -3714,33 +3730,33 @@ msgid ""
 "continue"
 msgstr "Non hai alcumes dispoñíbeis na lista de alcumes. Empregue: /nick <outroalcume> para seguir."
 
-#: ../src/core/coresessioneventprocessor.cpp:739
+#: ../src/core/coresessioneventprocessor.cpp:796
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:750
+#: ../src/core/coresessioneventprocessor.cpp:807
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to parse the DH1080_INIT. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:754
-#: ../src/core/coresessioneventprocessor.cpp:762
+#: ../src/core/coresessioneventprocessor.cpp:811
+#: ../src/core/coresessioneventprocessor.cpp:819
 msgctxt "CoreSessionEventProcessor|"
 msgid "Your key is set and messages will be encrypted."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:764
+#: ../src/core/coresessioneventprocessor.cpp:821
 msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1526
+#: ../src/core/coresessioneventprocessor.cpp:1583
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1544
+#: ../src/core/coresessioneventprocessor.cpp:1601
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
@@ -4182,7 +4198,7 @@ msgctxt "DockManagerNotificationBackend::ConfigWidget|"
 msgid "Mark dockmanager entry"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:238 ../src/core/eventstringifier.cpp:446
+#: ../src/core/eventstringifier.cpp:238 ../src/core/eventstringifier.cpp:447
 msgctxt "EventStringifier|"
 msgid "[Whois] "
 msgstr "[Quen é] %1"
@@ -4193,229 +4209,229 @@ msgctxt "EventStringifier|"
 msgid "%1 invited you to channel %2"
 msgstr "%1 convidouno á canle %2"
 
-#: ../src/core/eventstringifier.cpp:407
+#: ../src/core/eventstringifier.cpp:408
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has changed topic for %2 to: \"%3\""
 msgstr "%1 cambiou o tema de %2 a: «%3»"
 
-#: ../src/core/eventstringifier.cpp:418
+#: ../src/core/eventstringifier.cpp:419
 msgctxt "EventStringifier|"
 msgid "Error from server: "
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:423
+#: ../src/core/eventstringifier.cpp:424
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Operwall] %1: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:431
+#: ../src/core/eventstringifier.cpp:432
 msgctxt "EventStringifier|"
 msgid ""
 "Received non-RFC-compliant RPL_ISUPPORT: this can lead to unexpected "
 "behavior!"
 msgstr "Recibiuse RPL_ISUPPORT que non cumpre con RFC: isto pode conducir a un comportamento non desexado!"
 
-#: ../src/core/eventstringifier.cpp:462
+#: ../src/core/eventstringifier.cpp:463
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 is away: \"%2\""
 msgstr "%1 está ausente :«%2»"
 
-#: ../src/core/eventstringifier.cpp:469
+#: ../src/core/eventstringifier.cpp:470
 msgctxt "EventStringifier|"
 msgid "You are no longer marked as being away"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:477
+#: ../src/core/eventstringifier.cpp:478
 msgctxt "EventStringifier|"
 msgid "You have been marked as being away"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:499
+#: ../src/core/eventstringifier.cpp:500
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is %2 (%3)"
 msgstr "[Quen é] %1 é %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:515
+#: ../src/core/eventstringifier.cpp:516
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is online via %2 (%3)"
 msgstr "%1 está conectado a través de %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:517
+#: ../src/core/eventstringifier.cpp:518
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was online via %2 (%3)"
 msgstr "[Quen era] %1 era %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:527
+#: ../src/core/eventstringifier.cpp:528
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was %2@%3 (%4)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:536
+#: ../src/core/eventstringifier.cpp:537
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] End of /WHO list for %1"
 msgstr "[Quen] Fin da lista /WHO para %1"
 
-#: ../src/core/eventstringifier.cpp:557
+#: ../src/core/eventstringifier.cpp:558
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is logged in since %2"
 msgstr "[Quen é] %1 está conectado desde %2"
 
-#: ../src/core/eventstringifier.cpp:561
+#: ../src/core/eventstringifier.cpp:562
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is idling for %2 (since %3)"
 msgstr "[Quen é] %1 está inactivo desde %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:571
+#: ../src/core/eventstringifier.cpp:572
 msgctxt "EventStringifier|"
 msgid "[Whois] End of /WHOIS list"
 msgstr "[Quen] Fin da lista /WHO para %1"
 
-#: ../src/core/eventstringifier.cpp:594
+#: ../src/core/eventstringifier.cpp:595
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is a user on channels: %2"
 msgstr "[Quen é] %1 é un usuario na(s) canle(s): %2"
 
-#: ../src/core/eventstringifier.cpp:596
+#: ../src/core/eventstringifier.cpp:597
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 has voice on channels: %2"
 msgstr "[Quen é] %1 ten voz na(s) canle(s): %2"
 
-#: ../src/core/eventstringifier.cpp:598
+#: ../src/core/eventstringifier.cpp:599
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is an operator on channels: %2"
 msgstr "[Quen é] %1 é un operador na(s) canle(s): %2"
 
-#: ../src/core/eventstringifier.cpp:622
+#: ../src/core/eventstringifier.cpp:623
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 has %2 users. Topic is: \"%3\""
 msgstr "A canle %1 ten %2 usuario(s). O tema é: %3"
 
-#: ../src/core/eventstringifier.cpp:630
+#: ../src/core/eventstringifier.cpp:631
 msgctxt "EventStringifier|"
 msgid "End of channel list"
 msgstr "Fin da lista de canles"
 
-#: ../src/core/eventstringifier.cpp:648
+#: ../src/core/eventstringifier.cpp:649
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Homepage for %1 is %2"
 msgstr "A páxina web de %1 é %2"
 
-#: ../src/core/eventstringifier.cpp:674
+#: ../src/core/eventstringifier.cpp:675
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 created on %2"
 msgstr "Canle %1 creado en %2"
 
-#: ../src/core/eventstringifier.cpp:688
+#: ../src/core/eventstringifier.cpp:689
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is authed as %2"
 msgstr "[Quen é] %1 está ausente: «%2»"
 
-#: ../src/core/eventstringifier.cpp:691
+#: ../src/core/eventstringifier.cpp:692
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was authed as %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:700
+#: ../src/core/eventstringifier.cpp:701
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "No topic is set for %1."
 msgstr "Non hai un tema estabelecido para %1"
 
-#: ../src/core/eventstringifier.cpp:708
+#: ../src/core/eventstringifier.cpp:709
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic for %1 is \"%2\""
 msgstr "O tema para %1 é «%2»"
 
-#: ../src/core/eventstringifier.cpp:729
+#: ../src/core/eventstringifier.cpp:730
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic set by %1 on %2"
 msgstr "Tema estabelecido por %1 en %2"
 
-#: ../src/core/eventstringifier.cpp:742
+#: ../src/core/eventstringifier.cpp:743
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has been invited to %2"
 msgstr "%1 convidouno a %2"
 
-#: ../src/core/eventstringifier.cpp:750
+#: ../src/core/eventstringifier.cpp:751
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] %1"
 msgstr "[Quen] %1"
 
-#: ../src/core/eventstringifier.cpp:760
+#: ../src/core/eventstringifier.cpp:761
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[WhoX] %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:767
+#: ../src/core/eventstringifier.cpp:768
 msgctxt "EventStringifier|"
 msgid "End of /WHOWAS"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:777
+#: ../src/core/eventstringifier.cpp:778
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick %1 contains illegal characters"
 msgstr "O alcume %1 contén caracteres non admitidos"
 
-#: ../src/core/eventstringifier.cpp:787
+#: ../src/core/eventstringifier.cpp:788
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick already in use: %1"
 msgstr "Este alcume xa está en uso: %1"
 
-#: ../src/core/eventstringifier.cpp:797
+#: ../src/core/eventstringifier.cpp:798
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick/channel is temporarily unavailable: %1"
 msgstr "O alcume/canle non esta dispoñíbel temporalmente: %1"
 
-#: ../src/core/eventstringifier.cpp:821
+#: ../src/core/eventstringifier.cpp:822
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
 msgstr "enviando petición CTCP-%1 a %2"
 
-#: ../src/core/eventstringifier.cpp:837
+#: ../src/core/eventstringifier.cpp:838
 msgctxt "EventStringifier|"
 msgid "unknown"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:838
+#: ../src/core/eventstringifier.cpp:839
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received %1CTCP-%2 request by %3"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:841
+#: ../src/core/eventstringifier.cpp:842
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-%1 answer from %2: %3"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:856
+#: ../src/core/eventstringifier.cpp:857
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
@@ -4661,6 +4677,25 @@ msgstr ""
 msgctxt "HighlightSettingsPage|"
 msgid "highlight rule"
 msgstr "regra de resalte"
+
+#: ../src/core/identserver.cpp:42
+#, qt-format
+msgctxt "IdentServer|"
+msgid "Listening for identd clients on IPv6 %1 port %2"
+msgstr ""
+
+#: ../src/core/identserver.cpp:52
+#, qt-format
+msgctxt "IdentServer|"
+msgid "Listening for identd clients on IPv4 %1 port %2"
+msgstr ""
+
+#: ../src/core/identserver.cpp:61
+msgctxt "IdentServer|"
+msgid ""
+"Identd could not open any network interfaces to listen on! No identd "
+"functionality will be available"
+msgstr ""
 
 #: ../src/qtui/settingspages/identitiessettingspage.ui:31
 #: ../src/qtui/settingspages/identitiessettingspage.cpp:370
