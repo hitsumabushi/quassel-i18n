@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-06-19 13:11+0000\n"
+"PO-Revision-Date: 2018-06-20 13:45+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Danish (http://www.transifex.com/quassel/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:181
 msgctxt "AboutData|"
 msgid ""
-"QuasselDroid, architecture, (mobile) performance, many other improvements "
+"Quasseldroid, architecture, (mobile) performance, many other improvements "
 "and fixes, testing"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgctxt "AboutData|"
 msgid "Early beta tester and bughunter, Danish translation"
 msgstr "Tidlig betatester og fejljæger, dansk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:188 ../src/uisupport/aboutdata.cpp:267
+#: ../src/uisupport/aboutdata.cpp:188 ../src/uisupport/aboutdata.cpp:266
 #: ../src/uisupport/aboutdata.cpp:295 ../src/uisupport/aboutdata.cpp:307
 msgctxt "AboutData|"
 msgid "Spanish translation"
@@ -130,14 +130,14 @@ msgctxt "AboutData|"
 msgid "Brazilian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:270
+#: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
 msgid "Slovenian translation"
 msgstr "Slovensk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:196 ../src/uisupport/aboutdata.cpp:222
-#: ../src/uisupport/aboutdata.cpp:226 ../src/uisupport/aboutdata.cpp:244
-#: ../src/uisupport/aboutdata.cpp:253 ../src/uisupport/aboutdata.cpp:275
+#: ../src/uisupport/aboutdata.cpp:226 ../src/uisupport/aboutdata.cpp:243
+#: ../src/uisupport/aboutdata.cpp:252 ../src/uisupport/aboutdata.cpp:274
 #: ../src/uisupport/aboutdata.cpp:290 ../src/uisupport/aboutdata.cpp:310
 #: ../src/uisupport/aboutdata.cpp:347
 msgctxt "AboutData|"
@@ -154,8 +154,8 @@ msgctxt "AboutData|"
 msgid "Punjabi translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:262
-#: ../src/uisupport/aboutdata.cpp:277 ../src/uisupport/aboutdata.cpp:278
+#: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:261
+#: ../src/uisupport/aboutdata.cpp:276 ../src/uisupport/aboutdata.cpp:277
 msgctxt "AboutData|"
 msgid "Finnish translation"
 msgstr "Finsk oversættelse"
@@ -269,7 +269,7 @@ msgctxt "AboutData|"
 msgid "OSX Notification Center support"
 msgstr "Understøttelse af OSX-påmindelsescenter"
 
-#: ../src/uisupport/aboutdata.cpp:227 ../src/uisupport/aboutdata.cpp:245
+#: ../src/uisupport/aboutdata.cpp:227 ../src/uisupport/aboutdata.cpp:244
 #: ../src/uisupport/aboutdata.cpp:345 ../src/uisupport/aboutdata.cpp:351
 msgctxt "AboutData|"
 msgid "Turkish translation"
@@ -305,19 +305,19 @@ msgctxt "AboutData|"
 msgid "BluesTheme stylesheet"
 msgstr "BluesTheme-stilark"
 
-#: ../src/uisupport/aboutdata.cpp:235 ../src/uisupport/aboutdata.cpp:282
+#: ../src/uisupport/aboutdata.cpp:235 ../src/uisupport/aboutdata.cpp:281
 #: ../src/uisupport/aboutdata.cpp:323 ../src/uisupport/aboutdata.cpp:343
 msgctxt "AboutData|"
 msgid "Russian translation"
 msgstr "Russisk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:236 ../src/uisupport/aboutdata.cpp:286
+#: ../src/uisupport/aboutdata.cpp:236 ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
 msgid "Italian translation"
 msgstr "Italiensk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:238 ../src/uisupport/aboutdata.cpp:273
-#: ../src/uisupport/aboutdata.cpp:283 ../src/uisupport/aboutdata.cpp:287
+#: ../src/uisupport/aboutdata.cpp:238 ../src/uisupport/aboutdata.cpp:272
+#: ../src/uisupport/aboutdata.cpp:282 ../src/uisupport/aboutdata.cpp:286
 #: ../src/uisupport/aboutdata.cpp:289 ../src/uisupport/aboutdata.cpp:340
 msgctxt "AboutData|"
 msgid "German translation"
@@ -338,148 +338,148 @@ msgctxt "AboutData|"
 msgid "Hungarian translation"
 msgstr "Ungarsk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:242 ../src/uisupport/aboutdata.cpp:250
-#: ../src/uisupport/aboutdata.cpp:251 ../src/uisupport/aboutdata.cpp:261
-#: ../src/uisupport/aboutdata.cpp:268 ../src/uisupport/aboutdata.cpp:304
+#: ../src/uisupport/aboutdata.cpp:242
+msgctxt "AboutData|"
+msgid "IRC parser improvements"
+msgstr "Forbedringer af IRC-fortolker"
+
+#: ../src/uisupport/aboutdata.cpp:245
+msgctxt "AboutData|"
+msgid "Windows build support and Appveyor maintenance, snorenotify backend"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:246
+msgctxt "AboutData|"
+msgid "Initial Qt5 support"
+msgstr "Indledende Qt5-understøttelse"
+
+#: ../src/uisupport/aboutdata.cpp:247
+msgctxt "AboutData|"
+msgid "{Ku|U}buntu packager, motivator, promoter"
+msgstr "{Ku|U}buntu-pakker, motivator, promoter"
+
+#: ../src/uisupport/aboutdata.cpp:248
+msgctxt "AboutData|"
+msgid "Various features and improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:249 ../src/uisupport/aboutdata.cpp:250
+#: ../src/uisupport/aboutdata.cpp:260 ../src/uisupport/aboutdata.cpp:267
+#: ../src/uisupport/aboutdata.cpp:288 ../src/uisupport/aboutdata.cpp:304
 #: ../src/uisupport/aboutdata.cpp:317
 msgctxt "AboutData|"
 msgid "Various fixes"
 msgstr "Diverse rettelser"
 
-#: ../src/uisupport/aboutdata.cpp:243
-msgctxt "AboutData|"
-msgid "IRC parser improvements"
-msgstr "Forbedringer af IRC-fortolker"
-
-#: ../src/uisupport/aboutdata.cpp:246
-msgctxt "AboutData|"
-msgid "Windows build support and Appveyor maintenance, snorenotify backend"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:247
-msgctxt "AboutData|"
-msgid "Initial Qt5 support"
-msgstr "Indledende Qt5-understøttelse"
-
-#: ../src/uisupport/aboutdata.cpp:248
-msgctxt "AboutData|"
-msgid "{Ku|U}buntu packager, motivator, promoter"
-msgstr "{Ku|U}buntu-pakker, motivator, promoter"
-
-#: ../src/uisupport/aboutdata.cpp:249
-msgctxt "AboutData|"
-msgid "Various features and improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:252 ../src/uisupport/aboutdata.cpp:256
+#: ../src/uisupport/aboutdata.cpp:251 ../src/uisupport/aboutdata.cpp:255
 #: ../src/uisupport/aboutdata.cpp:309 ../src/uisupport/aboutdata.cpp:314
 #: ../src/uisupport/aboutdata.cpp:326
 msgctxt "AboutData|"
 msgid "Bugfixes"
 msgstr "Fejlrettelser"
 
-#: ../src/uisupport/aboutdata.cpp:254 ../src/uisupport/aboutdata.cpp:341
+#: ../src/uisupport/aboutdata.cpp:253 ../src/uisupport/aboutdata.cpp:341
 #: ../src/uisupport/aboutdata.cpp:344
 msgctxt "AboutData|"
 msgid "Czech translation"
 msgstr "Tjekkisk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:255
+#: ../src/uisupport/aboutdata.cpp:254
 msgctxt "AboutData|"
 msgid "Python improvements"
 msgstr "Pythonforbedringer"
 
-#: ../src/uisupport/aboutdata.cpp:257
+#: ../src/uisupport/aboutdata.cpp:256
 msgctxt "AboutData|"
 msgid "Proxy improvements, Spanish translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:258
+#: ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Postgres migration fixes"
 msgstr "Migreringsrettelser for Postgres"
 
-#: ../src/uisupport/aboutdata.cpp:259 ../src/uisupport/aboutdata.cpp:263
+#: ../src/uisupport/aboutdata.cpp:258 ../src/uisupport/aboutdata.cpp:262
 #: ../src/uisupport/aboutdata.cpp:301
 msgctxt "AboutData|"
 msgid "Danish translation"
 msgstr "Dansk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:260
+#: ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
 msgid "Context menu fixes"
 msgstr "Rettelser for kontekstmenuen"
 
-#: ../src/uisupport/aboutdata.cpp:264
+#: ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug triaging"
 msgstr "Mange rettelser og forbedringer, fejltriage"
 
-#: ../src/uisupport/aboutdata.cpp:265
+#: ../src/uisupport/aboutdata.cpp:264
 msgctxt "AboutData|"
 msgid "Original \"All-Seeing Eye\" logo"
 msgstr "Orginalt »All-Seeing Eye«-logo"
 
-#: ../src/uisupport/aboutdata.cpp:266
+#: ../src/uisupport/aboutdata.cpp:265
 msgctxt "AboutData|"
 msgid "Project founder, various improvements"
 msgstr "Projektgrundlægger, diverse forbedringer"
 
-#: ../src/uisupport/aboutdata.cpp:269
+#: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
 msgid "Serbian translation"
 msgstr "Serbisk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:271
+#: ../src/uisupport/aboutdata.cpp:270
 msgctxt "AboutData|"
 msgid ""
 "Tireless tester, {Ku|U}buntu tester and lobbyist, liters of delicious "
 "Finnish alcohol"
 msgstr "Utrættelig tester, {Ku|U}buntu-tester og lobbyist, mange litre af vidunderligt finsk alkohol"
 
-#: ../src/uisupport/aboutdata.cpp:272
+#: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid "Qt5 porting help, Travis CI setup"
 msgstr "Qt5-porthjælp, Travis CI-opsætning"
 
-#: ../src/uisupport/aboutdata.cpp:274
+#: ../src/uisupport/aboutdata.cpp:273
 msgctxt "AboutData|"
 msgid "Buffer merge improvements"
 msgstr "Forbedringer af bufferfletning"
 
-#: ../src/uisupport/aboutdata.cpp:276 ../src/uisupport/aboutdata.cpp:327
+#: ../src/uisupport/aboutdata.cpp:275 ../src/uisupport/aboutdata.cpp:327
 #: ../src/uisupport/aboutdata.cpp:328 ../src/uisupport/aboutdata.cpp:334
 #: ../src/uisupport/aboutdata.cpp:335
 msgctxt "AboutData|"
 msgid "Greek translation"
 msgstr "Græsk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:279
+#: ../src/uisupport/aboutdata.cpp:278
 msgctxt "AboutData|"
 msgid "OSX improvements"
 msgstr "OSX-forbedringer"
 
-#: ../src/uisupport/aboutdata.cpp:280
+#: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
 msgid "Lithuanian translation"
 msgstr "Lettisk oversættelse"
 
-#: ../src/uisupport/aboutdata.cpp:281
+#: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Documentation fixes"
 msgstr "Dokumentationsrettelser"
 
-#: ../src/uisupport/aboutdata.cpp:284 ../src/uisupport/aboutdata.cpp:316
+#: ../src/uisupport/aboutdata.cpp:283 ../src/uisupport/aboutdata.cpp:316
 msgctxt "AboutData|"
 msgid "Improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:285
+#: ../src/uisupport/aboutdata.cpp:284
 msgctxt "AboutData|"
 msgid "Ideas, hacking, initial motivation"
 msgstr "Ideer, hacking, opstartsmotivation"
 
-#: ../src/uisupport/aboutdata.cpp:288
+#: ../src/uisupport/aboutdata.cpp:287
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, Sonnet support, QuasselDroid"
 msgstr ""
@@ -3599,103 +3599,103 @@ msgid ""
 "connected clients."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:229
+#: ../src/core/corenetwork.cpp:233
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next Server"
 msgstr "Forbindelse mislykkedes. Prøver næste server"
 
-#: ../src/core/corenetwork.cpp:240 ../src/core/corenetwork.cpp:241
+#: ../src/core/corenetwork.cpp:244 ../src/core/corenetwork.cpp:245
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr "Forbinder til %1:%2 ..."
 
-#: ../src/core/corenetwork.cpp:307
+#: ../src/core/corenetwork.cpp:311
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr "Afbryder. (%1)"
 
-#: ../src/core/corenetwork.cpp:307
+#: ../src/core/corenetwork.cpp:311
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr "Kernenedlukning"
 
-#: ../src/core/corenetwork.cpp:530
+#: ../src/core/corenetwork.cpp:534
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr "Kunne ikke forbinde til %1 (%2)"
 
-#: ../src/core/corenetwork.cpp:532
+#: ../src/core/corenetwork.cpp:536
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr "Forbindelsesfejl: %1"
 
-#: ../src/core/corenetwork.cpp:580
+#: ../src/core/corenetwork.cpp:584
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1107
+#: ../src/core/corenetwork.cpp:1111
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1118
+#: ../src/core/corenetwork.cpp:1122
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1224
+#: ../src/core/corenetwork.cpp:1228
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1239
+#: ../src/core/corenetwork.cpp:1243
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1246
+#: ../src/core/corenetwork.cpp:1250
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1255
+#: ../src/core/corenetwork.cpp:1259
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1270
+#: ../src/core/corenetwork.cpp:1274
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1274
+#: ../src/core/corenetwork.cpp:1278
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1398
+#: ../src/core/corenetwork.cpp:1402
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1402 ../src/core/corenetwork.cpp:1415
+#: ../src/core/corenetwork.cpp:1406 ../src/core/corenetwork.cpp:1419
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1411
+#: ../src/core/corenetwork.cpp:1415
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
@@ -3866,8 +3866,8 @@ msgstr "sender CTCP-%1-forespørgsel til %2"
 
 #: ../src/core/coreuserinputhandler.cpp:206
 #: ../src/core/coreuserinputhandler.cpp:377
-#: ../src/core/coreuserinputhandler.cpp:681
-#: ../src/core/coreuserinputhandler.cpp:719
+#: ../src/core/coreuserinputhandler.cpp:684
+#: ../src/core/coreuserinputhandler.cpp:722
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl"
@@ -3882,7 +3882,7 @@ msgid ""
 msgstr "[usage] /delkey <kaldenavn|kanal> sletter krypteringsnøglen for kaldenavnet eller kanalen eller blot /delkey når du er i en kanal eller forespørgsel."
 
 #: ../src/core/coreuserinputhandler.cpp:224
-#: ../src/core/coreuserinputhandler.cpp:737
+#: ../src/core/coreuserinputhandler.cpp:740
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "No key has been set for %1."
@@ -3895,7 +3895,7 @@ msgid "The key for %1 has been deleted."
 msgstr "Nøglen til %1 er blevet slettet."
 
 #: ../src/core/coreuserinputhandler.cpp:233
-#: ../src/core/coreuserinputhandler.cpp:745
+#: ../src/core/coreuserinputhandler.cpp:748
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3928,7 +3928,7 @@ msgid "Initiated key exchange with %1."
 msgstr "Indledte nøgleudveksling med %1."
 
 #: ../src/core/coreuserinputhandler.cpp:413
-#: ../src/core/coreuserinputhandler.cpp:703
+#: ../src/core/coreuserinputhandler.cpp:706
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3937,18 +3937,18 @@ msgid ""
 "with QCA present."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:482
+#: ../src/core/coreuserinputhandler.cpp:481
 msgctxt "CoreUserInputHandler|"
 msgid "Your persistent modes have been reset."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:612
+#: ../src/core/coreuserinputhandler.cpp:615
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Starting query with %1"
 msgstr "Starter forespørgsel med %1"
 
-#: ../src/core/coreuserinputhandler.cpp:691
+#: ../src/core/coreuserinputhandler.cpp:694
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
@@ -3956,20 +3956,20 @@ msgid ""
 "it."
 msgstr "[usage] /setkey <kaldenavn|kanal> <key> sætter krypteringsnøglen for kaldenavn eller kanal. /setkey <key> når i en kanal eller forespørgselsbufferen sætter nøglen for den."
 
-#: ../src/core/coreuserinputhandler.cpp:700
+#: ../src/core/coreuserinputhandler.cpp:703
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been set."
 msgstr "Nøglen for %1 er blevet sat."
 
-#: ../src/core/coreuserinputhandler.cpp:729
+#: ../src/core/coreuserinputhandler.cpp:732
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel"
 " or just /showkey when in a channel or query."
 msgstr "[anvendelse] /showkey <kaldenavn|kanal> viser krypteringsnøglen for kaldenavn eller kanal, eller blot /showkey når du er i en kanal eller forespørgsel."
 
-#: ../src/core/coreuserinputhandler.cpp:741
+#: ../src/core/coreuserinputhandler.cpp:744
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
@@ -5585,12 +5585,12 @@ msgctxt "InputWidget|"
 msgid "Focus Input Line"
 msgstr "Fokuser input felt"
 
-#: ../src/qtui/inputwidget.cpp:633
+#: ../src/qtui/inputwidget.cpp:647
 msgctxt "InputWidget|"
 msgid "Hide formatting options"
 msgstr ""
 
-#: ../src/qtui/inputwidget.cpp:636
+#: ../src/qtui/inputwidget.cpp:650
 msgctxt "InputWidget|"
 msgid "Show formatting options"
 msgstr ""
@@ -7124,14 +7124,16 @@ msgid "Receive fallback:"
 msgstr "Modtage-reserve:"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:974
-#: ../src/qtui/settingspages/networkssettingspage.ui:988
+#: ../src/qtui/settingspages/networkssettingspage.ui:987
 msgctxt "NetworksSettingsPage|"
 msgid ""
-"This specifies how control messages, nicks and servernames are encoded.\n"
-"Unless you *really* know what you do, leave this as ISO-8859-1!"
-msgstr "Angiver hvordan kontrolmeddelelser, kaldenavne og servernavne kodes.\nLad den være ISO-8859-1, medmindre du *virkelig* ved hvad du gør!"
+"<qt><p>This specifies how control messages, nicks and servernames are "
+"encoded.</p><p><b>UTF-8</b> should be fine for modern networks.  On other "
+"networks, you may need to use <b>ISO-8859-1</b> to avoid errors with illegal"
+" characters and invalid encoding.</p></qt>"
+msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:978
+#: ../src/qtui/settingspages/networkssettingspage.ui:977
 msgctxt "NetworksSettingsPage|"
 msgid "Server encoding:"
 msgstr "Serverkodning:"
