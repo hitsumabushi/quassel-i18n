@@ -62,6 +62,17 @@ Quassel *Quassel::instance()
 
 Quassel::Quassel()
 {
+}
+
+
+bool Quassel::init()
+{
+    if (instance()->_initialized)
+        return true;  // allow multiple invocations because of MonolithicApplication
+
+    // Setup signal handling
+    // TODO: Don't use unsafe methods, see handleSignal()
+
     // We catch SIGTERM and SIGINT (caused by Ctrl+C) to graceful shutdown Quassel.
     signal(SIGTERM, handleSignal);
     signal(SIGINT, handleSignal);
@@ -70,13 +81,6 @@ Quassel::Quassel()
     // Windows does not support SIGHUP
     signal(SIGHUP, handleSignal);
 #endif
-}
-
-
-bool Quassel::init()
-{
-    if (instance()->_initialized)
-        return true;  // allow multiple invocations because of MonolithicApplication
 
     if (instance()->_handleCrashes) {
         // we have crashhandler for win32 and unix (based on execinfo).
@@ -88,12 +92,12 @@ bool Quassel::init()
 
         if (rc == -1 || !((long)limit->rlim_cur > 0 || limit->rlim_cur == RLIM_INFINITY)) {
 # endif /* Q_OS_WIN */
-        signal(SIGABRT, handleSignal);
-        signal(SIGSEGV, handleSignal);
+            signal(SIGABRT, handleSignal);
+            signal(SIGSEGV, handleSignal);
 # ifndef Q_OS_WIN
-        signal(SIGBUS, handleSignal);
-    }
-    free(limit);
+            signal(SIGBUS, handleSignal);
+        }
+        free(limit);
 # endif /* Q_OS_WIN */
 #endif /* Q_OS_WIN || HAVE_EXECINFO */
     }
@@ -299,19 +303,13 @@ void Quassel::setupBuildInfo()
     // Check if we got a commit hash
     if (!QString(GIT_HEAD).isEmpty()) {
         buildInfo.commitHash = GIT_HEAD;
-        QDateTime date;
-#if QT_VERSION >= 0x050800
-        date.setSecsSinceEpoch(GIT_COMMIT_DATE);
-#else
-        // toSecsSinceEpoch() was added in Qt 5.8.  Manually downconvert to seconds for now.
-        // See https://doc.qt.io/qt-5/qdatetime.html#toMSecsSinceEpoch
-        // Warning generated if not converting the 1000 to a qint64 first.
-        date.setMSecsSinceEpoch(GIT_COMMIT_DATE * (qint64)1000);
-#endif
-        buildInfo.commitDate = date.toString();
+        // Set to Unix epoch, wrapped as a string for backwards-compatibility
+        buildInfo.commitDate = QString::number(GIT_COMMIT_DATE);
     }
     else if (!QString(DIST_HASH).contains("Format")) {
         buildInfo.commitHash = DIST_HASH;
+        // Leave as Unix epoch if set as Unix epoch, but don't force this for
+        // backwards-compatibility with existing packaging/release tools that might set strings.
         buildInfo.commitDate = QString(DIST_DATE);
     }
 
@@ -362,6 +360,8 @@ const Quassel::BuildInfo &Quassel::buildInfo()
 
 
 //! Signal handler for graceful shutdown.
+//! @todo: Ensure this doesn't use unsafe methods (it does currently)
+//!        cf. QSocketNotifier, UnixSignalWatcher
 void Quassel::handleSignal(int sig)
 {
     switch (sig) {
