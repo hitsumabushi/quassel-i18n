@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-06-20 13:45+0000\n"
+"PO-Revision-Date: 2018-06-21 13:20+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Dutch (http://www.transifex.com/quassel/quassel/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -648,14 +648,19 @@ msgctxt "AboutDlg|"
 msgid "&Thanks To"
 msgstr "Me&t dank aan"
 
-#: ../src/qtui/aboutdlg.cpp:39
+#: ../src/qtui/aboutdlg.cpp:44
+msgctxt "AboutDlg|"
+msgid "Unknown date"
+msgstr ""
+
+#: ../src/qtui/aboutdlg.cpp:49
 #, qt-format
 msgctxt "AboutDlg|"
 msgid ""
 "<b>Version:</b> %1<br><b>Version date:</b> %2<br><b>Protocol version:</b> %3"
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:54
+#: ../src/qtui/aboutdlg.cpp:66
 #, qt-format
 msgctxt "AboutDlg|"
 msgid ""
@@ -677,46 +682,46 @@ msgid ""
 "report bugs."
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:74
+#: ../src/qtui/aboutdlg.cpp:86
 msgctxt "AboutDlg|"
 msgid "Quassel IRC is mainly developed by:"
 msgstr "Quassel-IRC wordt voornamelijk ontwikkeld door:"
 
-#: ../src/qtui/aboutdlg.cpp:88
+#: ../src/qtui/aboutdlg.cpp:100
 msgctxt "AboutDlg|"
 msgid ""
 "We would like to thank the following contributors (in alphabetical order) "
 "and everybody we forgot to mention here:"
 msgstr "We willen de volgende personen (in alfabetische volgorde) bedanken die een steentje bijgedragen hebben, naast iedereen die we hier vergeten zijn:"
 
-#: ../src/qtui/aboutdlg.cpp:92
+#: ../src/qtui/aboutdlg.cpp:104
 msgctxt "AboutDlg|"
 msgid ""
 "...and anybody else finding and reporting bugs, giving feedback, helping "
 "others and being part of the community!"
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:99
+#: ../src/qtui/aboutdlg.cpp:111
 msgctxt "AboutDlg|"
 msgid "Special thanks goes to:"
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:103
+#: ../src/qtui/aboutdlg.cpp:115
 msgctxt "AboutDlg|"
 msgid "for the original Quassel logo - The All-Seeing Eye"
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:107
+#: ../src/qtui/aboutdlg.cpp:119
 msgctxt "AboutDlg|"
 msgid "for the Oxygen Quassel logo"
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:111
+#: ../src/qtui/aboutdlg.cpp:123
 msgctxt "AboutDlg|"
 msgid "for the amazing Breeze and Oxygen icon themes"
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:115
+#: ../src/qtui/aboutdlg.cpp:127
 msgctxt "AboutDlg|"
 msgid ""
 "for creating an awesome framework, and for sponsoring development with "
@@ -3533,10 +3538,10 @@ msgstr "Uptime:"
 
 #: ../src/qtui/ui/coreinfodlg.ui:64
 msgctxt "CoreInfoDlg|"
-msgid "Connected Clients:"
-msgstr "Verbonden clients:"
+msgid "Connected clients:"
+msgstr ""
 
-#: ../src/qtui/ui/coreinfodlg.ui:117 ../src/qtui/coreinfodlg.cpp:184
+#: ../src/qtui/ui/coreinfodlg.ui:117 ../src/qtui/coreinfodlg.cpp:191
 msgctxt "CoreInfoDlg|"
 msgid "Your Quassel core is too old to show active sessions"
 msgstr ""
@@ -3551,23 +3556,28 @@ msgctxt "CoreInfoDlg|"
 msgid "Close"
 msgstr "Sluiten"
 
-#: ../src/qtui/coreinfodlg.cpp:85 ../src/qtui/coreinfodlg.cpp:86
-#: ../src/qtui/coreinfodlg.cpp:152
+#: ../src/qtui/coreinfodlg.cpp:86 ../src/qtui/coreinfodlg.cpp:87
+#: ../src/qtui/coreinfodlg.cpp:159
 msgctxt "CoreInfoDlg|"
 msgid "Unknown"
 msgstr ""
 
-#: ../src/qtui/coreinfodlg.cpp:89
+#: ../src/qtui/coreinfodlg.cpp:90
 msgctxt "CoreInfoDlg|"
 msgid "Disconnected from core"
 msgstr ""
 
-#: ../src/qtui/coreinfodlg.cpp:90 ../src/qtui/coreinfodlg.cpp:149
+#: ../src/qtui/coreinfodlg.cpp:91 ../src/qtui/coreinfodlg.cpp:156
 msgctxt "CoreInfoDlg|"
 msgid "Not available"
 msgstr ""
 
-#: ../src/qtui/coreinfodlg.cpp:165
+#: ../src/qtui/coreinfodlg.cpp:99
+msgctxt "CoreInfoDlg|"
+msgid "Unknown date"
+msgstr ""
+
+#: ../src/qtui/coreinfodlg.cpp:172
 #, qt-format
 msgctxt "CoreInfoDlg|"
 msgid "%n Day(s)"
@@ -3575,18 +3585,18 @@ msgid_plural "%n Day(s)"
 msgstr[0] "%n Dag"
 msgstr[1] "%n Dagen"
 
-#: ../src/qtui/coreinfodlg.cpp:166
+#: ../src/qtui/coreinfodlg.cpp:173
 #, qt-format
 msgctxt "CoreInfoDlg|"
 msgid " %1:%2:%3 (since %4)"
 msgstr " %1:%2:%3 (sinds %4)"
 
-#: ../src/qtui/coreinfodlg.cpp:182
+#: ../src/qtui/coreinfodlg.cpp:189
 msgctxt "CoreInfoDlg|"
 msgid "Active sessions unsupported"
 msgstr ""
 
-#: ../src/qtui/coreinfodlg.cpp:185
+#: ../src/qtui/coreinfodlg.cpp:192
 msgctxt "CoreInfoDlg|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer to view and disconnect other "
@@ -3773,7 +3783,7 @@ msgstr ""
 
 #: ../src/qtui/ui/coresessionwidget.ui:51
 msgctxt "CoreSessionWidget|"
-msgid "Version Date:"
+msgid "Version date:"
 msgstr ""
 
 #: ../src/qtui/ui/coresessionwidget.ui:65
@@ -3783,7 +3793,7 @@ msgstr ""
 
 #: ../src/qtui/ui/coresessionwidget.ui:79
 msgctxt "CoreSessionWidget|"
-msgid "Connected Since:"
+msgid "Connected since:"
 msgstr ""
 
 #: ../src/qtui/ui/coresessionwidget.ui:93
@@ -3796,27 +3806,32 @@ msgctxt "CoreSessionWidget|"
 msgid "End Session"
 msgstr ""
 
-#: ../src/qtui/coresessionwidget.cpp:45
+#: ../src/qtui/coresessionwidget.cpp:41
+msgctxt "CoreSessionWidget|"
+msgid "Unknown date"
+msgstr ""
+
+#: ../src/qtui/coresessionwidget.cpp:51
 msgctxt "CoreSessionWidget|"
 msgid "Yes"
 msgstr "Ja"
 
-#: ../src/qtui/coresessionwidget.cpp:45
+#: ../src/qtui/coresessionwidget.cpp:51
 msgctxt "CoreSessionWidget|"
 msgid "No"
 msgstr ""
 
-#: ../src/qtui/coresessionwidget.cpp:51 ../src/qtui/coresessionwidget.cpp:64
+#: ../src/qtui/coresessionwidget.cpp:57 ../src/qtui/coresessionwidget.cpp:70
 msgctxt "CoreSessionWidget|"
 msgid "End the client's session, disconnecting it"
 msgstr ""
 
-#: ../src/qtui/coresessionwidget.cpp:65
+#: ../src/qtui/coresessionwidget.cpp:71
 msgctxt "CoreSessionWidget|"
 msgid "This client does not support being remotely disconnected"
 msgstr ""
 
-#: ../src/qtui/coresessionwidget.cpp:78
+#: ../src/qtui/coresessionwidget.cpp:84
 msgctxt "CoreSessionWidget|"
 msgid "Ending session..."
 msgstr ""
@@ -7664,13 +7679,13 @@ msgid ""
 "KDE/Plasma themes Breeze, Breeze Dark and Oxygen."
 msgstr ""
 
-#: ../src/common/quassel.cpp:134
+#: ../src/common/quassel.cpp:138
 #, qt-format
 msgctxt "Quassel|"
 msgid "Invalid log level %1; supported are Debug|Info|Warning|Error"
 msgstr ""
 
-#: ../src/common/quassel.cpp:143
+#: ../src/common/quassel.cpp:147
 #, qt-format
 msgctxt "Quassel|"
 msgid "Could not open log file \"%1\": %2"
